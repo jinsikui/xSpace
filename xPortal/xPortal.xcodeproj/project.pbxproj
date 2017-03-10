@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		3154B73FB1EC8F4F998D8455 /* libPods-Box-xPortal.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8012D24A8EB3D8832515B4A4 /* libPods-Box-xPortal.a */; };
 		429DD13DD8AFDFEEFE2CF5B9 /* libPods-xPortal.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 82B42E39E16332FC3E44D1A6 /* libPods-xPortal.a */; };
+		63F758E61E72BFA100756FE7 /* CoreDataController.m in Sources */ = {isa = PBXBuildFile; fileRef = 63F758E51E72BFA100756FE7 /* CoreDataController.m */; };
 		B1748FD11DDF154C0034C852 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B1748FD01DDF154C0034C852 /* main.m */; };
 		B1748FD41DDF154C0034C852 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B1748FD31DDF154C0034C852 /* AppDelegate.m */; };
 		B1748FD71DDF154C0034C852 /* PortalIndexController.m in Sources */ = {isa = PBXBuildFile; fileRef = B1748FD61DDF154C0034C852 /* PortalIndexController.m */; };
@@ -50,6 +51,8 @@
 		30D979E7D24D635A6517A9CA /* Pods-Box-xPortal.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Box-xPortal.debug.xcconfig"; path = "../Pods/Target Support Files/Pods-Box-xPortal/Pods-Box-xPortal.debug.xcconfig"; sourceTree = "<group>"; };
 		4DF4C58C492B0616C9D7759A /* Pods-Box-xPortal.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Box-xPortal.release.xcconfig"; path = "../Pods/Target Support Files/Pods-Box-xPortal/Pods-Box-xPortal.release.xcconfig"; sourceTree = "<group>"; };
 		5E5FFD9343F0924413FFEA74 /* Pods-xPortal.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-xPortal.debug.xcconfig"; path = "../Pods/Target Support Files/Pods-xPortal/Pods-xPortal.debug.xcconfig"; sourceTree = "<group>"; };
+		63F758E41E72BFA100756FE7 /* CoreDataController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoreDataController.h; sourceTree = "<group>"; };
+		63F758E51E72BFA100756FE7 /* CoreDataController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoreDataController.m; sourceTree = "<group>"; };
 		8012D24A8EB3D8832515B4A4 /* libPods-Box-xPortal.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Box-xPortal.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		82B42E39E16332FC3E44D1A6 /* libPods-xPortal.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-xPortal.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B1748FCC1DDF154C0034C852 /* xPortal.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = xPortal.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -121,6 +124,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		63F758E31E72BE7C00756FE7 /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				63F758E41E72BFA100756FE7 /* CoreDataController.h */,
+				63F758E51E72BFA100756FE7 /* CoreDataController.m */,
+			);
+			path = CoreData;
+			sourceTree = "<group>";
+		};
 		B1748FC31DDF154C0034C852 = {
 			isa = PBXGroup;
 			children = (
@@ -146,6 +158,7 @@
 		B1748FCE1DDF154C0034C852 /* xPortal */ = {
 			isa = PBXGroup;
 			children = (
+				63F758E31E72BE7C00756FE7 /* CoreData */,
 				B1EFAD4E1E72800F00128906 /* xPhotoBrowser */,
 				B18163811E00046600D928FB /* Event */,
 				B17D8AFC1DF01939004CD18F /* OC */,
@@ -455,6 +468,7 @@
 				B17D8B021DF01A0B004CD18F /* A.m in Sources */,
 				B17D8B101DF01BC2004CD18F /* A+xCategory.m in Sources */,
 				B17490871DE4034B0034C852 /* PortalNavigationController.m in Sources */,
+				63F758E61E72BFA100756FE7 /* CoreDataController.m in Sources */,
 				B17D8B1F1DF14D6E004CD18F /* Greeting.mm in Sources */,
 				B17D8B051DF01A2D004CD18F /* B.m in Sources */,
 				B1748FD71DDF154C0034C852 /* PortalIndexController.m in Sources */,

@@ -6,6 +6,7 @@
 #import "OCController.h"
 #import "PortalNavigationController.h"
 #import "EventController.h"
+#import "CoreDataController.h"
 
 @interface PortalIndexController ()
 @end
@@ -24,7 +25,12 @@
     [contentView addSubview:[xViewTools createBorderBtn:CGRectMake(0.5*(kContentWidth - 100), 90, 100, 40) borderColor:kRed_FF6600 bgColor:kColor_FFFFFF titleColor:kRed_FF6600 title:@"AutoLayout" font:kFontPF(14) target:self selector:@selector(actionShowAutoLayout)]];
     [contentView addSubview:[xViewTools createBorderBtn:CGRectMake(0.5*(kContentWidth - 100), 150, 100, 40) borderColor:kRed_FF6600 bgColor:kColor_FFFFFF titleColor:kRed_FF6600 title:@"OC语法" font:kFontPF(14) target:self selector:@selector(actionShowOC)]];
     [contentView addSubview:[xViewTools createBorderBtn:CGRectMake(0.5*(kContentWidth - 100), 210, 100, 40) borderColor:kRed_FF6600 bgColor:kColor_FFFFFF titleColor:kRed_FF6600 title:@"事件处理" font:kFontPF(14) target:self selector:@selector(actionShowEvent)]];
+    [contentView addSubview:[xViewTools createBorderBtn:CGRectMake(0.5*(kContentWidth - 100), 270, 100, 40) borderColor:kRed_FF6600 bgColor:kColor_FFFFFF titleColor:kRed_FF6600 title:@"CoreData" font:kFontPF(14) target:self selector:@selector(actionShowCoreData)]];
     contentView.contentSize = CGSizeMake(kScreenWidth, kContentHeight + 1);
+}
+
+-(void)actionShowCoreData{
+    [self.navigationController pushViewController:[[CoreDataController alloc] init] animated:YES];
 }
 
 -(void)actionShowPhotoBrowser{
