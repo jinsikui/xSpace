@@ -1,0 +1,23 @@
+PODS:
+  - FDFullscreenPopGesture (1.1)
+  - Masonry (1.0.2)
+  - SDWebImage (4.0.0):
+    - SDWebImage/Core (= 4.0.0)
+  - SDWebImage/Core (4.0.0)
+  - TPKeyboardAvoiding (1.3.1)
+
+DEPENDENCIES:
+  - FDFullscreenPopGesture
+  - Masonry
+  - SDWebImage
+  - TPKeyboardAvoiding
+
+SPEC CHECKSUMS:
+  FDFullscreenPopGesture: a8a620179e3d9c40e8e00256dcee1c1a27c6d0f0
+  Masonry: 7c429b56da9d4ee0bbb3ed77a5ea710d6a5df39e
+  SDWebImage: 76a6348bdc74eb5a55dd08a091ef298e56b55e41
+  TPKeyboardAvoiding: 0d6af20e95e2850f4c621841225b59ec7d8dd852
+
+PODFILE CHECKSUM: 9014fb60c60bc6de9747ec8855561330951a4495
+
+COCOAPODS: 1.1.1

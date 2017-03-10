@@ -1,0 +1,727 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		3154B73FB1EC8F4F998D8455 /* libPods-Box-xPortal.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8012D24A8EB3D8832515B4A4 /* libPods-Box-xPortal.a */; };
+		429DD13DD8AFDFEEFE2CF5B9 /* libPods-xPortal.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 82B42E39E16332FC3E44D1A6 /* libPods-xPortal.a */; };
+		B1748FD11DDF154C0034C852 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B1748FD01DDF154C0034C852 /* main.m */; };
+		B1748FD41DDF154C0034C852 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B1748FD31DDF154C0034C852 /* AppDelegate.m */; };
+		B1748FD71DDF154C0034C852 /* PortalIndexController.m in Sources */ = {isa = PBXBuildFile; fileRef = B1748FD61DDF154C0034C852 /* PortalIndexController.m */; };
+		B1748FE21DDF154C0034C852 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B1748FE11DDF154C0034C852 /* Assets.xcassets */; };
+		B1748FE51DDF154C0034C852 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B1748FE31DDF154C0034C852 /* LaunchScreen.storyboard */; };
+		B1748FF01DDF154C0034C852 /* xPortalTests.m in Sources */ = {isa = PBXBuildFile; fileRef = B1748FEF1DDF154C0034C852 /* xPortalTests.m */; };
+		B1748FFB1DDF154C0034C852 /* xPortalUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = B1748FFA1DDF154C0034C852 /* xPortalUITests.m */; };
+		B174906A1DDF25AC0034C852 /* libxLibrary.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B17490691DDF25AC0034C852 /* libxLibrary.a */; };
+		B17490871DE4034B0034C852 /* PortalNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = B17490861DE4034B0034C852 /* PortalNavigationController.m */; };
+		B17490921DE59E410034C852 /* PortalBaseController.m in Sources */ = {isa = PBXBuildFile; fileRef = B17490911DE59E410034C852 /* PortalBaseController.m */; };
+		B17D8AE51DEEC7C3004CD18F /* AutoLayoutController.m in Sources */ = {isa = PBXBuildFile; fileRef = B17D8AE41DEEC7C3004CD18F /* AutoLayoutController.m */; };
+		B17D8AFF1DF01964004CD18F /* OCController.mm in Sources */ = {isa = PBXBuildFile; fileRef = B17D8AFE1DF01964004CD18F /* OCController.mm */; };
+		B17D8B021DF01A0B004CD18F /* A.m in Sources */ = {isa = PBXBuildFile; fileRef = B17D8B011DF01A0B004CD18F /* A.m */; };
+		B17D8B051DF01A2D004CD18F /* B.m in Sources */ = {isa = PBXBuildFile; fileRef = B17D8B041DF01A2D004CD18F /* B.m */; };
+		B17D8B101DF01BC2004CD18F /* A+xCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = B17D8B0F1DF01BC2004CD18F /* A+xCategory.m */; };
+		B17D8B1F1DF14D6E004CD18F /* Greeting.mm in Sources */ = {isa = PBXBuildFile; fileRef = B17D8B1D1DF14D6E004CD18F /* Greeting.mm */; };
+		B18163841E0004A700D928FB /* EventController.m in Sources */ = {isa = PBXBuildFile; fileRef = B18163831E0004A700D928FB /* EventController.m */; };
+		B1EFAD6D1E7282BA00128906 /* xPhotoBrowserController.m in Sources */ = {isa = PBXBuildFile; fileRef = B1EFAD6C1E7282BA00128906 /* xPhotoBrowserController.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		B1748FEC1DDF154C0034C852 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B1748FC41DDF154C0034C852 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B1748FCB1DDF154C0034C852;
+			remoteInfo = xPortal;
+		};
+		B1748FF71DDF154C0034C852 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B1748FC41DDF154C0034C852 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B1748FCB1DDF154C0034C852;
+			remoteInfo = xPortal;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		30D979E7D24D635A6517A9CA /* Pods-Box-xPortal.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Box-xPortal.debug.xcconfig"; path = "../Pods/Target Support Files/Pods-Box-xPortal/Pods-Box-xPortal.debug.xcconfig"; sourceTree = "<group>"; };
+		4DF4C58C492B0616C9D7759A /* Pods-Box-xPortal.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Box-xPortal.release.xcconfig"; path = "../Pods/Target Support Files/Pods-Box-xPortal/Pods-Box-xPortal.release.xcconfig"; sourceTree = "<group>"; };
+		5E5FFD9343F0924413FFEA74 /* Pods-xPortal.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-xPortal.debug.xcconfig"; path = "../Pods/Target Support Files/Pods-xPortal/Pods-xPortal.debug.xcconfig"; sourceTree = "<group>"; };
+		8012D24A8EB3D8832515B4A4 /* libPods-Box-xPortal.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Box-xPortal.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		82B42E39E16332FC3E44D1A6 /* libPods-xPortal.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-xPortal.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		B1748FCC1DDF154C0034C852 /* xPortal.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = xPortal.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		B1748FD01DDF154C0034C852 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		B1748FD21DDF154C0034C852 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		B1748FD31DDF154C0034C852 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		B1748FD51DDF154C0034C852 /* PortalIndexController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PortalIndexController.h; sourceTree = "<group>"; };
+		B1748FD61DDF154C0034C852 /* PortalIndexController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PortalIndexController.m; sourceTree = "<group>"; };
+		B1748FE11DDF154C0034C852 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		B1748FE41DDF154C0034C852 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		B1748FE61DDF154C0034C852 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B1748FEB1DDF154C0034C852 /* xPortalTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = xPortalTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		B1748FEF1DDF154C0034C852 /* xPortalTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = xPortalTests.m; sourceTree = "<group>"; };
+		B1748FF11DDF154C0034C852 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B1748FF61DDF154C0034C852 /* xPortalUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = xPortalUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		B1748FFA1DDF154C0034C852 /* xPortalUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = xPortalUITests.m; sourceTree = "<group>"; };
+		B1748FFC1DDF154C0034C852 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B17490691DDF25AC0034C852 /* libxLibrary.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libxLibrary.a; path = "../xLibrary/build/Debug-iphoneos/libxLibrary.a"; sourceTree = "<group>"; };
+		B17490721DDF2ECF0034C852 /* PrefixHeader.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
+		B17490851DE4034B0034C852 /* PortalNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PortalNavigationController.h; sourceTree = "<group>"; };
+		B17490861DE4034B0034C852 /* PortalNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PortalNavigationController.m; sourceTree = "<group>"; };
+		B17490901DE59E410034C852 /* PortalBaseController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PortalBaseController.h; sourceTree = "<group>"; };
+		B17490911DE59E410034C852 /* PortalBaseController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PortalBaseController.m; sourceTree = "<group>"; };
+		B17D8AE31DEEC7C3004CD18F /* AutoLayoutController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AutoLayoutController.h; sourceTree = "<group>"; };
+		B17D8AE41DEEC7C3004CD18F /* AutoLayoutController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AutoLayoutController.m; sourceTree = "<group>"; };
+		B17D8AFD1DF01964004CD18F /* OCController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OCController.h; sourceTree = "<group>"; };
+		B17D8AFE1DF01964004CD18F /* OCController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = OCController.mm; sourceTree = "<group>"; };
+		B17D8B001DF01A0B004CD18F /* A.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = A.h; sourceTree = "<group>"; };
+		B17D8B011DF01A0B004CD18F /* A.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = A.m; sourceTree = "<group>"; };
+		B17D8B031DF01A2D004CD18F /* B.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = B.h; sourceTree = "<group>"; };
+		B17D8B041DF01A2D004CD18F /* B.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = B.m; sourceTree = "<group>"; };
+		B17D8B0D1DF01BAC004CD18F /* A+xExtension.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "A+xExtension.h"; sourceTree = "<group>"; };
+		B17D8B0E1DF01BC2004CD18F /* A+xCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "A+xCategory.h"; sourceTree = "<group>"; };
+		B17D8B0F1DF01BC2004CD18F /* A+xCategory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "A+xCategory.m"; sourceTree = "<group>"; };
+		B17D8B1D1DF14D6E004CD18F /* Greeting.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = Greeting.mm; sourceTree = "<group>"; };
+		B17D8B1E1DF14D6E004CD18F /* Greeting.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Greeting.h; sourceTree = "<group>"; };
+		B18163821E0004A700D928FB /* EventController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventController.h; sourceTree = "<group>"; };
+		B18163831E0004A700D928FB /* EventController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventController.m; sourceTree = "<group>"; };
+		B1EFAD6B1E7282BA00128906 /* xPhotoBrowserController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = xPhotoBrowserController.h; sourceTree = "<group>"; };
+		B1EFAD6C1E7282BA00128906 /* xPhotoBrowserController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = xPhotoBrowserController.m; sourceTree = "<group>"; };
+		C9743325F15E5F4CB2D6D088 /* Pods-xPortal.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-xPortal.release.xcconfig"; path = "../Pods/Target Support Files/Pods-xPortal/Pods-xPortal.release.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		B1748FC91DDF154C0034C852 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B174906A1DDF25AC0034C852 /* libxLibrary.a in Frameworks */,
+				3154B73FB1EC8F4F998D8455 /* libPods-Box-xPortal.a in Frameworks */,
+				429DD13DD8AFDFEEFE2CF5B9 /* libPods-xPortal.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B1748FE81DDF154C0034C852 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B1748FF31DDF154C0034C852 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		B1748FC31DDF154C0034C852 = {
+			isa = PBXGroup;
+			children = (
+				B1748FCE1DDF154C0034C852 /* xPortal */,
+				B1748FEE1DDF154C0034C852 /* xPortalTests */,
+				B1748FF91DDF154C0034C852 /* xPortalUITests */,
+				B1748FCD1DDF154C0034C852 /* Products */,
+				B17490681DDF25AC0034C852 /* Frameworks */,
+				E3E4AC9DCB605DDCBF60C853 /* Pods */,
+			);
+			sourceTree = "<group>";
+		};
+		B1748FCD1DDF154C0034C852 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				B1748FCC1DDF154C0034C852 /* xPortal.app */,
+				B1748FEB1DDF154C0034C852 /* xPortalTests.xctest */,
+				B1748FF61DDF154C0034C852 /* xPortalUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		B1748FCE1DDF154C0034C852 /* xPortal */ = {
+			isa = PBXGroup;
+			children = (
+				B1EFAD4E1E72800F00128906 /* xPhotoBrowser */,
+				B18163811E00046600D928FB /* Event */,
+				B17D8AFC1DF01939004CD18F /* OC */,
+				B17D8AE21DEEC3C8004CD18F /* AutoLayout */,
+				B17490721DDF2ECF0034C852 /* PrefixHeader.pch */,
+				B17490851DE4034B0034C852 /* PortalNavigationController.h */,
+				B17490861DE4034B0034C852 /* PortalNavigationController.m */,
+				B1748FD21DDF154C0034C852 /* AppDelegate.h */,
+				B1748FD31DDF154C0034C852 /* AppDelegate.m */,
+				B1748FD51DDF154C0034C852 /* PortalIndexController.h */,
+				B1748FD61DDF154C0034C852 /* PortalIndexController.m */,
+				B1748FE11DDF154C0034C852 /* Assets.xcassets */,
+				B1748FE31DDF154C0034C852 /* LaunchScreen.storyboard */,
+				B1748FE61DDF154C0034C852 /* Info.plist */,
+				B1748FCF1DDF154C0034C852 /* Supporting Files */,
+				B17490901DE59E410034C852 /* PortalBaseController.h */,
+				B17490911DE59E410034C852 /* PortalBaseController.m */,
+			);
+			path = xPortal;
+			sourceTree = "<group>";
+		};
+		B1748FCF1DDF154C0034C852 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				B1748FD01DDF154C0034C852 /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		B1748FEE1DDF154C0034C852 /* xPortalTests */ = {
+			isa = PBXGroup;
+			children = (
+				B1748FEF1DDF154C0034C852 /* xPortalTests.m */,
+				B1748FF11DDF154C0034C852 /* Info.plist */,
+			);
+			path = xPortalTests;
+			sourceTree = "<group>";
+		};
+		B1748FF91DDF154C0034C852 /* xPortalUITests */ = {
+			isa = PBXGroup;
+			children = (
+				B1748FFA1DDF154C0034C852 /* xPortalUITests.m */,
+				B1748FFC1DDF154C0034C852 /* Info.plist */,
+			);
+			path = xPortalUITests;
+			sourceTree = "<group>";
+		};
+		B17490681DDF25AC0034C852 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				B17490691DDF25AC0034C852 /* libxLibrary.a */,
+				8012D24A8EB3D8832515B4A4 /* libPods-Box-xPortal.a */,
+				82B42E39E16332FC3E44D1A6 /* libPods-xPortal.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		B17D8AE21DEEC3C8004CD18F /* AutoLayout */ = {
+			isa = PBXGroup;
+			children = (
+				B17D8AE31DEEC7C3004CD18F /* AutoLayoutController.h */,
+				B17D8AE41DEEC7C3004CD18F /* AutoLayoutController.m */,
+			);
+			path = AutoLayout;
+			sourceTree = "<group>";
+		};
+		B17D8AFC1DF01939004CD18F /* OC */ = {
+			isa = PBXGroup;
+			children = (
+				B17D8AFD1DF01964004CD18F /* OCController.h */,
+				B17D8AFE1DF01964004CD18F /* OCController.mm */,
+				B17D8B001DF01A0B004CD18F /* A.h */,
+				B17D8B011DF01A0B004CD18F /* A.m */,
+				B17D8B031DF01A2D004CD18F /* B.h */,
+				B17D8B041DF01A2D004CD18F /* B.m */,
+				B17D8B0D1DF01BAC004CD18F /* A+xExtension.h */,
+				B17D8B0E1DF01BC2004CD18F /* A+xCategory.h */,
+				B17D8B0F1DF01BC2004CD18F /* A+xCategory.m */,
+				B17D8B1D1DF14D6E004CD18F /* Greeting.mm */,
+				B17D8B1E1DF14D6E004CD18F /* Greeting.h */,
+			);
+			path = OC;
+			sourceTree = "<group>";
+		};
+		B18163811E00046600D928FB /* Event */ = {
+			isa = PBXGroup;
+			children = (
+				B18163821E0004A700D928FB /* EventController.h */,
+				B18163831E0004A700D928FB /* EventController.m */,
+			);
+			path = Event;
+			sourceTree = "<group>";
+		};
+		B1EFAD4E1E72800F00128906 /* xPhotoBrowser */ = {
+			isa = PBXGroup;
+			children = (
+				B1EFAD6B1E7282BA00128906 /* xPhotoBrowserController.h */,
+				B1EFAD6C1E7282BA00128906 /* xPhotoBrowserController.m */,
+			);
+			path = xPhotoBrowser;
+			sourceTree = "<group>";
+		};
+		E3E4AC9DCB605DDCBF60C853 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				30D979E7D24D635A6517A9CA /* Pods-Box-xPortal.debug.xcconfig */,
+				4DF4C58C492B0616C9D7759A /* Pods-Box-xPortal.release.xcconfig */,
+				5E5FFD9343F0924413FFEA74 /* Pods-xPortal.debug.xcconfig */,
+				C9743325F15E5F4CB2D6D088 /* Pods-xPortal.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		B1748FCB1DDF154C0034C852 /* xPortal */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B1748FFF1DDF154C0034C852 /* Build configuration list for PBXNativeTarget "xPortal" */;
+			buildPhases = (
+				C07DD3C16CCC0B1C2D52E0C4 /* [CP] Check Pods Manifest.lock */,
+				B1748FC81DDF154C0034C852 /* Sources */,
+				B1748FC91DDF154C0034C852 /* Frameworks */,
+				B1748FCA1DDF154C0034C852 /* Resources */,
+				DA92C2DBC4316885944B3558 /* [CP] Embed Pods Frameworks */,
+				0A8C435A427419D85EACD501 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = xPortal;
+			productName = xPortal;
+			productReference = B1748FCC1DDF154C0034C852 /* xPortal.app */;
+			productType = "com.apple.product-type.application";
+		};
+		B1748FEA1DDF154C0034C852 /* xPortalTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B17490021DDF154C0034C852 /* Build configuration list for PBXNativeTarget "xPortalTests" */;
+			buildPhases = (
+				B1748FE71DDF154C0034C852 /* Sources */,
+				B1748FE81DDF154C0034C852 /* Frameworks */,
+				B1748FE91DDF154C0034C852 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				B1748FED1DDF154C0034C852 /* PBXTargetDependency */,
+			);
+			name = xPortalTests;
+			productName = xPortalTests;
+			productReference = B1748FEB1DDF154C0034C852 /* xPortalTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		B1748FF51DDF154C0034C852 /* xPortalUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B17490051DDF154C0034C852 /* Build configuration list for PBXNativeTarget "xPortalUITests" */;
+			buildPhases = (
+				B1748FF21DDF154C0034C852 /* Sources */,
+				B1748FF31DDF154C0034C852 /* Frameworks */,
+				B1748FF41DDF154C0034C852 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				B1748FF81DDF154C0034C852 /* PBXTargetDependency */,
+			);
+			name = xPortalUITests;
+			productName = xPortalUITests;
+			productReference = B1748FF61DDF154C0034C852 /* xPortalUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		B1748FC41DDF154C0034C852 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0810;
+				ORGANIZATIONNAME = xSpace;
+				TargetAttributes = {
+					B1748FCB1DDF154C0034C852 = {
+						CreatedOnToolsVersion = 8.1;
+						DevelopmentTeam = E6J3Q59668;
+						ProvisioningStyle = Automatic;
+					};
+					B1748FEA1DDF154C0034C852 = {
+						CreatedOnToolsVersion = 8.1;
+						DevelopmentTeam = E6J3Q59668;
+						ProvisioningStyle = Automatic;
+						TestTargetID = B1748FCB1DDF154C0034C852;
+					};
+					B1748FF51DDF154C0034C852 = {
+						CreatedOnToolsVersion = 8.1;
+						DevelopmentTeam = E6J3Q59668;
+						ProvisioningStyle = Automatic;
+						TestTargetID = B1748FCB1DDF154C0034C852;
+					};
+				};
+			};
+			buildConfigurationList = B1748FC71DDF154C0034C852 /* Build configuration list for PBXProject "xPortal" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = B1748FC31DDF154C0034C852;
+			productRefGroup = B1748FCD1DDF154C0034C852 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				B1748FCB1DDF154C0034C852 /* xPortal */,
+				B1748FEA1DDF154C0034C852 /* xPortalTests */,
+				B1748FF51DDF154C0034C852 /* xPortalUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		B1748FCA1DDF154C0034C852 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B1748FE51DDF154C0034C852 /* LaunchScreen.storyboard in Resources */,
+				B1748FE21DDF154C0034C852 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B1748FE91DDF154C0034C852 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B1748FF41DDF154C0034C852 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		0A8C435A427419D85EACD501 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/../Pods/Target Support Files/Pods-xPortal/Pods-xPortal-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C07DD3C16CCC0B1C2D52E0C4 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		DA92C2DBC4316885944B3558 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/../Pods/Target Support Files/Pods-xPortal/Pods-xPortal-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		B1748FC81DDF154C0034C852 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B17D8AE51DEEC7C3004CD18F /* AutoLayoutController.m in Sources */,
+				B1748FD41DDF154C0034C852 /* AppDelegate.m in Sources */,
+				B17490921DE59E410034C852 /* PortalBaseController.m in Sources */,
+				B18163841E0004A700D928FB /* EventController.m in Sources */,
+				B1EFAD6D1E7282BA00128906 /* xPhotoBrowserController.m in Sources */,
+				B17D8AFF1DF01964004CD18F /* OCController.mm in Sources */,
+				B1748FD11DDF154C0034C852 /* main.m in Sources */,
+				B17D8B021DF01A0B004CD18F /* A.m in Sources */,
+				B17D8B101DF01BC2004CD18F /* A+xCategory.m in Sources */,
+				B17490871DE4034B0034C852 /* PortalNavigationController.m in Sources */,
+				B17D8B1F1DF14D6E004CD18F /* Greeting.mm in Sources */,
+				B17D8B051DF01A2D004CD18F /* B.m in Sources */,
+				B1748FD71DDF154C0034C852 /* PortalIndexController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B1748FE71DDF154C0034C852 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B1748FF01DDF154C0034C852 /* xPortalTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B1748FF21DDF154C0034C852 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B1748FFB1DDF154C0034C852 /* xPortalUITests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		B1748FED1DDF154C0034C852 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = B1748FCB1DDF154C0034C852 /* xPortal */;
+			targetProxy = B1748FEC1DDF154C0034C852 /* PBXContainerItemProxy */;
+		};
+		B1748FF81DDF154C0034C852 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = B1748FCB1DDF154C0034C852 /* xPortal */;
+			targetProxy = B1748FF71DDF154C0034C852 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		B1748FE31DDF154C0034C852 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B1748FE41DDF154C0034C852 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		B1748FFD1DDF154C0034C852 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		B1748FFE1DDF154C0034C852 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		B17490001DDF154C0034C852 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5E5FFD9343F0924413FFEA74 /* Pods-xPortal.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = E6J3Q59668;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/xPortal/PrefixHeader.pch";
+				HEADER_SEARCH_PATHS = "$(SRCROOT)/../xLibrary/**";
+				INFOPLIST_FILE = xPortal/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.xspace.xPortal;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		B17490011DDF154C0034C852 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = C9743325F15E5F4CB2D6D088 /* Pods-xPortal.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = E6J3Q59668;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/xPortal/PrefixHeader.pch";
+				HEADER_SEARCH_PATHS = "$(SRCROOT)/../xLibrary/**";
+				INFOPLIST_FILE = xPortal/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.xspace.xPortal;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		B17490031DDF154C0034C852 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = E6J3Q59668;
+				INFOPLIST_FILE = xPortalTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.xspace.xPortalTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/xPortal.app/xPortal";
+			};
+			name = Debug;
+		};
+		B17490041DDF154C0034C852 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = E6J3Q59668;
+				INFOPLIST_FILE = xPortalTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.xspace.xPortalTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/xPortal.app/xPortal";
+			};
+			name = Release;
+		};
+		B17490061DDF154C0034C852 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DEVELOPMENT_TEAM = E6J3Q59668;
+				INFOPLIST_FILE = xPortalUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.xspace.xPortalUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = xPortal;
+			};
+			name = Debug;
+		};
+		B17490071DDF154C0034C852 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DEVELOPMENT_TEAM = E6J3Q59668;
+				INFOPLIST_FILE = xPortalUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.xspace.xPortalUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = xPortal;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		B1748FC71DDF154C0034C852 /* Build configuration list for PBXProject "xPortal" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B1748FFD1DDF154C0034C852 /* Debug */,
+				B1748FFE1DDF154C0034C852 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B1748FFF1DDF154C0034C852 /* Build configuration list for PBXNativeTarget "xPortal" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B17490001DDF154C0034C852 /* Debug */,
+				B17490011DDF154C0034C852 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B17490021DDF154C0034C852 /* Build configuration list for PBXNativeTarget "xPortalTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B17490031DDF154C0034C852 /* Debug */,
+				B17490041DDF154C0034C852 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B17490051DDF154C0034C852 /* Build configuration list for PBXNativeTarget "xPortalUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B17490061DDF154C0034C852 /* Debug */,
+				B17490071DDF154C0034C852 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = B1748FC41DDF154C0034C852 /* Project object */;
+}
