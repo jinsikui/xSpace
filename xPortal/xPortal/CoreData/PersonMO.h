@@ -4,7 +4,6 @@
 //
 //  Created by JSK on 2017/3/14.
 //  Copyright © 2017年 xSpace. All rights reserved.
-//  This file was automatically generated and should not be edited.
 //
 
 #import <Foundation/Foundation.h>
@@ -12,12 +11,10 @@
 
 @class FriendInfoMO;
 
-NS_ASSUME_NONNULL_BEGIN
-
 @interface PersonMO : NSManagedObject
 
+@property (nullable, nonatomic, copy) NSString *name;
+@property (nullable, nonatomic, retain) NSSet<FriendInfoMO *> *beFriendedBy;
+@property (nullable, nonatomic, retain) NSSet<FriendInfoMO *> *friends;
+
 @end
-
-NS_ASSUME_NONNULL_END
-
-#import "PersonMO+CoreDataProperties.h"

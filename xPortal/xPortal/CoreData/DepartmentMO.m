@@ -4,11 +4,14 @@
 //
 //  Created by JSK on 2017/3/14.
 //  Copyright © 2017年 xSpace. All rights reserved.
-//  This file was automatically generated and should not be edited.
 //
 
-#import "DepartmentMO+CoreDataClass.h"
-#import "EmployeeMO+CoreDataClass.h"
+#import "DepartmentMO.h"
+#import "EmployeeMO.h"
+
 @implementation DepartmentMO
+
+@dynamic title;
+@dynamic employees;
 
 @end
