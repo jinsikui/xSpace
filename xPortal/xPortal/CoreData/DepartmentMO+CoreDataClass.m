@@ -1,5 +1,5 @@
 //
-//  FriendInfoMO+CoreDataClass.m
+//  DepartmentMO+CoreDataClass.m
 //  xPortal
 //
 //  Created by JSK on 2017/3/14.
@@ -7,11 +7,8 @@
 //  This file was automatically generated and should not be edited.
 //
 
-#import "FriendInfoMO.h"
-
-@implementation FriendInfoMO
-
-@dynamic source;
-@dynamic setAsFriend;
+#import "DepartmentMO+CoreDataClass.h"
+#import "EmployeeMO+CoreDataClass.h"
+@implementation DepartmentMO
 
 @end

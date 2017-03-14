@@ -12,9 +12,12 @@
 
 @class EmployeeMO;
 
+NS_ASSUME_NONNULL_BEGIN
+
 @interface DepartmentMO : NSManagedObject
 
-@property (nullable, nonatomic, copy) NSString *title;
-@property (nullable, nonatomic, retain) NSSet<EmployeeMO *> *employees;
-
 @end
+
+NS_ASSUME_NONNULL_END
+
+#import "DepartmentMO+CoreDataProperties.h"

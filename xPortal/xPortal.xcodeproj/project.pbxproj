@@ -11,10 +11,14 @@
 		429DD13DD8AFDFEEFE2CF5B9 /* libPods-xPortal.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 82B42E39E16332FC3E44D1A6 /* libPods-xPortal.a */; };
 		63F758E61E72BFA100756FE7 /* CoreDataController.m in Sources */ = {isa = PBXBuildFile; fileRef = 63F758E51E72BFA100756FE7 /* CoreDataController.m */; };
 		63F759091E77980800756FE7 /* datamodel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 63F759071E77980800756FE7 /* datamodel.xcdatamodeld */; };
-		63F759331E77A71E00756FE7 /* DepartmentMO.m in Sources */ = {isa = PBXBuildFile; fileRef = 63F759241E77A71E00756FE7 /* DepartmentMO.m */; };
-		63F759351E77A71E00756FE7 /* PersonMO.m in Sources */ = {isa = PBXBuildFile; fileRef = 63F759281E77A71E00756FE7 /* PersonMO.m */; };
-		63F759371E77A71E00756FE7 /* EmployeeMO.m in Sources */ = {isa = PBXBuildFile; fileRef = 63F7592C1E77A71E00756FE7 /* EmployeeMO.m */; };
-		63F759391E77A71E00756FE7 /* FriendInfoMO.m in Sources */ = {isa = PBXBuildFile; fileRef = 63F759301E77A71E00756FE7 /* FriendInfoMO.m */; };
+		63F759CF1E77D44F00756FE7 /* EmployeeMO+CoreDataClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 63F759CC1E77D44F00756FE7 /* EmployeeMO+CoreDataClass.m */; };
+		63F759D01E77D44F00756FE7 /* EmployeeMO+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 63F759CE1E77D44F00756FE7 /* EmployeeMO+CoreDataProperties.m */; };
+		63F759D51E77D46C00756FE7 /* DepartmentMO+CoreDataClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 63F759D21E77D46C00756FE7 /* DepartmentMO+CoreDataClass.m */; };
+		63F759D61E77D46C00756FE7 /* DepartmentMO+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 63F759D41E77D46C00756FE7 /* DepartmentMO+CoreDataProperties.m */; };
+		63F759DF1E77D48600756FE7 /* PersonMO+CoreDataClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 63F759D81E77D48600756FE7 /* PersonMO+CoreDataClass.m */; };
+		63F759E01E77D48600756FE7 /* PersonMO+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 63F759DA1E77D48600756FE7 /* PersonMO+CoreDataProperties.m */; };
+		63F759E11E77D48600756FE7 /* FriendInfoMO+CoreDataClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 63F759DC1E77D48600756FE7 /* FriendInfoMO+CoreDataClass.m */; };
+		63F759E21E77D48600756FE7 /* FriendInfoMO+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 63F759DE1E77D48600756FE7 /* FriendInfoMO+CoreDataProperties.m */; };
 		B1748FD11DDF154C0034C852 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B1748FD01DDF154C0034C852 /* main.m */; };
 		B1748FD41DDF154C0034C852 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B1748FD31DDF154C0034C852 /* AppDelegate.m */; };
 		B1748FD71DDF154C0034C852 /* PortalIndexController.m in Sources */ = {isa = PBXBuildFile; fileRef = B1748FD61DDF154C0034C852 /* PortalIndexController.m */; };
@@ -60,14 +64,22 @@
 		63F758E51E72BFA100756FE7 /* CoreDataController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoreDataController.m; sourceTree = "<group>"; };
 		63F759081E77980800756FE7 /* datamodel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = datamodel.xcdatamodel; sourceTree = "<group>"; };
 		63F7590A1E77992B00756FE7 /* datamodel 2.0.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "datamodel 2.0.xcdatamodel"; sourceTree = "<group>"; };
-		63F759231E77A71E00756FE7 /* DepartmentMO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DepartmentMO.h; sourceTree = "<group>"; };
-		63F759241E77A71E00756FE7 /* DepartmentMO.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DepartmentMO.m; sourceTree = "<group>"; };
-		63F759271E77A71E00756FE7 /* PersonMO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PersonMO.h; sourceTree = "<group>"; };
-		63F759281E77A71E00756FE7 /* PersonMO.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PersonMO.m; sourceTree = "<group>"; };
-		63F7592B1E77A71E00756FE7 /* EmployeeMO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EmployeeMO.h; sourceTree = "<group>"; };
-		63F7592C1E77A71E00756FE7 /* EmployeeMO.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EmployeeMO.m; sourceTree = "<group>"; };
-		63F7592F1E77A71E00756FE7 /* FriendInfoMO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FriendInfoMO.h; sourceTree = "<group>"; };
-		63F759301E77A71E00756FE7 /* FriendInfoMO.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FriendInfoMO.m; sourceTree = "<group>"; };
+		63F759CB1E77D44F00756FE7 /* EmployeeMO+CoreDataClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "EmployeeMO+CoreDataClass.h"; sourceTree = "<group>"; };
+		63F759CC1E77D44F00756FE7 /* EmployeeMO+CoreDataClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "EmployeeMO+CoreDataClass.m"; sourceTree = "<group>"; };
+		63F759CD1E77D44F00756FE7 /* EmployeeMO+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "EmployeeMO+CoreDataProperties.h"; sourceTree = "<group>"; };
+		63F759CE1E77D44F00756FE7 /* EmployeeMO+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "EmployeeMO+CoreDataProperties.m"; sourceTree = "<group>"; };
+		63F759D11E77D46C00756FE7 /* DepartmentMO+CoreDataClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "DepartmentMO+CoreDataClass.h"; sourceTree = "<group>"; };
+		63F759D21E77D46C00756FE7 /* DepartmentMO+CoreDataClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "DepartmentMO+CoreDataClass.m"; sourceTree = "<group>"; };
+		63F759D31E77D46C00756FE7 /* DepartmentMO+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "DepartmentMO+CoreDataProperties.h"; sourceTree = "<group>"; };
+		63F759D41E77D46C00756FE7 /* DepartmentMO+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "DepartmentMO+CoreDataProperties.m"; sourceTree = "<group>"; };
+		63F759D71E77D48600756FE7 /* PersonMO+CoreDataClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "PersonMO+CoreDataClass.h"; sourceTree = "<group>"; };
+		63F759D81E77D48600756FE7 /* PersonMO+CoreDataClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "PersonMO+CoreDataClass.m"; sourceTree = "<group>"; };
+		63F759D91E77D48600756FE7 /* PersonMO+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "PersonMO+CoreDataProperties.h"; sourceTree = "<group>"; };
+		63F759DA1E77D48600756FE7 /* PersonMO+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "PersonMO+CoreDataProperties.m"; sourceTree = "<group>"; };
+		63F759DB1E77D48600756FE7 /* FriendInfoMO+CoreDataClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "FriendInfoMO+CoreDataClass.h"; sourceTree = "<group>"; };
+		63F759DC1E77D48600756FE7 /* FriendInfoMO+CoreDataClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "FriendInfoMO+CoreDataClass.m"; sourceTree = "<group>"; };
+		63F759DD1E77D48600756FE7 /* FriendInfoMO+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "FriendInfoMO+CoreDataProperties.h"; sourceTree = "<group>"; };
+		63F759DE1E77D48600756FE7 /* FriendInfoMO+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "FriendInfoMO+CoreDataProperties.m"; sourceTree = "<group>"; };
 		8012D24A8EB3D8832515B4A4 /* libPods-Box-xPortal.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Box-xPortal.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		82B42E39E16332FC3E44D1A6 /* libPods-xPortal.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-xPortal.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B1748FCC1DDF154C0034C852 /* xPortal.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = xPortal.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -142,14 +154,22 @@
 		63F758E31E72BE7C00756FE7 /* CoreData */ = {
 			isa = PBXGroup;
 			children = (
-				63F759231E77A71E00756FE7 /* DepartmentMO.h */,
-				63F759241E77A71E00756FE7 /* DepartmentMO.m */,
-				63F759271E77A71E00756FE7 /* PersonMO.h */,
-				63F759281E77A71E00756FE7 /* PersonMO.m */,
-				63F7592B1E77A71E00756FE7 /* EmployeeMO.h */,
-				63F7592C1E77A71E00756FE7 /* EmployeeMO.m */,
-				63F7592F1E77A71E00756FE7 /* FriendInfoMO.h */,
-				63F759301E77A71E00756FE7 /* FriendInfoMO.m */,
+				63F759D71E77D48600756FE7 /* PersonMO+CoreDataClass.h */,
+				63F759D81E77D48600756FE7 /* PersonMO+CoreDataClass.m */,
+				63F759D91E77D48600756FE7 /* PersonMO+CoreDataProperties.h */,
+				63F759DA1E77D48600756FE7 /* PersonMO+CoreDataProperties.m */,
+				63F759DB1E77D48600756FE7 /* FriendInfoMO+CoreDataClass.h */,
+				63F759DC1E77D48600756FE7 /* FriendInfoMO+CoreDataClass.m */,
+				63F759DD1E77D48600756FE7 /* FriendInfoMO+CoreDataProperties.h */,
+				63F759DE1E77D48600756FE7 /* FriendInfoMO+CoreDataProperties.m */,
+				63F759D11E77D46C00756FE7 /* DepartmentMO+CoreDataClass.h */,
+				63F759D21E77D46C00756FE7 /* DepartmentMO+CoreDataClass.m */,
+				63F759D31E77D46C00756FE7 /* DepartmentMO+CoreDataProperties.h */,
+				63F759D41E77D46C00756FE7 /* DepartmentMO+CoreDataProperties.m */,
+				63F759CB1E77D44F00756FE7 /* EmployeeMO+CoreDataClass.h */,
+				63F759CC1E77D44F00756FE7 /* EmployeeMO+CoreDataClass.m */,
+				63F759CD1E77D44F00756FE7 /* EmployeeMO+CoreDataProperties.h */,
+				63F759CE1E77D44F00756FE7 /* EmployeeMO+CoreDataProperties.m */,
 				63F758E41E72BFA100756FE7 /* CoreDataController.h */,
 				63F758E51E72BFA100756FE7 /* CoreDataController.m */,
 				63F759071E77980800756FE7 /* datamodel.xcdatamodeld */,
@@ -482,24 +502,28 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				63F759E01E77D48600756FE7 /* PersonMO+CoreDataProperties.m in Sources */,
 				B17D8AE51DEEC7C3004CD18F /* AutoLayoutController.m in Sources */,
 				B1748FD41DDF154C0034C852 /* AppDelegate.m in Sources */,
 				B17490921DE59E410034C852 /* PortalBaseController.m in Sources */,
 				B18163841E0004A700D928FB /* EventController.m in Sources */,
 				B1EFAD6D1E7282BA00128906 /* xPhotoBrowserController.m in Sources */,
+				63F759CF1E77D44F00756FE7 /* EmployeeMO+CoreDataClass.m in Sources */,
 				B17D8AFF1DF01964004CD18F /* OCController.mm in Sources */,
 				B1748FD11DDF154C0034C852 /* main.m in Sources */,
+				63F759D01E77D44F00756FE7 /* EmployeeMO+CoreDataProperties.m in Sources */,
+				63F759D51E77D46C00756FE7 /* DepartmentMO+CoreDataClass.m in Sources */,
+				63F759E11E77D48600756FE7 /* FriendInfoMO+CoreDataClass.m in Sources */,
 				B17D8B021DF01A0B004CD18F /* A.m in Sources */,
 				63F759091E77980800756FE7 /* datamodel.xcdatamodeld in Sources */,
 				B17D8B101DF01BC2004CD18F /* A+xCategory.m in Sources */,
-				63F759391E77A71E00756FE7 /* FriendInfoMO.m in Sources */,
+				63F759D61E77D46C00756FE7 /* DepartmentMO+CoreDataProperties.m in Sources */,
 				B17490871DE4034B0034C852 /* PortalNavigationController.m in Sources */,
-				63F759351E77A71E00756FE7 /* PersonMO.m in Sources */,
-				63F759371E77A71E00756FE7 /* EmployeeMO.m in Sources */,
-				63F759331E77A71E00756FE7 /* DepartmentMO.m in Sources */,
+				63F759E21E77D48600756FE7 /* FriendInfoMO+CoreDataProperties.m in Sources */,
 				63F758E61E72BFA100756FE7 /* CoreDataController.m in Sources */,
 				B17D8B1F1DF14D6E004CD18F /* Greeting.mm in Sources */,
 				B17D8B051DF01A2D004CD18F /* B.m in Sources */,
+				63F759DF1E77D48600756FE7 /* PersonMO+CoreDataClass.m in Sources */,
 				B1748FD71DDF154C0034C852 /* PortalIndexController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -588,7 +612,7 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				HEADER_SEARCH_PATHS = "";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -631,7 +655,7 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				HEADER_SEARCH_PATHS = "";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";

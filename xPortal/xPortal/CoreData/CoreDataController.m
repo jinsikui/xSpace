@@ -8,10 +8,6 @@
 
 #import "CoreDataController.h"
 #import "CoreDataManager.h"
-#import "DepartmentMO.h"
-#import "EmployeeMO.h"
-#import "PersonMO.h"
-#import "FriendInfoMO.h"
 
 
 #define kEmployeeEntityName     @"Employee"
@@ -62,50 +58,50 @@
 
 #pragma mark - actions
 
--(void)actionAddDepartment{
-    NSString *title = _departInput.text;
-    DepartmentMO *dep = (DepartmentMO*)[[CoreDataManager sharedInstance] objectForInsert:kDepartmentEntityName];
-    dep.title = title;
-    [[CoreDataManager sharedInstance] save];
-    [_departmentTable reloadData];
-}
-
-#pragma mark - tableView
-
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
-{
-    if(tableView == _departmentTable){
-        if(!_departmentArr){
-            _departmentArr = [[CoreDataManager sharedInstance] executeResultByPredicate:nil limit:0 offset:0 entityName:kDepartmentEntityName descriptorKey:nil ascending:NO];
-        }
-        return _departmentArr.count;
-    }
-    return 0;
-}
-
-- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    return 45;
-}
-
-
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    if(tableView == _departmentTable){
-        static NSString *cellId = @"departmentCell";
-        UITableViewCell *cell =[tableView dequeueReusableCellWithIdentifier:cellId];
-        if(!cell){
-            cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellId];
-        }
-        cell.textLabel.text = ((DepartmentMO*)_departmentArr[indexPath.row]).title;
-        return cell;
-    }
-    return nil;
-}
-
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    
-}
+//-(void)actionAddDepartment{
+//    NSString *title = _departInput.text;
+//    DepartmentMO *dep = (DepartmentMO*)[[CoreDataManager sharedInstance] objectForInsert:kDepartmentEntityName];
+//    dep.title = title;
+//    [[CoreDataManager sharedInstance] save];
+//    [_departmentTable reloadData];
+//}
+//
+//#pragma mark - tableView
+//
+//- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+//{
+//    if(tableView == _departmentTable){
+//        if(!_departmentArr){
+//            _departmentArr = [[CoreDataManager sharedInstance] executeResultByPredicate:nil limit:0 offset:0 entityName:kDepartmentEntityName descriptorKey:nil ascending:NO];
+//        }
+//        return _departmentArr.count;
+//    }
+//    return 0;
+//}
+//
+//- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+//{
+//    return 45;
+//}
+//
+//
+//- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+//{
+//    if(tableView == _departmentTable){
+//        static NSString *cellId = @"departmentCell";
+//        UITableViewCell *cell =[tableView dequeueReusableCellWithIdentifier:cellId];
+//        if(!cell){
+//            cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellId];
+//        }
+//        cell.textLabel.text = ((DepartmentMO*)_departmentArr[indexPath.row]).title;
+//        return cell;
+//    }
+//    return nil;
+//}
+//
+//- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+//{
+//    
+//}
 
 @end

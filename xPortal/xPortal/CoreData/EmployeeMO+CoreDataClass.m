@@ -1,5 +1,5 @@
 //
-//  DepartmentMO+CoreDataClass.m
+//  EmployeeMO+CoreDataClass.m
 //  xPortal
 //
 //  Created by JSK on 2017/3/14.
@@ -7,10 +7,8 @@
 //  This file was automatically generated and should not be edited.
 //
 
-#import "DepartmentMO.h"
-@implementation DepartmentMO
-
-@dynamic title;
-@dynamic employees;
+#import "EmployeeMO+CoreDataClass.h"
+#import "DepartmentMO+CoreDataClass.h"
+@implementation EmployeeMO
 
 @end

@@ -1,5 +1,5 @@
 //
-//  FriendInfoMO+CoreDataClass.h
+//  PersonMO+CoreDataClass.h
 //  xPortal
 //
 //  Created by JSK on 2017/3/14.
@@ -10,11 +10,14 @@
 #import <Foundation/Foundation.h>
 #import <CoreData/CoreData.h>
 
-@class PersonMO;
+@class FriendInfoMO;
 
-@interface FriendInfoMO : NSManagedObject
+NS_ASSUME_NONNULL_BEGIN
 
-@property (nullable, nonatomic, retain) PersonMO *source;
-@property (nullable, nonatomic, retain) PersonMO *setAsFriend;
+@interface PersonMO : NSManagedObject
 
 @end
+
+NS_ASSUME_NONNULL_END
+
+#import "PersonMO+CoreDataProperties.h"
