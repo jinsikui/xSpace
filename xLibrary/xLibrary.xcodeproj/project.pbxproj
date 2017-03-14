@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		2A2ACE0AF31E8A3D48B9BC62 /* libPods-xLibrary.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3D59FFB247B0652E8883766A /* libPods-xLibrary.a */; };
+		63F758F51E76ABC800756FE7 /* CoreDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 63F758F41E76ABC800756FE7 /* CoreDataManager.m */; };
 		B1EFAD071E726F9500128906 /* UIFont+xExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = B1EFAD001E726F9500128906 /* UIFont+xExtension.m */; };
 		B1EFAD081E726F9500128906 /* xViewTools.m in Sources */ = {isa = PBXBuildFile; fileRef = B1EFAD061E726F9500128906 /* xViewTools.m */; };
 		B1EFAD111E72701200128906 /* LogEnvironment.m in Sources */ = {isa = PBXBuildFile; fileRef = B1EFAD0C1E72701200128906 /* LogEnvironment.m */; };
@@ -34,6 +35,8 @@
 
 /* Begin PBXFileReference section */
 		3D59FFB247B0652E8883766A /* libPods-xLibrary.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-xLibrary.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		63F758F31E76ABC800756FE7 /* CoreDataManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoreDataManager.h; sourceTree = "<group>"; };
+		63F758F41E76ABC800756FE7 /* CoreDataManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoreDataManager.m; sourceTree = "<group>"; };
 		B17490591DDF206E0034C852 /* libxLibrary.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libxLibrary.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		B1EFACFF1E726F9500128906 /* UIFont+xExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIFont+xExtension.h"; sourceTree = "<group>"; };
 		B1EFAD001E726F9500128906 /* UIFont+xExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIFont+xExtension.m"; sourceTree = "<group>"; };
@@ -85,6 +88,15 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		63F758EB1E76A65000756FE7 /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				63F758F31E76ABC800756FE7 /* CoreDataManager.h */,
+				63F758F41E76ABC800756FE7 /* CoreDataManager.m */,
+			);
+			path = CoreData;
+			sourceTree = "<group>";
+		};
 		B17490501DDF206E0034C852 = {
 			isa = PBXGroup;
 			children = (
@@ -106,6 +118,7 @@
 		B17490731DDF30480034C852 /* xLibrary */ = {
 			isa = PBXGroup;
 			children = (
+				63F758EB1E76A65000756FE7 /* CoreData */,
 				B1EFAD5B1E7281D400128906 /* xPhotoBrowser */,
 				B1EFAD0A1E726FDA00128906 /* Log */,
 				B1EFACFE1E726F9500128906 /* General */,
@@ -261,6 +274,7 @@
 			files = (
 				B1EFAD651E7281F700128906 /* xPhotoBrowser.m in Sources */,
 				B1EFAD111E72701200128906 /* LogEnvironment.m in Sources */,
+				63F758F51E76ABC800756FE7 /* CoreDataManager.m in Sources */,
 				B1EFAD121E72701200128906 /* NSArray+Log.m in Sources */,
 				B1EFAD071E726F9500128906 /* UIFont+xExtension.m in Sources */,
 				B1EFAD641E7281F700128906 /* xPhoto.m in Sources */,
