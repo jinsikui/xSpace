@@ -33,6 +33,7 @@
 //
 #define kColor_000000 [UIColor blackColor]
 #define kColor_FFFFFF [UIColor whiteColor]
+#define kColor_333333 [UIColor colorWithRed:0.2f green:0.2f blue:0.2f alpha:1.0]
 #define kColor_222222 [UIColor colorWithRed:0.133333 green:0.133333 blue:0.133333 alpha:1.0]
 #define kColor_F7F9FB [UIColor colorWithRed:0.968627 green:0.976471 blue:0.984314 alpha:1.0]
 #define kColor_CCCCCC [UIColor colorWithRed:0.752941 green:0.752941 blue:0.752941 alpha:1.0]

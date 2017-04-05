@@ -9,6 +9,9 @@ target 'xPortal’ do
   pod 'FDFullscreenPopGesture'
   pod 'Masonry'
   pod 'TPKeyboardAvoiding'
+  pod 'FLAnimatedImage'
+  pod 'MJRefresh'
+  pod 'FMDB'
 end
 
 target 'xLibrary’ do
