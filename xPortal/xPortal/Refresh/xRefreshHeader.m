@@ -73,7 +73,17 @@
 - (void)scrollViewContentOffsetDidChange:(NSDictionary *)change
 {
     [super scrollViewContentOffsetDidChange:change];
-    
+    CGFloat y = [change[@"new"] CGPointValue].y;
+    if(y<=-self.ignoredScrollViewContentInsetTop-40){
+        if([self.label.text isEqualToString:@"下拉刷新"]){
+            self.label.text = @"继续下拉";
+        }
+    }
+    else{
+        if([self.label.text isEqualToString:@"继续下拉"]){
+            self.label.text = @"下拉刷新";
+        }
+    }
 }
 
 #pragma mark 监听scrollView的contentSize改变
