@@ -9,6 +9,7 @@
 #import "CoreDataController.h"
 #import "RefreshController.h"
 #import "FMDBController.h"
+#import "InterAppController.h"
 
 @interface PortalIndexController ()
 @end
@@ -31,7 +32,12 @@
     [contentView addSubview:[xViewTools createBorderBtn:CGRectMake(0.5*(kContentWidth - 100), 270, 100, 40) borderColor:kRed_FF6600 bgColor:kColor_FFFFFF titleColor:kRed_FF6600 title:@"CoreData" font:kFontPF(14) target:self selector:@selector(actionShowCoreData)]];
     [contentView addSubview:[xViewTools createBorderBtn:CGRectMake(0.5*(kContentWidth - 100), 330, 100, 40) borderColor:kRed_FF6600 bgColor:kColor_FFFFFF titleColor:kRed_FF6600 title:@"FMDB" font:kFontPF(14) target:self selector:@selector(actionFMDB)]];
     [contentView addSubview:[xViewTools createBorderBtn:CGRectMake(0.5*(kContentWidth - 100), 390, 100, 40) borderColor:kRed_FF6600 bgColor:kColor_FFFFFF titleColor:kRed_FF6600 title:@"下拉刷新" font:kFontPF(14) target:self selector:@selector(actionRefresh)]];
-    contentView.contentSize = CGSizeMake(kScreenWidth, 430);
+    [contentView addSubview:[xViewTools createBorderBtn:CGRectMake(0.5*(kContentWidth - 100), 450, 100, 40) borderColor:kRed_FF6600 bgColor:kColor_FFFFFF titleColor:kRed_FF6600 title:@"其他App交互" font:kFontPF(14) target:self selector:@selector(actionInterApp)]];
+    contentView.contentSize = CGSizeMake(kScreenWidth, 520);
+}
+
+-(void)actionInterApp{
+    [self.navigationController pushViewController:[[InterAppController alloc] init] animated:YES];
 }
 
 -(void)actionFMDB{

@@ -12,6 +12,7 @@
 		632F0C011E94DFDB000EBCB3 /* FMDBController.m in Sources */ = {isa = PBXBuildFile; fileRef = 632F0C001E94DFDB000EBCB3 /* FMDBController.m */; };
 		632F0C041E94E906000EBCB3 /* Department.m in Sources */ = {isa = PBXBuildFile; fileRef = 632F0C031E94E906000EBCB3 /* Department.m */; };
 		632F0C071E94E92A000EBCB3 /* Employee.m in Sources */ = {isa = PBXBuildFile; fileRef = 632F0C061E94E92A000EBCB3 /* Employee.m */; };
+		6364B4271EB84C8A008A0D5B /* InterAppController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6364B4261EB84C8A008A0D5B /* InterAppController.m */; };
 		63A3AB951E7FD53A00FB47B8 /* RefreshController.m in Sources */ = {isa = PBXBuildFile; fileRef = 63A3AB941E7FD53A00FB47B8 /* RefreshController.m */; };
 		63A3AB991E7FD7C700FB47B8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 63A3AB971E7FD7C700FB47B8 /* Assets.xcassets */; };
 		63A3AB9A1E7FD7C700FB47B8 /* refresh.gif in Resources */ = {isa = PBXBuildFile; fileRef = 63A3AB981E7FD7C700FB47B8 /* refresh.gif */; };
@@ -69,6 +70,8 @@
 		632F0C031E94E906000EBCB3 /* Department.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Department.m; sourceTree = "<group>"; };
 		632F0C051E94E92A000EBCB3 /* Employee.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Employee.h; sourceTree = "<group>"; };
 		632F0C061E94E92A000EBCB3 /* Employee.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Employee.m; sourceTree = "<group>"; };
+		6364B4251EB84C8A008A0D5B /* InterAppController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InterAppController.h; sourceTree = "<group>"; };
+		6364B4261EB84C8A008A0D5B /* InterAppController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InterAppController.m; sourceTree = "<group>"; };
 		63A3AB931E7FD53A00FB47B8 /* RefreshController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RefreshController.h; sourceTree = "<group>"; };
 		63A3AB941E7FD53A00FB47B8 /* RefreshController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RefreshController.m; sourceTree = "<group>"; };
 		63A3AB971E7FD7C700FB47B8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -172,6 +175,15 @@
 			path = FMDB;
 			sourceTree = "<group>";
 		};
+		6364B4241EB84C16008A0D5B /* InterApp */ = {
+			isa = PBXGroup;
+			children = (
+				6364B4251EB84C8A008A0D5B /* InterAppController.h */,
+				6364B4261EB84C8A008A0D5B /* InterAppController.m */,
+			);
+			path = InterApp;
+			sourceTree = "<group>";
+		};
 		63A3AB921E7FD51300FB47B8 /* Refresh */ = {
 			isa = PBXGroup;
 			children = (
@@ -237,6 +249,7 @@
 		B1748FCE1DDF154C0034C852 /* xPortal */ = {
 			isa = PBXGroup;
 			children = (
+				6364B4241EB84C16008A0D5B /* InterApp */,
 				632F0BFE1E94DFAA000EBCB3 /* FMDB */,
 				63A3AB961E7FD72A00FB47B8 /* Resources */,
 				63A3AB921E7FD51300FB47B8 /* Refresh */,
@@ -552,6 +565,7 @@
 				B1EFAD6D1E7282BA00128906 /* xPhotoBrowserController.m in Sources */,
 				B17D8AFF1DF01964004CD18F /* OCController.mm in Sources */,
 				632F0C041E94E906000EBCB3 /* Department.m in Sources */,
+				6364B4271EB84C8A008A0D5B /* InterAppController.m in Sources */,
 				B1748FD11DDF154C0034C852 /* main.m in Sources */,
 				B17D8B021DF01A0B004CD18F /* A.m in Sources */,
 				63F759091E77980800756FE7 /* datamodel.xcdatamodeld in Sources */,
