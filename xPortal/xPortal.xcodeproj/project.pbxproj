@@ -7,8 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		3154B73FB1EC8F4F998D8455 /* libPods-Box-xPortal.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8012D24A8EB3D8832515B4A4 /* libPods-Box-xPortal.a */; };
-		429DD13DD8AFDFEEFE2CF5B9 /* libPods-xPortal.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 82B42E39E16332FC3E44D1A6 /* libPods-xPortal.a */; };
 		632F0C011E94DFDB000EBCB3 /* FMDBController.m in Sources */ = {isa = PBXBuildFile; fileRef = 632F0C001E94DFDB000EBCB3 /* FMDBController.m */; };
 		632F0C041E94E906000EBCB3 /* Department.m in Sources */ = {isa = PBXBuildFile; fileRef = 632F0C031E94E906000EBCB3 /* Department.m */; };
 		632F0C071E94E92A000EBCB3 /* Employee.m in Sources */ = {isa = PBXBuildFile; fileRef = 632F0C061E94E92A000EBCB3 /* Employee.m */; };
@@ -18,6 +16,8 @@
 		63A3AB9A1E7FD7C700FB47B8 /* refresh.gif in Resources */ = {isa = PBXBuildFile; fileRef = 63A3AB981E7FD7C700FB47B8 /* refresh.gif */; };
 		63A3AB9D1E80CA6900FB47B8 /* xRefreshHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = 63A3AB9C1E80CA6900FB47B8 /* xRefreshHeader.m */; };
 		63A3ABA01E810A2600FB47B8 /* xRefreshFooter.m in Sources */ = {isa = PBXBuildFile; fileRef = 63A3AB9F1E810A2600FB47B8 /* xRefreshFooter.m */; };
+		63D326051EB87300006D424B /* libPods-xPortal.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 82B42E39E16332FC3E44D1A6 /* libPods-xPortal.a */; };
+		63D326091EB87316006D424B /* libxLibrary.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 63D326081EB87316006D424B /* libxLibrary.a */; };
 		63F758E61E72BFA100756FE7 /* CoreDataController.m in Sources */ = {isa = PBXBuildFile; fileRef = 63F758E51E72BFA100756FE7 /* CoreDataController.m */; };
 		63F759091E77980800756FE7 /* datamodel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 63F759071E77980800756FE7 /* datamodel.xcdatamodeld */; };
 		63F75A211E77DA7A00756FE7 /* FriendInfoMO..m in Sources */ = {isa = PBXBuildFile; fileRef = 63F75A121E77DA7900756FE7 /* FriendInfoMO..m */; };
@@ -30,7 +30,6 @@
 		B1748FE51DDF154C0034C852 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B1748FE31DDF154C0034C852 /* LaunchScreen.storyboard */; };
 		B1748FF01DDF154C0034C852 /* xPortalTests.m in Sources */ = {isa = PBXBuildFile; fileRef = B1748FEF1DDF154C0034C852 /* xPortalTests.m */; };
 		B1748FFB1DDF154C0034C852 /* xPortalUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = B1748FFA1DDF154C0034C852 /* xPortalUITests.m */; };
-		B174906A1DDF25AC0034C852 /* libxLibrary.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B17490691DDF25AC0034C852 /* libxLibrary.a */; };
 		B17490871DE4034B0034C852 /* PortalNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = B17490861DE4034B0034C852 /* PortalNavigationController.m */; };
 		B17490921DE59E410034C852 /* PortalBaseController.m in Sources */ = {isa = PBXBuildFile; fileRef = B17490911DE59E410034C852 /* PortalBaseController.m */; };
 		B17D8AE51DEEC7C3004CD18F /* AutoLayoutController.m in Sources */ = {isa = PBXBuildFile; fileRef = B17D8AE41DEEC7C3004CD18F /* AutoLayoutController.m */; };
@@ -80,6 +79,8 @@
 		63A3AB9C1E80CA6900FB47B8 /* xRefreshHeader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = xRefreshHeader.m; sourceTree = "<group>"; };
 		63A3AB9E1E810A2600FB47B8 /* xRefreshFooter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = xRefreshFooter.h; sourceTree = "<group>"; };
 		63A3AB9F1E810A2600FB47B8 /* xRefreshFooter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = xRefreshFooter.m; sourceTree = "<group>"; };
+		63D326061EB8730C006D424B /* libPods-xLibrary.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libPods-xLibrary.a"; path = "../../../../Library/Developer/Xcode/DerivedData/xSpace-hilysremasjmvphiqfkcoxywiynb/Build/Products/Debug-iphoneos/libPods-xLibrary.a"; sourceTree = "<group>"; };
+		63D326081EB87316006D424B /* libxLibrary.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libxLibrary.a; path = "../../../../Library/Developer/Xcode/DerivedData/xSpace-hilysremasjmvphiqfkcoxywiynb/Build/Products/Debug-iphoneos/libxLibrary.a"; sourceTree = "<group>"; };
 		63F758E41E72BFA100756FE7 /* CoreDataController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoreDataController.h; sourceTree = "<group>"; };
 		63F758E51E72BFA100756FE7 /* CoreDataController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoreDataController.m; sourceTree = "<group>"; };
 		63F759081E77980800756FE7 /* datamodel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = datamodel.xcdatamodel; sourceTree = "<group>"; };
@@ -139,9 +140,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B174906A1DDF25AC0034C852 /* libxLibrary.a in Frameworks */,
-				3154B73FB1EC8F4F998D8455 /* libPods-Box-xPortal.a in Frameworks */,
-				429DD13DD8AFDFEEFE2CF5B9 /* libPods-xPortal.a in Frameworks */,
+				63D326091EB87316006D424B /* libxLibrary.a in Frameworks */,
+				63D326051EB87300006D424B /* libPods-xPortal.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -303,6 +303,8 @@
 		B17490681DDF25AC0034C852 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				63D326081EB87316006D424B /* libxLibrary.a */,
+				63D326061EB8730C006D424B /* libPods-xLibrary.a */,
 				B17490691DDF25AC0034C852 /* libxLibrary.a */,
 				8012D24A8EB3D8832515B4A4 /* libPods-Box-xPortal.a */,
 				82B42E39E16332FC3E44D1A6 /* libPods-xPortal.a */,
