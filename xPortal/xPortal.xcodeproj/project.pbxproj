@@ -18,6 +18,13 @@
 		63A3ABA01E810A2600FB47B8 /* xRefreshFooter.m in Sources */ = {isa = PBXBuildFile; fileRef = 63A3AB9F1E810A2600FB47B8 /* xRefreshFooter.m */; };
 		63D326051EB87300006D424B /* libPods-xPortal.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 82B42E39E16332FC3E44D1A6 /* libPods-xPortal.a */; };
 		63D326091EB87316006D424B /* libxLibrary.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 63D326081EB87316006D424B /* libxLibrary.a */; };
+		63D3260D1EB9C3B1006D424B /* WVJBController.m in Sources */ = {isa = PBXBuildFile; fileRef = 63D3260C1EB9C3B1006D424B /* WVJBController.m */; };
+		63D3260F1EB9C42F006D424B /* WVJBPage.html in Resources */ = {isa = PBXBuildFile; fileRef = 63D3260E1EB9C42F006D424B /* WVJBPage.html */; };
+		63D326111EB9C7E0006D424B /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 63D326101EB9C7E0006D424B /* WebKit.framework */; };
+		63D3261B1EB9EB16006D424B /* WebViewJavascriptBridge.m in Sources */ = {isa = PBXBuildFile; fileRef = 63D326141EB9EB16006D424B /* WebViewJavascriptBridge.m */; };
+		63D3261C1EB9EB16006D424B /* WebViewJavascriptBridge_JS.m in Sources */ = {isa = PBXBuildFile; fileRef = 63D326161EB9EB16006D424B /* WebViewJavascriptBridge_JS.m */; };
+		63D3261D1EB9EB16006D424B /* WebViewJavascriptBridgeBase.m in Sources */ = {isa = PBXBuildFile; fileRef = 63D326181EB9EB16006D424B /* WebViewJavascriptBridgeBase.m */; };
+		63D3261E1EB9EB16006D424B /* WKWebViewJavascriptBridge.m in Sources */ = {isa = PBXBuildFile; fileRef = 63D3261A1EB9EB16006D424B /* WKWebViewJavascriptBridge.m */; };
 		63F758E61E72BFA100756FE7 /* CoreDataController.m in Sources */ = {isa = PBXBuildFile; fileRef = 63F758E51E72BFA100756FE7 /* CoreDataController.m */; };
 		63F759091E77980800756FE7 /* datamodel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 63F759071E77980800756FE7 /* datamodel.xcdatamodeld */; };
 		63F75A211E77DA7A00756FE7 /* FriendInfoMO..m in Sources */ = {isa = PBXBuildFile; fileRef = 63F75A121E77DA7900756FE7 /* FriendInfoMO..m */; };
@@ -81,6 +88,18 @@
 		63A3AB9F1E810A2600FB47B8 /* xRefreshFooter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = xRefreshFooter.m; sourceTree = "<group>"; };
 		63D326061EB8730C006D424B /* libPods-xLibrary.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libPods-xLibrary.a"; path = "../../../../Library/Developer/Xcode/DerivedData/xSpace-hilysremasjmvphiqfkcoxywiynb/Build/Products/Debug-iphoneos/libPods-xLibrary.a"; sourceTree = "<group>"; };
 		63D326081EB87316006D424B /* libxLibrary.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libxLibrary.a; path = "../../../../Library/Developer/Xcode/DerivedData/xSpace-hilysremasjmvphiqfkcoxywiynb/Build/Products/Debug-iphoneos/libxLibrary.a"; sourceTree = "<group>"; };
+		63D3260B1EB9C3B1006D424B /* WVJBController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WVJBController.h; sourceTree = "<group>"; };
+		63D3260C1EB9C3B1006D424B /* WVJBController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WVJBController.m; sourceTree = "<group>"; };
+		63D3260E1EB9C42F006D424B /* WVJBPage.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = WVJBPage.html; sourceTree = "<group>"; };
+		63D326101EB9C7E0006D424B /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
+		63D326131EB9EB16006D424B /* WebViewJavascriptBridge.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebViewJavascriptBridge.h; sourceTree = "<group>"; };
+		63D326141EB9EB16006D424B /* WebViewJavascriptBridge.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WebViewJavascriptBridge.m; sourceTree = "<group>"; };
+		63D326151EB9EB16006D424B /* WebViewJavascriptBridge_JS.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebViewJavascriptBridge_JS.h; sourceTree = "<group>"; };
+		63D326161EB9EB16006D424B /* WebViewJavascriptBridge_JS.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WebViewJavascriptBridge_JS.m; sourceTree = "<group>"; };
+		63D326171EB9EB16006D424B /* WebViewJavascriptBridgeBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebViewJavascriptBridgeBase.h; sourceTree = "<group>"; };
+		63D326181EB9EB16006D424B /* WebViewJavascriptBridgeBase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WebViewJavascriptBridgeBase.m; sourceTree = "<group>"; };
+		63D326191EB9EB16006D424B /* WKWebViewJavascriptBridge.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WKWebViewJavascriptBridge.h; sourceTree = "<group>"; };
+		63D3261A1EB9EB16006D424B /* WKWebViewJavascriptBridge.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WKWebViewJavascriptBridge.m; sourceTree = "<group>"; };
 		63F758E41E72BFA100756FE7 /* CoreDataController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoreDataController.h; sourceTree = "<group>"; };
 		63F758E51E72BFA100756FE7 /* CoreDataController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoreDataController.m; sourceTree = "<group>"; };
 		63F759081E77980800756FE7 /* datamodel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = datamodel.xcdatamodel; sourceTree = "<group>"; };
@@ -140,6 +159,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				63D326111EB9C7E0006D424B /* WebKit.framework in Frameworks */,
 				63D326091EB87316006D424B /* libxLibrary.a in Frameworks */,
 				63D326051EB87300006D424B /* libPods-xPortal.a in Frameworks */,
 			);
@@ -206,6 +226,32 @@
 			path = Resources;
 			sourceTree = "<group>";
 		};
+		63D3260A1EB9C39C006D424B /* JSBridge */ = {
+			isa = PBXGroup;
+			children = (
+				63D326121EB9EB16006D424B /* WebViewJavascriptBridge */,
+				63D3260E1EB9C42F006D424B /* WVJBPage.html */,
+				63D3260B1EB9C3B1006D424B /* WVJBController.h */,
+				63D3260C1EB9C3B1006D424B /* WVJBController.m */,
+			);
+			path = JSBridge;
+			sourceTree = "<group>";
+		};
+		63D326121EB9EB16006D424B /* WebViewJavascriptBridge */ = {
+			isa = PBXGroup;
+			children = (
+				63D326131EB9EB16006D424B /* WebViewJavascriptBridge.h */,
+				63D326141EB9EB16006D424B /* WebViewJavascriptBridge.m */,
+				63D326151EB9EB16006D424B /* WebViewJavascriptBridge_JS.h */,
+				63D326161EB9EB16006D424B /* WebViewJavascriptBridge_JS.m */,
+				63D326171EB9EB16006D424B /* WebViewJavascriptBridgeBase.h */,
+				63D326181EB9EB16006D424B /* WebViewJavascriptBridgeBase.m */,
+				63D326191EB9EB16006D424B /* WKWebViewJavascriptBridge.h */,
+				63D3261A1EB9EB16006D424B /* WKWebViewJavascriptBridge.m */,
+			);
+			path = WebViewJavascriptBridge;
+			sourceTree = "<group>";
+		};
 		63F758E31E72BE7C00756FE7 /* CoreData */ = {
 			isa = PBXGroup;
 			children = (
@@ -249,6 +295,7 @@
 		B1748FCE1DDF154C0034C852 /* xPortal */ = {
 			isa = PBXGroup;
 			children = (
+				63D3260A1EB9C39C006D424B /* JSBridge */,
 				6364B4241EB84C16008A0D5B /* InterApp */,
 				632F0BFE1E94DFAA000EBCB3 /* FMDB */,
 				63A3AB961E7FD72A00FB47B8 /* Resources */,
@@ -303,6 +350,7 @@
 		B17490681DDF25AC0034C852 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				63D326101EB9C7E0006D424B /* WebKit.framework */,
 				63D326081EB87316006D424B /* libxLibrary.a */,
 				63D326061EB8730C006D424B /* libPods-xLibrary.a */,
 				B17490691DDF25AC0034C852 /* libxLibrary.a */,
@@ -481,6 +529,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				63A3AB991E7FD7C700FB47B8 /* Assets.xcassets in Resources */,
+				63D3260F1EB9C42F006D424B /* WVJBPage.html in Resources */,
 				63A3AB9A1E7FD7C700FB47B8 /* refresh.gif in Resources */,
 				B1748FE51DDF154C0034C852 /* LaunchScreen.storyboard in Resources */,
 			);
@@ -556,10 +605,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				B17D8AE51DEEC7C3004CD18F /* AutoLayoutController.m in Sources */,
+				63D3261C1EB9EB16006D424B /* WebViewJavascriptBridge_JS.m in Sources */,
 				63A3AB951E7FD53A00FB47B8 /* RefreshController.m in Sources */,
 				B1748FD41DDF154C0034C852 /* AppDelegate.m in Sources */,
+				63D3261D1EB9EB16006D424B /* WebViewJavascriptBridgeBase.m in Sources */,
 				63F75A271E77DA7A00756FE7 /* PersonMO.m in Sources */,
 				B17490921DE59E410034C852 /* PortalBaseController.m in Sources */,
+				63D3261B1EB9EB16006D424B /* WebViewJavascriptBridge.m in Sources */,
 				63A3ABA01E810A2600FB47B8 /* xRefreshFooter.m in Sources */,
 				63A3AB9D1E80CA6900FB47B8 /* xRefreshHeader.m in Sources */,
 				632F0C011E94DFDB000EBCB3 /* FMDBController.m in Sources */,
@@ -579,7 +631,9 @@
 				63F75A251E77DA7A00756FE7 /* EmployeeMO.m in Sources */,
 				63F758E61E72BFA100756FE7 /* CoreDataController.m in Sources */,
 				B17D8B1F1DF14D6E004CD18F /* Greeting.mm in Sources */,
+				63D3260D1EB9C3B1006D424B /* WVJBController.m in Sources */,
 				B17D8B051DF01A2D004CD18F /* B.m in Sources */,
+				63D3261E1EB9EB16006D424B /* WKWebViewJavascriptBridge.m in Sources */,
 				B1748FD71DDF154C0034C852 /* PortalIndexController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

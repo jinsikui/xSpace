@@ -10,6 +10,7 @@
 #import "RefreshController.h"
 #import "FMDBController.h"
 #import "InterAppController.h"
+#import "WVJBController.h"
 
 @interface PortalIndexController ()
 @end
@@ -33,7 +34,12 @@
     [contentView addSubview:[xViewTools createBorderBtn:CGRectMake(0.5*(kContentWidth - 100), 330, 100, 40) borderColor:kRed_FF6600 bgColor:kColor_FFFFFF titleColor:kRed_FF6600 title:@"FMDB" font:kFontPF(14) target:self selector:@selector(actionFMDB)]];
     [contentView addSubview:[xViewTools createBorderBtn:CGRectMake(0.5*(kContentWidth - 100), 390, 100, 40) borderColor:kRed_FF6600 bgColor:kColor_FFFFFF titleColor:kRed_FF6600 title:@"下拉刷新" font:kFontPF(14) target:self selector:@selector(actionRefresh)]];
     [contentView addSubview:[xViewTools createBorderBtn:CGRectMake(0.5*(kContentWidth - 100), 450, 100, 40) borderColor:kRed_FF6600 bgColor:kColor_FFFFFF titleColor:kRed_FF6600 title:@"其他App交互" font:kFontPF(14) target:self selector:@selector(actionInterApp)]];
-    contentView.contentSize = CGSizeMake(kScreenWidth, 520);
+    [contentView addSubview:[xViewTools createBorderBtn:CGRectMake(0.5*(kContentWidth - 100), 510, 100, 40) borderColor:kRed_FF6600 bgColor:kColor_FFFFFF titleColor:kRed_FF6600 title:@"JSBridge" font:kFontPF(14) target:self selector:@selector(actionJSBridge)]];
+    contentView.contentSize = CGSizeMake(kScreenWidth, 580);
+}
+
+-(void)actionJSBridge{
+    [self.navigationController pushViewController:[[WVJBController alloc] init] animated:YES];
 }
 
 -(void)actionInterApp{
