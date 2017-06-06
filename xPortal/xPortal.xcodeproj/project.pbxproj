@@ -25,6 +25,7 @@
 		63D3261C1EB9EB16006D424B /* WebViewJavascriptBridge_JS.m in Sources */ = {isa = PBXBuildFile; fileRef = 63D326161EB9EB16006D424B /* WebViewJavascriptBridge_JS.m */; };
 		63D3261D1EB9EB16006D424B /* WebViewJavascriptBridgeBase.m in Sources */ = {isa = PBXBuildFile; fileRef = 63D326181EB9EB16006D424B /* WebViewJavascriptBridgeBase.m */; };
 		63D3261E1EB9EB16006D424B /* WKWebViewJavascriptBridge.m in Sources */ = {isa = PBXBuildFile; fileRef = 63D3261A1EB9EB16006D424B /* WKWebViewJavascriptBridge.m */; };
+		63EBC7FA1EE168A7001029B3 /* PagedController.m in Sources */ = {isa = PBXBuildFile; fileRef = 63EBC7F91EE168A7001029B3 /* PagedController.m */; };
 		63F758E61E72BFA100756FE7 /* CoreDataController.m in Sources */ = {isa = PBXBuildFile; fileRef = 63F758E51E72BFA100756FE7 /* CoreDataController.m */; };
 		63F759091E77980800756FE7 /* datamodel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 63F759071E77980800756FE7 /* datamodel.xcdatamodeld */; };
 		63F75A211E77DA7A00756FE7 /* FriendInfoMO..m in Sources */ = {isa = PBXBuildFile; fileRef = 63F75A121E77DA7900756FE7 /* FriendInfoMO..m */; };
@@ -100,6 +101,8 @@
 		63D326181EB9EB16006D424B /* WebViewJavascriptBridgeBase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WebViewJavascriptBridgeBase.m; sourceTree = "<group>"; };
 		63D326191EB9EB16006D424B /* WKWebViewJavascriptBridge.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WKWebViewJavascriptBridge.h; sourceTree = "<group>"; };
 		63D3261A1EB9EB16006D424B /* WKWebViewJavascriptBridge.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WKWebViewJavascriptBridge.m; sourceTree = "<group>"; };
+		63EBC7F81EE168A7001029B3 /* PagedController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PagedController.h; sourceTree = "<group>"; };
+		63EBC7F91EE168A7001029B3 /* PagedController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PagedController.m; sourceTree = "<group>"; };
 		63F758E41E72BFA100756FE7 /* CoreDataController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoreDataController.h; sourceTree = "<group>"; };
 		63F758E51E72BFA100756FE7 /* CoreDataController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoreDataController.m; sourceTree = "<group>"; };
 		63F759081E77980800756FE7 /* datamodel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = datamodel.xcdatamodel; sourceTree = "<group>"; };
@@ -252,6 +255,15 @@
 			path = WebViewJavascriptBridge;
 			sourceTree = "<group>";
 		};
+		63EBC7F71EE16854001029B3 /* Paged */ = {
+			isa = PBXGroup;
+			children = (
+				63EBC7F81EE168A7001029B3 /* PagedController.h */,
+				63EBC7F91EE168A7001029B3 /* PagedController.m */,
+			);
+			path = Paged;
+			sourceTree = "<group>";
+		};
 		63F758E31E72BE7C00756FE7 /* CoreData */ = {
 			isa = PBXGroup;
 			children = (
@@ -295,6 +307,7 @@
 		B1748FCE1DDF154C0034C852 /* xPortal */ = {
 			isa = PBXGroup;
 			children = (
+				63EBC7F71EE16854001029B3 /* Paged */,
 				63D3260A1EB9C39C006D424B /* JSBridge */,
 				6364B4241EB84C16008A0D5B /* InterApp */,
 				632F0BFE1E94DFAA000EBCB3 /* FMDB */,
@@ -621,6 +634,7 @@
 				632F0C041E94E906000EBCB3 /* Department.m in Sources */,
 				6364B4271EB84C8A008A0D5B /* InterAppController.m in Sources */,
 				B1748FD11DDF154C0034C852 /* main.m in Sources */,
+				63EBC7FA1EE168A7001029B3 /* PagedController.m in Sources */,
 				B17D8B021DF01A0B004CD18F /* A.m in Sources */,
 				63F759091E77980800756FE7 /* datamodel.xcdatamodeld in Sources */,
 				632F0C071E94E92A000EBCB3 /* Employee.m in Sources */,

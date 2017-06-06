@@ -11,6 +11,8 @@
 #import "FMDBController.h"
 #import "InterAppController.h"
 #import "WVJBController.h"
+#import "UIImageView+WebCache.h"
+#import "PagedController.h"
 
 @interface PortalIndexController ()
 @end
@@ -23,6 +25,7 @@
     [super viewDidLoad];
     self.title = @"首页";
     self.view.backgroundColor = kColor_FFFFFF;
+    
     UIScrollView *contentView = [[UIScrollView alloc] initWithFrame:CGRectMake(0, 0, kScreenWidth, kContentHeight)];
     contentView.alwaysBounceVertical = YES;
     [self.view addSubview:contentView];
@@ -35,7 +38,12 @@
     [contentView addSubview:[xViewTools createBorderBtn:CGRectMake(0.5*(kContentWidth - 100), 390, 100, 40) borderColor:kRed_FF6600 bgColor:kColor_FFFFFF titleColor:kRed_FF6600 title:@"下拉刷新" font:kFontPF(14) target:self selector:@selector(actionRefresh)]];
     [contentView addSubview:[xViewTools createBorderBtn:CGRectMake(0.5*(kContentWidth - 100), 450, 100, 40) borderColor:kRed_FF6600 bgColor:kColor_FFFFFF titleColor:kRed_FF6600 title:@"其他App交互" font:kFontPF(14) target:self selector:@selector(actionInterApp)]];
     [contentView addSubview:[xViewTools createBorderBtn:CGRectMake(0.5*(kContentWidth - 100), 510, 100, 40) borderColor:kRed_FF6600 bgColor:kColor_FFFFFF titleColor:kRed_FF6600 title:@"JSBridge" font:kFontPF(14) target:self selector:@selector(actionJSBridge)]];
-    contentView.contentSize = CGSizeMake(kScreenWidth, 580);
+    [contentView addSubview:[xViewTools createBorderBtn:CGRectMake(0.5*(kContentWidth - 100), 570, 100, 40) borderColor:kRed_FF6600 bgColor:kColor_FFFFFF titleColor:kRed_FF6600 title:@"分页" font:kFontPF(14) target:self selector:@selector(actionPaged)]];
+    contentView.contentSize = CGSizeMake(kScreenWidth, 640);
+}
+
+-(void)actionPaged{
+    [self.navigationController pushViewController:[[PagedController alloc] init] animated:YES];
 }
 
 -(void)actionJSBridge{
