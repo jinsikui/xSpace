@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		2A2ACE0AF31E8A3D48B9BC62 /* libPods-xLibrary.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3D59FFB247B0652E8883766A /* libPods-xLibrary.a */; };
+		63396C7F1EF0F918001525E7 /* UIView+xBannerLoading.m in Sources */ = {isa = PBXBuildFile; fileRef = 63396C7E1EF0F918001525E7 /* UIView+xBannerLoading.m */; };
+		63900A1E1F04CADC0080C48D /* NSObject+xRuntime.m in Sources */ = {isa = PBXBuildFile; fileRef = 63900A1D1F04CADC0080C48D /* NSObject+xRuntime.m */; };
 		63EBC8001EE251DF001029B3 /* xPagedView.m in Sources */ = {isa = PBXBuildFile; fileRef = 63EBC7FF1EE2511E001029B3 /* xPagedView.m */; };
 		63F758F51E76ABC800756FE7 /* CoreDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 63F758F41E76ABC800756FE7 /* CoreDataManager.m */; };
 		B1EFAD071E726F9500128906 /* UIFont+xExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = B1EFAD001E726F9500128906 /* UIFont+xExtension.m */; };
@@ -36,6 +38,34 @@
 
 /* Begin PBXFileReference section */
 		3D59FFB247B0652E8883766A /* libPods-xLibrary.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-xLibrary.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		63396C7D1EF0F918001525E7 /* UIView+xBannerLoading.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+xBannerLoading.h"; sourceTree = "<group>"; };
+		63396C7E1EF0F918001525E7 /* UIView+xBannerLoading.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+xBannerLoading.m"; sourceTree = "<group>"; };
+		63900A1C1F04CADC0080C48D /* NSObject+xRuntime.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+xRuntime.h"; sourceTree = "<group>"; };
+		63900A1D1F04CADC0080C48D /* NSObject+xRuntime.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+xRuntime.m"; sourceTree = "<group>"; };
+		63900A5F1F0649180080C48D /* NSObject+xStatis.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSObject+xStatis.h"; sourceTree = "<group>"; };
+		63900A601F0649180080C48D /* NSObject+xStatis.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSObject+xStatis.m"; sourceTree = "<group>"; };
+		63900A611F0649180080C48D /* UICollectionView+xStatis.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UICollectionView+xStatis.h"; sourceTree = "<group>"; };
+		63900A621F0649180080C48D /* UICollectionView+xStatis.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UICollectionView+xStatis.m"; sourceTree = "<group>"; };
+		63900A631F0649180080C48D /* UIControl+xStatis.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIControl+xStatis.h"; sourceTree = "<group>"; };
+		63900A641F0649180080C48D /* UIControl+xStatis.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIControl+xStatis.m"; sourceTree = "<group>"; };
+		63900A651F0649180080C48D /* UINavigationController+xStatis.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UINavigationController+xStatis.h"; sourceTree = "<group>"; };
+		63900A661F0649180080C48D /* UINavigationController+xStatis.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UINavigationController+xStatis.m"; sourceTree = "<group>"; };
+		63900A671F0649180080C48D /* UITabBarController+xStatis.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UITabBarController+xStatis.h"; sourceTree = "<group>"; };
+		63900A681F0649180080C48D /* UITabBarController+xStatis.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UITabBarController+xStatis.m"; sourceTree = "<group>"; };
+		63900A691F0649180080C48D /* UITableView+xStatis.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UITableView+xStatis.h"; sourceTree = "<group>"; };
+		63900A6A1F0649180080C48D /* UITableView+xStatis.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UITableView+xStatis.m"; sourceTree = "<group>"; };
+		63900A6B1F0649180080C48D /* UIView+xStatis.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIView+xStatis.h"; sourceTree = "<group>"; };
+		63900A6C1F0649180080C48D /* UIView+xStatis.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIView+xStatis.m"; sourceTree = "<group>"; };
+		63900A6D1F0649180080C48D /* UIViewController+xStatis.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIViewController+xStatis.h"; sourceTree = "<group>"; };
+		63900A6E1F0649180080C48D /* UIViewController+xStatis.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+xStatis.m"; sourceTree = "<group>"; };
+		63900A6F1F0649180080C48D /* xStatisActionData.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = xStatisActionData.h; sourceTree = "<group>"; };
+		63900A701F0649180080C48D /* xStatisActionData.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = xStatisActionData.m; sourceTree = "<group>"; };
+		63900A711F0649180080C48D /* xStatisManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = xStatisManager.h; sourceTree = "<group>"; };
+		63900A721F0649180080C48D /* xStatisManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = xStatisManager.m; sourceTree = "<group>"; };
+		63900A731F0649180080C48D /* xStatisService.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = xStatisService.h; sourceTree = "<group>"; };
+		63900A741F0649180080C48D /* xStatisService.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = xStatisService.m; sourceTree = "<group>"; };
+		63900A751F0649180080C48D /* xStatisStack.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = xStatisStack.h; sourceTree = "<group>"; };
+		63900A761F0649180080C48D /* xStatisStack.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = xStatisStack.m; sourceTree = "<group>"; };
 		63EBC7FE1EE2511E001029B3 /* xPagedView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = xPagedView.h; sourceTree = "<group>"; };
 		63EBC7FF1EE2511E001029B3 /* xPagedView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = xPagedView.m; sourceTree = "<group>"; };
 		63F758F31E76ABC800756FE7 /* CoreDataManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoreDataManager.h; sourceTree = "<group>"; };
@@ -91,6 +121,55 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		63396C791EF0F8BA001525E7 /* xBannerLoading */ = {
+			isa = PBXGroup;
+			children = (
+				63396C7D1EF0F918001525E7 /* UIView+xBannerLoading.h */,
+				63396C7E1EF0F918001525E7 /* UIView+xBannerLoading.m */,
+			);
+			path = xBannerLoading;
+			sourceTree = "<group>";
+		};
+		63900A181F04CA1A0080C48D /* runtime */ = {
+			isa = PBXGroup;
+			children = (
+				63900A1C1F04CADC0080C48D /* NSObject+xRuntime.h */,
+				63900A1D1F04CADC0080C48D /* NSObject+xRuntime.m */,
+			);
+			path = runtime;
+			sourceTree = "<group>";
+		};
+		63900A5E1F0649180080C48D /* xStatis */ = {
+			isa = PBXGroup;
+			children = (
+				63900A5F1F0649180080C48D /* NSObject+xStatis.h */,
+				63900A601F0649180080C48D /* NSObject+xStatis.m */,
+				63900A611F0649180080C48D /* UICollectionView+xStatis.h */,
+				63900A621F0649180080C48D /* UICollectionView+xStatis.m */,
+				63900A631F0649180080C48D /* UIControl+xStatis.h */,
+				63900A641F0649180080C48D /* UIControl+xStatis.m */,
+				63900A651F0649180080C48D /* UINavigationController+xStatis.h */,
+				63900A661F0649180080C48D /* UINavigationController+xStatis.m */,
+				63900A671F0649180080C48D /* UITabBarController+xStatis.h */,
+				63900A681F0649180080C48D /* UITabBarController+xStatis.m */,
+				63900A691F0649180080C48D /* UITableView+xStatis.h */,
+				63900A6A1F0649180080C48D /* UITableView+xStatis.m */,
+				63900A6B1F0649180080C48D /* UIView+xStatis.h */,
+				63900A6C1F0649180080C48D /* UIView+xStatis.m */,
+				63900A6D1F0649180080C48D /* UIViewController+xStatis.h */,
+				63900A6E1F0649180080C48D /* UIViewController+xStatis.m */,
+				63900A6F1F0649180080C48D /* xStatisActionData.h */,
+				63900A701F0649180080C48D /* xStatisActionData.m */,
+				63900A711F0649180080C48D /* xStatisManager.h */,
+				63900A721F0649180080C48D /* xStatisManager.m */,
+				63900A731F0649180080C48D /* xStatisService.h */,
+				63900A741F0649180080C48D /* xStatisService.m */,
+				63900A751F0649180080C48D /* xStatisStack.h */,
+				63900A761F0649180080C48D /* xStatisStack.m */,
+			);
+			path = xStatis;
+			sourceTree = "<group>";
+		};
 		63EBC7FD1EE2511E001029B3 /* xPagedView */ = {
 			isa = PBXGroup;
 			children = (
@@ -130,6 +209,9 @@
 		B17490731DDF30480034C852 /* xLibrary */ = {
 			isa = PBXGroup;
 			children = (
+				63900A5E1F0649180080C48D /* xStatis */,
+				63900A181F04CA1A0080C48D /* runtime */,
+				63396C791EF0F8BA001525E7 /* xBannerLoading */,
 				63EBC7FD1EE2511E001029B3 /* xPagedView */,
 				63F758EB1E76A65000756FE7 /* CoreData */,
 				B1EFAD5B1E7281D400128906 /* xPhotoBrowser */,
@@ -290,7 +372,9 @@
 				63F758F51E76ABC800756FE7 /* CoreDataManager.m in Sources */,
 				B1EFAD121E72701200128906 /* NSArray+Log.m in Sources */,
 				B1EFAD071E726F9500128906 /* UIFont+xExtension.m in Sources */,
+				63900A1E1F04CADC0080C48D /* NSObject+xRuntime.m in Sources */,
 				B1EFAD641E7281F700128906 /* xPhoto.m in Sources */,
+				63396C7F1EF0F918001525E7 /* UIView+xBannerLoading.m in Sources */,
 				B1EFAD131E72701200128906 /* NSDictionary+Log.m in Sources */,
 				63EBC8001EE251DF001029B3 /* xPagedView.m in Sources */,
 				B1EFAD671E7281F700128906 /* xPhotoView.m in Sources */,

@@ -13,6 +13,7 @@
 #import "WVJBController.h"
 #import "UIImageView+WebCache.h"
 #import "PagedController.h"
+#import "BannerLoadingController.h"
 
 @interface PortalIndexController ()
 @end
@@ -39,7 +40,12 @@
     [contentView addSubview:[xViewTools createBorderBtn:CGRectMake(0.5*(kContentWidth - 100), 450, 100, 40) borderColor:kRed_FF6600 bgColor:kColor_FFFFFF titleColor:kRed_FF6600 title:@"其他App交互" font:kFontPF(14) target:self selector:@selector(actionInterApp)]];
     [contentView addSubview:[xViewTools createBorderBtn:CGRectMake(0.5*(kContentWidth - 100), 510, 100, 40) borderColor:kRed_FF6600 bgColor:kColor_FFFFFF titleColor:kRed_FF6600 title:@"JSBridge" font:kFontPF(14) target:self selector:@selector(actionJSBridge)]];
     [contentView addSubview:[xViewTools createBorderBtn:CGRectMake(0.5*(kContentWidth - 100), 570, 100, 40) borderColor:kRed_FF6600 bgColor:kColor_FFFFFF titleColor:kRed_FF6600 title:@"分页" font:kFontPF(14) target:self selector:@selector(actionPaged)]];
-    contentView.contentSize = CGSizeMake(kScreenWidth, 640);
+    [contentView addSubview:[xViewTools createBorderBtn:CGRectMake(0.5*(kContentWidth - 100), 630, 100, 40) borderColor:kRed_FF6600 bgColor:kColor_FFFFFF titleColor:kRed_FF6600 title:@"Banner Loading" font:kFontPF(12) target:self selector:@selector(actionBannerLoading)]];
+    contentView.contentSize = CGSizeMake(kScreenWidth, 710);
+}
+
+-(void)actionBannerLoading{
+    [self.navigationController pushViewController:[[BannerLoadingController alloc] init] animated:YES];
 }
 
 -(void)actionPaged{

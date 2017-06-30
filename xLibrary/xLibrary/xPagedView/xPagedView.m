@@ -1,10 +1,16 @@
-
+//
+//  TJScrollPageControllerView.m
+//  TuJia
+//
+//  Created by 金思魁 on 16/9/14.
+//  Copyright © 2016年 途家. All rights reserved.
+//
 
 #import "xPagedView.h"
 
 @interface xPagedView()
 {
-    UIScrollView * scrollView_;
+    UIScrollView *scrollView_;
 }
 
 @end
@@ -19,10 +25,10 @@
 }
 
 -(void)setScrollView:(UIScrollView*)scrollView{
-    [self addSubview:scrollView];
     scrollView_ = scrollView;
-    scrollView_.delegate = self;
-    scrollView_.frame = CGRectMake(0, 0, self.frame.size.width, self.frame.size.height);
+    scrollView.frame = CGRectMake(0, 0, self.frame.size.width, self.frame.size.height);
+    [self addSubview:scrollView];
+    scrollView.delegate = self;
 }
 
 -(UIScrollView*)scrollView{
