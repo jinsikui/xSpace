@@ -182,6 +182,34 @@
 			path = xStatis;
 			sourceTree = "<group>";
 		};
+		63900A881F067C9B0080C48D /* xNetwork */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = xNetwork;
+			sourceTree = "<group>";
+		};
+		63900A891F067D320080C48D /* xCalendar */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = xCalendar;
+			sourceTree = "<group>";
+		};
+		63900A8A1F067D320080C48D /* xPhotoBanner */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = xPhotoBanner;
+			sourceTree = "<group>";
+		};
+		63900A8B1F067DA60080C48D /* xLocation */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = xLocation;
+			sourceTree = "<group>";
+		};
 		63EBC7FD1EE2511E001029B3 /* xPagedView */ = {
 			isa = PBXGroup;
 			children = (
@@ -221,6 +249,10 @@
 		B17490731DDF30480034C852 /* xLibrary */ = {
 			isa = PBXGroup;
 			children = (
+				63900A8B1F067DA60080C48D /* xLocation */,
+				63900A891F067D320080C48D /* xCalendar */,
+				63900A8A1F067D320080C48D /* xPhotoBanner */,
+				63900A881F067C9B0080C48D /* xNetwork */,
 				63900A5E1F0649180080C48D /* xStatis */,
 				63900A181F04CA1A0080C48D /* runtime */,
 				63396C791EF0F8BA001525E7 /* xBannerLoading */,
