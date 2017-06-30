@@ -10,6 +10,18 @@
 		2A2ACE0AF31E8A3D48B9BC62 /* libPods-xLibrary.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3D59FFB247B0652E8883766A /* libPods-xLibrary.a */; };
 		63396C7F1EF0F918001525E7 /* UIView+xBannerLoading.m in Sources */ = {isa = PBXBuildFile; fileRef = 63396C7E1EF0F918001525E7 /* UIView+xBannerLoading.m */; };
 		63900A1E1F04CADC0080C48D /* NSObject+xRuntime.m in Sources */ = {isa = PBXBuildFile; fileRef = 63900A1D1F04CADC0080C48D /* NSObject+xRuntime.m */; };
+		63900A7B1F066A5A0080C48D /* NSObject+xStatis.m in Sources */ = {isa = PBXBuildFile; fileRef = 63900A601F0649180080C48D /* NSObject+xStatis.m */; };
+		63900A7C1F066A5A0080C48D /* UICollectionView+xStatis.m in Sources */ = {isa = PBXBuildFile; fileRef = 63900A621F0649180080C48D /* UICollectionView+xStatis.m */; };
+		63900A7D1F066A5A0080C48D /* UIControl+xStatis.m in Sources */ = {isa = PBXBuildFile; fileRef = 63900A641F0649180080C48D /* UIControl+xStatis.m */; };
+		63900A7E1F066A5A0080C48D /* UINavigationController+xStatis.m in Sources */ = {isa = PBXBuildFile; fileRef = 63900A661F0649180080C48D /* UINavigationController+xStatis.m */; };
+		63900A7F1F066A5A0080C48D /* UITabBarController+xStatis.m in Sources */ = {isa = PBXBuildFile; fileRef = 63900A681F0649180080C48D /* UITabBarController+xStatis.m */; };
+		63900A801F066A5A0080C48D /* UITableView+xStatis.m in Sources */ = {isa = PBXBuildFile; fileRef = 63900A6A1F0649180080C48D /* UITableView+xStatis.m */; };
+		63900A811F066A5A0080C48D /* UIView+xStatis.m in Sources */ = {isa = PBXBuildFile; fileRef = 63900A6C1F0649180080C48D /* UIView+xStatis.m */; };
+		63900A821F066A5A0080C48D /* UIViewController+xStatis.m in Sources */ = {isa = PBXBuildFile; fileRef = 63900A6E1F0649180080C48D /* UIViewController+xStatis.m */; };
+		63900A831F066A5A0080C48D /* xStatisActionData.m in Sources */ = {isa = PBXBuildFile; fileRef = 63900A701F0649180080C48D /* xStatisActionData.m */; };
+		63900A841F066A5A0080C48D /* xStatisManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 63900A721F0649180080C48D /* xStatisManager.m */; };
+		63900A851F066A5A0080C48D /* xStatisService.m in Sources */ = {isa = PBXBuildFile; fileRef = 63900A741F0649180080C48D /* xStatisService.m */; };
+		63900A861F066A5A0080C48D /* xStatisStack.m in Sources */ = {isa = PBXBuildFile; fileRef = 63900A761F0649180080C48D /* xStatisStack.m */; };
 		63EBC8001EE251DF001029B3 /* xPagedView.m in Sources */ = {isa = PBXBuildFile; fileRef = 63EBC7FF1EE2511E001029B3 /* xPagedView.m */; };
 		63F758F51E76ABC800756FE7 /* CoreDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 63F758F41E76ABC800756FE7 /* CoreDataManager.m */; };
 		B1EFAD071E726F9500128906 /* UIFont+xExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = B1EFAD001E726F9500128906 /* UIFont+xExtension.m */; };
@@ -367,19 +379,31 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				63900A831F066A5A0080C48D /* xStatisActionData.m in Sources */,
+				63900A861F066A5A0080C48D /* xStatisStack.m in Sources */,
+				63900A7F1F066A5A0080C48D /* UITabBarController+xStatis.m in Sources */,
 				B1EFAD651E7281F700128906 /* xPhotoBrowser.m in Sources */,
 				B1EFAD111E72701200128906 /* LogEnvironment.m in Sources */,
 				63F758F51E76ABC800756FE7 /* CoreDataManager.m in Sources */,
 				B1EFAD121E72701200128906 /* NSArray+Log.m in Sources */,
+				63900A801F066A5A0080C48D /* UITableView+xStatis.m in Sources */,
 				B1EFAD071E726F9500128906 /* UIFont+xExtension.m in Sources */,
 				63900A1E1F04CADC0080C48D /* NSObject+xRuntime.m in Sources */,
 				B1EFAD641E7281F700128906 /* xPhoto.m in Sources */,
 				63396C7F1EF0F918001525E7 /* UIView+xBannerLoading.m in Sources */,
+				63900A7E1F066A5A0080C48D /* UINavigationController+xStatis.m in Sources */,
+				63900A841F066A5A0080C48D /* xStatisManager.m in Sources */,
+				63900A7D1F066A5A0080C48D /* UIControl+xStatis.m in Sources */,
+				63900A821F066A5A0080C48D /* UIViewController+xStatis.m in Sources */,
 				B1EFAD131E72701200128906 /* NSDictionary+Log.m in Sources */,
 				63EBC8001EE251DF001029B3 /* xPagedView.m in Sources */,
 				B1EFAD671E7281F700128906 /* xPhotoView.m in Sources */,
+				63900A811F066A5A0080C48D /* UIView+xStatis.m in Sources */,
 				B1EFAD081E726F9500128906 /* xViewTools.m in Sources */,
+				63900A851F066A5A0080C48D /* xStatisService.m in Sources */,
+				63900A7B1F066A5A0080C48D /* NSObject+xStatis.m in Sources */,
 				B1EFAD661E7281F700128906 /* xPhotoToolbar.m in Sources */,
+				63900A7C1F066A5A0080C48D /* UICollectionView+xStatis.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
