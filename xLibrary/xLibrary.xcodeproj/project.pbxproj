@@ -22,6 +22,9 @@
 		63900A841F066A5A0080C48D /* xStatisManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 63900A721F0649180080C48D /* xStatisManager.m */; };
 		63900A851F066A5A0080C48D /* xStatisService.m in Sources */ = {isa = PBXBuildFile; fileRef = 63900A741F0649180080C48D /* xStatisService.m */; };
 		63900A861F066A5A0080C48D /* xStatisStack.m in Sources */ = {isa = PBXBuildFile; fileRef = 63900A761F0649180080C48D /* xStatisStack.m */; };
+		63D94A4E1F33219000170AA7 /* xNoticeCenter.m in Sources */ = {isa = PBXBuildFile; fileRef = 63D94A4D1F33219000170AA7 /* xNoticeCenter.m */; };
+		63D94A521F33232A00170AA7 /* xTimer.m in Sources */ = {isa = PBXBuildFile; fileRef = 63D94A511F33232A00170AA7 /* xTimer.m */; };
+		63D94A551F33233F00170AA7 /* xAlert.m in Sources */ = {isa = PBXBuildFile; fileRef = 63D94A541F33233F00170AA7 /* xAlert.m */; };
 		63EBC8001EE251DF001029B3 /* xPagedView.m in Sources */ = {isa = PBXBuildFile; fileRef = 63EBC7FF1EE2511E001029B3 /* xPagedView.m */; };
 		63F758F51E76ABC800756FE7 /* CoreDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 63F758F41E76ABC800756FE7 /* CoreDataManager.m */; };
 		B1EFAD071E726F9500128906 /* UIFont+xExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = B1EFAD001E726F9500128906 /* UIFont+xExtension.m */; };
@@ -78,6 +81,12 @@
 		63900A741F0649180080C48D /* xStatisService.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = xStatisService.m; sourceTree = "<group>"; };
 		63900A751F0649180080C48D /* xStatisStack.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = xStatisStack.h; sourceTree = "<group>"; };
 		63900A761F0649180080C48D /* xStatisStack.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = xStatisStack.m; sourceTree = "<group>"; };
+		63D94A4C1F33219000170AA7 /* xNoticeCenter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = xNoticeCenter.h; sourceTree = "<group>"; };
+		63D94A4D1F33219000170AA7 /* xNoticeCenter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = xNoticeCenter.m; sourceTree = "<group>"; };
+		63D94A501F33232A00170AA7 /* xTimer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = xTimer.h; sourceTree = "<group>"; };
+		63D94A511F33232A00170AA7 /* xTimer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = xTimer.m; sourceTree = "<group>"; };
+		63D94A531F33233F00170AA7 /* xAlert.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = xAlert.h; sourceTree = "<group>"; };
+		63D94A541F33233F00170AA7 /* xAlert.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = xAlert.m; sourceTree = "<group>"; };
 		63EBC7FE1EE2511E001029B3 /* xPagedView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = xPagedView.h; sourceTree = "<group>"; };
 		63EBC7FF1EE2511E001029B3 /* xPagedView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = xPagedView.m; sourceTree = "<group>"; };
 		63F758F31E76ABC800756FE7 /* CoreDataManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoreDataManager.h; sourceTree = "<group>"; };
@@ -210,6 +219,26 @@
 			path = xLocation;
 			sourceTree = "<group>";
 		};
+		63D94A4B1F33213000170AA7 /* xNoticeCenter */ = {
+			isa = PBXGroup;
+			children = (
+				63D94A4C1F33219000170AA7 /* xNoticeCenter.h */,
+				63D94A4D1F33219000170AA7 /* xNoticeCenter.m */,
+				63D94A501F33232A00170AA7 /* xTimer.h */,
+				63D94A511F33232A00170AA7 /* xTimer.m */,
+			);
+			path = xNoticeCenter;
+			sourceTree = "<group>";
+		};
+		63D94A4F1F33230400170AA7 /* xAlert */ = {
+			isa = PBXGroup;
+			children = (
+				63D94A531F33233F00170AA7 /* xAlert.h */,
+				63D94A541F33233F00170AA7 /* xAlert.m */,
+			);
+			path = xAlert;
+			sourceTree = "<group>";
+		};
 		63EBC7FD1EE2511E001029B3 /* xPagedView */ = {
 			isa = PBXGroup;
 			children = (
@@ -249,6 +278,8 @@
 		B17490731DDF30480034C852 /* xLibrary */ = {
 			isa = PBXGroup;
 			children = (
+				63D94A4F1F33230400170AA7 /* xAlert */,
+				63D94A4B1F33213000170AA7 /* xNoticeCenter */,
 				63900A8B1F067DA60080C48D /* xLocation */,
 				63900A891F067D320080C48D /* xCalendar */,
 				63900A8A1F067D320080C48D /* xPhotoBanner */,
@@ -429,6 +460,8 @@
 				63900A821F066A5A0080C48D /* UIViewController+xStatis.m in Sources */,
 				B1EFAD131E72701200128906 /* NSDictionary+Log.m in Sources */,
 				63EBC8001EE251DF001029B3 /* xPagedView.m in Sources */,
+				63D94A521F33232A00170AA7 /* xTimer.m in Sources */,
+				63D94A551F33233F00170AA7 /* xAlert.m in Sources */,
 				B1EFAD671E7281F700128906 /* xPhotoView.m in Sources */,
 				63900A811F066A5A0080C48D /* UIView+xStatis.m in Sources */,
 				B1EFAD081E726F9500128906 /* xViewTools.m in Sources */,
@@ -436,6 +469,7 @@
 				63900A7B1F066A5A0080C48D /* NSObject+xStatis.m in Sources */,
 				B1EFAD661E7281F700128906 /* xPhotoToolbar.m in Sources */,
 				63900A7C1F066A5A0080C48D /* UICollectionView+xStatis.m in Sources */,
+				63D94A4E1F33219000170AA7 /* xNoticeCenter.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

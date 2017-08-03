@@ -520,7 +520,7 @@
 		B1748FC41DDF154C0034C852 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0810;
+				LastUpgradeCheck = 0830;
 				ORGANIZATIONNAME = xSpace;
 				TargetAttributes = {
 					B1748FCB1DDF154C0034C852 = {

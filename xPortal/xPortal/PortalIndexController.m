@@ -17,6 +17,7 @@
 #import "RuntimeController.h"
 
 @interface PortalIndexController ()
+@property(nonatomic,strong)UIView *affineShowingPanel;
 @end
 
 @implementation PortalIndexController
@@ -43,7 +44,44 @@
     [contentView addSubview:[xViewTools createBorderBtn:CGRectMake(0.5*(kContentWidth - 100), 570, 100, 40) borderColor:kRed_FF6600 bgColor:kColor_FFFFFF titleColor:kRed_FF6600 title:@"分页" font:kFontPF(14) target:self selector:@selector(actionPaged)]];
     [contentView addSubview:[xViewTools createBorderBtn:CGRectMake(0.5*(kContentWidth - 100), 630, 100, 40) borderColor:kRed_FF6600 bgColor:kColor_FFFFFF titleColor:kRed_FF6600 title:@"Banner Loading" font:kFontPF(12) target:self selector:@selector(actionBannerLoading)]];
     [contentView addSubview:[xViewTools createBorderBtn:CGRectMake(0.5*(kContentWidth - 100), 690, 100, 40) borderColor:kRed_FF6600 bgColor:kColor_FFFFFF titleColor:kRed_FF6600 title:@"runtime" font:kFontPF(12) target:self selector:@selector(actionRuntime)]];
-    contentView.contentSize = CGSizeMake(kScreenWidth, 770);
+    [contentView addSubview:[xViewTools createBorderBtn:CGRectMake(0.5*(kContentWidth - 100), 750, 100, 40) borderColor:kRed_FF6600 bgColor:kColor_FFFFFF titleColor:kRed_FF6600 title:@"affine showing" font:kFontPF(12) target:self selector:@selector(actionAffineShowing)]];
+    contentView.contentSize = CGSizeMake(kScreenWidth, 830);
+}
+
+-(void)actionAffineShowing{
+    UIWindow *window = [UIApplication sharedApplication].delegate.window;
+    UIColor *windowColor = window.backgroundColor;
+    window.backgroundColor = [UIColor blackColor];
+    
+    UIView *rootView = window.rootViewController.view;
+    _affineShowingPanel = [[UIView alloc] initWithFrame:CGRectMake(0, 150, kScreenWidth, kScreenHeight)];
+    [_affineShowingPanel addSubview:[xViewTools createBorderBtn:CGRectMake(0.5*(kContentWidth - 100), 150, 100, 40) borderColor:kRed_FF6600 bgColor:kColor_FFFFFF titleColor:kRed_FF6600 title:@"返回" font:kFontPF(14) target:self selector:@selector(actionBackFromAffineShowing)]];
+    _affineShowingPanel.backgroundColor = kColor_FD8238;
+    [window addSubview:_affineShowingPanel];
+    
+    [UIView animateWithDuration:0.3 animations:^{
+        _affineShowingPanel.frame = CGRectMake(0, 0, kScreenWidth, kScreenHeight);
+        rootView.transform = CGAffineTransformMakeScale(0.95, 0.95);
+    } completion:^(BOOL finished) {
+        rootView.transform = CGAffineTransformMakeScale(1, 1);
+        window.backgroundColor = windowColor;
+    }];
+}
+
+-(void)actionBackFromAffineShowing{
+    UIWindow *window = [UIApplication sharedApplication].delegate.window;
+    UIColor *windowColor = window.backgroundColor;
+    window.backgroundColor = [UIColor blackColor];
+    
+    UIView *rootView = window.rootViewController.view;
+    rootView.transform = CGAffineTransformMakeScale(0.95, 0.95);
+    [UIView animateWithDuration:0.3 animations:^{
+        _affineShowingPanel.frame = CGRectMake(0, kScreenHeight, kScreenWidth, kScreenHeight);
+        rootView.transform = CGAffineTransformMakeScale(1, 1);
+    } completion:^(BOOL finished) {
+        [_affineShowingPanel removeFromSuperview];
+        window.backgroundColor = windowColor;
+    }];
 }
 
 -(void)actionRuntime{
