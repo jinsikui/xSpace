@@ -25,6 +25,7 @@
 
 //===================================================================
 
+static NSString *const kSysAppFinishLaunching = @"kSysAppFinishLaunching";
 static NSString *const kSysAppBecomeActive = @"kSysAppBecomeActive";
 static NSString *const kSysAppEnterBackground = @"kSysAppEnterBackground";
 static NSString *const kSysAppWillTerminate = @"kSysAppWillTerminate";
@@ -72,6 +73,7 @@ static NSString *const kTimerRun = @"kTimerRun";
 
 
 -(void)registerSystemNotification {
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(appFinishLaunching:) name:UIApplicationDidFinishLaunchingNotification object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(appEnterBackground) name:UIApplicationDidEnterBackgroundNotification object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(appBecomeActive) name:UIApplicationDidBecomeActiveNotification object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(appWillTerminate) name:UIApplicationWillTerminateNotification object:nil];
@@ -102,6 +104,19 @@ static NSString *const kTimerRun = @"kTimerRun";
             ( (void (^)()) obj)();
         }
     }
+}
+
+
+-(void)registerAppFinishLaunching:(id)lifeCycle block:(void(^)(NSDictionary*))block{
+    dispatch_barrier_async(_bindQueue, ^{
+        [self setActionKey:kSysAppFinishLaunching key:lifeCycle block:block];
+    });
+}
+
+-(void)appFinishLaunching:(NSNotification*)notification{
+    dispatch_async(_bindQueue, ^{
+        [self runBlock:kSysAppFinishLaunching param:notification.userInfo];
+    });
 }
 
 -(void)registerAppBecomeActive:(id)lifeCycle block:(void (^)())block {
