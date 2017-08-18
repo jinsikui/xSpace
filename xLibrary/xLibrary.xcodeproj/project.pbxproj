@@ -22,6 +22,14 @@
 		63900A841F066A5A0080C48D /* xStatisManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 63900A721F0649180080C48D /* xStatisManager.m */; };
 		63900A851F066A5A0080C48D /* xStatisService.m in Sources */ = {isa = PBXBuildFile; fileRef = 63900A741F0649180080C48D /* xStatisService.m */; };
 		63900A861F066A5A0080C48D /* xStatisStack.m in Sources */ = {isa = PBXBuildFile; fileRef = 63900A761F0649180080C48D /* xStatisStack.m */; };
+		63CB5B551F46926C00EC1082 /* xPhotoBannerData.m in Sources */ = {isa = PBXBuildFile; fileRef = 63CB5B521F46926C00EC1082 /* xPhotoBannerData.m */; };
+		63CB5B561F46926C00EC1082 /* xPhotoBanner.m in Sources */ = {isa = PBXBuildFile; fileRef = 63CB5B541F46926C00EC1082 /* xPhotoBanner.m */; };
+		63CB5B701F46F95C00EC1082 /* TJPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 63CB5B6B1F46F95C00EC1082 /* TJPlayer.m */; };
+		63CB5B711F46F95C00EC1082 /* TJPlayerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 63CB5B6D1F46F95C00EC1082 /* TJPlayerView.m */; };
+		63CB5B721F46F95C00EC1082 /* TJPlayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 63CB5B6F1F46F95C00EC1082 /* TJPlayViewController.m */; };
+		63CB5B7D1F4703A300EC1082 /* TAAbstractDotView.m in Sources */ = {isa = PBXBuildFile; fileRef = 63CB5B781F4703A300EC1082 /* TAAbstractDotView.m */; };
+		63CB5B7E1F4703A300EC1082 /* TADotView.m in Sources */ = {isa = PBXBuildFile; fileRef = 63CB5B7A1F4703A300EC1082 /* TADotView.m */; };
+		63CB5B7F1F4703A300EC1082 /* TAPageControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 63CB5B7C1F4703A300EC1082 /* TAPageControl.m */; };
 		63D94A4E1F33219000170AA7 /* xNoticeCenter.m in Sources */ = {isa = PBXBuildFile; fileRef = 63D94A4D1F33219000170AA7 /* xNoticeCenter.m */; };
 		63D94A521F33232A00170AA7 /* xTimer.m in Sources */ = {isa = PBXBuildFile; fileRef = 63D94A511F33232A00170AA7 /* xTimer.m */; };
 		63D94A551F33233F00170AA7 /* xAlert.m in Sources */ = {isa = PBXBuildFile; fileRef = 63D94A541F33233F00170AA7 /* xAlert.m */; };
@@ -81,6 +89,31 @@
 		63900A741F0649180080C48D /* xStatisService.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = xStatisService.m; sourceTree = "<group>"; };
 		63900A751F0649180080C48D /* xStatisStack.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = xStatisStack.h; sourceTree = "<group>"; };
 		63900A761F0649180080C48D /* xStatisStack.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = xStatisStack.m; sourceTree = "<group>"; };
+		63CB5B511F46926C00EC1082 /* xPhotoBannerData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = xPhotoBannerData.h; sourceTree = "<group>"; };
+		63CB5B521F46926C00EC1082 /* xPhotoBannerData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = xPhotoBannerData.m; sourceTree = "<group>"; };
+		63CB5B531F46926C00EC1082 /* xPhotoBanner.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = xPhotoBanner.h; sourceTree = "<group>"; };
+		63CB5B541F46926C00EC1082 /* xPhotoBanner.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = xPhotoBanner.m; sourceTree = "<group>"; };
+		63CB5B621F46F95C00EC1082 /* kr-video-player-pause@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "kr-video-player-pause@2x.png"; sourceTree = "<group>"; };
+		63CB5B631F46F95C00EC1082 /* kr-video-player-pause@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "kr-video-player-pause@3x.png"; sourceTree = "<group>"; };
+		63CB5B641F46F95C00EC1082 /* kr-video-player-play@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "kr-video-player-play@2x.png"; sourceTree = "<group>"; };
+		63CB5B651F46F95C00EC1082 /* kr-video-player-play@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "kr-video-player-play@3x.png"; sourceTree = "<group>"; };
+		63CB5B661F46F95C00EC1082 /* playerBack@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "playerBack@2x.png"; sourceTree = "<group>"; };
+		63CB5B671F46F95C00EC1082 /* playerBack@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "playerBack@3x.png"; sourceTree = "<group>"; };
+		63CB5B681F46F95C00EC1082 /* playerDot@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "playerDot@2x.png"; sourceTree = "<group>"; };
+		63CB5B691F46F95C00EC1082 /* playerDot@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "playerDot@3x.png"; sourceTree = "<group>"; };
+		63CB5B6A1F46F95C00EC1082 /* TJPlayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TJPlayer.h; sourceTree = "<group>"; };
+		63CB5B6B1F46F95C00EC1082 /* TJPlayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TJPlayer.m; sourceTree = "<group>"; };
+		63CB5B6C1F46F95C00EC1082 /* TJPlayerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TJPlayerView.h; sourceTree = "<group>"; };
+		63CB5B6D1F46F95C00EC1082 /* TJPlayerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TJPlayerView.m; sourceTree = "<group>"; };
+		63CB5B6E1F46F95C00EC1082 /* TJPlayViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TJPlayViewController.h; sourceTree = "<group>"; };
+		63CB5B6F1F46F95C00EC1082 /* TJPlayViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TJPlayViewController.m; sourceTree = "<group>"; };
+		63CB5B751F47027E00EC1082 /* xPhotoBannerDefaultImg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = xPhotoBannerDefaultImg.png; sourceTree = "<group>"; };
+		63CB5B771F4703A300EC1082 /* TAAbstractDotView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TAAbstractDotView.h; sourceTree = "<group>"; };
+		63CB5B781F4703A300EC1082 /* TAAbstractDotView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TAAbstractDotView.m; sourceTree = "<group>"; };
+		63CB5B791F4703A300EC1082 /* TADotView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TADotView.h; sourceTree = "<group>"; };
+		63CB5B7A1F4703A300EC1082 /* TADotView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TADotView.m; sourceTree = "<group>"; };
+		63CB5B7B1F4703A300EC1082 /* TAPageControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TAPageControl.h; sourceTree = "<group>"; };
+		63CB5B7C1F4703A300EC1082 /* TAPageControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TAPageControl.m; sourceTree = "<group>"; };
 		63D94A4C1F33219000170AA7 /* xNoticeCenter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = xNoticeCenter.h; sourceTree = "<group>"; };
 		63D94A4D1F33219000170AA7 /* xNoticeCenter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = xNoticeCenter.m; sourceTree = "<group>"; };
 		63D94A501F33232A00170AA7 /* xTimer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = xTimer.h; sourceTree = "<group>"; };
@@ -208,6 +241,11 @@
 		63900A8A1F067D320080C48D /* xPhotoBanner */ = {
 			isa = PBXGroup;
 			children = (
+				63CB5B751F47027E00EC1082 /* xPhotoBannerDefaultImg.png */,
+				63CB5B511F46926C00EC1082 /* xPhotoBannerData.h */,
+				63CB5B521F46926C00EC1082 /* xPhotoBannerData.m */,
+				63CB5B531F46926C00EC1082 /* xPhotoBanner.h */,
+				63CB5B541F46926C00EC1082 /* xPhotoBanner.m */,
 			);
 			path = xPhotoBanner;
 			sourceTree = "<group>";
@@ -217,6 +255,47 @@
 			children = (
 			);
 			path = xLocation;
+			sourceTree = "<group>";
+		};
+		63CB5B571F46CFF500EC1082 /* xSlider */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = xSlider;
+			sourceTree = "<group>";
+		};
+		63CB5B611F46F91200EC1082 /* xPlayer */ = {
+			isa = PBXGroup;
+			children = (
+				63CB5B621F46F95C00EC1082 /* kr-video-player-pause@2x.png */,
+				63CB5B631F46F95C00EC1082 /* kr-video-player-pause@3x.png */,
+				63CB5B641F46F95C00EC1082 /* kr-video-player-play@2x.png */,
+				63CB5B651F46F95C00EC1082 /* kr-video-player-play@3x.png */,
+				63CB5B661F46F95C00EC1082 /* playerBack@2x.png */,
+				63CB5B671F46F95C00EC1082 /* playerBack@3x.png */,
+				63CB5B681F46F95C00EC1082 /* playerDot@2x.png */,
+				63CB5B691F46F95C00EC1082 /* playerDot@3x.png */,
+				63CB5B6A1F46F95C00EC1082 /* TJPlayer.h */,
+				63CB5B6B1F46F95C00EC1082 /* TJPlayer.m */,
+				63CB5B6C1F46F95C00EC1082 /* TJPlayerView.h */,
+				63CB5B6D1F46F95C00EC1082 /* TJPlayerView.m */,
+				63CB5B6E1F46F95C00EC1082 /* TJPlayViewController.h */,
+				63CB5B6F1F46F95C00EC1082 /* TJPlayViewController.m */,
+			);
+			path = xPlayer;
+			sourceTree = "<group>";
+		};
+		63CB5B761F47037B00EC1082 /* TAPageControl */ = {
+			isa = PBXGroup;
+			children = (
+				63CB5B771F4703A300EC1082 /* TAAbstractDotView.h */,
+				63CB5B781F4703A300EC1082 /* TAAbstractDotView.m */,
+				63CB5B791F4703A300EC1082 /* TADotView.h */,
+				63CB5B7A1F4703A300EC1082 /* TADotView.m */,
+				63CB5B7B1F4703A300EC1082 /* TAPageControl.h */,
+				63CB5B7C1F4703A300EC1082 /* TAPageControl.m */,
+			);
+			path = TAPageControl;
 			sourceTree = "<group>";
 		};
 		63D94A4B1F33213000170AA7 /* xNoticeCenter */ = {
@@ -278,6 +357,9 @@
 		B17490731DDF30480034C852 /* xLibrary */ = {
 			isa = PBXGroup;
 			children = (
+				63CB5B761F47037B00EC1082 /* TAPageControl */,
+				63CB5B611F46F91200EC1082 /* xPlayer */,
+				63CB5B571F46CFF500EC1082 /* xSlider */,
 				63D94A4F1F33230400170AA7 /* xAlert */,
 				63D94A4B1F33213000170AA7 /* xNoticeCenter */,
 				63900A8B1F067DA60080C48D /* xLocation */,
@@ -450,6 +532,9 @@
 				63F758F51E76ABC800756FE7 /* CoreDataManager.m in Sources */,
 				B1EFAD121E72701200128906 /* NSArray+Log.m in Sources */,
 				63900A801F066A5A0080C48D /* UITableView+xStatis.m in Sources */,
+				63CB5B701F46F95C00EC1082 /* TJPlayer.m in Sources */,
+				63CB5B551F46926C00EC1082 /* xPhotoBannerData.m in Sources */,
+				63CB5B7D1F4703A300EC1082 /* TAAbstractDotView.m in Sources */,
 				B1EFAD071E726F9500128906 /* UIFont+xExtension.m in Sources */,
 				63900A1E1F04CADC0080C48D /* NSObject+xRuntime.m in Sources */,
 				B1EFAD641E7281F700128906 /* xPhoto.m in Sources */,
@@ -458,6 +543,7 @@
 				63900A841F066A5A0080C48D /* xStatisManager.m in Sources */,
 				63900A7D1F066A5A0080C48D /* UIControl+xStatis.m in Sources */,
 				63900A821F066A5A0080C48D /* UIViewController+xStatis.m in Sources */,
+				63CB5B711F46F95C00EC1082 /* TJPlayerView.m in Sources */,
 				B1EFAD131E72701200128906 /* NSDictionary+Log.m in Sources */,
 				63EBC8001EE251DF001029B3 /* xPagedView.m in Sources */,
 				63D94A521F33232A00170AA7 /* xTimer.m in Sources */,
@@ -465,9 +551,13 @@
 				B1EFAD671E7281F700128906 /* xPhotoView.m in Sources */,
 				63900A811F066A5A0080C48D /* UIView+xStatis.m in Sources */,
 				B1EFAD081E726F9500128906 /* xViewTools.m in Sources */,
+				63CB5B7E1F4703A300EC1082 /* TADotView.m in Sources */,
+				63CB5B561F46926C00EC1082 /* xPhotoBanner.m in Sources */,
 				63900A851F066A5A0080C48D /* xStatisService.m in Sources */,
+				63CB5B7F1F4703A300EC1082 /* TAPageControl.m in Sources */,
 				63900A7B1F066A5A0080C48D /* NSObject+xStatis.m in Sources */,
 				B1EFAD661E7281F700128906 /* xPhotoToolbar.m in Sources */,
+				63CB5B721F46F95C00EC1082 /* TJPlayViewController.m in Sources */,
 				63900A7C1F066A5A0080C48D /* UICollectionView+xStatis.m in Sources */,
 				63D94A4E1F33219000170AA7 /* xNoticeCenter.m in Sources */,
 			);
