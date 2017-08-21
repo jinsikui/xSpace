@@ -24,9 +24,9 @@
 		63900A861F066A5A0080C48D /* xStatisStack.m in Sources */ = {isa = PBXBuildFile; fileRef = 63900A761F0649180080C48D /* xStatisStack.m */; };
 		63CB5B551F46926C00EC1082 /* xPhotoBannerData.m in Sources */ = {isa = PBXBuildFile; fileRef = 63CB5B521F46926C00EC1082 /* xPhotoBannerData.m */; };
 		63CB5B561F46926C00EC1082 /* xPhotoBanner.m in Sources */ = {isa = PBXBuildFile; fileRef = 63CB5B541F46926C00EC1082 /* xPhotoBanner.m */; };
-		63CB5B701F46F95C00EC1082 /* TJPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 63CB5B6B1F46F95C00EC1082 /* TJPlayer.m */; };
-		63CB5B711F46F95C00EC1082 /* TJPlayerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 63CB5B6D1F46F95C00EC1082 /* TJPlayerView.m */; };
-		63CB5B721F46F95C00EC1082 /* TJPlayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 63CB5B6F1F46F95C00EC1082 /* TJPlayViewController.m */; };
+		63CB5B701F46F95C00EC1082 /* xPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 63CB5B6B1F46F95C00EC1082 /* xPlayer.m */; };
+		63CB5B711F46F95C00EC1082 /* xPlayerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 63CB5B6D1F46F95C00EC1082 /* xPlayerView.m */; };
+		63CB5B721F46F95C00EC1082 /* xPlayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 63CB5B6F1F46F95C00EC1082 /* xPlayViewController.m */; };
 		63CB5B7D1F4703A300EC1082 /* TAAbstractDotView.m in Sources */ = {isa = PBXBuildFile; fileRef = 63CB5B781F4703A300EC1082 /* TAAbstractDotView.m */; };
 		63CB5B7E1F4703A300EC1082 /* TADotView.m in Sources */ = {isa = PBXBuildFile; fileRef = 63CB5B7A1F4703A300EC1082 /* TADotView.m */; };
 		63CB5B7F1F4703A300EC1082 /* TAPageControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 63CB5B7C1F4703A300EC1082 /* TAPageControl.m */; };
@@ -101,12 +101,12 @@
 		63CB5B671F46F95C00EC1082 /* playerBack@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "playerBack@3x.png"; sourceTree = "<group>"; };
 		63CB5B681F46F95C00EC1082 /* playerDot@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "playerDot@2x.png"; sourceTree = "<group>"; };
 		63CB5B691F46F95C00EC1082 /* playerDot@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "playerDot@3x.png"; sourceTree = "<group>"; };
-		63CB5B6A1F46F95C00EC1082 /* TJPlayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TJPlayer.h; sourceTree = "<group>"; };
-		63CB5B6B1F46F95C00EC1082 /* TJPlayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TJPlayer.m; sourceTree = "<group>"; };
-		63CB5B6C1F46F95C00EC1082 /* TJPlayerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TJPlayerView.h; sourceTree = "<group>"; };
-		63CB5B6D1F46F95C00EC1082 /* TJPlayerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TJPlayerView.m; sourceTree = "<group>"; };
-		63CB5B6E1F46F95C00EC1082 /* TJPlayViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TJPlayViewController.h; sourceTree = "<group>"; };
-		63CB5B6F1F46F95C00EC1082 /* TJPlayViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TJPlayViewController.m; sourceTree = "<group>"; };
+		63CB5B6A1F46F95C00EC1082 /* xPlayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = xPlayer.h; sourceTree = "<group>"; };
+		63CB5B6B1F46F95C00EC1082 /* xPlayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = xPlayer.m; sourceTree = "<group>"; };
+		63CB5B6C1F46F95C00EC1082 /* xPlayerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = xPlayerView.h; sourceTree = "<group>"; };
+		63CB5B6D1F46F95C00EC1082 /* xPlayerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = xPlayerView.m; sourceTree = "<group>"; };
+		63CB5B6E1F46F95C00EC1082 /* xPlayViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = xPlayViewController.h; sourceTree = "<group>"; };
+		63CB5B6F1F46F95C00EC1082 /* xPlayViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = xPlayViewController.m; sourceTree = "<group>"; };
 		63CB5B751F47027E00EC1082 /* xPhotoBannerDefaultImg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = xPhotoBannerDefaultImg.png; sourceTree = "<group>"; };
 		63CB5B771F4703A300EC1082 /* TAAbstractDotView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TAAbstractDotView.h; sourceTree = "<group>"; };
 		63CB5B781F4703A300EC1082 /* TAAbstractDotView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TAAbstractDotView.m; sourceTree = "<group>"; };
@@ -275,12 +275,12 @@
 				63CB5B671F46F95C00EC1082 /* playerBack@3x.png */,
 				63CB5B681F46F95C00EC1082 /* playerDot@2x.png */,
 				63CB5B691F46F95C00EC1082 /* playerDot@3x.png */,
-				63CB5B6A1F46F95C00EC1082 /* TJPlayer.h */,
-				63CB5B6B1F46F95C00EC1082 /* TJPlayer.m */,
-				63CB5B6C1F46F95C00EC1082 /* TJPlayerView.h */,
-				63CB5B6D1F46F95C00EC1082 /* TJPlayerView.m */,
-				63CB5B6E1F46F95C00EC1082 /* TJPlayViewController.h */,
-				63CB5B6F1F46F95C00EC1082 /* TJPlayViewController.m */,
+				63CB5B6A1F46F95C00EC1082 /* xPlayer.h */,
+				63CB5B6B1F46F95C00EC1082 /* xPlayer.m */,
+				63CB5B6C1F46F95C00EC1082 /* xPlayerView.h */,
+				63CB5B6D1F46F95C00EC1082 /* xPlayerView.m */,
+				63CB5B6E1F46F95C00EC1082 /* xPlayViewController.h */,
+				63CB5B6F1F46F95C00EC1082 /* xPlayViewController.m */,
 			);
 			path = xPlayer;
 			sourceTree = "<group>";
@@ -532,7 +532,7 @@
 				63F758F51E76ABC800756FE7 /* CoreDataManager.m in Sources */,
 				B1EFAD121E72701200128906 /* NSArray+Log.m in Sources */,
 				63900A801F066A5A0080C48D /* UITableView+xStatis.m in Sources */,
-				63CB5B701F46F95C00EC1082 /* TJPlayer.m in Sources */,
+				63CB5B701F46F95C00EC1082 /* xPlayer.m in Sources */,
 				63CB5B551F46926C00EC1082 /* xPhotoBannerData.m in Sources */,
 				63CB5B7D1F4703A300EC1082 /* TAAbstractDotView.m in Sources */,
 				B1EFAD071E726F9500128906 /* UIFont+xExtension.m in Sources */,
@@ -543,7 +543,7 @@
 				63900A841F066A5A0080C48D /* xStatisManager.m in Sources */,
 				63900A7D1F066A5A0080C48D /* UIControl+xStatis.m in Sources */,
 				63900A821F066A5A0080C48D /* UIViewController+xStatis.m in Sources */,
-				63CB5B711F46F95C00EC1082 /* TJPlayerView.m in Sources */,
+				63CB5B711F46F95C00EC1082 /* xPlayerView.m in Sources */,
 				B1EFAD131E72701200128906 /* NSDictionary+Log.m in Sources */,
 				63EBC8001EE251DF001029B3 /* xPagedView.m in Sources */,
 				63D94A521F33232A00170AA7 /* xTimer.m in Sources */,
@@ -557,7 +557,7 @@
 				63CB5B7F1F4703A300EC1082 /* TAPageControl.m in Sources */,
 				63900A7B1F066A5A0080C48D /* NSObject+xStatis.m in Sources */,
 				B1EFAD661E7281F700128906 /* xPhotoToolbar.m in Sources */,
-				63CB5B721F46F95C00EC1082 /* TJPlayViewController.m in Sources */,
+				63CB5B721F46F95C00EC1082 /* xPlayViewController.m in Sources */,
 				63900A7C1F066A5A0080C48D /* UICollectionView+xStatis.m in Sources */,
 				63D94A4E1F33219000170AA7 /* xNoticeCenter.m in Sources */,
 			);

@@ -1,18 +1,21 @@
 
 
-#import "TJCyclePhotoView.h"
+#import "xPhotoBanner.h"
+#import "xPhotoBannerData.h"
 #import "Masonry.h"
-#import "TJCyclePhotoConfig.h"
 #import "xTimer.h"
 #import "TAPageControl.h"
-#import "TJPlayViewController.h"
-#import "TJURLTJCodeParseManager.h"
-#import "Statistics.h"
+#import "TADotView.h"
+#import "xPlayViewController.h"
 #import "UIImageView+WebCache.h"
+
+#define kPhotoBannerCellReuseId  @"xPhotoBannerCell"
 
 
 @interface xPhotoBannerCell ()
-@property(nonatomic,strong)UIImageView *photoImage;
+
+@property(nonatomic,strong)UIImageView *imgView;
+
 @end
 
 @implementation xPhotoBannerCell
@@ -24,20 +27,21 @@
         imgView.contentMode = UIViewContentModeScaleAspectFill;
         imgView.clipsToBounds = YES;
         imgView.backgroundColor = [UIColor whiteColor];
-        
         [self.contentView addSubview:imgView];
+        //
         [imgView mas_makeConstraints:^(MASConstraintMaker *make) {
             make.edges.mas_equalTo(UIEdgeInsetsZero);
         }];
-        _photoImage = imgView;
+        _imgView = imgView;
         
     }
     return self;
 }
--(void)setPhotoData:(TJCyclePhotoData *)photoData {
+
+-(void)setPhotoData:(xPhotoBannerData*)photoData {
     
-    if(![photoData.pictureUrl isEqualToString:_photoData.pictureUrl]) {
-        [_photoImage sd_setImageWithURL:[NSURL URLWithString:photoData.pictureUrl] placeholderImage:photoData.defaultImage];
+    if(![photoData.photoUrl isEqualToString:_photoData.photoUrl]) {
+        [_imgView sd_setImageWithURL:[NSURL URLWithString:photoData.photoUrl] placeholderImage:photoData.defaultImage];
     }
     _photoData = photoData;
     
@@ -47,325 +51,277 @@
 
 
 
+@interface xPhotoBanner ()<UICollectionViewDelegate,UICollectionViewDataSource, TAPageControlDelegate>
 
-@interface TJCyclePhotoView ()
-@property(nonatomic)NSInteger totalImageCount;
-@property(nonatomic)NSInteger tempIndexOnPageControl;
-@property(nonatomic,strong)TAPageControl *pageControl;
+@property(nonatomic,strong) TAPageControl *pageControl;
 @property(nonatomic,strong) UICollectionView *collectView;
 @property(nonatomic,strong) UICollectionViewFlowLayout *layout;
-@property(nonatomic,strong) TJTimer *timer;
-@property(nonatomic)BOOL isAutoScroller;
-@end
-
-@interface TJCyclePhotoView (CollectionViewDelegate)<UICollectionViewDelegate,UICollectionViewDataSource>
+@property(nonatomic,strong) xTimer *timer;
+@property(nonatomic) NSInteger lastPhotoIndex;
 
 @end
-@interface TJCyclePhotoView (scroller)<UIScrollViewDelegate>
-@end
 
-#define kCyclePhotoImageCellReuseId  @"TJCyclePhotoImageCell"
-
-@implementation TJCyclePhotoView
+@implementation xPhotoBanner
 
 -(instancetype)initWithFrame:(CGRect)frame {
     self = [super initWithFrame:frame];
     if (self) {
+        //
         _layout = [[UICollectionViewFlowLayout alloc] init];
         _layout.minimumInteritemSpacing = 0;
         _layout.minimumLineSpacing = 0;
         _layout.scrollDirection = UICollectionViewScrollDirectionHorizontal;
         _layout.itemSize = frame.size;
+        //
         _collectView = [[UICollectionView alloc] initWithFrame:self.bounds collectionViewLayout:_layout];
         _collectView.delegate = self;
         _collectView.dataSource = self;
         _collectView.pagingEnabled = YES;
         _collectView.showsHorizontalScrollIndicator = NO;
         _collectView.showsVerticalScrollIndicator = NO;
-        _collectView.scrollsToTop = NO;
         _collectView.directionalLockEnabled = YES;
-        
-        
+        _collectView.backgroundColor = [UIColor whiteColor];
+        [_collectView registerClass:[xPhotoBannerCell class] forCellWithReuseIdentifier:kPhotoBannerCellReuseId];
         [self addSubview:_collectView];
-        self.backgroundColor = [UIColor whiteColor ];
         [_collectView mas_makeConstraints:^(MASConstraintMaker *make) {
             make.edges.mas_equalTo(UIEdgeInsetsZero);
         }];
-        _collectView.backgroundColor = [UIColor whiteColor];
-        [_collectView registerClass:[TJCyclePhotoImageCell class] forCellWithReuseIdentifier:kCyclePhotoImageCellReuseId];
-        
-        _collectView.pagingEnabled = YES;
-        _pageControlBottomOffset = 15;
-        _pageControlOffsetX = 15;
+        //
+        _pageOffsetLeftOrRight = 15;
+        _pageOffsetBottom = 15;
+        _isCycleScroll = YES;
+        _isAutoScroll = YES;
+        _autoScrollIntervalSeconds = 3;
+        _pagePosition = xPhotoBannerPagePositionRight;
     }
     return self;
 }
 
-
-// 获取当前的index
--(NSInteger)currentIndex {
-    
-    if (_collectView.frame.size.width == 0 || _collectView.frame.size.height == 0 ){
-        return 0;
-    }
-    NSInteger index = (_collectView.contentOffset.x + _layout.itemSize.width * 0.5)/_layout.itemSize.width;
-    if (index <= 0) {
-        index = _photoDataList.count;
-    }
-    if (index >= _totalImageCount - 1) {
-        index = _photoDataList.count - 1;
-    }
-    return index;
-    
-}
--(NSInteger)pageControlIndexWithCurrentCellIndex:(NSInteger)index {
-     return index % self.photoDataList.count;
-}
-
--(void)automaticScroll {
-    if (_totalImageCount == 0 && !self.isAutoScroller) {
-        return;
-    }
-    NSInteger currentIndex = [self currentIndex];
-    NSInteger targetIndex = currentIndex + 1;
-    [self scrollToIndex:targetIndex animated:YES];
-}
--(void)setupTimer {
-    if(self.photoDataList.count <= 1) {
-        return;
-    }
-    __weak typeof(self)weak = self;
-    _timer = [TJTimer timerWithStart:3*NSEC_PER_SEC leeway:0 queue:dispatch_get_main_queue() block:^{
-        [weak automaticScroll];
-    }];
-    [_timer resume];
-}
--(void)invalidateTimer {
-    _timer = nil;
-}
-
--(void)scrollToIndex:(NSInteger)index animated:(BOOL)animated {
-    if (_totalImageCount != 0 && _photoDataList ) {
-        [_collectView scrollToItemAtIndexPath:[NSIndexPath indexPathForRow:index inSection:0] atScrollPosition:UICollectionViewScrollPositionNone animated:animated];
-    }
-    if (self.photoToScroll) {
-        NSInteger currentindex = self.currentImageIndex;
-        self.photoToScroll(self.photoDataList[currentindex],currentindex);
-    }
-}
-
--(void)setStartAutoAminat:(BOOL)isAuto {
-    if (isAuto) {
-        [self setupTimer];
-    }else {
-        [self invalidateTimer];
-    }
-}
-
-#pragma mark --
-
--(void)setAutoScroll:(BOOL)autoScroll {
-    _autoScroll = autoScroll;
-    if (_autoScroll) {
-        [self setupTimer];
-    }else {
-        [self invalidateTimer];
-    }
-}
-
--(void)setBackgroundColor:(UIColor *)backgroundColor {
-    [super setBackgroundColor:backgroundColor];
-    _collectView.backgroundColor = backgroundColor;
-}
--(void)setPhotoDataList:(NSArray<TJCyclePhotoData *> *)photoDataList {
-    _photoDataList = photoDataList;
-    _totalImageCount = photoDataList.count *2;
-    [self layoutSubviews];
-     [self.collectView reloadData];
-    if ( photoDataList.count > 1) {
-        [self scrollToIndex:photoDataList.count animated:NO];
-    }
-}
--(void)setStyle:(TJCyclePhotoViewStyle)style {
-    _style = style;
-    [self.pageControl removeFromSuperview];
-    if (style == TJCyclePhotoViewNone) {
-        return;
-    }
-    TAPageControl *pageControl = [[TAPageControl alloc] init];
-    pageControl.numberOfPages = self.photoDataList.count;
-    pageControl.dotColor = kColor_FD8238;
-    pageControl.userInteractionEnabled = NO;
-    pageControl.dotSize = CGSizeMake(4, 4);
-    [self addSubview:pageControl];
-    _pageControl = pageControl;
-    
-}
-
-- (void)layoutSubviews
-{
-    [super layoutSubviews];
-    
-    if(_photoDataList.count <= 0) {
-        [self addSubview:self.backgroundImageView];
-        self.backgroundImageView.frame = self.bounds;
-       
-    }else {
-        [self.backgroundImageView removeFromSuperview];
-        self.pageControl.numberOfPages = _photoDataList.count;
-    }
-    self.collectView.scrollEnabled = self.photoDataList.count > 1;
-    self.pageControl.hidden = YES;
-    self.autoScroll = _autoScroll;
-    
-    if (_style == TJCyclePhotoViewNone ) {
-        return;
-    }
-    
-    CGSize size = [_pageControl sizeForNumberOfPages:self.photoDataList.count];
-    CGFloat x = 15; // left
-    switch (_style) {
-        case TJCyclePhotoViewRight:
-             x = self.frame.size.width - size.width - _pageControlOffsetX;
-            break;
-          case TJCyclePhotoViewCenter:
-            x = (self.frame.size.width - size.width) * 0.5;
-        default:
-            break;
-    }
-    
-    CGFloat y = self.frame.size.height - size.height - _pageControlBottomOffset;
-    [_pageControl sizeToFit];
-    self.pageControl.frame = CGRectMake(x, y, size.width, size.height);
-    self.pageControl.hidden = self.photoDataList.count <= 1;
-}
-
--(UIImageView *)currentImageView {
-    UIImageView *imageView = [[UIImageView alloc] init];
-    NSInteger current = self.currentImageIndex;
-    TJCyclePhotoData *photoData = self.photoDataList[current];
-    imageView.frame = self.frame;
-     [imageView sd_setImageWithURL:[NSURL URLWithString:photoData.pictureUrl] placeholderImage:photoData.defaultImage];
-    return imageView;
-}
--(NSInteger)currentImageIndex {
-    return [self pageControlIndexWithCurrentCellIndex:[self currentIndex]];
-}
-+(void)selectBannerItem:(TJCyclePhotoData *)data index:(NSInteger)index orderSource:(NSString *)orderSource
-{
-    switch (data.dataType) {
-        case TJCyclePhotoDataVideo:
-            [TJCyclePhotoView playVideo:data];
-            break;
-        case TJCyclePhotoDataImage:
-            [TJCyclePhotoView pushViewController:data orderSource:orderSource];
-            break;
-            
-        case TJCyclePhotoDataText:
-            break;
-            
-        default:
-            break;
-    }
-    
-}
-
-+(void)playVideo:(TJCyclePhotoData *)data {
-    TJPlayViewController *player = [[TJPlayViewController alloc] init];
-    player.videoTitle = data.name;
-    player.videoUrl = data.videoUrl;
-    [[ControllerHelper currentNavController] presentViewController:player animated:YES completion:nil];
-}
-+(void)pushViewController:(TJCyclePhotoData *)data orderSource:(NSString *)orderSource{
-    [TJURLTJCodeParseManager pushViewControllerWithUrl:data.navigateUrl stat:orderSource shareSetting:data.shareSetting];
-
-    
-}
-
--(void)dealloc {
-    _collectView.delegate = nil;
-    _collectView.dataSource = nil;
-    [self invalidateTimer];
-}
-
-@end
-
-@implementation TJCyclePhotoView (CollectionViewDelegate)
+#pragma mark - CollectionViewDelegate
 
 -(NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView {
     return 1;
 }
+
 -(NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
-    return _totalImageCount;
-}
--(UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
-    NSInteger indexOnPageControl = [self pageControlIndexWithCurrentCellIndex:indexPath.item];
-    TJCyclePhotoData *data = self.photoDataList[indexOnPageControl];
-    switch (data.dataType) {
-        case TJCyclePhotoDataImage:
-        case TJCyclePhotoDataVideo:
-        {
-            TJCyclePhotoImageCell *imageCell = [collectionView dequeueReusableCellWithReuseIdentifier:kCyclePhotoImageCellReuseId forIndexPath:indexPath];
-            imageCell.photoData = data;
-            return imageCell;
-        }
-            break;
-            
-        default:
-            break;
+    if(!_photoDataList || _photoDataList.count == 0){
+        return 0;
     }
-    
-    return nil;
+    if(_photoDataList.count == 1){
+        return 1;
+    }
+    if(!_isCycleScroll){
+        return _photoDataList.count;
+    }
+    else{
+        return _photoDataList.count + 2;
+    }
 }
+
+-(UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
+    xPhotoBannerCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:kPhotoBannerCellReuseId forIndexPath:indexPath];
+    xPhotoBannerData *data = _photoDataList[[self getPhotoIndexByCellIndex:indexPath.item]];
+    cell.photoData = data;
+    return cell;
+}
+
+-(NSInteger)getPhotoIndexByCellIndex:(NSInteger)cellIndex{
+    if(!_photoDataList || _photoDataList.count == 0){
+        return 0;
+    }
+    if(_photoDataList.count == 1){
+        return 0;
+    }
+    if(!_isCycleScroll){
+        return cellIndex;
+    }
+    else{
+        if(cellIndex == 0){
+            //第一个cell
+            return _photoDataList.count - 1;
+        }
+        if(cellIndex == _photoDataList.count + 1){
+            //最后一个cell
+            return 0;
+        }
+        return cellIndex - 1;
+    }
+}
+
 -(void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
-     NSInteger indexOnPageControl = [self pageControlIndexWithCurrentCellIndex:indexPath.item];
-    TJCyclePhotoData *data = self.photoDataList[indexOnPageControl];
-    if(self.photoViewTap) {
-        BOOL go = self.photoViewTap(data,indexOnPageControl);
+    NSInteger index = [self getPhotoIndexByCellIndex:indexPath.item];
+    xPhotoBannerData *data = self.photoDataList[index];
+    if(self.tapPhoto) {
+        BOOL go = self.tapPhoto(data, index);
         if(!go){
             return;
         }
     }
+    [self navToPhoto:data index:index];
+}
+
+-(void)navToPhoto:(xPhotoBannerData*)data index:(NSInteger)index{
     
-    [TJCyclePhotoView selectBannerItem:data index:indexOnPageControl orderSource:nil];
 }
 
-@end
+#pragma mark - ScrollViewDelegate
 
-@implementation TJCyclePhotoView (scroller)
+-(NSInteger)getCellIndexByScrollPosition{
+    NSInteger cellIndex = ceilf((_collectView.contentOffset.x + _layout.itemSize.width * 0.5)/_layout.itemSize.width - 1);
+    return cellIndex;
+}
+
+-(void)adjustCyclePosition{
+    if(_isCycleScroll && _photoDataList && _photoDataList.count > 1){
+        NSInteger cellIndex = [self getCellIndexByScrollPosition];
+        if(cellIndex == 0){
+            [_collectView scrollToItemAtIndexPath:[NSIndexPath indexPathForRow:_photoDataList.count inSection:0] atScrollPosition:UICollectionViewScrollPositionNone animated:NO];
+        }
+        if(cellIndex == _photoDataList.count + 1){
+            [_collectView scrollToItemAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0] atScrollPosition:UICollectionViewScrollPositionNone animated:NO];
+        }
+    }
+}
+
+//停止滑动（代码）
 -(void)scrollViewDidEndScrollingAnimation:(UIScrollView *)scrollView {
-    if (self.photoDataList.count <= 0) {
-        return;
+    NSLog(@"=====scrollViewDidEndScrollingAnimation=====");
+    if(_isAutoScroll){
+        [self startTimer];
     }
-    NSInteger itemIndex = [self currentIndex];
-    [self scrollToIndex:itemIndex animated:NO];
-}
--(void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView {
-    [self scrollViewDidEndScrollingAnimation:scrollView];
+    [self adjustCyclePosition];
 }
 
+//停止滑动（手势）
+-(void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView {
+    NSLog(@"=====scrollViewDidEndDecelerating=====");
+    if(_isAutoScroll){
+        [self startTimer];
+    }
+    [self adjustCyclePosition];
+}
+
+//开始划动
 -(void)scrollViewWillBeginDragging:(UIScrollView *)scrollView {
-    if (self.autoScroll) {
-        [self invalidateTimer];
-    }
+    NSLog(@"=====scrollViewWillBeginDragging=====");
+    [self stopTimer];
 }
-- (void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate
-{
-    if (self.autoScroll) {
-        [self setupTimer];
-    }
+
+//松手
+- (void)scrollViewWillEndDragging:(UIScrollView *)scrollView withVelocity:(CGPoint)velocity targetContentOffset:(inout CGPoint *)targetContentOffset {
+    NSLog(@"=====scrollViewWillEndDragging=====");
+    NSInteger cellIndex = [self getCellIndexByScrollPosition];
+    CGFloat endX = cellIndex * _layout.itemSize.width;
+    CGPoint endOffset = CGPointMake(endX, 0);
+    *targetContentOffset = scrollView.contentOffset;
+    [scrollView setContentOffset:endOffset animated:YES];
 }
+
+//滑动过程中
 -(void)scrollViewDidScroll:(UIScrollView *)scrollView {
-    if (self.photoDataList.count <= 0) {
+    NSLog(@"=====scrollViewDidScroll=====");
+    if (_photoDataList.count <= 0) {
         return;
     }
-    NSInteger itemIndex = [self currentIndex];
-    NSInteger indexOnPageControl = [self pageControlIndexWithCurrentCellIndex:itemIndex];
-    if (_tempIndexOnPageControl == indexOnPageControl) {
+    //设置pageControl
+    NSInteger cellIndex = [self getCellIndexByScrollPosition];
+    NSInteger index = [self getPhotoIndexByCellIndex:cellIndex];
+    if(_lastPhotoIndex != index){
+        _pageControl.currentPage = index;
+    }
+    //
+    _lastPhotoIndex = index;
+}
+
+
+#pragma mark - Auto scroll
+
+-(void)startTimer{
+    if(self.photoDataList.count <= 1) {
         return;
     }
-    self.pageControl.currentPage = indexOnPageControl;
-    self.tempIndexOnPageControl = indexOnPageControl;
+    if(!_timer){
+        __weak typeof(self)weak = self;
+        _timer = [xTimer timerWithStart:_autoScrollIntervalSeconds*NSEC_PER_SEC leeway:0 queue:dispatch_get_main_queue() block:^{
+            [weak scrollToNext];
+        }];
+    }
+    [_timer resume];
+}
+
+-(void)stopTimer{
+    if(_timer){
+        [_timer suspend];
+    }
+}
+
+-(void)scrollToNext{
+    NSInteger cellIndex = [self getCellIndexByScrollPosition];
+    [_collectView scrollToItemAtIndexPath:[NSIndexPath indexPathForRow:cellIndex + 1 inSection:0] atScrollPosition:UICollectionViewScrollPositionNone animated:YES];
+}
+
+#pragma mark - Page Control
+
+- (void)TAPageControl:(TAPageControl *)pageControl didSelectPageAtIndex:(NSInteger)index{
+    [self scrollToPhotoIndex:index animated:YES];
+}
+
+-(void)scrollToPhotoIndex:(NSInteger)photoIndex animated:(BOOL)animated{
+    if(!_isCycleScroll || _photoDataList.count <= 1){
+        [_collectView scrollToItemAtIndexPath:[NSIndexPath indexPathForRow:photoIndex inSection:0] atScrollPosition:UICollectionViewScrollPositionNone animated:animated];
+    }
+    else{
+        [_collectView scrollToItemAtIndexPath:[NSIndexPath indexPathForRow:photoIndex + 1 inSection:0] atScrollPosition:UICollectionViewScrollPositionNone animated:animated];
+    }
+}
+
+-(void)setPagePosition:(xPhotoBannerPagePosition)pagePosition{
+    _pagePosition = pagePosition;
+    [_pageControl removeFromSuperview];
+    if(_pagePosition == xPhotoBannerPagePositionNone){
+        return;
+    }
+    
+    //
+    TAPageControl *pageControl = [[TAPageControl alloc] init];
+    [self addSubview:pageControl];
+    _pageControl = pageControl;
+    pageControl.dotViewClass = [TADotView class];
+    pageControl.numberOfPages = _photoDataList.count;
+    pageControl.delegate = self;
+    
+    //
+    [pageControl sizeToFit];
+    CGRect f = pageControl.frame;
+    f.origin.y = self.bounds.size.height - self.pageOffsetBottom - pageControl.frame.size.height;
+    if(pagePosition == xPhotoBannerPagePositionCenter){
+        f.origin.x = 0.5*(self.bounds.size.width - pageControl.frame.size.width);
+    }
+    else if(pagePosition == xPhotoBannerPagePositionLeft){
+        f.origin.x = self.pageOffsetLeftOrRight;
+    }
+    else{
+        f.origin.x = self.bounds.size.width - self.pageOffsetLeftOrRight - pageControl.frame.size.width;
+    }
+    pageControl.frame = f;
+}
+
+#pragma mark - General Methods
+
+-(void)setPhotoDataList:(NSArray<xPhotoBannerData *> *)photoDataList {
+    _photoDataList = photoDataList;
+    [self.collectView reloadData];
+    if (_isCycleScroll && photoDataList.count > 1) {
+        //此时需要划到cell中的第二个，即photoIndex=0的位置
+        [self scrollToPhotoIndex:0 animated:NO];
+    }
+    //重置页码控件
+    [self setPagePosition:_pagePosition];
+}
+
+-(void)dealloc {
+    [_timer cancel];
+    _timer = nil;
 }
 
 @end

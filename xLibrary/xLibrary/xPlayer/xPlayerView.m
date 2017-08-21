@@ -1,19 +1,13 @@
-//
-//  TJPlayerView.m
-//  视频播放器
-//
-//  Created by 王亚军 on 16/11/11.
-//  Copyright © 2016年 王亚军. All rights reserved.
-//
 
-#import "TJPlayerView.h"
-#import "TJPlayer.h"
+
+#import "xPlayerView.h"
+#import "xPlayer.h"
 #import "Masonry.h"
-#import "TJTimer.h"
-#import <GALibrary/UIColor+HexColor.h>
+#import "xTimer.h"
 
-@interface TJPlayerView()<TJPlayerDelegate>
-@property(nonatomic,strong)TJPlayer *player;
+
+@interface xPlayerView()<xPlayerDelegate>
+@property(nonatomic,strong)xPlayer *player;
 
 @property (nonatomic, strong) UIActivityIndicatorView *loadingProgress;
 
@@ -29,17 +23,17 @@
 @property (nonatomic, strong) UIButton *playOrPauseButton;
 
 @property (nonatomic) BOOL isShowView;
-@property (nonatomic,strong) TJTimer *timer;
+@property (nonatomic,strong) xTimer *timer;
 @property (nonatomic) NSTimeInterval duration;
 @end
 
-@implementation TJPlayerView
+@implementation xPlayerView
 
 -(instancetype)initWithFrame:(CGRect)frame {
     self = [super initWithFrame:frame];
     if (self) {
         self.backgroundColor = [UIColor blueColor];
-        _player = [[TJPlayer alloc] init];
+        _player = [[xPlayer alloc] init];
         [self addSubview:_player];
         [_player mas_makeConstraints:^(MASConstraintMaker *make) {
             make.edges.mas_equalTo(UIEdgeInsetsZero);
@@ -114,7 +108,7 @@
     [_player play];
     [self showLoading];
     __weak typeof(self)weak = self;
-    self.timer = [TJTimer timerWithStart:3*NSEC_PER_SEC leeway:0 queue:dispatch_get_main_queue() block:^{
+    self.timer = [xTimer timerWithStart:3*NSEC_PER_SEC leeway:0 queue:dispatch_get_main_queue() block:^{
         [weak hiddenMaskView];
     }];
     [self.timer resume];
@@ -135,10 +129,10 @@
 -(void)playerFailure {
     
 }
--(void)player:(TJPlayer *)player playTime:(NSTimeInterval)interval allTime:(NSTimeInterval)allTime {
+-(void)player:(xPlayer *)player playTime:(NSTimeInterval)interval allTime:(NSTimeInterval)allTime {
      [self updateTimeWithCurrentTime:interval duration:allTime];
 }
--(void)player:(TJPlayer *)player cacheLength:(NSTimeInterval)interval allLength:(NSTimeInterval)allLength {
+-(void)player:(xPlayer *)player cacheLength:(NSTimeInterval)interval allLength:(NSTimeInterval)allLength {
     self.progressView.progress = interval/allLength;
 }
 - (void)updateTimeWithCurrentTime:(NSTimeInterval)currentTime duration:(NSTimeInterval)duration
@@ -299,7 +293,7 @@
     if (!_currentVideoTime) {
         _currentVideoTime = [[UILabel alloc] init];
         _currentVideoTime.textAlignment = NSTextAlignmentCenter;
-        _currentVideoTime.textColor = UIColorFromRGB(0xffffff);
+        _currentVideoTime.textColor = kColor_FFFFFF;
         _currentVideoTime.font = [UIFont systemFontOfSize:10];
         _currentVideoTime.text = @"00:00";
     }
@@ -310,7 +304,7 @@
     if (!_totalVideoTime) {
         _totalVideoTime = [[UILabel alloc] init];
         _totalVideoTime.textAlignment = NSTextAlignmentCenter;
-        _totalVideoTime.textColor = UIColorFromRGB(0xffffff);
+        _totalVideoTime.textColor = kColor_FFFFFF;
         _totalVideoTime.font = [UIFont systemFontOfSize:10];
         _totalVideoTime.text = @"00:00";
     }
@@ -319,8 +313,8 @@
 -(UIProgressView *)progressView {
     if (!_progressView) {
         _progressView = [[UIProgressView alloc] initWithProgressViewStyle:UIProgressViewStyleDefault];
-        _progressView.progressTintColor = UIColorFromRGB(0x3b3b3b);
-        _progressView.trackTintColor    = UIColorFromRGB(0x555555);
+        _progressView.progressTintColor = kColor_333333;
+        _progressView.trackTintColor    = kColor_555555;
     }
     return _progressView;
 }

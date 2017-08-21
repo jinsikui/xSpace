@@ -1,24 +1,18 @@
-//
-//  TJPlayViewController.m
-//  视频播放器
-//
-//  Created by 王亚军 on 2016/11/12.
-//  Copyright © 2016年 王亚军. All rights reserved.
-//
 
-#import "TJPlayViewController.h"
-#import "TJPlayerView.h"
-@interface TJPlayViewController ()<TJPlayerViewProtocol>
-@property(nonatomic,strong)TJPlayerView *playView;
+
+#import "xPlayViewController.h"
+#import "xPlayerView.h"
+@interface xPlayViewController ()<xPlayerViewProtocol>
+@property(nonatomic,strong)xPlayerView *playView;
 @property(nonatomic)BOOL isShowFull;
 @end
 
-@implementation TJPlayViewController
+@implementation xPlayViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    TJPlayerView *playView = [[TJPlayerView alloc] initWithFrame:CGRectMake(0, 100, 320, 200)];
+    xPlayerView *playView = [[xPlayerView alloc] initWithFrame:CGRectMake(0, 100, 320, 200)];
     //    playView.frame = ;
     playView.videoTitle = self.videoTitle;
     
@@ -49,11 +43,11 @@
     return self.isShowFull;
 }
 
--(void)playerShowFullView:(TJPlayerView *)player isFullView:(BOOL)isFull {
+-(void)playerShowFullView:(xPlayerView *)player isFullView:(BOOL)isFull {
     self.isShowFull = isFull;
     [self setNeedsStatusBarAppearanceUpdate];
 }
--(void)playerBackViewPress:(TJPlayerView *)player {
+-(void)playerBackViewPress:(xPlayerView *)player {
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 /*

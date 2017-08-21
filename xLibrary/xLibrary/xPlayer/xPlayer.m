@@ -1,16 +1,10 @@
-//
-//  TJPlayer.m
-//  视频播放器
-//
-//  Created by 王亚军 on 16/11/11.
-//  Copyright © 2016年 王亚军. All rights reserved.
-//
 
-#import "TJPlayer.h"
+
+#import "xPlayer.h"
 #import <AVFoundation/AVFoundation.h>
 #import "Masonry.h"
-#import "TJNoticeManager.h"
-@interface TJPlayer ()
+#import "xNoticeCenter.h"
+@interface xPlayer ()
 @property(nonatomic,strong)AVPlayer *player;
 @property(nonatomic,strong)AVPlayerLayer *playerLayer;
 @property (nonatomic, strong) AVPlayerItem *playerItem;
@@ -26,7 +20,7 @@ static void *PlayViewCMTimeValue = &PlayViewCMTimeValue;
 
 static void *PlayViewStatusObservationContext = &PlayViewStatusObservationContext;
 static void *PlayViewloadedTimeRanges = &PlayViewloadedTimeRanges;
-@implementation TJPlayer
+@implementation xPlayer
 
 -(instancetype)initWithFrame:(CGRect)frame {
     self = [super initWithFrame:frame];
@@ -56,12 +50,12 @@ static void *PlayViewloadedTimeRanges = &PlayViewloadedTimeRanges;
         }
     }];
     
-    [[TJNoticeManager shareNoticeManager] addAppBecomeActive:self block:^{
+    [[xNoticeCenter sharedInstance] registerAppBecomeActive:self block:^{
         if(weak.appBackIsPlaying ) {
           [weak.player play];
         }
     }];
-    [[TJNoticeManager shareNoticeManager] addAppEnterBackground:self block:^{
+    [[xNoticeCenter sharedInstance] registerAppEnterBackground:self block:^{
         weak.appBackIsPlaying = weak.isPlaying;
         [weak.player pause];
     }];
