@@ -15,6 +15,7 @@
 #import "PagedController.h"
 #import "BannerLoadingController.h"
 #import "RuntimeController.h"
+#import "PhotoBannerController.h"
 
 @interface PortalIndexController ()
 @property(nonatomic,strong)UIView *affineShowingPanel;
@@ -45,7 +46,12 @@
     [contentView addSubview:[xViewTools createBorderBtn:CGRectMake(0.5*(kContentWidth - 100), 630, 100, 40) borderColor:kRed_FF6600 bgColor:kColor_FFFFFF titleColor:kRed_FF6600 title:@"Banner Loading" font:kFontPF(12) target:self selector:@selector(actionBannerLoading)]];
     [contentView addSubview:[xViewTools createBorderBtn:CGRectMake(0.5*(kContentWidth - 100), 690, 100, 40) borderColor:kRed_FF6600 bgColor:kColor_FFFFFF titleColor:kRed_FF6600 title:@"runtime" font:kFontPF(12) target:self selector:@selector(actionRuntime)]];
     [contentView addSubview:[xViewTools createBorderBtn:CGRectMake(0.5*(kContentWidth - 100), 750, 100, 40) borderColor:kRed_FF6600 bgColor:kColor_FFFFFF titleColor:kRed_FF6600 title:@"affine showing" font:kFontPF(12) target:self selector:@selector(actionAffineShowing)]];
-    contentView.contentSize = CGSizeMake(kScreenWidth, 830);
+    [contentView addSubview:[xViewTools createBorderBtn:CGRectMake(0.5*(kContentWidth - 100), 810, 100, 40) borderColor:kRed_FF6600 bgColor:kColor_FFFFFF titleColor:kRed_FF6600 title:@"图片Banner" font:kFontPF(12) target:self selector:@selector(actionPhotoBanner)]];
+    contentView.contentSize = CGSizeMake(kScreenWidth, 890);
+}
+
+-(void)actionPhotoBanner{
+    [self.navigationController pushViewController:[[PhotoBannerController alloc] init] animated:YES];
 }
 
 -(void)actionAffineShowing{

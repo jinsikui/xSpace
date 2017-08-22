@@ -7,7 +7,6 @@
 -(instancetype)init {
     self = [super init];
     if (self) {
-        self.defaultImage = [UIImage imageNamed:@"xPhotoBannerDefaultImg"];
     }
     return self;
 }

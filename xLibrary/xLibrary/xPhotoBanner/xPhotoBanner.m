@@ -2,11 +2,9 @@
 
 #import "xPhotoBanner.h"
 #import "xPhotoBannerData.h"
-#import "Masonry.h"
 #import "xTimer.h"
 #import "TAPageControl.h"
 #import "TADotView.h"
-#import "xPlayViewController.h"
 #import "UIImageView+WebCache.h"
 
 #define kPhotoBannerCellReuseId  @"xPhotoBannerCell"
@@ -14,7 +12,8 @@
 
 @interface xPhotoBannerCell ()
 
-@property(nonatomic,strong)UIImageView *imgView;
+@property(nonatomic,strong) UIImageView *imgView;
+@property(nonatomic,strong) NSString    *photoUrl;
 
 @end
 
@@ -23,28 +22,24 @@
 -(instancetype)initWithFrame:(CGRect)frame {
     self = [super initWithFrame:frame];
     if (self) {
-        UIImageView *imgView = [[UIImageView alloc] init];
+        //
+        self.backgroundColor = [UIColor whiteColor];
+        //
+        UIImageView *imgView = [[UIImageView alloc] initWithFrame:self.bounds];
         imgView.contentMode = UIViewContentModeScaleAspectFill;
         imgView.clipsToBounds = YES;
-        imgView.backgroundColor = [UIColor whiteColor];
         [self.contentView addSubview:imgView];
-        //
-        [imgView mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.edges.mas_equalTo(UIEdgeInsetsZero);
-        }];
         _imgView = imgView;
-        
     }
     return self;
 }
 
--(void)setPhotoData:(xPhotoBannerData*)photoData {
+-(void)setPhotoUrl:(NSString*)photoUrl placeholderImage:(UIImage*)placeholderImage {
     
-    if(![photoData.photoUrl isEqualToString:_photoData.photoUrl]) {
-        [_imgView sd_setImageWithURL:[NSURL URLWithString:photoData.photoUrl] placeholderImage:photoData.defaultImage];
+    if(![_photoUrl isEqualToString:photoUrl]) {
+        [_imgView sd_setImageWithURL:[NSURL URLWithString:photoUrl] placeholderImage:placeholderImage];
     }
-    _photoData = photoData;
-    
+    _photoUrl = photoUrl;
 }
 
 @end
@@ -80,12 +75,8 @@
         _collectView.showsHorizontalScrollIndicator = NO;
         _collectView.showsVerticalScrollIndicator = NO;
         _collectView.directionalLockEnabled = YES;
-        _collectView.backgroundColor = [UIColor whiteColor];
         [_collectView registerClass:[xPhotoBannerCell class] forCellWithReuseIdentifier:kPhotoBannerCellReuseId];
         [self addSubview:_collectView];
-        [_collectView mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.edges.mas_equalTo(UIEdgeInsetsZero);
-        }];
         //
         _pageOffsetLeftOrRight = 15;
         _pageOffsetBottom = 15;
@@ -121,31 +112,8 @@
 -(UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
     xPhotoBannerCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:kPhotoBannerCellReuseId forIndexPath:indexPath];
     xPhotoBannerData *data = _photoDataList[[self getPhotoIndexByCellIndex:indexPath.item]];
-    cell.photoData = data;
+    [cell setPhotoUrl:data.photoUrl placeholderImage:_placeholderImage];
     return cell;
-}
-
--(NSInteger)getPhotoIndexByCellIndex:(NSInteger)cellIndex{
-    if(!_photoDataList || _photoDataList.count == 0){
-        return 0;
-    }
-    if(_photoDataList.count == 1){
-        return 0;
-    }
-    if(!_isCycleScroll){
-        return cellIndex;
-    }
-    else{
-        if(cellIndex == 0){
-            //第一个cell
-            return _photoDataList.count - 1;
-        }
-        if(cellIndex == _photoDataList.count + 1){
-            //最后一个cell
-            return 0;
-        }
-        return cellIndex - 1;
-    }
 }
 
 -(void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
@@ -160,86 +128,73 @@
     [self navToPhoto:data index:index];
 }
 
--(void)navToPhoto:(xPhotoBannerData*)data index:(NSInteger)index{
-    
-}
-
 #pragma mark - ScrollViewDelegate
-
--(NSInteger)getCellIndexByScrollPosition{
-    NSInteger cellIndex = ceilf((_collectView.contentOffset.x + _layout.itemSize.width * 0.5)/_layout.itemSize.width - 1);
-    return cellIndex;
-}
 
 -(void)adjustCyclePosition{
     if(_isCycleScroll && _photoDataList && _photoDataList.count > 1){
         NSInteger cellIndex = [self getCellIndexByScrollPosition];
         if(cellIndex == 0){
-            [_collectView scrollToItemAtIndexPath:[NSIndexPath indexPathForRow:_photoDataList.count inSection:0] atScrollPosition:UICollectionViewScrollPositionNone animated:NO];
+            [self scrollToPhotoIndex:_photoDataList.count - 1 animated:NO];
         }
         if(cellIndex == _photoDataList.count + 1){
-            [_collectView scrollToItemAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0] atScrollPosition:UICollectionViewScrollPositionNone animated:NO];
+            [self scrollToPhotoIndex:0 animated:NO];
         }
     }
 }
 
 //停止滑动（代码）
 -(void)scrollViewDidEndScrollingAnimation:(UIScrollView *)scrollView {
-    NSLog(@"=====scrollViewDidEndScrollingAnimation=====");
+#ifdef DEBUG
+    NSLog(@"===== scrollViewDidEndScrollingAnimation x:%f =====", scrollView.contentOffset.x);
+#endif
     if(_isAutoScroll){
         [self startTimer];
     }
     [self adjustCyclePosition];
+    [self callScrollToPhoto];
 }
 
 //停止滑动（手势）
 -(void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView {
-    NSLog(@"=====scrollViewDidEndDecelerating=====");
+#ifdef DEBUG
+    NSLog(@"===== scrollViewDidEndDecelerating x:%f =====", scrollView.contentOffset.x);
+#endif
     if(_isAutoScroll){
         [self startTimer];
     }
     [self adjustCyclePosition];
+    [self callScrollToPhoto];
 }
 
 //开始划动
 -(void)scrollViewWillBeginDragging:(UIScrollView *)scrollView {
-    NSLog(@"=====scrollViewWillBeginDragging=====");
+#ifdef DEBUG
+    NSLog(@"=====scrollViewWillBeginDragging x:%f =====", scrollView.contentOffset.x);
+#endif
     [self stopTimer];
-}
-
-//松手
-- (void)scrollViewWillEndDragging:(UIScrollView *)scrollView withVelocity:(CGPoint)velocity targetContentOffset:(inout CGPoint *)targetContentOffset {
-    NSLog(@"=====scrollViewWillEndDragging=====");
-    NSInteger cellIndex = [self getCellIndexByScrollPosition];
-    CGFloat endX = cellIndex * _layout.itemSize.width;
-    CGPoint endOffset = CGPointMake(endX, 0);
-    *targetContentOffset = scrollView.contentOffset;
-    [scrollView setContentOffset:endOffset animated:YES];
 }
 
 //滑动过程中
 -(void)scrollViewDidScroll:(UIScrollView *)scrollView {
-    NSLog(@"=====scrollViewDidScroll=====");
+#ifdef DEBUG
+    NSLog(@"=====scrollViewDidScroll x:%f =====", scrollView.contentOffset.x);
+#endif
     if (_photoDataList.count <= 0) {
         return;
     }
     //设置pageControl
-    NSInteger cellIndex = [self getCellIndexByScrollPosition];
-    NSInteger index = [self getPhotoIndexByCellIndex:cellIndex];
-    if(_lastPhotoIndex != index){
-        _pageControl.currentPage = index;
+    NSInteger photoIndex = [self getCurPhotoIndex];
+    if(_lastPhotoIndex != photoIndex){
+        _pageControl.currentPage = photoIndex;
     }
     //
-    _lastPhotoIndex = index;
+    _lastPhotoIndex = photoIndex;
 }
 
 
 #pragma mark - Auto scroll
 
 -(void)startTimer{
-    if(self.photoDataList.count <= 1) {
-        return;
-    }
     if(!_timer){
         __weak typeof(self)weak = self;
         _timer = [xTimer timerWithStart:_autoScrollIntervalSeconds*NSEC_PER_SEC leeway:0 queue:dispatch_get_main_queue() block:^{
@@ -251,11 +206,15 @@
 
 -(void)stopTimer{
     if(_timer){
-        [_timer suspend];
+        [_timer cancel];
+        _timer = nil;
     }
 }
 
 -(void)scrollToNext{
+    if(!_photoDataList || _photoDataList.count <= 1){
+        return;
+    }
     NSInteger cellIndex = [self getCellIndexByScrollPosition];
     [_collectView scrollToItemAtIndexPath:[NSIndexPath indexPathForRow:cellIndex + 1 inSection:0] atScrollPosition:UICollectionViewScrollPositionNone animated:YES];
 }
@@ -266,28 +225,22 @@
     [self scrollToPhotoIndex:index animated:YES];
 }
 
--(void)scrollToPhotoIndex:(NSInteger)photoIndex animated:(BOOL)animated{
-    if(!_isCycleScroll || _photoDataList.count <= 1){
-        [_collectView scrollToItemAtIndexPath:[NSIndexPath indexPathForRow:photoIndex inSection:0] atScrollPosition:UICollectionViewScrollPositionNone animated:animated];
-    }
-    else{
-        [_collectView scrollToItemAtIndexPath:[NSIndexPath indexPathForRow:photoIndex + 1 inSection:0] atScrollPosition:UICollectionViewScrollPositionNone animated:animated];
-    }
-}
-
 -(void)setPagePosition:(xPhotoBannerPagePosition)pagePosition{
     _pagePosition = pagePosition;
+    if(!_photoDataList || _photoDataList.count == 0){
+        return;
+    }
     [_pageControl removeFromSuperview];
     if(_pagePosition == xPhotoBannerPagePositionNone){
         return;
     }
-    
     //
     TAPageControl *pageControl = [[TAPageControl alloc] init];
     [self addSubview:pageControl];
     _pageControl = pageControl;
     pageControl.dotViewClass = [TADotView class];
     pageControl.numberOfPages = _photoDataList.count;
+    pageControl.hidesForSinglePage = YES;
     pageControl.delegate = self;
     
     //
@@ -308,6 +261,58 @@
 
 #pragma mark - General Methods
 
+-(NSInteger)getCellIndexByScrollPosition{
+    NSInteger cellIndex = ceilf((_collectView.contentOffset.x + _layout.itemSize.width * 0.5)/_layout.itemSize.width - 1);
+    return cellIndex;
+}
+
+-(NSInteger)getPhotoIndexByCellIndex:(NSInteger)cellIndex{
+    if(!_photoDataList || _photoDataList.count == 0){
+        return -1;
+    }
+    if(_photoDataList.count == 1){
+        return 0;
+    }
+    if(!_isCycleScroll){
+        return cellIndex;
+    }
+    else{
+        if(cellIndex == 0){
+            //第一个cell
+            return _photoDataList.count - 1;
+        }
+        if(cellIndex == _photoDataList.count + 1){
+            //最后一个cell
+            return 0;
+        }
+        return cellIndex - 1;
+    }
+}
+
+-(NSInteger)getCurPhotoIndex{
+    return [self getPhotoIndexByCellIndex:[self getCellIndexByScrollPosition]];
+}
+
+-(void)scrollToPhotoIndex:(NSInteger)photoIndex animated:(BOOL)animated{
+    if(!_isCycleScroll || _photoDataList.count <= 1){
+        [_collectView scrollToItemAtIndexPath:[NSIndexPath indexPathForRow:photoIndex inSection:0] atScrollPosition:UICollectionViewScrollPositionNone animated:animated];
+    }
+    else{
+        [_collectView scrollToItemAtIndexPath:[NSIndexPath indexPathForRow:photoIndex + 1 inSection:0] atScrollPosition:UICollectionViewScrollPositionNone animated:animated];
+    }
+}
+
+-(void)callScrollToPhoto{
+    if(self.scrollToPhoto){
+        NSInteger photoIndex = [self getCurPhotoIndex];
+        self.scrollToPhoto(_photoDataList[photoIndex], photoIndex);
+    }
+}
+
+-(void)navToPhoto:(xPhotoBannerData*)data index:(NSInteger)index{
+    //跳转方法
+}
+
 -(void)setPhotoDataList:(NSArray<xPhotoBannerData *> *)photoDataList {
     _photoDataList = photoDataList;
     [self.collectView reloadData];
@@ -317,6 +322,29 @@
     }
     //重置页码控件
     [self setPagePosition:_pagePosition];
+    //自动播放
+    [self stopTimer];
+    if(_isAutoScroll && _photoDataList.count > 1){
+        [self startTimer];
+    }
+}
+
+-(void)setIsCycleScroll:(BOOL)isCycleScroll{
+    _isCycleScroll = isCycleScroll;
+    if(!isCycleScroll){
+        _isAutoScroll = NO;
+    }
+}
+
+-(void)setIsAutoScroll:(BOOL)isAutoScroll{
+    if(!isAutoScroll){
+        _isAutoScroll = NO;
+    }
+    else{
+        if(_isCycleScroll){
+            _isAutoScroll = YES;
+        }
+    }
 }
 
 -(void)dealloc {

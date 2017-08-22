@@ -7,7 +7,7 @@
 
 @interface xPhotoBannerCell : UICollectionViewCell
 
-@property(nonatomic,strong)xPhotoBannerData *photoData;
+-(void)setPhotoUrl:(NSString*)photoUrl placeholderImage:(UIImage*)placeholderImage;
 
 @end
 
@@ -26,22 +26,27 @@ typedef NS_ENUM(NSUInteger,xPhotoBannerPagePosition)
 
 @interface xPhotoBanner : UIView
 // 是否循环滚动
-@property(nonatomic)BOOL isCycleScroll;
+@property(nonatomic) BOOL isCycleScroll;
 // 是否自动滚动（只有循环滚动时才支持自动滚动）
-@property(nonatomic)BOOL isAutoScroll;
+@property(nonatomic) BOOL isAutoScroll;
 // 自动滚动间隔
-@property(nonatomic)CGFloat autoScrollIntervalSeconds;
-// 分页控件样式
-@property(nonatomic)xPhotoBannerPagePosition pagePosition;
-
-@property(nonatomic,strong)NSArray <xPhotoBannerData *>*photoDataList;
+@property(nonatomic) CGFloat autoScrollIntervalSeconds;
+// 分页控件位置
+@property(nonatomic) xPhotoBannerPagePosition pagePosition;
 // 分页控件距底部距离，默认是15
-@property(nonatomic)CGFloat pageOffsetBottom;
+@property(nonatomic) CGFloat pageOffsetBottom;
 // 分页控件居左或右时距侧边距离，默认是15
-@property(nonatomic)CGFloat pageOffsetLeftOrRight;
-// 如果此赋值并返回NO，点击图片则不响应默认跳转事件，执行此block
-@property(nonatomic,copy)BOOL(^tapPhoto)(xPhotoBannerData *data,NSInteger index);
-@property(nonatomic,copy)void(^scrollToPhoto)(xPhotoBannerData *data,NSInteger index);
+@property(nonatomic) CGFloat pageOffsetLeftOrRight;
+// 点击图片回调方法，如果此赋值并返回NO，点击图片不执行默认跳转方法，执行此block
+@property(nonatomic,copy) BOOL(^tapPhoto)(xPhotoBannerData *data,NSInteger index);
+// 默认跳转方法
+-(void)navToPhoto:(xPhotoBannerData*)data index:(NSInteger)index;
+// 滚动到图片回调方法
+@property(nonatomic,copy) void(^scrollToPhoto)(xPhotoBannerData *data,NSInteger index);
+// 图片未加载时显示的image
+@property(nonatomic,strong) UIImage *placeholderImage;
+// 图片数据列表，最后设置
+@property(nonatomic,strong) NSArray <xPhotoBannerData *>*photoDataList;
 
 @end
 

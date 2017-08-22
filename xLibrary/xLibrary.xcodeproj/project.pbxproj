@@ -107,7 +107,6 @@
 		63CB5B6D1F46F95C00EC1082 /* xPlayerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = xPlayerView.m; sourceTree = "<group>"; };
 		63CB5B6E1F46F95C00EC1082 /* xPlayViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = xPlayViewController.h; sourceTree = "<group>"; };
 		63CB5B6F1F46F95C00EC1082 /* xPlayViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = xPlayViewController.m; sourceTree = "<group>"; };
-		63CB5B751F47027E00EC1082 /* xPhotoBannerDefaultImg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = xPhotoBannerDefaultImg.png; sourceTree = "<group>"; };
 		63CB5B771F4703A300EC1082 /* TAAbstractDotView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TAAbstractDotView.h; sourceTree = "<group>"; };
 		63CB5B781F4703A300EC1082 /* TAAbstractDotView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TAAbstractDotView.m; sourceTree = "<group>"; };
 		63CB5B791F4703A300EC1082 /* TADotView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TADotView.h; sourceTree = "<group>"; };
@@ -241,7 +240,6 @@
 		63900A8A1F067D320080C48D /* xPhotoBanner */ = {
 			isa = PBXGroup;
 			children = (
-				63CB5B751F47027E00EC1082 /* xPhotoBannerDefaultImg.png */,
 				63CB5B511F46926C00EC1082 /* xPhotoBannerData.h */,
 				63CB5B521F46926C00EC1082 /* xPhotoBannerData.m */,
 				63CB5B531F46926C00EC1082 /* xPhotoBanner.h */,

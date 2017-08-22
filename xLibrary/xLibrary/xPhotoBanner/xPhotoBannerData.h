@@ -16,8 +16,7 @@ typedef NS_ENUM(NSUInteger,xPhotoBannerDataType)
 
 // 数据类型
 @property(nonatomic) xPhotoBannerDataType dataType;
-// 默认图片 自动赋值默认为1：1的图，其他比例需要重新赋值
-@property(nonatomic,strong) UIImage     *defaultImage;
+// 图片url
 @property(nonatomic,strong) NSString    *photoUrl;
 // 导航url
 @property(nonatomic,strong) NSString    *navigateUrl;

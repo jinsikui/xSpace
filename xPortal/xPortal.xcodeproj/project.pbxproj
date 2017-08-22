@@ -18,6 +18,8 @@
 		63A3AB9A1E7FD7C700FB47B8 /* refresh.gif in Resources */ = {isa = PBXBuildFile; fileRef = 63A3AB981E7FD7C700FB47B8 /* refresh.gif */; };
 		63A3AB9D1E80CA6900FB47B8 /* xRefreshHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = 63A3AB9C1E80CA6900FB47B8 /* xRefreshHeader.m */; };
 		63A3ABA01E810A2600FB47B8 /* xRefreshFooter.m in Sources */ = {isa = PBXBuildFile; fileRef = 63A3AB9F1E810A2600FB47B8 /* xRefreshFooter.m */; };
+		63CB5B831F4BCA5700EC1082 /* PhotoBannerController.m in Sources */ = {isa = PBXBuildFile; fileRef = 63CB5B821F4BCA5700EC1082 /* PhotoBannerController.m */; };
+		63CB5B851F4C006500EC1082 /* empty_image.png in Resources */ = {isa = PBXBuildFile; fileRef = 63CB5B841F4C006500EC1082 /* empty_image.png */; };
 		63D326051EB87300006D424B /* libPods-xPortal.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 82B42E39E16332FC3E44D1A6 /* libPods-xPortal.a */; };
 		63D326091EB87316006D424B /* libxLibrary.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 63D326081EB87316006D424B /* libxLibrary.a */; };
 		63D3260D1EB9C3B1006D424B /* WVJBController.m in Sources */ = {isa = PBXBuildFile; fileRef = 63D3260C1EB9C3B1006D424B /* WVJBController.m */; };
@@ -93,6 +95,9 @@
 		63A3AB9C1E80CA6900FB47B8 /* xRefreshHeader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = xRefreshHeader.m; sourceTree = "<group>"; };
 		63A3AB9E1E810A2600FB47B8 /* xRefreshFooter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = xRefreshFooter.h; sourceTree = "<group>"; };
 		63A3AB9F1E810A2600FB47B8 /* xRefreshFooter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = xRefreshFooter.m; sourceTree = "<group>"; };
+		63CB5B811F4BCA5700EC1082 /* PhotoBannerController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhotoBannerController.h; sourceTree = "<group>"; };
+		63CB5B821F4BCA5700EC1082 /* PhotoBannerController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhotoBannerController.m; sourceTree = "<group>"; };
+		63CB5B841F4C006500EC1082 /* empty_image.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = empty_image.png; sourceTree = "<group>"; };
 		63D326061EB8730C006D424B /* libPods-xLibrary.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libPods-xLibrary.a"; path = "../../../../Library/Developer/Xcode/DerivedData/xSpace-hilysremasjmvphiqfkcoxywiynb/Build/Products/Debug-iphoneos/libPods-xLibrary.a"; sourceTree = "<group>"; };
 		63D326081EB87316006D424B /* libxLibrary.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libxLibrary.a; path = "../../../../Library/Developer/Xcode/DerivedData/xSpace-hilysremasjmvphiqfkcoxywiynb/Build/Products/Debug-iphoneos/libxLibrary.a"; sourceTree = "<group>"; };
 		63D3260B1EB9C3B1006D424B /* WVJBController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WVJBController.h; sourceTree = "<group>"; };
@@ -248,9 +253,19 @@
 			isa = PBXGroup;
 			children = (
 				63A3AB971E7FD7C700FB47B8 /* Assets.xcassets */,
+				63CB5B841F4C006500EC1082 /* empty_image.png */,
 				63A3AB981E7FD7C700FB47B8 /* refresh.gif */,
 			);
 			path = Resources;
+			sourceTree = "<group>";
+		};
+		63CB5B801F4BCA2F00EC1082 /* PhotoBanner */ = {
+			isa = PBXGroup;
+			children = (
+				63CB5B811F4BCA5700EC1082 /* PhotoBannerController.h */,
+				63CB5B821F4BCA5700EC1082 /* PhotoBannerController.m */,
+			);
+			path = PhotoBanner;
 			sourceTree = "<group>";
 		};
 		63D3260A1EB9C39C006D424B /* JSBridge */ = {
@@ -331,6 +346,7 @@
 		B1748FCE1DDF154C0034C852 /* xPortal */ = {
 			isa = PBXGroup;
 			children = (
+				63CB5B801F4BCA2F00EC1082 /* PhotoBanner */,
 				63900A771F0660770080C48D /* runtime */,
 				63396C721EF0F724001525E7 /* BannerLoading */,
 				63EBC7F71EE16854001029B3 /* Paged */,
@@ -570,6 +586,7 @@
 				63A3AB991E7FD7C700FB47B8 /* Assets.xcassets in Resources */,
 				63D3260F1EB9C42F006D424B /* WVJBPage.html in Resources */,
 				63A3AB9A1E7FD7C700FB47B8 /* refresh.gif in Resources */,
+				63CB5B851F4C006500EC1082 /* empty_image.png in Resources */,
 				B1748FE51DDF154C0034C852 /* LaunchScreen.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -675,6 +692,7 @@
 				B17D8B1F1DF14D6E004CD18F /* Greeting.mm in Sources */,
 				63D3260D1EB9C3B1006D424B /* WVJBController.m in Sources */,
 				B17D8B051DF01A2D004CD18F /* B.m in Sources */,
+				63CB5B831F4BCA5700EC1082 /* PhotoBannerController.m in Sources */,
 				63D3261E1EB9EB16006D424B /* WKWebViewJavascriptBridge.m in Sources */,
 				B1748FD71DDF154C0034C852 /* PortalIndexController.m in Sources */,
 			);
