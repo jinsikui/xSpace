@@ -12,6 +12,7 @@ target 'xPortal’ do
   pod 'FLAnimatedImage'
   pod 'MJRefresh'
   pod 'FMDB'
+  pod 'QTNetwork’, :git => "https://git2.qingtingfm.com/app/QTNetwork.git", :tag => '0.1.2'
 end
 
 target 'xLibrary’ do

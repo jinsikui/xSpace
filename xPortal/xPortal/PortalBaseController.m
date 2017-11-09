@@ -10,6 +10,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.view.backgroundColor = kColor_FFFFFF;
 }
 
 - (void)actionBack{

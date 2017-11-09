@@ -16,6 +16,10 @@
 #import "BannerLoadingController.h"
 #import "RuntimeController.h"
 #import "PhotoBannerController.h"
+#import "PlayerController.h"
+#import "QTNetworkController.h"
+#import <AVFoundation/AVFoundation.h>
+#import <AVKit/AVKit.h>
 
 @interface PortalIndexController ()
 @property(nonatomic,strong)UIView *affineShowingPanel;
@@ -47,7 +51,21 @@
     [contentView addSubview:[xViewTools createBorderBtn:CGRectMake(0.5*(kContentWidth - 100), 690, 100, 40) borderColor:kRed_FF6600 bgColor:kColor_FFFFFF titleColor:kRed_FF6600 title:@"runtime" font:kFontPF(12) target:self selector:@selector(actionRuntime)]];
     [contentView addSubview:[xViewTools createBorderBtn:CGRectMake(0.5*(kContentWidth - 100), 750, 100, 40) borderColor:kRed_FF6600 bgColor:kColor_FFFFFF titleColor:kRed_FF6600 title:@"affine showing" font:kFontPF(12) target:self selector:@selector(actionAffineShowing)]];
     [contentView addSubview:[xViewTools createBorderBtn:CGRectMake(0.5*(kContentWidth - 100), 810, 100, 40) borderColor:kRed_FF6600 bgColor:kColor_FFFFFF titleColor:kRed_FF6600 title:@"图片Banner" font:kFontPF(12) target:self selector:@selector(actionPhotoBanner)]];
-    contentView.contentSize = CGSizeMake(kScreenWidth, 890);
+    [contentView addSubview:[xViewTools createBorderBtn:CGRectMake(0.5*(kContentWidth - 100), 870, 100, 40) borderColor:kRed_FF6600 bgColor:kColor_FFFFFF titleColor:kRed_FF6600 title:@"播放http视频" font:kFontPF(12) target:self selector:@selector(actionPlay)]];
+    [contentView addSubview:[xViewTools createBorderBtn:CGRectMake(0.5*(kContentWidth - 100), 930, 100, 40) borderColor:kRed_FF6600 bgColor:kColor_FFFFFF titleColor:kRed_FF6600 title:@"QTNetwork" font:kFontPF(12) target:self selector:@selector(actionQTNetwork)]];
+    contentView.contentSize = CGSizeMake(kScreenWidth, 1110);
+}
+
+-(void)actionQTNetwork{
+    [self.navigationController pushViewController:[[QTNetworkController alloc] init] animated:YES];
+}
+
+-(void)actionPlay{
+    NSURL *url = [NSURL URLWithString:@"http://devimages.apple.com.edgekey.net/samplecode/avfoundationMedia/AVFoundationQueuePlayer_HLS2/master.m3u8"];
+    AVPlayer *player = [AVPlayer playerWithURL:url];
+    AVPlayerViewController *controller = [[AVPlayerViewController alloc] init];
+    controller.player = player;
+    [self.navigationController presentViewController:controller animated:YES completion:nil];
 }
 
 -(void)actionPhotoBanner{

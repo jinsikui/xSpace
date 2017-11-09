@@ -3,6 +3,7 @@
 #import "AppDelegate.h"
 #import "PortalNavigationController.h"
 #import "PortalIndexController.h"
+#import <AVFoundation/AVFoundation.h>
 
 @interface AppDelegate (){
 }
@@ -28,6 +29,17 @@
     [[UIBarButtonItem appearance] setBackButtonTitlePositionAdjustment:UIOffsetMake(-9999, 0.f) forBarMetrics:UIBarMetricsDefault];
     //导航栏按钮文字
     [[UIBarButtonItem appearance] setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:kColor_000000,NSForegroundColorAttributeName, kFontPF(14), NSFontAttributeName, nil] forState:UIControlStateNormal];
+    
+    
+    AVAudioSession *audioSession = [AVAudioSession sharedInstance];
+    @try {
+        NSError *error;
+        [audioSession setCategory:AVAudioSessionCategoryPlayAndRecord error:&error];
+    }
+    @catch(NSException *exception) {
+        NSLog(@"Setting category to AVAudioSessionCategoryPlayAndRecord failed.");
+    }    
+    
     //
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     self.window.rootViewController = [[PortalNavigationController alloc] initWithRootViewController:[[PortalIndexController alloc] init]];

@@ -223,20 +223,6 @@
 			path = xStatis;
 			sourceTree = "<group>";
 		};
-		63900A881F067C9B0080C48D /* xNetwork */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = xNetwork;
-			sourceTree = "<group>";
-		};
-		63900A891F067D320080C48D /* xCalendar */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = xCalendar;
-			sourceTree = "<group>";
-		};
 		63900A8A1F067D320080C48D /* xPhotoBanner */ = {
 			isa = PBXGroup;
 			children = (
@@ -246,20 +232,6 @@
 				63CB5B541F46926C00EC1082 /* xPhotoBanner.m */,
 			);
 			path = xPhotoBanner;
-			sourceTree = "<group>";
-		};
-		63900A8B1F067DA60080C48D /* xLocation */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = xLocation;
-			sourceTree = "<group>";
-		};
-		63CB5B571F46CFF500EC1082 /* xSlider */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = xSlider;
 			sourceTree = "<group>";
 		};
 		63CB5B611F46F91200EC1082 /* xPlayer */ = {
@@ -357,13 +329,9 @@
 			children = (
 				63CB5B761F47037B00EC1082 /* TAPageControl */,
 				63CB5B611F46F91200EC1082 /* xPlayer */,
-				63CB5B571F46CFF500EC1082 /* xSlider */,
 				63D94A4F1F33230400170AA7 /* xAlert */,
 				63D94A4B1F33213000170AA7 /* xNoticeCenter */,
-				63900A8B1F067DA60080C48D /* xLocation */,
-				63900A891F067D320080C48D /* xCalendar */,
 				63900A8A1F067D320080C48D /* xPhotoBanner */,
-				63900A881F067C9B0080C48D /* xNetwork */,
 				63900A5E1F0649180080C48D /* xStatis */,
 				63900A181F04CA1A0080C48D /* runtime */,
 				63396C791EF0F8BA001525E7 /* xBannerLoading */,
@@ -506,13 +474,16 @@
 			files = (
 			);
 			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-xLibrary-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
