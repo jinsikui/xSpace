@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="11759" systemVersion="16C67" minimumToolsVersion="Automatic" sourceLanguage="Objective-C" userDefinedModelVersionIdentifier="">
+    <entity name="Department" representedClassName="DepartmentMO" syncable="YES">
+        <attribute name="title" attributeType="String" syncable="YES"/>
+        <relationship name="employees" optional="YES" toMany="YES" deletionRule="Deny" destinationEntity="Employee" inverseName="department" inverseEntity="Employee" syncable="YES"/>
+    </entity>
+    <entity name="Employee" representedClassName="EmployeeMO" syncable="YES">
+        <attribute name="hireDate" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="name" attributeType="String" syncable="YES"/>
+        <relationship name="department" maxCount="1" deletionRule="Nullify" destinationEntity="Department" inverseName="employees" inverseEntity="Department" syncable="YES"/>
+        <relationship name="managers" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Employee" inverseName="reporters" inverseEntity="Employee" syncable="YES"/>
+        <relationship name="reporters" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Employee" inverseName="managers" inverseEntity="Employee" syncable="YES"/>
+    </entity>
+    <entity name="FriendInfo" representedClassName="FriendInfoMO" syncable="YES">
+        <relationship name="setAsFriend" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Person" inverseName="beFriendedBy" inverseEntity="Person" syncable="YES"/>
+        <relationship name="source" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Person" inverseName="friends" inverseEntity="Person" syncable="YES"/>
+    </entity>
+    <entity name="Person" representedClassName="PersonMO" syncable="YES">
+        <attribute name="name" attributeType="String" syncable="YES"/>
+        <relationship name="beFriendedBy" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="FriendInfo" inverseName="setAsFriend" inverseEntity="FriendInfo" syncable="YES"/>
+        <relationship name="friends" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="FriendInfo" inverseName="source" inverseEntity="FriendInfo" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="Department" positionX="-36" positionY="98" width="128" height="75"/>
+        <element name="Employee" positionX="-369" positionY="51" width="128" height="120"/>
+        <element name="FriendInfo" positionX="-74" positionY="279" width="128" height="75"/>
+        <element name="Person" positionX="-360" positionY="266" width="128" height="90"/>
+    </elements>
+</model>
