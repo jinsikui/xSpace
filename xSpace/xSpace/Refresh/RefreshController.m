@@ -23,14 +23,14 @@
     [super viewDidLoad];
     self.title = @"上下拉刷新";
     self.view.backgroundColor = [UIColor whiteColor];
-    _scroll = [[UIScrollView alloc] initWithFrame:CGRectMake(0, 0, kScreenWidth, kContentHeight)];
+    _scroll = [[UIScrollView alloc] initWithFrame:CGRectMake(0, 0, kScreenWidth, kScreenHeight - kStatusBarHeight - kNavBarHeight)];
     [self.view addSubview:_scroll];
     _scroll.alwaysBounceVertical = YES;
     _scroll.delegate = self;
-    UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0, 0, kScreenWidth, kContentHeight+100)];
-    view.backgroundColor = kColor_FD8238;
+    UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0, 0, kScreenWidth, kScreenHeight - kStatusBarHeight - kNavBarHeight+100)];
+    view.backgroundColor = kColor(0xFD8238);
     [_scroll addSubview:view];
-    _scroll.contentSize = CGSizeMake(0, kContentHeight+100);
+    _scroll.contentSize = CGSizeMake(0, kScreenHeight - kStatusBarHeight - kNavBarHeight+100);
     //
     _scroll.mj_header = [xRefreshHeader headerWithRefreshingBlock:^{
         // 模拟延迟加载数据，因此2秒后才调用（真实开发中，可以移除这段gcd代码）

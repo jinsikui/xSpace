@@ -120,7 +120,7 @@
     //
     _departmentTable = [[UITableView alloc] initWithFrame:CGRectMake(x, y, 200, 100)];
     _departmentTable.layer.borderWidth = 0.5;
-    _departmentTable.layer.borderColor = kColor_000000.CGColor;
+    _departmentTable.layer.borderColor = kColor(0x000000).CGColor;
     _departmentTable.dataSource = self;
     _departmentTable.delegate = self;
     [_scroll addSubview:_departmentTable];
@@ -128,7 +128,7 @@
     //
     _employeeTable = [[UITableView alloc] initWithFrame:CGRectMake(x, y, kScreenWidth - 2*x, 150)];
     _employeeTable.layer.borderWidth = 0.5;
-    _employeeTable.layer.borderColor = kColor_000000.CGColor;
+    _employeeTable.layer.borderColor = kColor(0x000000).CGColor;
     _employeeTable.dataSource = self;
     _employeeTable.delegate = self;
     [_scroll addSubview:_employeeTable];
@@ -136,29 +136,33 @@
     //
     _personTable = [[UITableView alloc] initWithFrame:CGRectMake(x, y, kScreenWidth - 2*x, 150)];
     _personTable.layer.borderWidth = 0.5;
-    _personTable.layer.borderColor = kColor_000000.CGColor;
+    _personTable.layer.borderColor = kColor(0x000000).CGColor;
     _personTable.dataSource = self;
     _personTable.delegate = self;
     [_scroll addSubview:_personTable];
     y += 150+10;
     //
-    _srcLabel = [xViewTools createLabel:@"" frame:CGRectMake(x, y, 100, 28) alignment:NSTextAlignmentLeft font:kFontPF(14) textColor:kColor_000000 line:1];
+    _srcLabel = [xViewFactory labelWithText:@"" font:kFontPF(14) color:kColor(0x000000) alignment:NSTextAlignmentLeft];
+    _srcLabel.frame = CGRectMake(x, y, 100, 28);
+    _srcLabel.numberOfLines = 1;
     [_scroll addSubview:_srcLabel];
     //
-    _friendedLabel = [xViewTools createLabel:@"" frame:CGRectMake(x+120, y, 100, 28) alignment:NSTextAlignmentLeft font:kFontPF(14) textColor:kColor_000000 line:1];
+    _friendedLabel = [xViewFactory labelWithText:@"" font:kFontPF(14) color:kColor(0x000000) alignment:NSTextAlignmentLeft];
+    _friendedLabel.frame = CGRectMake(x+120, y, 100, 28);
+    _friendedLabel.numberOfLines = 1;
     [_scroll addSubview:_friendedLabel];
     y += 38;
     //
     _friendTable = [[UITableView alloc] initWithFrame:CGRectMake(x, y, 100, 150)];
     _friendTable.layer.borderWidth = 0.5;
-    _friendTable.layer.borderColor = kColor_000000.CGColor;
+    _friendTable.layer.borderColor = kColor(0x000000).CGColor;
     _friendTable.dataSource = self;
     _friendTable.delegate = self;
     [_scroll addSubview:_friendTable];
     //
     _friendedTable = [[UITableView alloc] initWithFrame:CGRectMake(x+120, y, 100, 150)];
     _friendedTable.layer.borderWidth = 0.5;
-    _friendedTable.layer.borderColor = kColor_000000.CGColor;
+    _friendedTable.layer.borderColor = kColor(0x000000).CGColor;
     _friendedTable.dataSource = self;
     _friendedTable.delegate = self;
     [_scroll addSubview:_friendedTable];

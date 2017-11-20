@@ -3,7 +3,7 @@
 #import "xPlayer.h"
 #import <AVFoundation/AVFoundation.h>
 #import "Masonry.h"
-#import "xNoticeCenter.h"
+#import "xNotice.h"
 @interface xPlayer ()
 @property(nonatomic,strong)AVPlayer *player;
 @property(nonatomic,strong)AVPlayerLayer *playerLayer;
@@ -50,12 +50,12 @@ static void *PlayViewloadedTimeRanges = &PlayViewloadedTimeRanges;
         }
     }];
     
-    [[xNoticeCenter sharedInstance] registerAppBecomeActive:self block:^{
+    [[xNotice shared] registerAppBecomeActive:self action:^(id prame){
         if(weak.appBackIsPlaying ) {
           [weak.player play];
         }
     }];
-    [[xNoticeCenter sharedInstance] registerAppEnterBackground:self block:^{
+    [[xNotice shared] registerAppEnterBackground:self action:^(id param){
         weak.appBackIsPlaying = weak.isPlaying;
         [weak.player pause];
     }];

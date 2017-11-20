@@ -108,10 +108,10 @@
     [_player play];
     [self showLoading];
     __weak typeof(self)weak = self;
-    self.timer = [xTimer timerWithStart:3*NSEC_PER_SEC leeway:0 queue:dispatch_get_main_queue() block:^{
+    self.timer = [xTimer timerWithStartSeconds:3 queue:dispatch_get_main_queue() action:^{
         [weak hiddenMaskView];
     }];
-    [self.timer resume];
+    [self.timer start];
 }
 -(void)hiddenMaskView {
     if (self.topBar.alpha != 1) {
@@ -293,7 +293,7 @@
     if (!_currentVideoTime) {
         _currentVideoTime = [[UILabel alloc] init];
         _currentVideoTime.textAlignment = NSTextAlignmentCenter;
-        _currentVideoTime.textColor = kColor_FFFFFF;
+        _currentVideoTime.textColor = kColor(0xFFFFFF);
         _currentVideoTime.font = [UIFont systemFontOfSize:10];
         _currentVideoTime.text = @"00:00";
     }
@@ -304,7 +304,7 @@
     if (!_totalVideoTime) {
         _totalVideoTime = [[UILabel alloc] init];
         _totalVideoTime.textAlignment = NSTextAlignmentCenter;
-        _totalVideoTime.textColor = kColor_FFFFFF;
+        _totalVideoTime.textColor = kColor(0xFFFFFF);
         _totalVideoTime.font = [UIFont systemFontOfSize:10];
         _totalVideoTime.text = @"00:00";
     }
@@ -313,8 +313,8 @@
 -(UIProgressView *)progressView {
     if (!_progressView) {
         _progressView = [[UIProgressView alloc] initWithProgressViewStyle:UIProgressViewStyleDefault];
-        _progressView.progressTintColor = kColor_333333;
-        _progressView.trackTintColor    = kColor_555555;
+        _progressView.progressTintColor = kColor(0x333333);
+        _progressView.trackTintColor    = kColor(0x555555);
     }
     return _progressView;
 }

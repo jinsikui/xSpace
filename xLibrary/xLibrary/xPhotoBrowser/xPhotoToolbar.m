@@ -23,7 +23,7 @@
         indexLabel_ = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, self.frame.size.width, self.frame.size.height)];
         indexLabel_.font = kFontRegular(11);
         indexLabel_.backgroundColor = [UIColor clearColor];
-        indexLabel_.textColor = kColor_B2B2B2;
+        indexLabel_.textColor = kColor(0xB2B2B2);
         indexLabel_.textAlignment = NSTextAlignmentLeft;
         indexLabel_.autoresizingMask = UIViewAutoresizingFlexibleHeight | UIViewAutoresizingFlexibleWidth;
         [self addSubview:indexLabel_];

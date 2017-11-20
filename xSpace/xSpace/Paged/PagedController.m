@@ -18,7 +18,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.title = @"分页";
-    self.view.backgroundColor = kColor_FFFFFF;
+    self.view.backgroundColor = kColor(0xFFFFFF);
     UIScrollView *scrollView = [[UIScrollView alloc] init];
     scrollView.showsHorizontalScrollIndicator = NO;
     UIView *v;

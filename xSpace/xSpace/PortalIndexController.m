@@ -32,27 +32,59 @@
 {
     [super viewDidLoad];
     self.title = @"首页";
-    self.view.backgroundColor = kColor_FFFFFF;
+    self.view.backgroundColor = kColor(0xFFFFFF);
     
     UIScrollView *contentView = [[UIScrollView alloc] initWithFrame:CGRectMake(0, 0, kScreenWidth, kContentHeight)];
     contentView.alwaysBounceVertical = YES;
     [self.view addSubview:contentView];
-    [contentView addSubview:[xViewTools createBorderBtn:CGRectMake(0.5*(kContentWidth - 100), 30, 100, 40) borderColor:kRed_FF6600 bgColor:kColor_FFFFFF titleColor:kRed_FF6600 title:@"图片浏览" font:kFontPF(14) target:self selector:@selector(actionShowPhotoBrowser)]];
-    [contentView addSubview:[xViewTools createBorderBtn:CGRectMake(0.5*(kContentWidth - 100), 90, 100, 40) borderColor:kRed_FF6600 bgColor:kColor_FFFFFF titleColor:kRed_FF6600 title:@"AutoLayout" font:kFontPF(14) target:self selector:@selector(actionShowAutoLayout)]];
-    [contentView addSubview:[xViewTools createBorderBtn:CGRectMake(0.5*(kContentWidth - 100), 150, 100, 40) borderColor:kRed_FF6600 bgColor:kColor_FFFFFF titleColor:kRed_FF6600 title:@"OC语法" font:kFontPF(14) target:self selector:@selector(actionShowOC)]];
-    [contentView addSubview:[xViewTools createBorderBtn:CGRectMake(0.5*(kContentWidth - 100), 210, 100, 40) borderColor:kRed_FF6600 bgColor:kColor_FFFFFF titleColor:kRed_FF6600 title:@"事件处理" font:kFontPF(14) target:self selector:@selector(actionShowEvent)]];
-    [contentView addSubview:[xViewTools createBorderBtn:CGRectMake(0.5*(kContentWidth - 100), 270, 100, 40) borderColor:kRed_FF6600 bgColor:kColor_FFFFFF titleColor:kRed_FF6600 title:@"CoreData" font:kFontPF(14) target:self selector:@selector(actionShowCoreData)]];
-    [contentView addSubview:[xViewTools createBorderBtn:CGRectMake(0.5*(kContentWidth - 100), 330, 100, 40) borderColor:kRed_FF6600 bgColor:kColor_FFFFFF titleColor:kRed_FF6600 title:@"FMDB" font:kFontPF(14) target:self selector:@selector(actionFMDB)]];
-    [contentView addSubview:[xViewTools createBorderBtn:CGRectMake(0.5*(kContentWidth - 100), 390, 100, 40) borderColor:kRed_FF6600 bgColor:kColor_FFFFFF titleColor:kRed_FF6600 title:@"下拉刷新" font:kFontPF(14) target:self selector:@selector(actionRefresh)]];
-    [contentView addSubview:[xViewTools createBorderBtn:CGRectMake(0.5*(kContentWidth - 100), 450, 100, 40) borderColor:kRed_FF6600 bgColor:kColor_FFFFFF titleColor:kRed_FF6600 title:@"其他App交互" font:kFontPF(14) target:self selector:@selector(actionInterApp)]];
-    [contentView addSubview:[xViewTools createBorderBtn:CGRectMake(0.5*(kContentWidth - 100), 510, 100, 40) borderColor:kRed_FF6600 bgColor:kColor_FFFFFF titleColor:kRed_FF6600 title:@"JSBridge" font:kFontPF(14) target:self selector:@selector(actionJSBridge)]];
-    [contentView addSubview:[xViewTools createBorderBtn:CGRectMake(0.5*(kContentWidth - 100), 570, 100, 40) borderColor:kRed_FF6600 bgColor:kColor_FFFFFF titleColor:kRed_FF6600 title:@"分页" font:kFontPF(14) target:self selector:@selector(actionPaged)]];
-    [contentView addSubview:[xViewTools createBorderBtn:CGRectMake(0.5*(kContentWidth - 100), 630, 100, 40) borderColor:kRed_FF6600 bgColor:kColor_FFFFFF titleColor:kRed_FF6600 title:@"Banner Loading" font:kFontPF(12) target:self selector:@selector(actionBannerLoading)]];
-    [contentView addSubview:[xViewTools createBorderBtn:CGRectMake(0.5*(kContentWidth - 100), 690, 100, 40) borderColor:kRed_FF6600 bgColor:kColor_FFFFFF titleColor:kRed_FF6600 title:@"runtime" font:kFontPF(12) target:self selector:@selector(actionRuntime)]];
-    [contentView addSubview:[xViewTools createBorderBtn:CGRectMake(0.5*(kContentWidth - 100), 750, 100, 40) borderColor:kRed_FF6600 bgColor:kColor_FFFFFF titleColor:kRed_FF6600 title:@"affine showing" font:kFontPF(12) target:self selector:@selector(actionAffineShowing)]];
-    [contentView addSubview:[xViewTools createBorderBtn:CGRectMake(0.5*(kContentWidth - 100), 810, 100, 40) borderColor:kRed_FF6600 bgColor:kColor_FFFFFF titleColor:kRed_FF6600 title:@"图片Banner" font:kFontPF(12) target:self selector:@selector(actionPhotoBanner)]];
-    [contentView addSubview:[xViewTools createBorderBtn:CGRectMake(0.5*(kContentWidth - 100), 870, 100, 40) borderColor:kRed_FF6600 bgColor:kColor_FFFFFF titleColor:kRed_FF6600 title:@"播放http视频" font:kFontPF(12) target:self selector:@selector(actionPlay)]];
-    [contentView addSubview:[xViewTools createBorderBtn:CGRectMake(0.5*(kContentWidth - 100), 930, 100, 40) borderColor:kRed_FF6600 bgColor:kColor_FFFFFF titleColor:kRed_FF6600 title:@"QTNetwork" font:kFontPF(12) target:self selector:@selector(actionQTNetwork)]];
+    UIButton *btn = [xViewFactory buttonWithTitle:@"图片浏览" font:kFontPF(14) titleColor:kColor(0xFF6600) bgColor:kColor(0xFFFFFF) cornerRadius:0 borderColor:kColor(0xFF6600) borderWidth:0.5 frame:CGRectMake(0.5*(kContentWidth - 100), 30, 100, 40)];
+    [btn addTarget:self action:@selector(actionShowPhotoBrowser) forControlEvents:UIControlEventTouchUpInside];
+    [contentView addSubview:btn];
+    btn = [xViewFactory buttonWithTitle:@"AutoLayout" font:kFontPF(14) titleColor:kColor(0xFF6600) bgColor:kColor(0xFFFFFF) cornerRadius:0 borderColor:kColor(0xFF6600) borderWidth:0.5 frame:CGRectMake(0.5*(kContentWidth - 100), 90, 100, 40)];
+    [btn addTarget:self action:@selector(actionShowAutoLayout) forControlEvents:UIControlEventTouchUpInside];
+    [contentView addSubview:btn];
+    btn = [xViewFactory buttonWithTitle:@"OC语法" font:kFontPF(14) titleColor:kColor(0xFF6600) bgColor:kColor(0xFFFFFF) cornerRadius:0 borderColor:kColor(0xFF6600) borderWidth:0.5 frame:CGRectMake(0.5*(kContentWidth - 100), 150, 100, 40)];
+    [btn addTarget:self action:@selector(actionShowOC) forControlEvents:UIControlEventTouchUpInside];
+    [contentView addSubview:btn];
+    btn = [xViewFactory buttonWithTitle:@"事件处理" font:kFontPF(14) titleColor:kColor(0xFF6600) bgColor:kColor(0xFFFFFF) cornerRadius:0 borderColor:kColor(0xFF6600) borderWidth:0.5 frame:CGRectMake(0.5*(kContentWidth - 100), 210, 100, 40)];
+    [btn addTarget:self action:@selector(actionShowEvent) forControlEvents:UIControlEventTouchUpInside];
+    [contentView addSubview:btn];
+    btn = [xViewFactory buttonWithTitle:@"CoreData" font:kFontPF(14) titleColor:kColor(0xFF6600) bgColor:kColor(0xFFFFFF) cornerRadius:0 borderColor:kColor(0xFF6600) borderWidth:0.5 frame:CGRectMake(0.5*(kContentWidth - 100), 270, 100, 40)];
+    [btn addTarget:self action:@selector(actionShowCoreData) forControlEvents:UIControlEventTouchUpInside];
+    [contentView addSubview:btn];
+    btn = [xViewFactory buttonWithTitle:@"FMDB" font:kFontPF(14) titleColor:kColor(0xFF6600) bgColor:kColor(0xFFFFFF) cornerRadius:0 borderColor:kColor(0xFF6600) borderWidth:0.5 frame:CGRectMake(0.5*(kContentWidth - 100), 330, 100, 40)];
+    [btn addTarget:self action:@selector(actionFMDB) forControlEvents:UIControlEventTouchUpInside];
+    [contentView addSubview:btn];
+    btn = [xViewFactory buttonWithTitle:@"下拉刷新" font:kFontPF(14) titleColor:kColor(0xFF6600) bgColor:kColor(0xFFFFFF) cornerRadius:0 borderColor:kColor(0xFF6600) borderWidth:0.5 frame:CGRectMake(0.5*(kContentWidth - 100), 390, 100, 40)];
+    [btn addTarget:self action:@selector(actionRefresh) forControlEvents:UIControlEventTouchUpInside];
+    [contentView addSubview:btn];
+    btn = [xViewFactory buttonWithTitle:@"其他App交互" font:kFontPF(14) titleColor:kColor(0xFF6600) bgColor:kColor(0xFFFFFF) cornerRadius:0 borderColor:kColor(0xFF6600) borderWidth:0.5 frame:CGRectMake(0.5*(kContentWidth - 100), 450, 100, 40)];
+    [btn addTarget:self action:@selector(actionInterApp) forControlEvents:UIControlEventTouchUpInside];
+    [contentView addSubview:btn];
+    btn = [xViewFactory buttonWithTitle:@"JSBridge" font:kFontPF(14) titleColor:kColor(0xFF6600) bgColor:kColor(0xFFFFFF) cornerRadius:0 borderColor:kColor(0xFF6600) borderWidth:0.5 frame:CGRectMake(0.5*(kContentWidth - 100), 510, 100, 40)];
+    [btn addTarget:self action:@selector(actionJSBridge) forControlEvents:UIControlEventTouchUpInside];
+    [contentView addSubview:btn];
+    btn = [xViewFactory buttonWithTitle:@"分页" font:kFontPF(14) titleColor:kColor(0xFF6600) bgColor:kColor(0xFFFFFF) cornerRadius:0 borderColor:kColor(0xFF6600) borderWidth:0.5 frame:CGRectMake(0.5*(kContentWidth - 100), 570, 100, 40)];
+    [btn addTarget:self action:@selector(actionPaged) forControlEvents:UIControlEventTouchUpInside];
+    [contentView addSubview:btn];
+    btn = [xViewFactory buttonWithTitle:@"Banner Loading" font:kFontPF(14) titleColor:kColor(0xFF6600) bgColor:kColor(0xFFFFFF) cornerRadius:0 borderColor:kColor(0xFF6600) borderWidth:0.5 frame:CGRectMake(0.5*(kContentWidth - 100), 630, 100, 40)];
+    [btn addTarget:self action:@selector(actionBannerLoading) forControlEvents:UIControlEventTouchUpInside];
+    [contentView addSubview:btn];
+    btn = [xViewFactory buttonWithTitle:@"runtime" font:kFontPF(14) titleColor:kColor(0xFF6600) bgColor:kColor(0xFFFFFF) cornerRadius:0 borderColor:kColor(0xFF6600) borderWidth:0.5 frame:CGRectMake(0.5*(kContentWidth - 100), 690, 100, 40)];
+    [btn addTarget:self action:@selector(actionRuntime) forControlEvents:UIControlEventTouchUpInside];
+    [contentView addSubview:btn];
+    btn = [xViewFactory buttonWithTitle:@"affine showing" font:kFontPF(14) titleColor:kColor(0xFF6600) bgColor:kColor(0xFFFFFF) cornerRadius:0 borderColor:kColor(0xFF6600) borderWidth:0.5 frame:CGRectMake(0.5*(kContentWidth - 100), 750, 100, 40)];
+    [btn addTarget:self action:@selector(actionAffineShowing) forControlEvents:UIControlEventTouchUpInside];
+    [contentView addSubview:btn];
+    btn = [xViewFactory buttonWithTitle:@"图片Banner" font:kFontPF(14) titleColor:kColor(0xFF6600) bgColor:kColor(0xFFFFFF) cornerRadius:0 borderColor:kColor(0xFF6600) borderWidth:0.5 frame:CGRectMake(0.5*(kContentWidth - 100), 810, 100, 40)];
+    [btn addTarget:self action:@selector(actionPhotoBanner) forControlEvents:UIControlEventTouchUpInside];
+    [contentView addSubview:btn];
+    btn = [xViewFactory buttonWithTitle:@"播放http视频" font:kFontPF(14) titleColor:kColor(0xFF6600) bgColor:kColor(0xFFFFFF) cornerRadius:0 borderColor:kColor(0xFF6600) borderWidth:0.5 frame:CGRectMake(0.5*(kContentWidth - 100), 870, 100, 40)];
+    [btn addTarget:self action:@selector(actionPlay) forControlEvents:UIControlEventTouchUpInside];
+    [contentView addSubview:btn];
+    btn = [xViewFactory buttonWithTitle:@"QTNetwork" font:kFontPF(14) titleColor:kColor(0xFF6600) bgColor:kColor(0xFFFFFF) cornerRadius:0 borderColor:kColor(0xFF6600) borderWidth:0.5 frame:CGRectMake(0.5*(kContentWidth - 100), 930, 100, 40)];
+    [btn addTarget:self action:@selector(actionQTNetwork) forControlEvents:UIControlEventTouchUpInside];
+    [contentView addSubview:btn];
     contentView.contentSize = CGSizeMake(kScreenWidth, 1110);
 }
 
@@ -79,8 +111,9 @@
     
     UIView *rootView = window.rootViewController.view;
     _affineShowingPanel = [[UIView alloc] initWithFrame:CGRectMake(0, 150, kScreenWidth, kScreenHeight)];
-    [_affineShowingPanel addSubview:[xViewTools createBorderBtn:CGRectMake(0.5*(kContentWidth - 100), 150, 100, 40) borderColor:kRed_FF6600 bgColor:kColor_FFFFFF titleColor:kRed_FF6600 title:@"返回" font:kFontPF(14) target:self selector:@selector(actionBackFromAffineShowing)]];
-    _affineShowingPanel.backgroundColor = kColor_FD8238;
+    UIButton *btn = [xViewFactory buttonWithTitle:@"返回" font:kFontPF(14) titleColor:kColor(0xFF6600) bgColor:kColor(0xFFFFFF) cornerRadius:0 borderColor:kColor(0xFF6600) borderWidth:0.5 frame:CGRectMake(0.5*(kContentWidth - 100), 150, 100, 40)];
+    [_affineShowingPanel addSubview:btn];
+    _affineShowingPanel.backgroundColor = kColor(0xFD8238);
     [window addSubview:_affineShowingPanel];
     
     [UIView animateWithDuration:0.3 animations:^{

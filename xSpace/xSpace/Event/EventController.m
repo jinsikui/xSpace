@@ -1,6 +1,7 @@
 
 
 #import "EventController.h"
+#import "xNotice.h"
 
 #define NotiName @"MyNoti"
 
@@ -46,6 +47,15 @@
     UITextView *t = [[UITextView alloc] initWithFrame:CGRectMake(20, 230, kContentWidth - 40, kContentHeight - 230)];
     textView_ = t;
     [scroll addSubview:t];
+    
+    //
+    [[xNotice shared] registerEvent:@"customEvent" lifeIndicator:self action:^(id param) {
+        NSLog(@"===== fire custom event, name:%@ =====", ((NSDictionary<NSString*, id>*)param)[@"name"]);
+    }];
+    
+    [[xNotice shared] registerTimer:self intervalSeconds:3 action:^{
+        NSLog(@"===== timer fire =====");
+    }];
 }
 
 -(void)appendStr:(NSString*)str{
@@ -66,6 +76,7 @@
 -(void)btn2Click:(UIButton*)btn{
     [self appendStr:@"btn2 click"];
     [[NSNotificationCenter defaultCenter] postNotificationName:NotiName object:nil];
+    [[xNotice shared] postEvent:@"customEvent" userInfo:@{@"name": @"hello world"}];
 }
 
 -(void)label1Click:(UILabel*)label{

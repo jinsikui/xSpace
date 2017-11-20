@@ -16,7 +16,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.view.backgroundColor = kColor_000000;
+    self.view.backgroundColor = kColor(0x000000);
     
 }
 

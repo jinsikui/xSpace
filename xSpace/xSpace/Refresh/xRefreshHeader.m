@@ -35,7 +35,7 @@
     [self addSubview:_imageView];
     //
     _label = [[UILabel alloc] init];
-    _label.textColor = kColor_333333;
+    _label.textColor = kColor(0x333333);
     _label.font = kFontPF(11);
     _label.textAlignment = NSTextAlignmentCenter;
     [self addSubview:_label];

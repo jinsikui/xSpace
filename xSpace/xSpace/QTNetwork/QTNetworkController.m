@@ -19,7 +19,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.title = @"QTNetwork test";
-    UILabel *label = [xViewTools createLabel:@"See console print" frame:CGRectMake(100, 100, 200, 17) alignment:NSTextAlignmentLeft font:kFontPF(17) textColor:kColor_000000 line:1];
+    UILabel *label = [xViewFactory labelWithText:@"See console print" font:kFontPF(17) color:kColor(0x000000) alignment:NSTextAlignmentLeft];
+    label.frame = CGRectMake(100, 100, 200, 17);
     [self.view addSubview:label];
     self.manager = [QTNetworkManager manager];
     TestAPI *api = [[TestAPI alloc] initWithId:@"abcab67b8afe4a2ac1dd559d483348aa"];

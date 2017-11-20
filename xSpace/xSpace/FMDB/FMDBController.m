@@ -84,8 +84,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.title = @"FMDB";
-    self.view.backgroundColor = kColor_FFFFFF;
-    _scroll = [[UIScrollView alloc] initWithFrame:CGRectMake(0, 0, kScreenWidth, kContentHeight)];
+    self.view.backgroundColor = kColor(0xFFFFFF);
+    _scroll = [[UIScrollView alloc] initWithFrame:CGRectMake(0, 0, kScreenWidth, kScreenHeight - kStatusBarHeight - kNavBarHeight)];
     [self.view addSubview:_scroll];
     _scroll.alwaysBounceVertical = YES;
     
@@ -94,7 +94,7 @@
     //
     _departmentTable = [[UITableView alloc] initWithFrame:CGRectMake(x, y, 200, 100)];
     _departmentTable.layer.borderWidth = 0.5;
-    _departmentTable.layer.borderColor = kColor_000000.CGColor;
+    _departmentTable.layer.borderColor = kColor(0x000000).CGColor;
     _departmentTable.dataSource = self;
     _departmentTable.delegate = self;
     [_scroll addSubview:_departmentTable];
@@ -102,7 +102,7 @@
     //
     _employeeTable = [[UITableView alloc] initWithFrame:CGRectMake(x, y, kScreenWidth - 2*x, 150)];
     _employeeTable.layer.borderWidth = 0.5;
-    _employeeTable.layer.borderColor = kColor_000000.CGColor;
+    _employeeTable.layer.borderColor = kColor(0x000000).CGColor;
     _employeeTable.dataSource = self;
     _employeeTable.delegate = self;
     [_scroll addSubview:_employeeTable];

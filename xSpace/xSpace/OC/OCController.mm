@@ -19,7 +19,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.title = @"OC语法";
-    self.view.backgroundColor = kColor_FFFFFF;
+    self.view.backgroundColor = kColor(0xFFFFFF);
     
     A *a = [[A alloc] initWithStr:@"Hellow" andStr:@"World"];
     a->s1_ = @"w_Hello";
@@ -43,13 +43,15 @@
     [a x_makeStr];
     NSString *str = [a x_genStr];
     //
-    UILabel *label = [xViewTools createLabel:str frame:CGRectMake(0, 50, kContentWidth, 200) alignment:NSTextAlignmentCenter font:kFontPF(14) textColor:kColor_000000 line:0];
+    UILabel *label = [xViewFactory labelWithText:str font:kFontPF(14) color:kColor(0) alignment:NSTextAlignmentCenter];
+    label.frame = CGRectMake(0, 50, kContentWidth, 200);
     [self.view addSubview:label];
     
     //call c++
     NSString* str2 = [NSString stringWithCString:greeting_.greet().c_str() encoding:[NSString defaultCStringEncoding]];
     //
-    UILabel *label2 = [xViewTools createLabel:str2 frame:CGRectMake(0, 250, kContentWidth, 20) alignment:NSTextAlignmentCenter font:kFontPF(14) textColor:kColor_000000 line:0];
+    UILabel *label2 = [xViewFactory labelWithText:str2 font:kFontPF(14) color:kColor(0) alignment:NSTextAlignmentCenter];
+    label2.frame = CGRectMake(0, 250, kContentWidth, 20);
     [self.view addSubview:label2];
     
 }

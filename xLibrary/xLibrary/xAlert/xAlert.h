@@ -26,10 +26,10 @@ typedef void(^xAlertResultCallback)(xAlertResult result);
 
 @interface xAlert : NSObject
 
-+ (void) showAlertWithMessage:(NSString *)message;
++ (void) showWithMessage:(NSString *)message;
 
-+ (void) showAlertWithMessage:(NSString *)message completionHandler:(xAlertResultCallback)completionHandler;
++ (void) showWithMessage:(NSString *)message completionHandler:(xAlertResultCallback)completionHandler;
 
-+ (void) showAlertWithTitle:(NSString *)title message:(NSString *)message cancelTitle:(NSString *)cancelTitle confirmTitle:(NSString *)confirmTitle completionHandler:(xAlertResultCallback)completionHandler;
++ (void) showWithTitle:(NSString *)title message:(NSString *)message cancelTitle:(NSString *)cancelTitle confirmTitle:(NSString *)confirmTitle completionHandler:(xAlertResultCallback)completionHandler;
 
 @end

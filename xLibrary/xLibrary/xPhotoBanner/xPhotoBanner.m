@@ -197,11 +197,11 @@
 -(void)startTimer{
     if(!_timer){
         __weak typeof(self)weak = self;
-        _timer = [xTimer timerWithStart:_autoScrollIntervalSeconds*NSEC_PER_SEC leeway:0 queue:dispatch_get_main_queue() block:^{
+        _timer = [xTimer timerWithStartSeconds:_autoScrollIntervalSeconds queue:dispatch_get_main_queue() action:^{
             [weak scrollToNext];
         }];
     }
-    [_timer resume];
+    [_timer start];
 }
 
 -(void)stopTimer{

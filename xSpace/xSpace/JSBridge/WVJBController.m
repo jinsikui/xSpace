@@ -20,7 +20,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.title = @"WVJB";
-    self.view.backgroundColor = kColor_FFFFFF;
+    self.view.backgroundColor = kColor(0xFFFFFF);
 }
 
 - (void)viewWillAppear:(BOOL)animated {

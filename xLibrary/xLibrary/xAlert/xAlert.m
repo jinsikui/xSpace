@@ -53,7 +53,7 @@
 @interface xAlertContext : NSObject<UIAlertViewDelegate>
 
 @property (nonatomic) BOOL haveShow;
-@property (nonatomic, strong) NSString *lastAlert;
+@property (nonatomic, strong) NSString *lastMessage;
 
 @end
 
@@ -70,9 +70,9 @@
 
 @end
 
-static xAlertContext *alertContext = nil;
-
 //======================================================================
+
+static xAlertContext *alertContext = nil;
 
 @implementation xAlert
 
@@ -81,23 +81,23 @@ static xAlertContext *alertContext = nil;
     alertContext  = [[xAlertContext alloc] init];
 }
 
-+ (void) showAlertWithMessage:(NSString *)message
++ (void) showWithMessage:(NSString *)message
 {
-    [self showAlertWithTitle:@"提示" message:message cancelTitle:@"确定" confirmTitle:nil completionHandler:nil];
+    [self showWithTitle:@"提示" message:message cancelTitle:@"确定" confirmTitle:nil completionHandler:nil];
 }
 
-+ (void) showAlertWithMessage:(NSString *)message completionHandler:(xAlertResultCallback)completionHandler
++ (void) showWithMessage:(NSString *)message completionHandler:(xAlertResultCallback)completionHandler
 {
-    [self showAlertWithTitle:@"提示" message:message cancelTitle:@"确定" confirmTitle:nil completionHandler:completionHandler];
+    [self showWithTitle:@"提示" message:message cancelTitle:@"确定" confirmTitle:nil completionHandler:completionHandler];
 }
 
-+ (void) showAlertWithTitle:(NSString *)title message:(NSString *)message cancelTitle:(NSString *)cancelTitle confirmTitle:(NSString *)confirmTitle completionHandler:(xAlertResultCallback)completionHandler
++ (void) showWithTitle:(NSString *)title message:(NSString *)message cancelTitle:(NSString *)cancelTitle confirmTitle:(NSString *)confirmTitle completionHandler:(xAlertResultCallback)completionHandler
 {
-    if (alertContext.haveShow == YES && [alertContext.lastAlert isEqualToString:message]) {
+    if (alertContext.haveShow == YES && [alertContext.lastMessage isEqualToString:message]) {
         return;
     }
     alertContext.haveShow = YES;
-    alertContext.lastAlert = message;
+    alertContext.lastMessage = message;
     if (V_IOS_8) {
         
         //

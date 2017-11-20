@@ -21,26 +21,26 @@
     [super viewDidLoad];
     
     self.title = @"AutoLayout";
-    self.view.backgroundColor = kColor_FFFFFF;
+    self.view.backgroundColor = kColor(0xFFFFFF);
     
     v1_ = [[UIView alloc] init];
-    v1_.backgroundColor = kRed_FF6600;
+    v1_.backgroundColor = kColor(0xFF6600);
     [self.view addSubview:v1_];
     
     v2_ = [[UIView alloc] init];
-    v2_.backgroundColor = kGreen_7DD429;
+    v2_.backgroundColor = kColor(0x7DD429);
     [self.view addSubview:v2_];
     
     v3_ = [[UIView alloc] init];
-    v3_.backgroundColor = kBlue_0066CC;
+    v3_.backgroundColor = kColor(0x0066CC);
     [self.view addSubview:v3_];
     
     v4_ = [[UIView alloc] init];
-    v4_.backgroundColor = kYellow_FFFFD7;
+    v4_.backgroundColor = kColor(0xFFFFD7);
     [self.view addSubview:v4_];
     
     v5_ = [[UIView alloc] init];
-    v5_.backgroundColor = kGray_666666;
+    v5_.backgroundColor = kColor(0x666666);
     [self.view addSubview:v5_];
     [v5_ addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(actionChangeSize)]];
     

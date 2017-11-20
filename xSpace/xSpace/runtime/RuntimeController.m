@@ -16,9 +16,10 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.title = @"runtime";
-    self.view.backgroundColor = kColor_FFFFFF;
+    self.view.backgroundColor = kColor(0xFFFFFF);
     //
-    UILabel *label = [xViewTools createLabel:nil frame:CGRectMake(0, 10, kContentWidth, kContentHeight) alignment:NSTextAlignmentCenter font:kFontPF(14) textColor:kColor_000000 line:0];
+    UILabel *label = [xViewFactory labelWithText:nil font:kFontPF(14) color:kColor(0x0) alignment:NSTextAlignmentCenter];
+    label.frame = CGRectMake(0, 10, kContentWidth, kContentHeight);
     [self.view addSubview:label];
     
     /**

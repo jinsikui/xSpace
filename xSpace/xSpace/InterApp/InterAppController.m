@@ -18,11 +18,14 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.title = @"其他App交互";
-    self.view.backgroundColor = kColor_FFFFFF;
+    self.view.backgroundColor = kColor(0xFFFFFF);
     self.latitude = 39.978077422708985;
     self.longitude = 116.48346795506615;
     //
-    [self.view addSubview:[xViewTools createBorderBtn:CGRectMake(0.5*(kContentWidth - 100), 30, 100, 40) borderColor:kRed_FF6600 bgColor:kColor_FFFFFF titleColor:kRed_FF6600 title:@"打开地图" font:kFontPF(14) target:self selector:@selector(actionMap)]];
+    UIButton *btn = [xViewFactory buttonWithTitle:@"打开地图" font:kFontPF(14) titleColor:kColor(0xFF6600) bgColor:kColor(0xFFFFFF) borderColor:kColor(0xFF6600) borderWidth:0.5];
+    btn.frame = CGRectMake(0.5*(kScreenWidth - 100), 30, 100, 40);
+    [btn addTarget:self action:@selector(actionMap) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:btn];
 }
 
 - (void)actionMap{

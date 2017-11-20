@@ -76,7 +76,8 @@
     [super viewDidLoad];
     //
     coverView_ = [[UIView alloc] initWithFrame:self.view.bounds];
-    coverView_.backgroundColor = kColor_222222;
+    CGFloat a = kScreenWidth;
+    coverView_.backgroundColor = kColor(0x222222);
     coverView_.alpha = 0;
     [self.view addSubview:coverView_];
     //

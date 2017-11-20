@@ -17,18 +17,18 @@
     //导航栏样式
     UINavigationBar *navBar = [UINavigationBar appearance];
     //导航栏标题
-    [navBar setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:kColor_000000,NSForegroundColorAttributeName, kFontPF(18), NSFontAttributeName, nil]];
+    [navBar setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:kColor(0x000000),NSForegroundColorAttributeName, kFontPF(18), NSFontAttributeName, nil]];
     //导航栏背景
-    [navBar setBackgroundImage:[xViewTools createSingleColorImage:CGRectMake(0, 0, 1, 1) color:[UIColor whiteColor]] forBarMetrics:UIBarMetricsDefault];
+    [navBar setBackgroundImage:[UIImage imageWithColor:[UIColor whiteColor] rect:CGRectMake(0, 0, 1, 1)] forBarMetrics:UIBarMetricsDefault];
     //导航栏底部边框样式
-    [navBar setShadowImage:[xViewTools createSingleColorImage:CGRectMake(0, 0, 1, 0.5) color:kColor_E9E9E9]];
+    [navBar setShadowImage:[UIImage imageWithColor:kColor(0xE9E9E9) rect:CGRectMake(0, 0, 1, 0.5)]];
     //返回按钮
     [navBar setBackIndicatorImage:[[UIImage imageNamed:@"nav_back_btn"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]];
     [navBar setBackIndicatorTransitionMaskImage:[[UIImage imageNamed:@"nav_back_btn"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]];
     //隐藏返回文字
     [[UIBarButtonItem appearance] setBackButtonTitlePositionAdjustment:UIOffsetMake(-9999, 0.f) forBarMetrics:UIBarMetricsDefault];
     //导航栏按钮文字
-    [[UIBarButtonItem appearance] setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:kColor_000000,NSForegroundColorAttributeName, kFontPF(14), NSFontAttributeName, nil] forState:UIControlStateNormal];
+    [[UIBarButtonItem appearance] setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:kColor(0x000000),NSForegroundColorAttributeName, kFontPF(14), NSFontAttributeName, nil] forState:UIControlStateNormal];
     
     
     AVAudioSession *audioSession = [AVAudioSession sharedInstance];

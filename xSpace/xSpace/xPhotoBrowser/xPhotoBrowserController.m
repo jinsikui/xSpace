@@ -45,7 +45,7 @@
     //隐藏导航栏
     self.fd_prefersNavigationBarHidden = YES;
     self.automaticallyAdjustsScrollViewInsets = NO;
-    self.view.backgroundColor = kColor_000000;
+    self.view.backgroundColor = kColor(0x000000);
     UIScrollView *contentView = [[UIScrollView alloc] initWithFrame:CGRectMake(0, 0, kScreenWidth, kContentHeight)];
     [self.view addSubview:contentView];
     
