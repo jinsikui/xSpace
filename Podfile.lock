@@ -25,46 +25,36 @@ PODS:
   - FMDB (2.6.2):
     - FMDB/standard (= 2.6.2)
   - FMDB/standard (2.6.2)
+  - KVOController (1.2.0)
   - Masonry (1.0.2)
   - MJRefresh (3.1.12)
-  - QTNetwork (0.1.2):
-    - AFNetworking (~> 2.6.3)
   - SDWebImage (4.0.0):
     - SDWebImage/Core (= 4.0.0)
   - SDWebImage/Core (4.0.0)
   - TPKeyboardAvoiding (1.3.1)
 
 DEPENDENCIES:
+  - AFNetworking
   - FDFullscreenPopGesture
   - FLAnimatedImage
   - FMDB
+  - KVOController
   - Masonry
   - MJRefresh
-  - QTNetwork (from `https://git2.qingtingfm.com/app/QTNetwork.git`, tag `0.1.2`)
   - SDWebImage
   - TPKeyboardAvoiding
-
-EXTERNAL SOURCES:
-  QTNetwork:
-    :git: https://git2.qingtingfm.com/app/QTNetwork.git
-    :tag: 0.1.2
-
-CHECKOUT OPTIONS:
-  QTNetwork:
-    :git: https://git2.qingtingfm.com/app/QTNetwork.git
-    :tag: 0.1.2
 
 SPEC CHECKSUMS:
   AFNetworking: cb8d14a848e831097108418f5d49217339d4eb60
   FDFullscreenPopGesture: a8a620179e3d9c40e8e00256dcee1c1a27c6d0f0
   FLAnimatedImage: 4a0b56255d9b05f18b6dd7ee06871be5d3b89e31
   FMDB: 854a0341b4726e53276f2a8996f06f1b80f9259a
+  KVOController: d72ace34afea42468329623b3379ab3cd1d286b6
   Masonry: 7c429b56da9d4ee0bbb3ed77a5ea710d6a5df39e
   MJRefresh: b96cdb21c4aa75a7b07654311ab2f315c497e806
-  QTNetwork: 2342abf52c22d56fd872ff4e1bf8465d49a645a9
   SDWebImage: 76a6348bdc74eb5a55dd08a091ef298e56b55e41
   TPKeyboardAvoiding: 0d6af20e95e2850f4c621841225b59ec7d8dd852
 
-PODFILE CHECKSUM: 104ae48542251a75080c0a3c7a5d4e319772d6ff
+PODFILE CHECKSUM: 0c3587605d0bfea1ab86ce184f028b14f2e21fd3
 
 COCOAPODS: 1.3.1

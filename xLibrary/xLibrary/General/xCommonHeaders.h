@@ -14,6 +14,10 @@
 #import "xDevice.h"
 #import "xViewFactory.h"
 #import "xExtensions.h"
+#import "xNotice.h"
+#import "xTimer.h"
+#import "xTask.h"
+#import "Masonry.h"
 #import "xDefines.h"
 
 #endif

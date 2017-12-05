@@ -8,6 +8,10 @@
 
 #import <Foundation/Foundation.h>
 
+@interface NSNull (JSON)
+
+@end
+
 @interface UIImage (xExtension)
 
 +(UIImage*)imageWithColor:(UIColor*)color rect:(CGRect)rect;

@@ -197,7 +197,7 @@
 -(void)startTimer{
     if(!_timer){
         __weak typeof(self)weak = self;
-        _timer = [xTimer timerWithStartSeconds:_autoScrollIntervalSeconds queue:dispatch_get_main_queue() action:^{
+        _timer = [xTimer timerWithIntervalSeconds:_autoScrollIntervalSeconds queue:dispatch_get_main_queue() fireOnStart:NO action:^{
             [weak scrollToNext];
         }];
     }
@@ -206,7 +206,7 @@
 
 -(void)stopTimer{
     if(_timer){
-        [_timer cancel];
+        [_timer stop];
         _timer = nil;
     }
 }
@@ -345,11 +345,6 @@
             _isAutoScroll = YES;
         }
     }
-}
-
--(void)dealloc {
-    [_timer cancel];
-    _timer = nil;
 }
 
 @end

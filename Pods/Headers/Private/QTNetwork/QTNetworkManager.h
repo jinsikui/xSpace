@@ -1,1 +1,0 @@
-../../../QTNetwork/QTNetwork/Core/QTNetworkManager.h

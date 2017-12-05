@@ -20,6 +20,7 @@
     label.text = text;
     label.font = font;
     label.textColor = color;
+    label.backgroundColor = [UIColor clearColor];
     label.textAlignment = alignment;
     label.numberOfLines = 1;
     return label;

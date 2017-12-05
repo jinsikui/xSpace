@@ -8,6 +8,7 @@
 @interface EventController ()<UIScrollViewDelegate>{
     UITextView *textView_;
 }
+@property(nonatomic,strong) xTimer *timer;
 
 @end
 
@@ -54,8 +55,12 @@
     }];
     
     [[xNotice shared] registerTimer:self intervalSeconds:3 action:^{
-        NSLog(@"===== timer fire =====");
+        NSLog(@"===== xNotice Timer fire =====");
     }];
+    self.timer = [xTimer timerOnGlobalWithIntervalSeconds:2 fireOnStart:YES action:^{
+        NSLog(@"===== xTimer fire =====");
+    }];
+    [self.timer start];
 }
 
 -(void)appendStr:(NSString*)str{

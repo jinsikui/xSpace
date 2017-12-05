@@ -7,14 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		630A14121FCFE68400B0864B /* BeaconAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = 630A14111FCFE68400B0864B /* BeaconAPI.m */; };
 		632F0C011E94DFDB000EBCB3 /* FMDBController.m in Sources */ = {isa = PBXBuildFile; fileRef = 632F0C001E94DFDB000EBCB3 /* FMDBController.m */; };
 		632F0C041E94E906000EBCB3 /* Department.m in Sources */ = {isa = PBXBuildFile; fileRef = 632F0C031E94E906000EBCB3 /* Department.m */; };
 		632F0C071E94E92A000EBCB3 /* Employee.m in Sources */ = {isa = PBXBuildFile; fileRef = 632F0C061E94E92A000EBCB3 /* Employee.m */; };
 		63396C781EF0F825001525E7 /* BannerLoadingController.m in Sources */ = {isa = PBXBuildFile; fileRef = 63396C771EF0F825001525E7 /* BannerLoadingController.m */; };
-		63460A011FB47EF8008C55A9 /* QTNetworkController.m in Sources */ = {isa = PBXBuildFile; fileRef = 63460A001FB47EF8008C55A9 /* QTNetworkController.m */; };
-		63460A041FB4808C008C55A9 /* TestAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = 63460A031FB4808C008C55A9 /* TestAPI.m */; };
 		6364B4271EB84C8A008A0D5B /* InterAppController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6364B4261EB84C8A008A0D5B /* InterAppController.m */; };
 		63900A7A1F0661000080C48D /* RuntimeController.m in Sources */ = {isa = PBXBuildFile; fileRef = 63900A791F0661000080C48D /* RuntimeController.m */; };
+		6391A9B51FC52A4B00431D72 /* UITestController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6391A9B41FC52A4A00431D72 /* UITestController.m */; };
+		6391A9B91FC55B0600431D72 /* KVOTestController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6391A9B81FC55B0600431D72 /* KVOTestController.m */; };
 		63A3AB951E7FD53A00FB47B8 /* RefreshController.m in Sources */ = {isa = PBXBuildFile; fileRef = 63A3AB941E7FD53A00FB47B8 /* RefreshController.m */; };
 		63A3AB991E7FD7C700FB47B8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 63A3AB971E7FD7C700FB47B8 /* Assets.xcassets */; };
 		63A3AB9A1E7FD7C700FB47B8 /* refresh.gif in Resources */ = {isa = PBXBuildFile; fileRef = 63A3AB981E7FD7C700FB47B8 /* refresh.gif */; };
@@ -22,7 +23,6 @@
 		63A3ABA01E810A2600FB47B8 /* xRefreshFooter.m in Sources */ = {isa = PBXBuildFile; fileRef = 63A3AB9F1E810A2600FB47B8 /* xRefreshFooter.m */; };
 		63CB5B831F4BCA5700EC1082 /* PhotoBannerController.m in Sources */ = {isa = PBXBuildFile; fileRef = 63CB5B821F4BCA5700EC1082 /* PhotoBannerController.m */; };
 		63CB5B851F4C006500EC1082 /* empty_image.png in Resources */ = {isa = PBXBuildFile; fileRef = 63CB5B841F4C006500EC1082 /* empty_image.png */; };
-		63D326051EB87300006D424B /* libPods-xPortal.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 82B42E39E16332FC3E44D1A6 /* libPods-xPortal.a */; };
 		63D326091EB87316006D424B /* libxLibrary.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 63D326081EB87316006D424B /* libxLibrary.a */; };
 		63D3260D1EB9C3B1006D424B /* WVJBController.m in Sources */ = {isa = PBXBuildFile; fileRef = 63D3260C1EB9C3B1006D424B /* WVJBController.m */; };
 		63D3260F1EB9C42F006D424B /* WVJBPage.html in Resources */ = {isa = PBXBuildFile; fileRef = 63D3260E1EB9C42F006D424B /* WVJBPage.html */; };
@@ -31,6 +31,18 @@
 		63D3261C1EB9EB16006D424B /* WebViewJavascriptBridge_JS.m in Sources */ = {isa = PBXBuildFile; fileRef = 63D326161EB9EB16006D424B /* WebViewJavascriptBridge_JS.m */; };
 		63D3261D1EB9EB16006D424B /* WebViewJavascriptBridgeBase.m in Sources */ = {isa = PBXBuildFile; fileRef = 63D326181EB9EB16006D424B /* WebViewJavascriptBridgeBase.m */; };
 		63D3261E1EB9EB16006D424B /* WKWebViewJavascriptBridge.m in Sources */ = {isa = PBXBuildFile; fileRef = 63D3261A1EB9EB16006D424B /* WKWebViewJavascriptBridge.m */; };
+		63D3F4381FC7E8140061B993 /* PopView.m in Sources */ = {isa = PBXBuildFile; fileRef = 63D3F4371FC7E8140061B993 /* PopView.m */; };
+		63D3F43A1FC7ED400061B993 /* liveshow-bg.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 63D3F4391FC7ED3F0061B993 /* liveshow-bg.jpg */; };
+		63D3F4401FC8517F0061B993 /* AudienceController.m in Sources */ = {isa = PBXBuildFile; fileRef = 63D3F43F1FC8517F0061B993 /* AudienceController.m */; };
+		63D3F4431FC851AF0061B993 /* QtAgoraEngine.m in Sources */ = {isa = PBXBuildFile; fileRef = 63D3F4411FC851AF0061B993 /* QtAgoraEngine.m */; };
+		63D3F4471FC852800061B993 /* AgoraRtcEngineKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 63D3F4461FC852800061B993 /* AgoraRtcEngineKit.framework */; };
+		63D3F4491FC853420061B993 /* libresolv.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 63D3F4481FC853420061B993 /* libresolv.tbd */; };
+		63D3F44B1FC853640061B993 /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 63D3F44A1FC853530061B993 /* CoreTelephony.framework */; };
+		63D3F44D1FC853830061B993 /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 63D3F44C1FC853740061B993 /* CoreMedia.framework */; };
+		63D3F44F1FC8539D0061B993 /* CoreMotion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 63D3F44E1FC8538F0061B993 /* CoreMotion.framework */; };
+		63D3F4511FC853D80061B993 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 63D3F4501FC853CD0061B993 /* AudioToolbox.framework */; };
+		63D3F4531FC853E70061B993 /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 63D3F4521FC853E70061B993 /* libc++.tbd */; };
+		63D3F4551FC857D80061B993 /* VideoToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 63D3F4541FC857CB0061B993 /* VideoToolbox.framework */; };
 		63DE23DA1F7E1ABE0068A647 /* PlayerController.m in Sources */ = {isa = PBXBuildFile; fileRef = 63DE23D91F7E1ABE0068A647 /* PlayerController.m */; };
 		63DE23DD1F7E1B240068A647 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 63DE23DB1F7E1B240068A647 /* AVFoundation.framework */; };
 		63DE23DE1F7E1B240068A647 /* AVKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 63DE23DC1F7E1B240068A647 /* AVKit.framework */; };
@@ -57,6 +69,7 @@
 		B17D8B1F1DF14D6E004CD18F /* Greeting.mm in Sources */ = {isa = PBXBuildFile; fileRef = B17D8B1D1DF14D6E004CD18F /* Greeting.mm */; };
 		B18163841E0004A700D928FB /* EventController.m in Sources */ = {isa = PBXBuildFile; fileRef = B18163831E0004A700D928FB /* EventController.m */; };
 		B1EFAD6D1E7282BA00128906 /* xPhotoBrowserController.m in Sources */ = {isa = PBXBuildFile; fileRef = B1EFAD6C1E7282BA00128906 /* xPhotoBrowserController.m */; };
+		DBB777953685A11032424CE4 /* libPods-xSpace.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 66E1A84CD09E67B3C5DB688E /* libPods-xSpace.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -78,8 +91,11 @@
 
 /* Begin PBXFileReference section */
 		30D979E7D24D635A6517A9CA /* Pods-Box-xPortal.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Box-xPortal.debug.xcconfig"; path = "../Pods/Target Support Files/Pods-Box-xPortal/Pods-Box-xPortal.debug.xcconfig"; sourceTree = "<group>"; };
+		31B02325BF5B96FC1486A62B /* Pods-xSpace.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-xSpace.debug.xcconfig"; path = "../Pods/Target Support Files/Pods-xSpace/Pods-xSpace.debug.xcconfig"; sourceTree = "<group>"; };
 		4DF4C58C492B0616C9D7759A /* Pods-Box-xPortal.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Box-xPortal.release.xcconfig"; path = "../Pods/Target Support Files/Pods-Box-xPortal/Pods-Box-xPortal.release.xcconfig"; sourceTree = "<group>"; };
 		5E5FFD9343F0924413FFEA74 /* Pods-xPortal.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-xPortal.debug.xcconfig"; path = "../Pods/Target Support Files/Pods-xPortal/Pods-xPortal.debug.xcconfig"; sourceTree = "<group>"; };
+		630A14101FCFE68400B0864B /* BeaconAPI.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BeaconAPI.h; sourceTree = "<group>"; };
+		630A14111FCFE68400B0864B /* BeaconAPI.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BeaconAPI.m; sourceTree = "<group>"; };
 		632F0BFF1E94DFDB000EBCB3 /* FMDBController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDBController.h; sourceTree = "<group>"; };
 		632F0C001E94DFDB000EBCB3 /* FMDBController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDBController.m; sourceTree = "<group>"; };
 		632F0C021E94E906000EBCB3 /* Department.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Department.h; sourceTree = "<group>"; };
@@ -88,14 +104,14 @@
 		632F0C061E94E92A000EBCB3 /* Employee.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Employee.m; sourceTree = "<group>"; };
 		63396C761EF0F825001525E7 /* BannerLoadingController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BannerLoadingController.h; sourceTree = "<group>"; };
 		63396C771EF0F825001525E7 /* BannerLoadingController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BannerLoadingController.m; sourceTree = "<group>"; };
-		634609FF1FB47EF8008C55A9 /* QTNetworkController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = QTNetworkController.h; sourceTree = "<group>"; };
-		63460A001FB47EF8008C55A9 /* QTNetworkController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = QTNetworkController.m; sourceTree = "<group>"; };
-		63460A021FB4808C008C55A9 /* TestAPI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestAPI.h; sourceTree = "<group>"; };
-		63460A031FB4808C008C55A9 /* TestAPI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestAPI.m; sourceTree = "<group>"; };
 		6364B4251EB84C8A008A0D5B /* InterAppController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InterAppController.h; sourceTree = "<group>"; };
 		6364B4261EB84C8A008A0D5B /* InterAppController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InterAppController.m; sourceTree = "<group>"; };
 		63900A781F0661000080C48D /* RuntimeController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RuntimeController.h; sourceTree = "<group>"; };
 		63900A791F0661000080C48D /* RuntimeController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RuntimeController.m; sourceTree = "<group>"; };
+		6391A9B31FC52A4A00431D72 /* UITestController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UITestController.h; sourceTree = "<group>"; };
+		6391A9B41FC52A4A00431D72 /* UITestController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UITestController.m; sourceTree = "<group>"; };
+		6391A9B71FC55B0600431D72 /* KVOTestController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KVOTestController.h; sourceTree = "<group>"; };
+		6391A9B81FC55B0600431D72 /* KVOTestController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KVOTestController.m; sourceTree = "<group>"; };
 		63A3AB931E7FD53A00FB47B8 /* RefreshController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RefreshController.h; sourceTree = "<group>"; };
 		63A3AB941E7FD53A00FB47B8 /* RefreshController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RefreshController.m; sourceTree = "<group>"; };
 		63A3AB971E7FD7C700FB47B8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -121,6 +137,21 @@
 		63D326181EB9EB16006D424B /* WebViewJavascriptBridgeBase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WebViewJavascriptBridgeBase.m; sourceTree = "<group>"; };
 		63D326191EB9EB16006D424B /* WKWebViewJavascriptBridge.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WKWebViewJavascriptBridge.h; sourceTree = "<group>"; };
 		63D3261A1EB9EB16006D424B /* WKWebViewJavascriptBridge.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WKWebViewJavascriptBridge.m; sourceTree = "<group>"; };
+		63D3F4361FC7E8140061B993 /* PopView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PopView.h; sourceTree = "<group>"; };
+		63D3F4371FC7E8140061B993 /* PopView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PopView.m; sourceTree = "<group>"; };
+		63D3F4391FC7ED3F0061B993 /* liveshow-bg.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "liveshow-bg.jpg"; sourceTree = "<group>"; };
+		63D3F43E1FC8517F0061B993 /* AudienceController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AudienceController.h; sourceTree = "<group>"; };
+		63D3F43F1FC8517F0061B993 /* AudienceController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AudienceController.m; sourceTree = "<group>"; };
+		63D3F4411FC851AF0061B993 /* QtAgoraEngine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QtAgoraEngine.m; sourceTree = "<group>"; };
+		63D3F4421FC851AF0061B993 /* QtAgoraEngine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QtAgoraEngine.h; sourceTree = "<group>"; };
+		63D3F4461FC852800061B993 /* AgoraRtcEngineKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AgoraRtcEngineKit.framework; sourceTree = "<group>"; };
+		63D3F4481FC853420061B993 /* libresolv.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libresolv.tbd; path = usr/lib/libresolv.tbd; sourceTree = SDKROOT; };
+		63D3F44A1FC853530061B993 /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = System/Library/Frameworks/CoreTelephony.framework; sourceTree = SDKROOT; };
+		63D3F44C1FC853740061B993 /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
+		63D3F44E1FC8538F0061B993 /* CoreMotion.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMotion.framework; path = System/Library/Frameworks/CoreMotion.framework; sourceTree = SDKROOT; };
+		63D3F4501FC853CD0061B993 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		63D3F4521FC853E70061B993 /* libc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.tbd"; path = "usr/lib/libc++.tbd"; sourceTree = SDKROOT; };
+		63D3F4541FC857CB0061B993 /* VideoToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = VideoToolbox.framework; path = System/Library/Frameworks/VideoToolbox.framework; sourceTree = SDKROOT; };
 		63DE23D81F7E1ABE0068A647 /* PlayerController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlayerController.h; sourceTree = "<group>"; };
 		63DE23D91F7E1ABE0068A647 /* PlayerController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlayerController.m; sourceTree = "<group>"; };
 		63DE23DB1F7E1B240068A647 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
@@ -139,8 +170,10 @@
 		63F75A1A1E77DA7900756FE7 /* EmployeeMO.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EmployeeMO.m; sourceTree = "<group>"; };
 		63F75A1D1E77DA7900756FE7 /* PersonMO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PersonMO.h; sourceTree = "<group>"; };
 		63F75A1E1E77DA7900756FE7 /* PersonMO.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PersonMO.m; sourceTree = "<group>"; };
+		66E1A84CD09E67B3C5DB688E /* libPods-xSpace.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-xSpace.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8012D24A8EB3D8832515B4A4 /* libPods-Box-xPortal.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Box-xPortal.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		82B42E39E16332FC3E44D1A6 /* libPods-xPortal.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-xPortal.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		95065CFB73E9CD7653EA932E /* Pods-xSpace.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-xSpace.release.xcconfig"; path = "../Pods/Target Support Files/Pods-xSpace/Pods-xSpace.release.xcconfig"; sourceTree = "<group>"; };
 		B1748FCC1DDF154C0034C852 /* xSpace.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = xSpace.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B1748FD01DDF154C0034C852 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		B1748FD21DDF154C0034C852 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -186,11 +219,19 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				63D3F4551FC857D80061B993 /* VideoToolbox.framework in Frameworks */,
+				63D3F4511FC853D80061B993 /* AudioToolbox.framework in Frameworks */,
+				63D3F44F1FC8539D0061B993 /* CoreMotion.framework in Frameworks */,
+				63D3F44D1FC853830061B993 /* CoreMedia.framework in Frameworks */,
+				63D3F44B1FC853640061B993 /* CoreTelephony.framework in Frameworks */,
+				63D3F4471FC852800061B993 /* AgoraRtcEngineKit.framework in Frameworks */,
 				63DE23DD1F7E1B240068A647 /* AVFoundation.framework in Frameworks */,
+				63D3F4531FC853E70061B993 /* libc++.tbd in Frameworks */,
 				63DE23DE1F7E1B240068A647 /* AVKit.framework in Frameworks */,
+				63D3F4491FC853420061B993 /* libresolv.tbd in Frameworks */,
 				63D326111EB9C7E0006D424B /* WebKit.framework in Frameworks */,
 				63D326091EB87316006D424B /* libxLibrary.a in Frameworks */,
-				63D326051EB87300006D424B /* libPods-xPortal.a in Frameworks */,
+				DBB777953685A11032424CE4 /* libPods-xSpace.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -211,6 +252,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		630A140F1FCFE66700B0864B /* AFNetworking */ = {
+			isa = PBXGroup;
+			children = (
+				630A14101FCFE68400B0864B /* BeaconAPI.h */,
+				630A14111FCFE68400B0864B /* BeaconAPI.m */,
+			);
+			path = AFNetworking;
+			sourceTree = "<group>";
+		};
 		632F0BFE1E94DFAA000EBCB3 /* FMDB */ = {
 			isa = PBXGroup;
 			children = (
@@ -233,17 +283,6 @@
 			path = BannerLoading;
 			sourceTree = "<group>";
 		};
-		634609FE1FB47EA9008C55A9 /* QTNetwork */ = {
-			isa = PBXGroup;
-			children = (
-				63460A021FB4808C008C55A9 /* TestAPI.h */,
-				63460A031FB4808C008C55A9 /* TestAPI.m */,
-				634609FF1FB47EF8008C55A9 /* QTNetworkController.h */,
-				63460A001FB47EF8008C55A9 /* QTNetworkController.m */,
-			);
-			path = QTNetwork;
-			sourceTree = "<group>";
-		};
 		6364B4241EB84C16008A0D5B /* InterApp */ = {
 			isa = PBXGroup;
 			children = (
@@ -262,6 +301,26 @@
 			path = runtime;
 			sourceTree = "<group>";
 		};
+		6391A9B21FC529F000431D72 /* UITest */ = {
+			isa = PBXGroup;
+			children = (
+				6391A9B31FC52A4A00431D72 /* UITestController.h */,
+				6391A9B41FC52A4A00431D72 /* UITestController.m */,
+				63D3F4361FC7E8140061B993 /* PopView.h */,
+				63D3F4371FC7E8140061B993 /* PopView.m */,
+			);
+			path = UITest;
+			sourceTree = "<group>";
+		};
+		6391A9B61FC55ADE00431D72 /* KVO */ = {
+			isa = PBXGroup;
+			children = (
+				6391A9B71FC55B0600431D72 /* KVOTestController.h */,
+				6391A9B81FC55B0600431D72 /* KVOTestController.m */,
+			);
+			path = KVO;
+			sourceTree = "<group>";
+		};
 		63A3AB921E7FD51300FB47B8 /* Refresh */ = {
 			isa = PBXGroup;
 			children = (
@@ -278,6 +337,7 @@
 		63A3AB961E7FD72A00FB47B8 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				63D3F4391FC7ED3F0061B993 /* liveshow-bg.jpg */,
 				63A3AB971E7FD7C700FB47B8 /* Assets.xcassets */,
 				63CB5B841F4C006500EC1082 /* empty_image.png */,
 				63A3AB981E7FD7C700FB47B8 /* refresh.gif */,
@@ -318,6 +378,33 @@
 				63D3261A1EB9EB16006D424B /* WKWebViewJavascriptBridge.m */,
 			);
 			path = WebViewJavascriptBridge;
+			sourceTree = "<group>";
+		};
+		63D3F43D1FC851150061B993 /* Agora */ = {
+			isa = PBXGroup;
+			children = (
+				63D3F4421FC851AF0061B993 /* QtAgoraEngine.h */,
+				63D3F4411FC851AF0061B993 /* QtAgoraEngine.m */,
+				63D3F43E1FC8517F0061B993 /* AudienceController.h */,
+				63D3F43F1FC8517F0061B993 /* AudienceController.m */,
+			);
+			path = Agora;
+			sourceTree = "<group>";
+		};
+		63D3F4441FC852410061B993 /* ThirdParty */ = {
+			isa = PBXGroup;
+			children = (
+				63D3F4451FC852800061B993 /* Agora */,
+			);
+			path = ThirdParty;
+			sourceTree = "<group>";
+		};
+		63D3F4451FC852800061B993 /* Agora */ = {
+			isa = PBXGroup;
+			children = (
+				63D3F4461FC852800061B993 /* AgoraRtcEngineKit.framework */,
+			);
+			path = Agora;
 			sourceTree = "<group>";
 		};
 		63DE23D71F7E19260068A647 /* AV */ = {
@@ -381,7 +468,11 @@
 		B1748FCE1DDF154C0034C852 /* xSpace */ = {
 			isa = PBXGroup;
 			children = (
-				634609FE1FB47EA9008C55A9 /* QTNetwork */,
+				630A140F1FCFE66700B0864B /* AFNetworking */,
+				63D3F4441FC852410061B993 /* ThirdParty */,
+				63D3F43D1FC851150061B993 /* Agora */,
+				6391A9B61FC55ADE00431D72 /* KVO */,
+				6391A9B21FC529F000431D72 /* UITest */,
 				63DE23D71F7E19260068A647 /* AV */,
 				63CB5B801F4BCA2F00EC1082 /* PhotoBanner */,
 				63900A771F0660770080C48D /* runtime */,
@@ -442,6 +533,13 @@
 		B17490681DDF25AC0034C852 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				63D3F4541FC857CB0061B993 /* VideoToolbox.framework */,
+				63D3F4521FC853E70061B993 /* libc++.tbd */,
+				63D3F4501FC853CD0061B993 /* AudioToolbox.framework */,
+				63D3F44E1FC8538F0061B993 /* CoreMotion.framework */,
+				63D3F44C1FC853740061B993 /* CoreMedia.framework */,
+				63D3F44A1FC853530061B993 /* CoreTelephony.framework */,
+				63D3F4481FC853420061B993 /* libresolv.tbd */,
 				63DE23DB1F7E1B240068A647 /* AVFoundation.framework */,
 				63DE23DC1F7E1B240068A647 /* AVKit.framework */,
 				63D326101EB9C7E0006D424B /* WebKit.framework */,
@@ -450,6 +548,7 @@
 				B17490691DDF25AC0034C852 /* libxLibrary.a */,
 				8012D24A8EB3D8832515B4A4 /* libPods-Box-xPortal.a */,
 				82B42E39E16332FC3E44D1A6 /* libPods-xPortal.a */,
+				66E1A84CD09E67B3C5DB688E /* libPods-xSpace.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -506,6 +605,8 @@
 				4DF4C58C492B0616C9D7759A /* Pods-Box-xPortal.release.xcconfig */,
 				5E5FFD9343F0924413FFEA74 /* Pods-xPortal.debug.xcconfig */,
 				C9743325F15E5F4CB2D6D088 /* Pods-xPortal.release.xcconfig */,
+				31B02325BF5B96FC1486A62B /* Pods-xSpace.debug.xcconfig */,
+				95065CFB73E9CD7653EA932E /* Pods-xSpace.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -582,6 +683,11 @@
 						CreatedOnToolsVersion = 8.1;
 						DevelopmentTeam = E6J3Q59668;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+						};
 					};
 					B1748FEA1DDF154C0034C852 = {
 						CreatedOnToolsVersion = 8.1;
@@ -625,6 +731,7 @@
 				63A3AB991E7FD7C700FB47B8 /* Assets.xcassets in Resources */,
 				63D3260F1EB9C42F006D424B /* WVJBPage.html in Resources */,
 				63A3AB9A1E7FD7C700FB47B8 /* refresh.gif in Resources */,
+				63D3F43A1FC7ED400061B993 /* liveshow-bg.jpg in Resources */,
 				63CB5B851F4C006500EC1082 /* empty_image.png in Resources */,
 				B1748FE51DDF154C0034C852 /* LaunchScreen.storyboard in Resources */,
 			);
@@ -653,7 +760,7 @@
 			files = (
 			);
 			inputPaths = (
-				"${SRCROOT}/../Pods/Target Support Files/Pods-xPortal/Pods-xPortal-resources.sh",
+				"${SRCROOT}/../Pods/Target Support Files/Pods-xSpace/Pods-xSpace-resources.sh",
 				"${PODS_ROOT}/MJRefresh/MJRefresh/MJRefresh.bundle",
 			);
 			name = "[CP] Copy Pods Resources";
@@ -662,7 +769,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/../Pods/Target Support Files/Pods-xPortal/Pods-xPortal-resources.sh\"\n";
+			shellScript = "\"${SRCROOT}/../Pods/Target Support Files/Pods-xSpace/Pods-xSpace-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		C07DD3C16CCC0B1C2D52E0C4 /* [CP] Check Pods Manifest.lock */ = {
@@ -676,7 +783,7 @@
 			);
 			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-xPortal-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-xSpace-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -695,7 +802,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/../Pods/Target Support Files/Pods-xPortal/Pods-xPortal-frameworks.sh\"\n";
+			shellScript = "\"${SRCROOT}/../Pods/Target Support Files/Pods-xSpace/Pods-xSpace-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -716,6 +823,7 @@
 				63A3ABA01E810A2600FB47B8 /* xRefreshFooter.m in Sources */,
 				63A3AB9D1E80CA6900FB47B8 /* xRefreshHeader.m in Sources */,
 				63DE23DA1F7E1ABE0068A647 /* PlayerController.m in Sources */,
+				63D3F4431FC851AF0061B993 /* QtAgoraEngine.m in Sources */,
 				632F0C011E94DFDB000EBCB3 /* FMDBController.m in Sources */,
 				B18163841E0004A700D928FB /* EventController.m in Sources */,
 				B1EFAD6D1E7282BA00128906 /* xPhotoBrowserController.m in Sources */,
@@ -727,22 +835,25 @@
 				63EBC7FA1EE168A7001029B3 /* PagedController.m in Sources */,
 				B17D8B021DF01A0B004CD18F /* A.m in Sources */,
 				63900A7A1F0661000080C48D /* RuntimeController.m in Sources */,
+				6391A9B91FC55B0600431D72 /* KVOTestController.m in Sources */,
+				63D3F4401FC8517F0061B993 /* AudienceController.m in Sources */,
 				63F759091E77980800756FE7 /* datamodel.xcdatamodeld in Sources */,
 				632F0C071E94E92A000EBCB3 /* Employee.m in Sources */,
 				63F75A231E77DA7A00756FE7 /* DepartmentMO.m in Sources */,
 				B17D8B101DF01BC2004CD18F /* A+xCategory.m in Sources */,
 				B17490871DE4034B0034C852 /* PortalNavigationController.m in Sources */,
+				63D3F4381FC7E8140061B993 /* PopView.m in Sources */,
 				63F75A211E77DA7A00756FE7 /* FriendInfoMO..m in Sources */,
+				630A14121FCFE68400B0864B /* BeaconAPI.m in Sources */,
 				63F75A251E77DA7A00756FE7 /* EmployeeMO.m in Sources */,
 				63F758E61E72BFA100756FE7 /* CoreDataController.m in Sources */,
-				63460A041FB4808C008C55A9 /* TestAPI.m in Sources */,
 				B17D8B1F1DF14D6E004CD18F /* Greeting.mm in Sources */,
 				63D3260D1EB9C3B1006D424B /* WVJBController.m in Sources */,
 				B17D8B051DF01A2D004CD18F /* B.m in Sources */,
 				63CB5B831F4BCA5700EC1082 /* PhotoBannerController.m in Sources */,
 				63D3261E1EB9EB16006D424B /* WKWebViewJavascriptBridge.m in Sources */,
-				63460A011FB47EF8008C55A9 /* QTNetworkController.m in Sources */,
 				B1748FD71DDF154C0034C852 /* PortalIndexController.m in Sources */,
+				6391A9B51FC52A4B00431D72 /* UITestController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -883,16 +994,21 @@
 		};
 		B17490001DDF154C0034C852 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 5E5FFD9343F0924413FFEA74 /* Pods-xPortal.debug.xcconfig */;
+			baseConfigurationReference = 31B02325BF5B96FC1486A62B /* Pods-xSpace.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = E6J3Q59668;
+				ENABLE_BITCODE = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/xSpace/ThirdParty/Agora",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/xSpace/PrefixHeader.pch";
 				HEADER_SEARCH_PATHS = "$(SRCROOT)/../xLibrary/**";
 				INFOPLIST_FILE = xSpace/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.xspace.xSpace;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -901,16 +1017,21 @@
 		};
 		B17490011DDF154C0034C852 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = C9743325F15E5F4CB2D6D088 /* Pods-xPortal.release.xcconfig */;
+			baseConfigurationReference = 95065CFB73E9CD7653EA932E /* Pods-xSpace.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = E6J3Q59668;
+				ENABLE_BITCODE = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/xSpace/ThirdParty/Agora",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/xSpace/PrefixHeader.pch";
 				HEADER_SEARCH_PATHS = "$(SRCROOT)/../xLibrary/**";
 				INFOPLIST_FILE = xSpace/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.xspace.xSpace;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -922,9 +1043,9 @@
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				DEVELOPMENT_TEAM = E6J3Q59668;
-				INFOPLIST_FILE = xPortalTests/Info.plist;
+				INFOPLIST_FILE = xSpacelTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.xspace.xPortalTests;
+				PRODUCT_BUNDLE_IDENTIFIER = com.xspace.xSpaceTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/xSpace.app/xSpace";
 			};
@@ -935,9 +1056,9 @@
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				DEVELOPMENT_TEAM = E6J3Q59668;
-				INFOPLIST_FILE = xPortalTests/Info.plist;
+				INFOPLIST_FILE = xSpacelTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.xspace.xPortalTests;
+				PRODUCT_BUNDLE_IDENTIFIER = com.xspace.xSpaceTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/xSpace.app/xSpace";
 			};
@@ -947,11 +1068,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				DEVELOPMENT_TEAM = E6J3Q59668;
-				INFOPLIST_FILE = xPortalUITests/Info.plist;
+				INFOPLIST_FILE = xSpaceUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.xspace.xPortalUITests;
+				PRODUCT_BUNDLE_IDENTIFIER = com.xspace.xSpaceUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_TARGET_NAME = xPortal;
+				TEST_TARGET_NAME = xSpace;
 			};
 			name = Debug;
 		};
@@ -959,11 +1080,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				DEVELOPMENT_TEAM = E6J3Q59668;
-				INFOPLIST_FILE = xPortalUITests/Info.plist;
+				INFOPLIST_FILE = xSpaceUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.xspace.xPortalUITests;
+				PRODUCT_BUNDLE_IDENTIFIER = com.xspace.xSpaceUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_TARGET_NAME = xPortal;
+				TEST_TARGET_NAME = xSpace;
 			};
 			name = Release;
 		};

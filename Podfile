@@ -1,18 +1,19 @@
 workspace ‘xSpace.xcworkspace’
 platform :ios, '8.0'
 
-target 'xPortal’ do
-  project ‘xPortal/xPortal.xcodeproj’
+target 'xSpace’ do
+  project ‘xSpace/xSpace.xcodeproj’
   # Uncomment the next line if you're using Swift or would like to use dynamic frameworks
   # use_frameworks!
   pod ‘SDWebImage’
   pod 'FDFullscreenPopGesture'
+  pod 'AFNetworking'
   pod 'Masonry'
   pod 'TPKeyboardAvoiding'
   pod 'FLAnimatedImage'
   pod 'MJRefresh'
   pod 'FMDB'
-  pod 'QTNetwork’, :git => "https://git2.qingtingfm.com/app/QTNetwork.git", :tag => '0.1.2'
+  pod 'KVOController'
 end
 
 target 'xLibrary’ do

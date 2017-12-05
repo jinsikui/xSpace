@@ -53,7 +53,7 @@
 @interface xAlertContext : NSObject<UIAlertViewDelegate>
 
 @property (nonatomic) BOOL haveShow;
-@property (nonatomic, strong) NSString *lastMessage;
+@property (nonatomic, copy) NSString *lastMessage;
 
 @end
 

@@ -13,7 +13,7 @@
 @implementation AppDelegate
 
 
-- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {    
     //导航栏样式
     UINavigationBar *navBar = [UINavigationBar appearance];
     //导航栏标题

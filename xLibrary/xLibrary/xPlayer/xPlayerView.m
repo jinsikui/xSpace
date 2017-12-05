@@ -108,7 +108,7 @@
     [_player play];
     [self showLoading];
     __weak typeof(self)weak = self;
-    self.timer = [xTimer timerWithStartSeconds:3 queue:dispatch_get_main_queue() action:^{
+    self.timer = [xTimer timerWithIntervalSeconds:3 queue:dispatch_get_main_queue() fireOnStart:NO action:^{
         [weak hiddenMaskView];
     }];
     [self.timer start];
@@ -189,7 +189,7 @@
     [self.delegate playerBackViewPress:self];
 }
 -(void)playerViewPress {
-    [self.timer cancel];
+    [self.timer stop];
     [UIView animateWithDuration:0.5 animations:^{
         if (self.bottomBar.alpha == 0.0) {
             self.bottomBar.alpha = 1.0;

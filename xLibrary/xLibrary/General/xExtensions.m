@@ -8,6 +8,64 @@
 
 #import "xExtensions.h"
 
+@implementation NSNull (JSON)
+
+- (void) forwardInvocation:(NSInvocation *)invocation{
+    if ([self respondsToSelector:[invocation selector]]) {
+        [invocation invokeWithTarget:self];
+    }
+}
+
+- (NSMethodSignature *) methodSignatureForSelector:(SEL)selector{
+    NSMethodSignature *signature = [[NSNull class] instanceMethodSignatureForSelector:selector];
+    if(signature == nil) {
+        signature = [NSMethodSignature signatureWithObjCTypes:"@^v^c"];
+    }
+    return signature;
+}
+
+- (NSUInteger) length{
+    return 0;
+}
+
+- (NSUInteger) unsignedIntegerValue{
+    return 0;
+}
+
+- (NSInteger) integerValue{
+    return 0;
+}
+
+- (int) intValue{
+    return 0;
+}
+
+- (float) floatValue{
+    return 0;
+}
+
+- (NSString *) description{
+    return @"";
+}
+
+- (NSArray *) componentsSeparatedByString:(NSString *)separator{
+    return @[];
+}
+
+- (id) objectForKey:(id)key{
+    return nil;
+}
+
+- (id) objectAtIndex:(NSUInteger)index{
+    return nil;
+}
+
+- (BOOL)boolValue{
+    return NO;
+}
+
+@end
+
 @implementation UIImage (xExtension)
 
 +(UIImage*)imageWithColor:(UIColor*)color rect:(CGRect)rect{

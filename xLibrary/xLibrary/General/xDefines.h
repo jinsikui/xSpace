@@ -24,6 +24,12 @@
 #define kColor(x)           ([xColor fromRGB:x])
 #define kColorA(x,a)         ([xColor fromRGBA:x alpha:a])
 
+#ifdef DEBUG
+#   define NSLog(...) NSLog(__VA_ARGS__)
+#else
+#   define NSLog(...) (void)0
+#endif
+
 /*!
  *  @brief 英文和数字字体
  */

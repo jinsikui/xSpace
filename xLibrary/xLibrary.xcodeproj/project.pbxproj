@@ -27,10 +27,11 @@
 		6391A8B21FC1893900431D72 /* xDevice.m in Sources */ = {isa = PBXBuildFile; fileRef = 6391A8B11FC1893900431D72 /* xDevice.m */; };
 		6391A8B51FC1895100431D72 /* xViewFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 6391A8B41FC1895100431D72 /* xViewFactory.m */; };
 		6391A8B91FC18A4600431D72 /* xGridView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6391A8B81FC18A4600431D72 /* xGridView.m */; };
-		6391A8C41FC1CC8400431D72 /* xNotice.m in Sources */ = {isa = PBXBuildFile; fileRef = 6391A8C11FC1CC8400431D72 /* xNotice.m */; };
-		6391A8C51FC1CC8400431D72 /* xTimer.m in Sources */ = {isa = PBXBuildFile; fileRef = 6391A8C21FC1CC8400431D72 /* xTimer.m */; };
 		6391A8CA1FC2755B00431D72 /* UICollectionViewCell+xGridView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6391A8C91FC2755B00431D72 /* UICollectionViewCell+xGridView.m */; };
 		6391A8CE1FC2880F00431D72 /* xExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 6391A8CD1FC2880F00431D72 /* xExtensions.m */; };
+		6391A9C41FC5AEAB00431D72 /* xTimer.m in Sources */ = {isa = PBXBuildFile; fileRef = 6391A9C11FC5AEAA00431D72 /* xTimer.m */; };
+		6391A9C51FC5AEAB00431D72 /* xNotice.m in Sources */ = {isa = PBXBuildFile; fileRef = 6391A9C31FC5AEAA00431D72 /* xNotice.m */; };
+		6391A9C81FC5AEEF00431D72 /* xTask.m in Sources */ = {isa = PBXBuildFile; fileRef = 6391A9C61FC5AEEF00431D72 /* xTask.m */; };
 		63CB5B551F46926C00EC1082 /* xPhotoBannerData.m in Sources */ = {isa = PBXBuildFile; fileRef = 63CB5B521F46926C00EC1082 /* xPhotoBannerData.m */; };
 		63CB5B561F46926C00EC1082 /* xPhotoBanner.m in Sources */ = {isa = PBXBuildFile; fileRef = 63CB5B541F46926C00EC1082 /* xPhotoBanner.m */; };
 		63CB5B701F46F95C00EC1082 /* xPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 63CB5B6B1F46F95C00EC1082 /* xPlayer.m */; };
@@ -105,15 +106,17 @@
 		6391A8B71FC18A4600431D72 /* xGridView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = xGridView.h; sourceTree = "<group>"; };
 		6391A8B81FC18A4600431D72 /* xGridView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = xGridView.m; sourceTree = "<group>"; };
 		6391A8BD1FC1B3EF00431D72 /* xDefines.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = xDefines.h; sourceTree = "<group>"; };
-		6391A8C01FC1CC8300431D72 /* xNotice.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = xNotice.h; sourceTree = "<group>"; };
-		6391A8C11FC1CC8400431D72 /* xNotice.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = xNotice.m; sourceTree = "<group>"; };
-		6391A8C21FC1CC8400431D72 /* xTimer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = xTimer.m; sourceTree = "<group>"; };
-		6391A8C31FC1CC8400431D72 /* xTimer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = xTimer.h; sourceTree = "<group>"; };
 		6391A8C81FC2755B00431D72 /* UICollectionViewCell+xGridView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UICollectionViewCell+xGridView.h"; sourceTree = "<group>"; };
 		6391A8C91FC2755B00431D72 /* UICollectionViewCell+xGridView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UICollectionViewCell+xGridView.m"; sourceTree = "<group>"; };
 		6391A8CB1FC284AA00431D72 /* xCommonHeaders.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = xCommonHeaders.h; sourceTree = "<group>"; };
 		6391A8CC1FC2880F00431D72 /* xExtensions.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = xExtensions.h; sourceTree = "<group>"; };
 		6391A8CD1FC2880F00431D72 /* xExtensions.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = xExtensions.m; sourceTree = "<group>"; };
+		6391A9C01FC5AEAA00431D72 /* xTimer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = xTimer.h; sourceTree = "<group>"; };
+		6391A9C11FC5AEAA00431D72 /* xTimer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = xTimer.m; sourceTree = "<group>"; };
+		6391A9C21FC5AEAA00431D72 /* xNotice.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = xNotice.h; sourceTree = "<group>"; };
+		6391A9C31FC5AEAA00431D72 /* xNotice.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = xNotice.m; sourceTree = "<group>"; };
+		6391A9C61FC5AEEF00431D72 /* xTask.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = xTask.m; sourceTree = "<group>"; };
+		6391A9C71FC5AEEF00431D72 /* xTask.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = xTask.h; sourceTree = "<group>"; };
 		63CB5B511F46926C00EC1082 /* xPhotoBannerData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = xPhotoBannerData.h; sourceTree = "<group>"; };
 		63CB5B521F46926C00EC1082 /* xPhotoBannerData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = xPhotoBannerData.m; sourceTree = "<group>"; };
 		63CB5B531F46926C00EC1082 /* xPhotoBanner.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = xPhotoBanner.h; sourceTree = "<group>"; };
@@ -258,17 +261,6 @@
 			path = xGridView;
 			sourceTree = "<group>";
 		};
-		6391A8BF1FC1CC5900431D72 /* xNotice */ = {
-			isa = PBXGroup;
-			children = (
-				6391A8C01FC1CC8300431D72 /* xNotice.h */,
-				6391A8C11FC1CC8400431D72 /* xNotice.m */,
-				6391A8C31FC1CC8400431D72 /* xTimer.h */,
-				6391A8C21FC1CC8400431D72 /* xTimer.m */,
-			);
-			path = xNotice;
-			sourceTree = "<group>";
-		};
 		63CB5B611F46F91200EC1082 /* xPlayer */ = {
 			isa = PBXGroup;
 			children = (
@@ -351,7 +343,6 @@
 		B17490731DDF30480034C852 /* xLibrary */ = {
 			isa = PBXGroup;
 			children = (
-				6391A8BF1FC1CC5900431D72 /* xNotice */,
 				6391A8B61FC1899D00431D72 /* xGridView */,
 				63CB5B761F47037B00EC1082 /* TAPageControl */,
 				63CB5B611F46F91200EC1082 /* xPlayer */,
@@ -373,6 +364,12 @@
 		B1EFACFE1E726F9500128906 /* General */ = {
 			isa = PBXGroup;
 			children = (
+				6391A9C71FC5AEEF00431D72 /* xTask.h */,
+				6391A9C61FC5AEEF00431D72 /* xTask.m */,
+				6391A9C21FC5AEAA00431D72 /* xNotice.h */,
+				6391A9C31FC5AEAA00431D72 /* xNotice.m */,
+				6391A9C01FC5AEAA00431D72 /* xTimer.h */,
+				6391A9C11FC5AEAA00431D72 /* xTimer.m */,
 				6391A8AA1FC1891700431D72 /* xFont.h */,
 				6391A8AB1FC1891700431D72 /* xFont.m */,
 				6391A8AD1FC1892700431D72 /* xColor.h */,
@@ -535,7 +532,6 @@
 				63CB5B701F46F95C00EC1082 /* xPlayer.m in Sources */,
 				63CB5B551F46926C00EC1082 /* xPhotoBannerData.m in Sources */,
 				63CB5B7D1F4703A300EC1082 /* TAAbstractDotView.m in Sources */,
-				6391A8C51FC1CC8400431D72 /* xTimer.m in Sources */,
 				63900A1E1F04CADC0080C48D /* NSObject+xRuntime.m in Sources */,
 				6391A8AF1FC1892700431D72 /* xColor.m in Sources */,
 				B1EFAD641E7281F700128906 /* xPhoto.m in Sources */,
@@ -544,6 +540,7 @@
 				63900A841F066A5A0080C48D /* xStatisManager.m in Sources */,
 				63900A7D1F066A5A0080C48D /* UIControl+xStatis.m in Sources */,
 				63900A821F066A5A0080C48D /* UIViewController+xStatis.m in Sources */,
+				6391A9C81FC5AEEF00431D72 /* xTask.m in Sources */,
 				63CB5B711F46F95C00EC1082 /* xPlayerView.m in Sources */,
 				B1EFAD131E72701200128906 /* NSDictionary+Log.m in Sources */,
 				6391A8CA1FC2755B00431D72 /* UICollectionViewCell+xGridView.m in Sources */,
@@ -551,6 +548,7 @@
 				6391A8CE1FC2880F00431D72 /* xExtensions.m in Sources */,
 				63D94A551F33233F00170AA7 /* xAlert.m in Sources */,
 				B1EFAD671E7281F700128906 /* xPhotoView.m in Sources */,
+				6391A9C41FC5AEAB00431D72 /* xTimer.m in Sources */,
 				6391A8B91FC18A4600431D72 /* xGridView.m in Sources */,
 				63900A811F066A5A0080C48D /* UIView+xStatis.m in Sources */,
 				63CB5B7E1F4703A300EC1082 /* TADotView.m in Sources */,
@@ -558,10 +556,10 @@
 				63900A851F066A5A0080C48D /* xStatisService.m in Sources */,
 				63CB5B7F1F4703A300EC1082 /* TAPageControl.m in Sources */,
 				63900A7B1F066A5A0080C48D /* NSObject+xStatis.m in Sources */,
+				6391A9C51FC5AEAB00431D72 /* xNotice.m in Sources */,
 				B1EFAD661E7281F700128906 /* xPhotoToolbar.m in Sources */,
 				6391A8B21FC1893900431D72 /* xDevice.m in Sources */,
 				63CB5B721F46F95C00EC1082 /* xPlayViewController.m in Sources */,
-				6391A8C41FC1CC8400431D72 /* xNotice.m in Sources */,
 				63900A7C1F066A5A0080C48D /* UICollectionView+xStatis.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

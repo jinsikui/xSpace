@@ -14,7 +14,7 @@
 @property(nonatomic)Class cellClass;
 @property(nonatomic,strong)UICollectionView *collectionView;
 @property(nonatomic,strong)UICollectionViewFlowLayout *layout;
-@property(nonatomic,strong)NSString *reuseId;
+@property(nonatomic,copy)NSString *reuseId;
 @end
 
 @implementation xGridView

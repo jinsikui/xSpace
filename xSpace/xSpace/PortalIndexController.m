@@ -17,12 +17,16 @@
 #import "RuntimeController.h"
 #import "PhotoBannerController.h"
 #import "PlayerController.h"
-#import "QTNetworkController.h"
+#import "UITestController.h"
+#import "KVOTestController.h"
+#import "AudienceController.h"
 #import <AVFoundation/AVFoundation.h>
 #import <AVKit/AVKit.h>
+#import "BeaconAPI.h"
 
 @interface PortalIndexController ()
 @property(nonatomic,strong)UIView *affineShowingPanel;
+@property(nonatomic,strong)UIScrollView *contentView;
 @end
 
 @implementation PortalIndexController
@@ -37,59 +41,48 @@
     UIScrollView *contentView = [[UIScrollView alloc] initWithFrame:CGRectMake(0, 0, kScreenWidth, kContentHeight)];
     contentView.alwaysBounceVertical = YES;
     [self.view addSubview:contentView];
-    UIButton *btn = [xViewFactory buttonWithTitle:@"图片浏览" font:kFontPF(14) titleColor:kColor(0xFF6600) bgColor:kColor(0xFFFFFF) cornerRadius:0 borderColor:kColor(0xFF6600) borderWidth:0.5 frame:CGRectMake(0.5*(kContentWidth - 100), 30, 100, 40)];
-    [btn addTarget:self action:@selector(actionShowPhotoBrowser) forControlEvents:UIControlEventTouchUpInside];
-    [contentView addSubview:btn];
-    btn = [xViewFactory buttonWithTitle:@"AutoLayout" font:kFontPF(14) titleColor:kColor(0xFF6600) bgColor:kColor(0xFFFFFF) cornerRadius:0 borderColor:kColor(0xFF6600) borderWidth:0.5 frame:CGRectMake(0.5*(kContentWidth - 100), 90, 100, 40)];
-    [btn addTarget:self action:@selector(actionShowAutoLayout) forControlEvents:UIControlEventTouchUpInside];
-    [contentView addSubview:btn];
-    btn = [xViewFactory buttonWithTitle:@"OC语法" font:kFontPF(14) titleColor:kColor(0xFF6600) bgColor:kColor(0xFFFFFF) cornerRadius:0 borderColor:kColor(0xFF6600) borderWidth:0.5 frame:CGRectMake(0.5*(kContentWidth - 100), 150, 100, 40)];
-    [btn addTarget:self action:@selector(actionShowOC) forControlEvents:UIControlEventTouchUpInside];
-    [contentView addSubview:btn];
-    btn = [xViewFactory buttonWithTitle:@"事件处理" font:kFontPF(14) titleColor:kColor(0xFF6600) bgColor:kColor(0xFFFFFF) cornerRadius:0 borderColor:kColor(0xFF6600) borderWidth:0.5 frame:CGRectMake(0.5*(kContentWidth - 100), 210, 100, 40)];
-    [btn addTarget:self action:@selector(actionShowEvent) forControlEvents:UIControlEventTouchUpInside];
-    [contentView addSubview:btn];
-    btn = [xViewFactory buttonWithTitle:@"CoreData" font:kFontPF(14) titleColor:kColor(0xFF6600) bgColor:kColor(0xFFFFFF) cornerRadius:0 borderColor:kColor(0xFF6600) borderWidth:0.5 frame:CGRectMake(0.5*(kContentWidth - 100), 270, 100, 40)];
-    [btn addTarget:self action:@selector(actionShowCoreData) forControlEvents:UIControlEventTouchUpInside];
-    [contentView addSubview:btn];
-    btn = [xViewFactory buttonWithTitle:@"FMDB" font:kFontPF(14) titleColor:kColor(0xFF6600) bgColor:kColor(0xFFFFFF) cornerRadius:0 borderColor:kColor(0xFF6600) borderWidth:0.5 frame:CGRectMake(0.5*(kContentWidth - 100), 330, 100, 40)];
-    [btn addTarget:self action:@selector(actionFMDB) forControlEvents:UIControlEventTouchUpInside];
-    [contentView addSubview:btn];
-    btn = [xViewFactory buttonWithTitle:@"下拉刷新" font:kFontPF(14) titleColor:kColor(0xFF6600) bgColor:kColor(0xFFFFFF) cornerRadius:0 borderColor:kColor(0xFF6600) borderWidth:0.5 frame:CGRectMake(0.5*(kContentWidth - 100), 390, 100, 40)];
-    [btn addTarget:self action:@selector(actionRefresh) forControlEvents:UIControlEventTouchUpInside];
-    [contentView addSubview:btn];
-    btn = [xViewFactory buttonWithTitle:@"其他App交互" font:kFontPF(14) titleColor:kColor(0xFF6600) bgColor:kColor(0xFFFFFF) cornerRadius:0 borderColor:kColor(0xFF6600) borderWidth:0.5 frame:CGRectMake(0.5*(kContentWidth - 100), 450, 100, 40)];
-    [btn addTarget:self action:@selector(actionInterApp) forControlEvents:UIControlEventTouchUpInside];
-    [contentView addSubview:btn];
-    btn = [xViewFactory buttonWithTitle:@"JSBridge" font:kFontPF(14) titleColor:kColor(0xFF6600) bgColor:kColor(0xFFFFFF) cornerRadius:0 borderColor:kColor(0xFF6600) borderWidth:0.5 frame:CGRectMake(0.5*(kContentWidth - 100), 510, 100, 40)];
-    [btn addTarget:self action:@selector(actionJSBridge) forControlEvents:UIControlEventTouchUpInside];
-    [contentView addSubview:btn];
-    btn = [xViewFactory buttonWithTitle:@"分页" font:kFontPF(14) titleColor:kColor(0xFF6600) bgColor:kColor(0xFFFFFF) cornerRadius:0 borderColor:kColor(0xFF6600) borderWidth:0.5 frame:CGRectMake(0.5*(kContentWidth - 100), 570, 100, 40)];
-    [btn addTarget:self action:@selector(actionPaged) forControlEvents:UIControlEventTouchUpInside];
-    [contentView addSubview:btn];
-    btn = [xViewFactory buttonWithTitle:@"Banner Loading" font:kFontPF(14) titleColor:kColor(0xFF6600) bgColor:kColor(0xFFFFFF) cornerRadius:0 borderColor:kColor(0xFF6600) borderWidth:0.5 frame:CGRectMake(0.5*(kContentWidth - 100), 630, 100, 40)];
-    [btn addTarget:self action:@selector(actionBannerLoading) forControlEvents:UIControlEventTouchUpInside];
-    [contentView addSubview:btn];
-    btn = [xViewFactory buttonWithTitle:@"runtime" font:kFontPF(14) titleColor:kColor(0xFF6600) bgColor:kColor(0xFFFFFF) cornerRadius:0 borderColor:kColor(0xFF6600) borderWidth:0.5 frame:CGRectMake(0.5*(kContentWidth - 100), 690, 100, 40)];
-    [btn addTarget:self action:@selector(actionRuntime) forControlEvents:UIControlEventTouchUpInside];
-    [contentView addSubview:btn];
-    btn = [xViewFactory buttonWithTitle:@"affine showing" font:kFontPF(14) titleColor:kColor(0xFF6600) bgColor:kColor(0xFFFFFF) cornerRadius:0 borderColor:kColor(0xFF6600) borderWidth:0.5 frame:CGRectMake(0.5*(kContentWidth - 100), 750, 100, 40)];
-    [btn addTarget:self action:@selector(actionAffineShowing) forControlEvents:UIControlEventTouchUpInside];
-    [contentView addSubview:btn];
-    btn = [xViewFactory buttonWithTitle:@"图片Banner" font:kFontPF(14) titleColor:kColor(0xFF6600) bgColor:kColor(0xFFFFFF) cornerRadius:0 borderColor:kColor(0xFF6600) borderWidth:0.5 frame:CGRectMake(0.5*(kContentWidth - 100), 810, 100, 40)];
-    [btn addTarget:self action:@selector(actionPhotoBanner) forControlEvents:UIControlEventTouchUpInside];
-    [contentView addSubview:btn];
-    btn = [xViewFactory buttonWithTitle:@"播放http视频" font:kFontPF(14) titleColor:kColor(0xFF6600) bgColor:kColor(0xFFFFFF) cornerRadius:0 borderColor:kColor(0xFF6600) borderWidth:0.5 frame:CGRectMake(0.5*(kContentWidth - 100), 870, 100, 40)];
-    [btn addTarget:self action:@selector(actionPlay) forControlEvents:UIControlEventTouchUpInside];
-    [contentView addSubview:btn];
-    btn = [xViewFactory buttonWithTitle:@"QTNetwork" font:kFontPF(14) titleColor:kColor(0xFF6600) bgColor:kColor(0xFFFFFF) cornerRadius:0 borderColor:kColor(0xFF6600) borderWidth:0.5 frame:CGRectMake(0.5*(kContentWidth - 100), 930, 100, 40)];
-    [btn addTarget:self action:@selector(actionQTNetwork) forControlEvents:UIControlEventTouchUpInside];
-    [contentView addSubview:btn];
-    contentView.contentSize = CGSizeMake(kScreenWidth, 1110);
+    self.contentView = contentView;
+    
+    [self createBtn:@"图片浏览" y:30 selector:@selector(actionShowPhotoBrowser)];
+    [self createBtn:@"AutoLayout" y:90 selector:@selector(actionShowAutoLayout)];
+    [self createBtn:@"OC语法" y:150 selector:@selector(actionShowOC)];
+    [self createBtn:@"事件处理" y:210 selector:@selector(actionShowEvent)];
+    [self createBtn:@"CoreData" y:270 selector:@selector(actionShowCoreData)];
+    [self createBtn:@"FMDB" y:330 selector:@selector(actionFMDB)];
+    [self createBtn:@"下拉刷新" y:390 selector:@selector(actionRefresh)];
+    [self createBtn:@"其他App交互" y:450 selector:@selector(actionInterApp)];
+    [self createBtn:@"JSBridge" y:510 selector:@selector(actionJSBridge)];
+    [self createBtn:@"分页" y:570 selector:@selector(actionPaged)];
+    [self createBtn:@"Banner loading" y:630 selector:@selector(actionBannerLoading)];
+    [self createBtn:@"runtime" y:690 selector:@selector(actionRuntime)];
+    [self createBtn:@"affine showing" y:750 selector:@selector(actionAffineShowing)];
+    [self createBtn:@"图片Banner" y:810 selector:@selector(actionPhotoBanner)];
+    [self createBtn:@"播放http视频" y:870 selector:@selector(actionPlay)];
+    [self createBtn:@"Network" y:930 selector:@selector(actionNetwork)];
+    [self createBtn:@"UITest" y:990 selector:@selector(actionUITest)];
+    [self createBtn:@"KVO" y:1050 selector:@selector(actionKVO)];
+    [self createBtn:@"Agora Audience" y:1110 selector:@selector(actionAudience)];
+    [self createBtn:@"AFNetworking" y:1170 selector:@selector(actionAFNetworking)];
+    contentView.contentSize = CGSizeMake(kScreenWidth, 1320);
 }
 
--(void)actionQTNetwork{
-    [self.navigationController pushViewController:[[QTNetworkController alloc] init] animated:YES];
+-(void)actionAFNetworking{
+    [BeaconAPI send:@"test" event:@"hello" params:@{@"id":@(123)} commonParams:@{@"a":@"0",@"b":@"1"}];
+}
+
+-(void)actionAudience{
+    [self.navigationController pushViewController:[[AudienceController alloc] init] animated:YES];
+}
+
+-(void)actionKVO{
+    [self.navigationController pushViewController:[[KVOTestController alloc] init] animated:YES];
+}
+
+-(void)actionUITest{
+    [self.navigationController pushViewController:[[UITestController alloc] init] animated:YES];
+}
+
+-(void)actionNetwork{
 }
 
 -(void)actionPlay{
@@ -187,6 +180,12 @@
 
 -(void)actionShowEvent{
     [self.navigationController pushViewController:[[EventController alloc] init] animated:YES];
+}
+
+-(void)createBtn:(NSString*)title y:(CGFloat)y selector:(SEL)selector{
+    UIButton *btn = [xViewFactory buttonWithTitle:title font:kFontPF(14) titleColor:kColor(0xFF6600) bgColor:kColor(0xFFFFFF) cornerRadius:0 borderColor:kColor(0xFF6600) borderWidth:0.5 frame:CGRectMake(0.5*(kContentWidth - 120), y, 120, 40)];
+    [btn addTarget:self action:selector forControlEvents:UIControlEventTouchUpInside];
+    [self.contentView addSubview:btn];
 }
 
 -(UIInterfaceOrientationMask)supportedInterfaceOrientations{
