@@ -8,6 +8,8 @@
 
 #import "xNotice.h"
 #import "xTimer.h"
+#import <objc/runtime.h>
+#import <AVFoundation/AVFoundation.h>
 
 
 @interface xTimerContext : NSObject
@@ -31,6 +33,21 @@
         _curTime = 0;
     }
 }
+@end
+
+@implementation NSObject (xNotice)
+
+-(void)setX_notice_disable:(BOOL)x_notice_disable{
+    objc_setAssociatedObject(self, @selector(x_notice_disable), @(x_notice_disable), OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+}
+
+-(BOOL)x_notice_disable{
+    NSNumber *x_notice_disable = objc_getAssociatedObject(self, _cmd);
+    if(x_notice_disable == nil){
+        return NO;
+    }
+    return [x_notice_disable boolValue];
+}
 
 @end
 
@@ -41,6 +58,7 @@ static NSString *const kAppBecomeActive = @"xNotice.AppBecomeActive";
 static NSString *const kAppEnterBackground = @"xNotice.AppEnterBackground";
 static NSString *const kAppWillTerminate = @"xNotice.AppWillTerminate";
 static NSString *const kAppWillResignActive = @"xNotice.AppWillResignActive";
+static NSString *const kAppAudioSessionRouteChange = @"xNotice.AppAudioSessionRouteChange";
 static NSString *const kTimerTicking = @"xNotice.TimerTicking";
 static NSString *const _customEventNameKey = @"xNotice.customEventNameKey";
 static NSString *const _customEventUserInfoKey = @"xNotice.customEventUserInfoKey";
@@ -97,6 +115,7 @@ static NSString *const _customEventUserInfoKey = @"xNotice.customEventUserInfoKe
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(appBecomeActive:) name:UIApplicationDidBecomeActiveNotification object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(appWillTerminate:) name:UIApplicationWillTerminateNotification object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(appWillResignActive:) name:UIApplicationWillResignActiveNotification object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(appAudioSessionRouteChange:) name:AVAudioSessionRouteChangeNotification object:nil];
 }
 
 
@@ -114,10 +133,14 @@ static NSString *const _customEventUserInfoKey = @"xNotice.customEventUserInfoKe
     if (!mapTable) {
         return;
     }
-    NSEnumerator *enumerator = [mapTable objectEnumerator];
-    id obj;
-    while ( obj = [enumerator nextObject] ) {
-        ( (void (^)(id)) obj)(param);
+    NSEnumerator *keyEnum = mapTable.keyEnumerator;
+    id keyObj;
+    while (keyObj = [keyEnum nextObject]) {
+        if(((NSObject*)keyObj).x_notice_disable){
+            continue;
+        }
+        void (^obj)(id) = [mapTable objectForKey:keyObj];
+        obj(param);
     }
 }
 
@@ -155,6 +178,12 @@ static NSString *const _customEventUserInfoKey = @"xNotice.customEventUserInfoKe
     dispatch_async(_bindQueue, ^{
         [self.timer stop];
         [self runAction:kAppWillTerminate param:notification.userInfo];
+    });
+}
+
+-(void)appAudioSessionRouteChange:(NSNotification*)notification {
+    dispatch_async(_bindQueue, ^{
+        [self runAction:kAppAudioSessionRouteChange param:notification.userInfo];
     });
 }
 
@@ -205,6 +234,12 @@ static NSString *const _customEventUserInfoKey = @"xNotice.customEventUserInfoKe
 -(void)registerAppWillTerminate:(id)lifeIndicator action:(void (^)(id))action {
     dispatch_barrier_async(_bindQueue, ^{
         [self setAction:kAppWillTerminate lifeIndicator:lifeIndicator action:action];
+    });
+}
+
+-(void)registerAppAudioSessionRouteChange:(id)lifeIndicator action:(void (^)(id))action {
+    dispatch_barrier_async(_bindQueue, ^{
+        [self setAction:kAppAudioSessionRouteChange lifeIndicator:lifeIndicator action:action];
     });
 }
 

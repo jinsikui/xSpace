@@ -43,6 +43,7 @@
 {
     self = [super init];
     if (self == nil) return nil;
+    
     self.source = dispatch_source_create(DISPATCH_SOURCE_TYPE_TIMER, 0, 0, queue);
     if (self.source != nil) {
         dispatch_source_set_timer(self.source,dispatch_walltime(NULL, fireOnStart?0:seconds*NSEC_PER_SEC),seconds*NSEC_PER_SEC,0);

@@ -8,6 +8,12 @@
 
 #import <Foundation/Foundation.h>
 
+@interface NSObject (xNotice)
+
+@property(nonatomic,assign)BOOL x_notice_disable;
+
+@end
+
 @interface xNotice : NSObject
 
 +(instancetype)shared;
@@ -21,6 +27,8 @@
 -(void)registerAppEnterBackground:(id)lifeIndicator action:(void (^)(id))action;
 
 -(void)registerAppWillTerminate:(id)lifeIndicator action:(void (^)(id))action;
+
+-(void)registerAppAudioSessionRouteChange:(id)lifeIndicator action:(void (^)(id))action;
 
 -(void)registerTimerTicking:(id)lifeIndicator action:(void (^)(id))action;
 

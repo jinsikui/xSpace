@@ -18,8 +18,16 @@
 
 +(CGFloat)navBarHeight;
 
++(CGFloat)bottomBarHeight;
+
 +(float)iosVersion;
 
++(NSString*)iosRawVersion;
+
++(NSString*)deviceName;
+
 +(NSString*)deviceId;
+
++(BOOL)isIphoneX;
 
 @end

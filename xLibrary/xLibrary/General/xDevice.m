@@ -7,6 +7,7 @@
 //
 
 #import "xDevice.h"
+#import <sys/utsname.h>
 
 static float _iosVersion = -1;
 static CGFloat _screenWidth = -1;
@@ -31,12 +32,22 @@ static NSString *_deviceId = nil;
 
 +(CGFloat)statusBarHeight{
     //[[UIApplication sharedApplication] statusBarFrame].size.height
+    if([self isIphoneX]){
+        return 44;
+    }
     return 20;
 }
 
 +(CGFloat)navBarHeight{
     //navigationController.navigationBar.frame.size.height
     return 44;
+}
+
++(CGFloat)bottomBarHeight{
+    if([self isIphoneX]){
+        return 34;
+    }
+    return 0;
 }
 
 +(float)iosVersion{
@@ -66,11 +77,25 @@ static NSString *_deviceId = nil;
     return _iosVersion;
 }
 
++(NSString*)iosRawVersion{
+    return [UIDevice currentDevice].systemVersion;
+}
+
++(NSString*)deviceName{
+    struct utsname systemInfo;
+    uname(&systemInfo);
+    return [NSString stringWithCString:systemInfo.machine encoding:NSUTF8StringEncoding];
+}
+
 +(NSString*)deviceId{
     if(_deviceId == nil){
         _deviceId = [UIDevice currentDevice].identifierForVendor.UUIDString;
     }
     return _deviceId;
+}
+
++(BOOL)isIphoneX{
+    return [self screenWidth] == 375.f && [self screenHeight] == 812.f;
 }
 
 @end

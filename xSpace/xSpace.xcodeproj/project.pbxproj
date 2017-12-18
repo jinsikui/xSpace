@@ -13,6 +13,7 @@
 		632F0C071E94E92A000EBCB3 /* Employee.m in Sources */ = {isa = PBXBuildFile; fileRef = 632F0C061E94E92A000EBCB3 /* Employee.m */; };
 		63396C781EF0F825001525E7 /* BannerLoadingController.m in Sources */ = {isa = PBXBuildFile; fileRef = 63396C771EF0F825001525E7 /* BannerLoadingController.m */; };
 		6364B4271EB84C8A008A0D5B /* InterAppController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6364B4261EB84C8A008A0D5B /* InterAppController.m */; };
+		636E6E471FD992EA0076D260 /* MyDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 636E6E461FD992EA0076D260 /* MyDelegate.m */; };
 		63900A7A1F0661000080C48D /* RuntimeController.m in Sources */ = {isa = PBXBuildFile; fileRef = 63900A791F0661000080C48D /* RuntimeController.m */; };
 		6391A9B51FC52A4B00431D72 /* UITestController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6391A9B41FC52A4A00431D72 /* UITestController.m */; };
 		6391A9B91FC55B0600431D72 /* KVOTestController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6391A9B81FC55B0600431D72 /* KVOTestController.m */; };
@@ -106,6 +107,9 @@
 		63396C771EF0F825001525E7 /* BannerLoadingController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BannerLoadingController.m; sourceTree = "<group>"; };
 		6364B4251EB84C8A008A0D5B /* InterAppController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InterAppController.h; sourceTree = "<group>"; };
 		6364B4261EB84C8A008A0D5B /* InterAppController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InterAppController.m; sourceTree = "<group>"; };
+		636E6E451FD992EA0076D260 /* MyDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MyDelegate.h; sourceTree = "<group>"; };
+		636E6E461FD992EA0076D260 /* MyDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MyDelegate.m; sourceTree = "<group>"; };
+		636E6E481FD993080076D260 /* LogDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LogDelegate.h; sourceTree = "<group>"; };
 		63900A781F0661000080C48D /* RuntimeController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RuntimeController.h; sourceTree = "<group>"; };
 		63900A791F0661000080C48D /* RuntimeController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RuntimeController.m; sourceTree = "<group>"; };
 		6391A9B31FC52A4A00431D72 /* UITestController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UITestController.h; sourceTree = "<group>"; };
@@ -292,6 +296,16 @@
 			path = InterApp;
 			sourceTree = "<group>";
 		};
+		636E6E441FD992B70076D260 /* NSPointerArray */ = {
+			isa = PBXGroup;
+			children = (
+				636E6E451FD992EA0076D260 /* MyDelegate.h */,
+				636E6E461FD992EA0076D260 /* MyDelegate.m */,
+				636E6E481FD993080076D260 /* LogDelegate.h */,
+			);
+			path = NSPointerArray;
+			sourceTree = "<group>";
+		};
 		63900A771F0660770080C48D /* runtime */ = {
 			isa = PBXGroup;
 			children = (
@@ -468,6 +482,7 @@
 		B1748FCE1DDF154C0034C852 /* xSpace */ = {
 			isa = PBXGroup;
 			children = (
+				636E6E441FD992B70076D260 /* NSPointerArray */,
 				630A140F1FCFE66700B0864B /* AFNetworking */,
 				63D3F4441FC852410061B993 /* ThirdParty */,
 				63D3F43D1FC851150061B993 /* Agora */,
@@ -844,6 +859,7 @@
 				B17490871DE4034B0034C852 /* PortalNavigationController.m in Sources */,
 				63D3F4381FC7E8140061B993 /* PopView.m in Sources */,
 				63F75A211E77DA7A00756FE7 /* FriendInfoMO..m in Sources */,
+				636E6E471FD992EA0076D260 /* MyDelegate.m in Sources */,
 				630A14121FCFE68400B0864B /* BeaconAPI.m in Sources */,
 				63F75A251E77DA7A00756FE7 /* EmployeeMO.m in Sources */,
 				63F758E61E72BFA100756FE7 /* CoreDataController.m in Sources */,

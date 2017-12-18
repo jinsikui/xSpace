@@ -27,7 +27,6 @@
 		6391A8B21FC1893900431D72 /* xDevice.m in Sources */ = {isa = PBXBuildFile; fileRef = 6391A8B11FC1893900431D72 /* xDevice.m */; };
 		6391A8B51FC1895100431D72 /* xViewFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 6391A8B41FC1895100431D72 /* xViewFactory.m */; };
 		6391A8B91FC18A4600431D72 /* xGridView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6391A8B81FC18A4600431D72 /* xGridView.m */; };
-		6391A8CA1FC2755B00431D72 /* UICollectionViewCell+xGridView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6391A8C91FC2755B00431D72 /* UICollectionViewCell+xGridView.m */; };
 		6391A8CE1FC2880F00431D72 /* xExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 6391A8CD1FC2880F00431D72 /* xExtensions.m */; };
 		6391A9C41FC5AEAB00431D72 /* xTimer.m in Sources */ = {isa = PBXBuildFile; fileRef = 6391A9C11FC5AEAA00431D72 /* xTimer.m */; };
 		6391A9C51FC5AEAB00431D72 /* xNotice.m in Sources */ = {isa = PBXBuildFile; fileRef = 6391A9C31FC5AEAA00431D72 /* xNotice.m */; };
@@ -67,6 +66,7 @@
 
 /* Begin PBXFileReference section */
 		3D59FFB247B0652E8883766A /* libPods-xLibrary.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-xLibrary.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		633538991FE7655500EC99C5 /* xHeaders.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = xHeaders.h; sourceTree = "<group>"; };
 		63396C7D1EF0F918001525E7 /* UIView+xBannerLoading.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+xBannerLoading.h"; sourceTree = "<group>"; };
 		63396C7E1EF0F918001525E7 /* UIView+xBannerLoading.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+xBannerLoading.m"; sourceTree = "<group>"; };
 		63900A1C1F04CADC0080C48D /* NSObject+xRuntime.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+xRuntime.h"; sourceTree = "<group>"; };
@@ -106,9 +106,6 @@
 		6391A8B71FC18A4600431D72 /* xGridView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = xGridView.h; sourceTree = "<group>"; };
 		6391A8B81FC18A4600431D72 /* xGridView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = xGridView.m; sourceTree = "<group>"; };
 		6391A8BD1FC1B3EF00431D72 /* xDefines.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = xDefines.h; sourceTree = "<group>"; };
-		6391A8C81FC2755B00431D72 /* UICollectionViewCell+xGridView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UICollectionViewCell+xGridView.h"; sourceTree = "<group>"; };
-		6391A8C91FC2755B00431D72 /* UICollectionViewCell+xGridView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UICollectionViewCell+xGridView.m"; sourceTree = "<group>"; };
-		6391A8CB1FC284AA00431D72 /* xCommonHeaders.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = xCommonHeaders.h; sourceTree = "<group>"; };
 		6391A8CC1FC2880F00431D72 /* xExtensions.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = xExtensions.h; sourceTree = "<group>"; };
 		6391A8CD1FC2880F00431D72 /* xExtensions.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = xExtensions.m; sourceTree = "<group>"; };
 		6391A9C01FC5AEAA00431D72 /* xTimer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = xTimer.h; sourceTree = "<group>"; };
@@ -255,8 +252,6 @@
 			children = (
 				6391A8B71FC18A4600431D72 /* xGridView.h */,
 				6391A8B81FC18A4600431D72 /* xGridView.m */,
-				6391A8C81FC2755B00431D72 /* UICollectionViewCell+xGridView.h */,
-				6391A8C91FC2755B00431D72 /* UICollectionViewCell+xGridView.m */,
 			);
 			path = xGridView;
 			sourceTree = "<group>";
@@ -364,6 +359,7 @@
 		B1EFACFE1E726F9500128906 /* General */ = {
 			isa = PBXGroup;
 			children = (
+				633538991FE7655500EC99C5 /* xHeaders.h */,
 				6391A9C71FC5AEEF00431D72 /* xTask.h */,
 				6391A9C61FC5AEEF00431D72 /* xTask.m */,
 				6391A9C21FC5AEAA00431D72 /* xNotice.h */,
@@ -379,7 +375,6 @@
 				6391A8B31FC1895100431D72 /* xViewFactory.h */,
 				6391A8B41FC1895100431D72 /* xViewFactory.m */,
 				6391A8BD1FC1B3EF00431D72 /* xDefines.h */,
-				6391A8CB1FC284AA00431D72 /* xCommonHeaders.h */,
 				6391A8CC1FC2880F00431D72 /* xExtensions.h */,
 				6391A8CD1FC2880F00431D72 /* xExtensions.m */,
 			);
@@ -543,7 +538,6 @@
 				6391A9C81FC5AEEF00431D72 /* xTask.m in Sources */,
 				63CB5B711F46F95C00EC1082 /* xPlayerView.m in Sources */,
 				B1EFAD131E72701200128906 /* NSDictionary+Log.m in Sources */,
-				6391A8CA1FC2755B00431D72 /* UICollectionViewCell+xGridView.m in Sources */,
 				63EBC8001EE251DF001029B3 /* xPagedView.m in Sources */,
 				6391A8CE1FC2880F00431D72 /* xExtensions.m in Sources */,
 				63D94A551F33233F00170AA7 /* xAlert.m in Sources */,

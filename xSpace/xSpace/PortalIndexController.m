@@ -23,10 +23,17 @@
 #import <AVFoundation/AVFoundation.h>
 #import <AVKit/AVKit.h>
 #import "BeaconAPI.h"
+#import "MyDelegate.h"
+#import "LogDelegate.h"
 
 @interface PortalIndexController ()
 @property(nonatomic,strong)UIView *affineShowingPanel;
 @property(nonatomic,strong)UIScrollView *contentView;
+
+@property(nonatomic,strong)NSPointerArray *delegates;
+@property(nonatomic,strong)MyDelegate *myDelegate1;
+@property(nonatomic,strong)MyDelegate *myDelegate2;
+@property(nonatomic,strong)MyDelegate *myDelegate3;
 @end
 
 @implementation PortalIndexController
@@ -63,7 +70,67 @@
     [self createBtn:@"KVO" y:1050 selector:@selector(actionKVO)];
     [self createBtn:@"Agora Audience" y:1110 selector:@selector(actionAudience)];
     [self createBtn:@"AFNetworking" y:1170 selector:@selector(actionAFNetworking)];
-    contentView.contentSize = CGSizeMake(kScreenWidth, 1320);
+    [self createBtn:@"NSPointerArray" y:1230 selector:@selector(actionPointerArray)];
+    contentView.contentSize = CGSizeMake(kScreenWidth, 1380);
+}
+
+-(void)actionPointerArray{
+    _delegates = [NSPointerArray weakObjectsPointerArray];
+    self.myDelegate1 = [[MyDelegate alloc] initWithNum:1];
+    [self addDelegate:_myDelegate1];
+    self.myDelegate2 = [[MyDelegate alloc] initWithNum:2];
+    [self addDelegate:_myDelegate2];
+    self.myDelegate3 = [[MyDelegate alloc] initWithNum:3];
+    [self addDelegate:_myDelegate3];
+    
+    __weak typeof(self) weak = self;
+    [xTask asyncMainAfter:3 task:^{
+        weak.myDelegate1 = nil;
+        weak.myDelegate3 = nil;
+    }];
+    [xTask asyncMainAfter:6 task:^{
+        [weak executeDelegates];
+        [weak executeDelegates];
+    }];
+}
+
+-(void)executeDelegates{
+    NSLog(@"===== delegates.count: %lu =====", (unsigned long)self.delegates.count);
+    NSMutableArray *nilIndexArr = [NSMutableArray array];
+    for(NSInteger i=0; i<self.delegates.count; i++){
+        id<LogDelegate> log = [self.delegates pointerAtIndex:i];
+        if(log == nil){
+            [nilIndexArr addObject:@(i)];
+        }
+        else{
+            [log log:@"hello world"];
+        }
+    }
+    for(NSInteger j = nilIndexArr.count -1; j>=0; j--){
+        NSInteger index = [nilIndexArr[j] integerValue];
+        [self.delegates removePointerAtIndex:index];
+    }
+}
+
+- (void)addDelegate:(id<LogDelegate>)delegate
+{
+    if([[_delegates allObjects] containsObject:delegate]){
+        return;
+    }
+    [_delegates addPointer:(__bridge void * _Nullable)(delegate)];
+}
+
+- (void)removeDelegate:(id<LogDelegate>)delegate
+{
+    NSMutableArray *arr = [[NSMutableArray alloc] initWithArray: [_delegates allObjects]];
+    if([arr containsObject:delegate]){
+        [arr removeObject:delegate];
+        NSPointerArray *pArr = [NSPointerArray weakObjectsPointerArray];
+        for(id<LogDelegate> obj in arr){
+            [pArr addPointer:(__bridge void * _Nullable)(obj)];
+        }
+        _delegates = pArr;
+    }
 }
 
 -(void)actionAFNetworking{

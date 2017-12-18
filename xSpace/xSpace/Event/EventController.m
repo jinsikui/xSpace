@@ -53,6 +53,8 @@
     [[xNotice shared] registerEvent:@"customEvent" lifeIndicator:self action:^(id param) {
         NSLog(@"===== fire custom event, name:%@ =====", ((NSDictionary<NSString*, id>*)param)[@"name"]);
     }];
+    self.x_notice_disable = YES; //will disable action call on self lifeIndicator
+    self.x_notice_disable = NO;
     
     [[xNotice shared] registerTimer:self intervalSeconds:3 action:^{
         NSLog(@"===== xNotice Timer fire =====");

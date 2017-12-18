@@ -8,7 +8,14 @@
 
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
-#import "UICollectionViewCell+xGridView.h"
+
+@interface UICollectionViewCell (xGridView)
+
+@property(nonatomic,strong)id x_data;
+
+@property(nonatomic)NSIndexPath *x_indexPath;
+
+@end
 
 @interface xGridView : UIView <UICollectionViewDelegateFlowLayout, UICollectionViewDataSource>
 
