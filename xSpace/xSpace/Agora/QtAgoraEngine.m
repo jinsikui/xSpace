@@ -14,6 +14,10 @@ NSString *const QtAgoraEventConnectStatusChanged = @"QtAgoraEvent.ConnectStatusC
 NSString *const QtAgoraEventConnectStatusKey = @"QtAgoraEvent.ConnectStatusKey";
 NSString *const QtAgoraEventNetworkStatusChanged = @"QtAgoraEvent.NetworkStatusChanged";
 NSString *const QtAgoraEventNetworkStatusKey = @"QtAgoraEvent.NetworkStatusKey";
+NSString *const QtAgoraEventConnectionLost = @"QtAgoraEvent.ConnectionLost";
+NSString *const QtAgoraEventRequestChannelKey = @"QtAgoraEvent.RequestChannelKey";
+NSString *const QtAgoraEventSDKError = @"QtAgoraEvent.SDKError";
+NSString *const QtAgoraEventSDKErrorCodeKey = @"QtAgoraEvent.SDKErrorCodeKey";
 NSString *const QtAgoraEventSelfConnected = @"QtAgoraEvent.SelfConnected";
 NSString *const QtAgoraEventMasterCutoff = @"QtAgoraEvent.MasterCutoff";
 NSString *const QtAgoraEventPublisherConnected = @"QtAgoraEvent.PublisherConnected";
@@ -21,9 +25,14 @@ NSString *const QtAgoraEventPublisherUidKey = @"QtAgoraEvent.PublisherUidKey";
 NSString *const QtAgoraEventPublisherDisconnected = @"QtAgoraEvent.PublisherDisconnected";
 NSString *const QtAgoraEventSelfVolumeInfo = @"QtAgoraEvent.SelfVolumeInfo";
 NSString *const QtAgoraEventSelfVolumeInfoKey = @"QtAgoraEvent.SelfVolumeInfoKey";
-NSString *const QtAgoraEventAudienceVolumesInfo = @"QtAgoraEvent.AudienceVolumesInfo";
-NSString *const QtAgoraEventAudienceVolumesInfoKey = @"QtAgoraEvent.AudienceVolumesInfoKey";
-static NSString *const agoraAppId = @"e113311f89174445a7d20f79662ef006";
+NSString *const QtAgoraEventOthersVolumesInfo = @"QtAgoraEvent.OthersVolumesInfo";
+NSString *const QtAgoraEventOthersVolumesInfoKey = @"QtAgoraEvent.OthersVolumesInfoKey";
+//#ifdef DEBUG
+//static NSString *const agoraAppId = @"3107d20858804bc0b86df192bd663be9";    //测试环境
+//#else
+//static NSString *const agoraAppId = @"523204405737451bac7ccb7d306afe57";    //正式环境
+//#endif
+static NSString *const agoraAppId = @"e113311f89174445a7d20f79662ef006";    //demo环境
 
 @interface QtAgoraEngine()<AgoraLiveDelegate,AgoraLivePublisherDelegate,AgoraLiveSubscriberDelegate,AgoraRtcEngineDelegate>{
     QtAgoraConnectStatus    _status;
@@ -32,13 +41,13 @@ static NSString *const agoraAppId = @"e113311f89174445a7d20f79662ef006";
 
 @property(nonatomic,copy)   NSString        *channel;
 @property(nonatomic,assign) NSUInteger      uid;
-@property(nonatomic,assign) QtAgoraConnectStatus    status;
 @property(nonatomic,assign) QtAgoraNetworkStatus    networkStatus;
 @property(nonatomic,strong) AgoraLiveKit    *liveKit;
 @property(nonatomic,strong) AgoraLiveChannelConfig  *channelConfig;
 @property(nonatomic,strong) AgoraLivePublisher      *publisher;
 @property(nonatomic,strong) AgoraLiveSubscriber     *subscriber;
 @property(nonatomic,weak)   id<QtAgoraEnginDelegate>    delegate;
+
 @end
 
 @implementation QtAgoraEngine
@@ -48,15 +57,16 @@ static NSString *const agoraAppId = @"e113311f89174445a7d20f79662ef006";
     [self stopHostin];
 }
 
-- (instancetype)initWithChannel:(NSString*)channel uid:(NSUInteger)uid{
+- (instancetype)initWithChannel:(NSString*)channel uid:(NSUInteger)uid agoraKey:(NSString*)agoraKey{
     self = [super init];
     if(self){
         self.channel = channel;
+        self.agoraKey = agoraKey;
         self.uid = uid;
         //
         self.liveKit = [AgoraLiveKit sharedLiveKitWithAppId:agoraAppId];
         _liveKit.delegate = self;
-        [[_liveKit getRtcEngineKit] setEngineDelegate:self];
+        [_liveKit getRtcEngineKit].delegate = self;
         [[_liveKit getRtcEngineKit] enableAudioVolumeIndication:kSpeakerVolumesCallbackInterval smooth:3];
         
         //
@@ -99,17 +109,24 @@ static NSString *const agoraAppId = @"e113311f89174445a7d20f79662ef006";
     [[self.liveKit getRtcEngineKit] muteLocalAudioStream:isMuted];
 }
 
+// 应该可重入
 -(void)startHostin{
     NSLog(@"===== startHostin =====");
-    [self.liveKit joinChannel:self.channel key:nil config:self.channelConfig uid:self.uid];
-    self.status = QtAgoraConnectStatusConnecting;
+    if(self.status == QtAgoraConnectStatusStop){
+        self.status = QtAgoraConnectStatusConnecting;
+        [self.liveKit joinChannel:self.channel key:self.agoraKey config:self.channelConfig uid:self.uid];
+    }
 }
 
+// 应该可重入
 -(void)stopHostin{
     NSLog(@"===== stopHostin =====");
+    if(self.status == QtAgoraConnectStatusStop){
+        return;
+    }
+    self.status = QtAgoraConnectStatusStop;
     [self.publisher unpublish];
     [self.liveKit leaveChannel];
-    self.status = QtAgoraConnectStatusStop;
 }
 
 -(void)unsubscribeUser:(NSUInteger)uid{
@@ -119,7 +136,7 @@ static NSString *const agoraAppId = @"e113311f89174445a7d20f79662ef006";
 
 #pragma mark - Agora Delegate
 
-// 加入频道成功
+// 加入频道成功 SDK 在加入频道失败时会自动进行重试。
 - (void)liveKit:(AgoraLiveKit *)kit didJoinChannel:(NSString *)channel withUid:(NSUInteger)uid elapsed:(NSInteger)elapsed {
     NSLog(@"===== liveKit didJoinChannel: %@ uid: %lu =====", channel, (unsigned long)uid);
     // uid: 用户 uid 。如果在 joinChannel 时使用了 0，这里回返回服务器分配的 uid 。
@@ -128,18 +145,43 @@ static NSString *const agoraAppId = @"e113311f89174445a7d20f79662ef006";
     [[xNotice shared] postEvent:QtAgoraEventSelfConnected userInfo:nil];
 }
 
-// SDK 遇到错误。SDK 在加入频道失败时会自动进行重试。
-- (void)liveKit:(AgoraLiveKit *)kit didOccurError:(AgoraErrorCode)errorCode {
-    NSLog(@"===== liveKit didOccurError: %d =====", (int)errorCode);
-    self.status = QtAgoraConnectStatusStop;
-}
-
 // 重新加入频道成功
 - (void)liveKit:(AgoraLiveKit *)kit didRejoinChannel:(NSString *)channel withUid:(NSUInteger)uid elapsed:(NSInteger)elapsed {
     NSLog(@"===== liveKit didRejoinChannel: %@ uid: %lu =====", channel, (unsigned long)uid);
     [self.publisher publishWithPermissionKey:nil];
     self.status = QtAgoraConnectStatusConnected;
     [[xNotice shared] postEvent:QtAgoraEventSelfConnected userInfo:nil];
+}
+
+// SDK 遇到错误
+- (void)liveKit:(AgoraLiveKit *)kit didOccurError:(AgoraErrorCode)errorCode {
+    NSLog(@"===== liveKit didOccurError: %d =====", (int)errorCode);
+    if(errorCode == AgoraErrorCodeChannelKeyExpired ||
+       errorCode == AgoraErrorCodeInvalidChannelKey){
+        //在liveKitRequestChannelKey回调中处理
+        return;
+    }
+    self.status = QtAgoraConnectStatusStop;
+    [[xNotice shared] postEvent:QtAgoraEventSDKError userInfo:@{QtAgoraEventSDKErrorCodeKey: @((int)errorCode)}];
+}
+
+/**
+ * when channel key is enabled, and specified channel key is invalid or expired, this function will be called.
+ * APP should generate a new channel key and call renewChannelKey() to refresh the key.
+ * NOTE: to be compatible with previous version, ERR_CHANNEL_KEY_EXPIRED and ERR_INVALID_CHANNEL_KEY are also reported via onError() callback.
+ * You should move renew of channel key logic into this callback.
+ *  @param kit The live kit
+ */
+- (void)liveKitRequestChannelKey:(AgoraLiveKit *_Nonnull)kit{
+    NSLog(@"===== liveKitRequestChannelKey =====");
+    [[xNotice shared] postEvent:QtAgoraEventRequestChannelKey userInfo:nil];
+}
+
+// 外部获取到新的 agoraKey 之后调用
+- (void)renewChannelKey:(NSString*)agoraKey{
+    NSLog(@"===== renewChannelKey: %@ =====", agoraKey);
+    self.agoraKey = agoraKey;
+    [self.liveKit renewChannelKey:agoraKey];
 }
 
 /**
@@ -160,6 +202,7 @@ static NSString *const agoraAppId = @"e113311f89174445a7d20f79662ef006";
  */
 - (void)liveKitConnectionDidLost:(AgoraLiveKit *_Nonnull)kit{
     NSLog(@"===== liveKit ConnectionDidLost =====");
+    [[xNotice shared] postEvent:QtAgoraEventConnectionLost userInfo:nil];
 }
 
 /**
@@ -194,7 +237,6 @@ static NSString *const agoraAppId = @"e113311f89174445a7d20f79662ef006";
 // 收到主播踢人请求
 - (void)liveKit:(AgoraLiveKit *_Nonnull)kit unpublishingRequestReceivedFromOwner:(NSUInteger)uid{
     NSLog(@"===== liveKit unpublishingRequestReceivedFromOwner: %lu =====", (unsigned long)uid);
-    [self stopHostin];
     [[xNotice shared] postEvent:QtAgoraEventMasterCutoff userInfo:nil];
 }
 
@@ -263,7 +305,7 @@ static NSString *const agoraAppId = @"e113311f89174445a7d20f79662ef006";
                 [audienceArr addObject:info];
             }
         }
-        [[xNotice shared] postEvent:QtAgoraEventAudienceVolumesInfo userInfo:@{QtAgoraEventAudienceVolumesInfoKey:audienceArr}];
+        [[xNotice shared] postEvent:QtAgoraEventOthersVolumesInfo userInfo:@{QtAgoraEventOthersVolumesInfoKey:audienceArr}];
     }
 }
 

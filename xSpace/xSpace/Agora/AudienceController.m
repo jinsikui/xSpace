@@ -22,7 +22,7 @@
     
     ///测试
     if(_agoraEngine == nil){
-        _agoraEngine = [[QtAgoraEngine alloc] initWithChannel:@"100001116" uid:444];
+        _agoraEngine = [[QtAgoraEngine alloc] initWithChannel:@"100000000" uid:1000 agoraKey:nil];
         [[xNotice shared] registerEvent:QtAgoraEventSelfConnected lifeIndicator:self action:^(id param) {
             NSLog(@"===== SelfConnected =====");
         }];
@@ -38,6 +38,10 @@
         }];
     }
     [_agoraEngine startHostin];
+}
+
+-(void)dealloc{
+    [_agoraEngine stopHostin];
 }
 
 @end

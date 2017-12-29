@@ -14,6 +14,10 @@ extern NSString *const QtAgoraEventConnectStatusChanged;
 extern NSString *const QtAgoraEventConnectStatusKey;
 extern NSString *const QtAgoraEventNetworkStatusChanged;
 extern NSString *const QtAgoraEventNetworkStatusKey;
+extern NSString *const QtAgoraEventConnectionLost;
+extern NSString *const QtAgoraEventRequestChannelKey;
+extern NSString *const QtAgoraEventSDKError;
+extern NSString *const QtAgoraEventSDKErrorCodeKey;
 extern NSString *const QtAgoraEventSelfConnected;
 extern NSString *const QtAgoraEventMasterCutoff;
 extern NSString *const QtAgoraEventPublisherConnected;
@@ -21,8 +25,8 @@ extern NSString *const QtAgoraEventPublisherUidKey;
 extern NSString *const QtAgoraEventPublisherDisconnected;
 extern NSString *const QtAgoraEventSelfVolumeInfo;
 extern NSString *const QtAgoraEventSelfVolumeInfoKey;
-extern NSString *const QtAgoraEventAudienceVolumesInfo;
-extern NSString *const QtAgoraEventAudienceVolumesInfoKey;
+extern NSString *const QtAgoraEventOthersVolumesInfo;
+extern NSString *const QtAgoraEventOthersVolumesInfoKey;
 
 typedef enum QtAgoraConnectStatus{
     QtAgoraConnectStatusStop = 0,
@@ -45,7 +49,13 @@ typedef enum QtAgoraNetworkStatus{
 
 @interface QtAgoraEngine : NSObject
 
-- (instancetype)initWithChannel:(NSString*)channel uid:(NSUInteger)uid;
+@property(nonatomic,copy)   NSString        *agoraKey;
+@property(nonatomic,assign) QtAgoraConnectStatus    status;
+
+- (instancetype)initWithChannel:(NSString*)channel uid:(NSUInteger)uid agoraKey:(NSString*)agoraKey;
+
+// 外部获取到新的 agoraKey 之后调用
+- (void)renewChannelKey:(NSString*)agoraKey;
 
 //静音／关闭静音
 -(void)setMuted:(BOOL)isMuted;

@@ -105,7 +105,7 @@ typedef NS_ENUM(NSInteger, AgoraErrorCode) {
 
 typedef NS_ENUM(NSInteger, AgoraVideoProfile) {
     // res       fps  kbps
-    AgoraVideoProfileLandscapeInvalid = -1,
+    AgoraVideoProfileInvalid = -1,
     AgoraVideoProfileLandscape120P = 0,         // 160x120   15   65
 #if TARGET_OS_IPHONE
     AgoraVideoProfileLandscape120P_3 = 2,		// 120x120   15   50
