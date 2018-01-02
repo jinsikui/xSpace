@@ -25,6 +25,7 @@
 #import "BeaconAPI.h"
 #import "MyDelegate.h"
 #import "LogDelegate.h"
+#import "BlurViewController.h"
 
 @interface PortalIndexController ()
 @property(nonatomic,strong)UIView *affineShowingPanel;
@@ -71,7 +72,12 @@
     [self createBtn:@"Agora Audience" y:1110 selector:@selector(actionAudience)];
     [self createBtn:@"AFNetworking" y:1170 selector:@selector(actionAFNetworking)];
     [self createBtn:@"NSPointerArray" y:1230 selector:@selector(actionPointerArray)];
+    [self createBtn:@"BlurView" y:1290 selector:@selector(actionBlurView)];
     contentView.contentSize = CGSizeMake(kScreenWidth, 1380);
+}
+
+-(void)actionBlurView{
+    [self.navigationController pushViewController:[[BlurViewController alloc] init] animated:YES];
 }
 
 -(void)actionPointerArray{

@@ -55,6 +55,8 @@
 		63F75A251E77DA7A00756FE7 /* EmployeeMO.m in Sources */ = {isa = PBXBuildFile; fileRef = 63F75A1A1E77DA7900756FE7 /* EmployeeMO.m */; };
 		63F75A271E77DA7A00756FE7 /* PersonMO.m in Sources */ = {isa = PBXBuildFile; fileRef = 63F75A1E1E77DA7900756FE7 /* PersonMO.m */; };
 		63FFE76F1FF6B94100C96F70 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 63FFE76E1FF6B94000C96F70 /* SystemConfiguration.framework */; };
+		63FFE7731FF6BA4E00C96F70 /* BlurViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 63FFE7721FF6BA4E00C96F70 /* BlurViewController.m */; };
+		63FFE7751FF6C0BE00C96F70 /* pic.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 63FFE7741FF6C0BD00C96F70 /* pic.jpg */; };
 		B1748FD11DDF154C0034C852 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B1748FD01DDF154C0034C852 /* main.m */; };
 		B1748FD41DDF154C0034C852 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B1748FD31DDF154C0034C852 /* AppDelegate.m */; };
 		B1748FD71DDF154C0034C852 /* PortalIndexController.m in Sources */ = {isa = PBXBuildFile; fileRef = B1748FD61DDF154C0034C852 /* PortalIndexController.m */; };
@@ -176,6 +178,9 @@
 		63F75A1D1E77DA7900756FE7 /* PersonMO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PersonMO.h; sourceTree = "<group>"; };
 		63F75A1E1E77DA7900756FE7 /* PersonMO.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PersonMO.m; sourceTree = "<group>"; };
 		63FFE76E1FF6B94000C96F70 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		63FFE7711FF6BA4E00C96F70 /* BlurViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BlurViewController.h; sourceTree = "<group>"; };
+		63FFE7721FF6BA4E00C96F70 /* BlurViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BlurViewController.m; sourceTree = "<group>"; };
+		63FFE7741FF6C0BD00C96F70 /* pic.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = pic.jpg; sourceTree = "<group>"; };
 		66E1A84CD09E67B3C5DB688E /* libPods-xSpace.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-xSpace.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8012D24A8EB3D8832515B4A4 /* libPods-Box-xPortal.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Box-xPortal.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		82B42E39E16332FC3E44D1A6 /* libPods-xPortal.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-xPortal.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -354,6 +359,7 @@
 		63A3AB961E7FD72A00FB47B8 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				63FFE7741FF6C0BD00C96F70 /* pic.jpg */,
 				63D3F4391FC7ED3F0061B993 /* liveshow-bg.jpg */,
 				63A3AB971E7FD7C700FB47B8 /* Assets.xcassets */,
 				63CB5B841F4C006500EC1082 /* empty_image.png */,
@@ -460,6 +466,15 @@
 			path = CoreData;
 			sourceTree = "<group>";
 		};
+		63FFE7701FF6BA1A00C96F70 /* BlurView */ = {
+			isa = PBXGroup;
+			children = (
+				63FFE7711FF6BA4E00C96F70 /* BlurViewController.h */,
+				63FFE7721FF6BA4E00C96F70 /* BlurViewController.m */,
+			);
+			path = BlurView;
+			sourceTree = "<group>";
+		};
 		B1748FC31DDF154C0034C852 = {
 			isa = PBXGroup;
 			children = (
@@ -485,6 +500,7 @@
 		B1748FCE1DDF154C0034C852 /* xSpace */ = {
 			isa = PBXGroup;
 			children = (
+				63FFE7701FF6BA1A00C96F70 /* BlurView */,
 				636E6E441FD992B70076D260 /* NSPointerArray */,
 				630A140F1FCFE66700B0864B /* AFNetworking */,
 				63D3F4441FC852410061B993 /* ThirdParty */,
@@ -747,6 +763,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				63FFE7751FF6C0BE00C96F70 /* pic.jpg in Resources */,
 				63A3AB991E7FD7C700FB47B8 /* Assets.xcassets in Resources */,
 				63D3260F1EB9C42F006D424B /* WVJBPage.html in Resources */,
 				63A3AB9A1E7FD7C700FB47B8 /* refresh.gif in Resources */,
@@ -834,6 +851,7 @@
 				B17D8AE51DEEC7C3004CD18F /* AutoLayoutController.m in Sources */,
 				63D3261C1EB9EB16006D424B /* WebViewJavascriptBridge_JS.m in Sources */,
 				63A3AB951E7FD53A00FB47B8 /* RefreshController.m in Sources */,
+				63FFE7731FF6BA4E00C96F70 /* BlurViewController.m in Sources */,
 				B1748FD41DDF154C0034C852 /* AppDelegate.m in Sources */,
 				63D3261D1EB9EB16006D424B /* WebViewJavascriptBridgeBase.m in Sources */,
 				63F75A271E77DA7A00756FE7 /* PersonMO.m in Sources */,
