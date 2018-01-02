@@ -26,6 +26,7 @@
 #import "MyDelegate.h"
 #import "LogDelegate.h"
 #import "BlurViewController.h"
+#import "RTMPController.h"
 
 @interface PortalIndexController ()
 @property(nonatomic,strong)UIView *affineShowingPanel;
@@ -73,7 +74,12 @@
     [self createBtn:@"AFNetworking" y:1170 selector:@selector(actionAFNetworking)];
     [self createBtn:@"NSPointerArray" y:1230 selector:@selector(actionPointerArray)];
     [self createBtn:@"BlurView" y:1290 selector:@selector(actionBlurView)];
-    contentView.contentSize = CGSizeMake(kScreenWidth, 1380);
+    [self createBtn:@"RTMP Player" y:1350 selector:@selector(actionRTMP)];
+    contentView.contentSize = CGSizeMake(kScreenWidth, 1450);
+}
+
+-(void)actionRTMP{
+    [self.navigationController pushViewController:[[RTMPController alloc] init] animated:YES];
 }
 
 -(void)actionBlurView{
