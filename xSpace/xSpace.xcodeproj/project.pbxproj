@@ -17,6 +17,7 @@
 		63900A7A1F0661000080C48D /* RuntimeController.m in Sources */ = {isa = PBXBuildFile; fileRef = 63900A791F0661000080C48D /* RuntimeController.m */; };
 		6391A9B51FC52A4B00431D72 /* UITestController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6391A9B41FC52A4A00431D72 /* UITestController.m */; };
 		6391A9B91FC55B0600431D72 /* KVOTestController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6391A9B81FC55B0600431D72 /* KVOTestController.m */; };
+		63A03AD0205FE56F0039D5C9 /* CThreadController.m in Sources */ = {isa = PBXBuildFile; fileRef = 63A03ACF205FE56F0039D5C9 /* CThreadController.m */; };
 		63A3AB951E7FD53A00FB47B8 /* RefreshController.m in Sources */ = {isa = PBXBuildFile; fileRef = 63A3AB941E7FD53A00FB47B8 /* RefreshController.m */; };
 		63A3AB991E7FD7C700FB47B8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 63A3AB971E7FD7C700FB47B8 /* Assets.xcassets */; };
 		63A3AB9A1E7FD7C700FB47B8 /* refresh.gif in Resources */ = {isa = PBXBuildFile; fileRef = 63A3AB981E7FD7C700FB47B8 /* refresh.gif */; };
@@ -57,7 +58,6 @@
 		63FFE76F1FF6B94100C96F70 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 63FFE76E1FF6B94000C96F70 /* SystemConfiguration.framework */; };
 		63FFE7731FF6BA4E00C96F70 /* BlurViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 63FFE7721FF6BA4E00C96F70 /* BlurViewController.m */; };
 		63FFE7751FF6C0BE00C96F70 /* pic.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 63FFE7741FF6C0BD00C96F70 /* pic.jpg */; };
-		63FFE7B61FFB615D00C96F70 /* RTMPController.m in Sources */ = {isa = PBXBuildFile; fileRef = 63FFE7B51FFB615D00C96F70 /* RTMPController.m */; };
 		B1748FD11DDF154C0034C852 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B1748FD01DDF154C0034C852 /* main.m */; };
 		B1748FD41DDF154C0034C852 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B1748FD31DDF154C0034C852 /* AppDelegate.m */; };
 		B1748FD71DDF154C0034C852 /* PortalIndexController.m in Sources */ = {isa = PBXBuildFile; fileRef = B1748FD61DDF154C0034C852 /* PortalIndexController.m */; };
@@ -120,6 +120,8 @@
 		6391A9B41FC52A4A00431D72 /* UITestController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UITestController.m; sourceTree = "<group>"; };
 		6391A9B71FC55B0600431D72 /* KVOTestController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KVOTestController.h; sourceTree = "<group>"; };
 		6391A9B81FC55B0600431D72 /* KVOTestController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KVOTestController.m; sourceTree = "<group>"; };
+		63A03ACE205FE56F0039D5C9 /* CThreadController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CThreadController.h; sourceTree = "<group>"; };
+		63A03ACF205FE56F0039D5C9 /* CThreadController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CThreadController.m; sourceTree = "<group>"; };
 		63A3AB931E7FD53A00FB47B8 /* RefreshController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RefreshController.h; sourceTree = "<group>"; };
 		63A3AB941E7FD53A00FB47B8 /* RefreshController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RefreshController.m; sourceTree = "<group>"; };
 		63A3AB971E7FD7C700FB47B8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -182,8 +184,6 @@
 		63FFE7711FF6BA4E00C96F70 /* BlurViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BlurViewController.h; sourceTree = "<group>"; };
 		63FFE7721FF6BA4E00C96F70 /* BlurViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BlurViewController.m; sourceTree = "<group>"; };
 		63FFE7741FF6C0BD00C96F70 /* pic.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = pic.jpg; sourceTree = "<group>"; };
-		63FFE7B41FFB615D00C96F70 /* RTMPController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RTMPController.h; sourceTree = "<group>"; };
-		63FFE7B51FFB615D00C96F70 /* RTMPController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RTMPController.m; sourceTree = "<group>"; };
 		66E1A84CD09E67B3C5DB688E /* libPods-xSpace.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-xSpace.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8012D24A8EB3D8832515B4A4 /* libPods-Box-xPortal.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Box-xPortal.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		82B42E39E16332FC3E44D1A6 /* libPods-xPortal.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-xPortal.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -346,6 +346,15 @@
 			path = KVO;
 			sourceTree = "<group>";
 		};
+		63A03ACD205FE5550039D5C9 /* CThread */ = {
+			isa = PBXGroup;
+			children = (
+				63A03ACE205FE56F0039D5C9 /* CThreadController.h */,
+				63A03ACF205FE56F0039D5C9 /* CThreadController.m */,
+			);
+			path = CThread;
+			sourceTree = "<group>";
+		};
 		63A3AB921E7FD51300FB47B8 /* Refresh */ = {
 			isa = PBXGroup;
 			children = (
@@ -478,15 +487,6 @@
 			path = BlurView;
 			sourceTree = "<group>";
 		};
-		63FFE7B31FFB612D00C96F70 /* RTMP */ = {
-			isa = PBXGroup;
-			children = (
-				63FFE7B41FFB615D00C96F70 /* RTMPController.h */,
-				63FFE7B51FFB615D00C96F70 /* RTMPController.m */,
-			);
-			path = RTMP;
-			sourceTree = "<group>";
-		};
 		B1748FC31DDF154C0034C852 = {
 			isa = PBXGroup;
 			children = (
@@ -512,7 +512,7 @@
 		B1748FCE1DDF154C0034C852 /* xSpace */ = {
 			isa = PBXGroup;
 			children = (
-				63FFE7B31FFB612D00C96F70 /* RTMP */,
+				63A03ACD205FE5550039D5C9 /* CThread */,
 				63FFE7701FF6BA1A00C96F70 /* BlurView */,
 				636E6E441FD992B70076D260 /* NSPointerArray */,
 				630A140F1FCFE66700B0864B /* AFNetworking */,
@@ -868,6 +868,7 @@
 				B1748FD41DDF154C0034C852 /* AppDelegate.m in Sources */,
 				63D3261D1EB9EB16006D424B /* WebViewJavascriptBridgeBase.m in Sources */,
 				63F75A271E77DA7A00756FE7 /* PersonMO.m in Sources */,
+				63A03AD0205FE56F0039D5C9 /* CThreadController.m in Sources */,
 				B17490921DE59E410034C852 /* PortalBaseController.m in Sources */,
 				63D3261B1EB9EB16006D424B /* WebViewJavascriptBridge.m in Sources */,
 				63A3ABA01E810A2600FB47B8 /* xRefreshFooter.m in Sources */,
@@ -878,7 +879,6 @@
 				B18163841E0004A700D928FB /* EventController.m in Sources */,
 				B1EFAD6D1E7282BA00128906 /* xPhotoBrowserController.m in Sources */,
 				B17D8AFF1DF01964004CD18F /* OCController.mm in Sources */,
-				63FFE7B61FFB615D00C96F70 /* RTMPController.m in Sources */,
 				632F0C041E94E906000EBCB3 /* Department.m in Sources */,
 				63396C781EF0F825001525E7 /* BannerLoadingController.m in Sources */,
 				6364B4271EB84C8A008A0D5B /* InterAppController.m in Sources */,
