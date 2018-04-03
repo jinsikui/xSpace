@@ -1,7 +1,7 @@
 /*******************************************************************************
     xTask 轻量好用的任务管理组件
     定义: task是指一个实现了xTaskProtocol协议的实例，代表一个会在未来某个时刻结束的过程
-    原则上，一个task可以cancel，但不保证cancel成功，这由具体实现决定，可通过task.status来查询状态
+    原则上，一个task可以cancel，但不保证cancel成功，这由具体实现决定
     已经实现了以下几种task:
     xAsyncTask: 在某个dispatch queue上执行一个block，可以设置延迟时间，在延迟结束前可以cancel成功
     xDelayTask: 代表一个延迟过程，在延迟结束前可以cancel成功，常作为xCompositeTask的子task
@@ -88,9 +88,9 @@ typedef enum xCompositeTaskType{
 @property(nonatomic,readonly) xTaskHandle *handle;
 @property(nonatomic,readonly) xTaskStatus status;
 @property(nonatomic) xCompositeTaskType     type;
-@property(nonatomic) NSArray<xTaskProtocol> *tasks;
-@property(nonatomic) void (^callback)(NSArray<xTaskProtocol>*);
--(instancetype)initWithType:(xCompositeTaskType)type tasks:(NSArray<xTaskProtocol>*)tasks callback:(void(^)(NSArray<xTaskProtocol>*))callback;
+@property(nonatomic) NSArray<id<xTaskProtocol>> *tasks;
+@property(nonatomic) void (^callback)(NSArray<id<xTaskProtocol>>*);
+-(instancetype)initWithType:(xCompositeTaskType)type tasks:(NSArray<id<xTaskProtocol>>*)tasks callback:(void(^)(NSArray<id<xTaskProtocol>>*))callback;
 -(void)cancel;
 
 @end
@@ -127,11 +127,11 @@ typedef enum xCompositeTaskType{
 
 +(xCustomTask*)customTaskWithHandler:(void(^)(xTaskHandle*))handler;
 
-//会立刻执行
-+(xTaskHandle*)all:(NSArray<xTaskProtocol>*)tasks callback:(void(^)(NSArray<xTaskProtocol>*))callback;
+//会立刻执行，注意保存返回的xCompositeTask，否则可能还未执行完就连同子task一起被回收了
++(xCompositeTask*)all:(NSArray<id<xTaskProtocol>>*)tasks callback:(void(^)(NSArray<id<xTaskProtocol>>*))callback;
 
-//会立刻执行
-+(xTaskHandle*)any:(NSArray<xTaskProtocol>*)tasks callback:(void(^)(NSArray<xTaskProtocol>*))callback;
+//会立刻执行，注意保存返回的xCompositeTask，否则可能还未执行完就连同子task一起被回收了
++(xCompositeTask*)any:(NSArray<id<xTaskProtocol>>*)tasks callback:(void(^)(NSArray<id<xTaskProtocol>>*))callback;
 
 
 @end

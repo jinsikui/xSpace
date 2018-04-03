@@ -30,7 +30,6 @@
     //导航栏按钮文字
     [[UIBarButtonItem appearance] setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:kColor(0x000000),NSForegroundColorAttributeName, kFontPF(14), NSFontAttributeName, nil] forState:UIControlStateNormal];
     
-    
     AVAudioSession *audioSession = [AVAudioSession sharedInstance];
     @try {
         NSError *error;

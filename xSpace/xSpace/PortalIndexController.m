@@ -27,6 +27,7 @@
 #import "LogDelegate.h"
 #import "BlurViewController.h"
 #import "CThreadController.h"
+#import "xTaskController.h"
 
 @interface PortalIndexController ()
 @property(nonatomic,strong)UIView *affineShowingPanel;
@@ -75,7 +76,12 @@
     [self createBtn:@"NSPointerArray" y:1230 selector:@selector(actionPointerArray)];
     [self createBtn:@"BlurView" y:1290 selector:@selector(actionBlurView)];
     [self createBtn:@"c thread" y:1350 selector:@selector(actionCThread)];
+    [self createBtn:@"xTask" y:1350 selector:@selector(actionxTask)];
     contentView.contentSize = CGSizeMake(kScreenWidth, 1450);
+}
+
+-(void)actionxTask{
+    [self.navigationController pushViewController:[[xTaskController alloc] init] animated:YES];
 }
 
 -(void)actionCThread{

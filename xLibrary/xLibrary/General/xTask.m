@@ -28,18 +28,37 @@
 }
 
 -(void)_setStatus:(xTaskStatus)status result:(id)result error:(NSError*)error{
-    self.status = status;
     self.result = result;
     self.error = error;
+    self.status = status;
 }
 
 @end
 
-@interface xAsyncTask()
-@property(nonatomic) BOOL isBlockInvoked;
+@interface xAsyncTaskHandle:xTaskHandle
+
+@property(nonatomic) BOOL isInvoked;
+
+@end
+
+@implementation xAsyncTaskHandle
+
+-(instancetype)init{
+    return [super init];
+}
+
+@end
+
+@interface xAsyncTask(){
+    xAsyncTaskHandle *_handle;
+}
 @end
 
 @implementation xAsyncTask
+
+-(xTaskHandle*)handle{
+    return _handle;
+}
 
 -(xTaskStatus)status{
     return _handle.status;
@@ -49,7 +68,7 @@
     self = [super init];
     if(!self)
         return nil;
-    _handle = [[xTaskHandle alloc] init];
+    _handle = [[xAsyncTaskHandle alloc] init];
     _queue = queue;
     _afterSecs = afterSecs;
     _task = task;
@@ -59,33 +78,42 @@
 -(void)execute{
     if(_handle.status == xTaskStatusInitial) {
         _handle.status = xTaskStatusExecuting;
-        __weak typeof(self) weak = self;
-        void (^wrapperTask)() = ^{
-            __strong typeof(weak) self_ = weak;
-            if(self_.handle.status == xTaskStatusExecuting) {
-                self_.isBlockInvoked = YES;
-                self_.task();
-                self_.handle.status = xTaskStatusCompleted;
+        xAsyncTaskHandle *hd = (xAsyncTaskHandle *)_handle;
+        void (^block)() = _task;
+        void (^wrapperBlock)() = ^{
+            if(hd.status == xTaskStatusExecuting) {
+                hd.isInvoked = YES;
+                block();
+                hd.status = xTaskStatusCompleted;
             }
         };
         if(_afterSecs <= 0){
-            dispatch_async(_queue, wrapperTask);
+            dispatch_async(_queue, wrapperBlock);
         }
         else{
-            dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(_afterSecs * NSEC_PER_SEC)), _queue, wrapperTask);
+            dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(_afterSecs * NSEC_PER_SEC)), _queue, wrapperBlock);
         }
     }
 }
 
 -(void)cancel{
-    if((_handle.status == xTaskStatusInitial || _handle.status == xTaskStatusExecuting) && !_isBlockInvoked){
+    if((_handle.status == xTaskStatusInitial || _handle.status == xTaskStatusExecuting) && !_handle.isInvoked){
         _handle.status = xTaskStatusCanceled;
     }
 }
 
 @end
 
+@interface xDelayTask(){
+    xTaskHandle *_handle;
+}
+@end
+
 @implementation xDelayTask
+
+-(xTaskHandle*)handle{
+    return _handle;
+}
 
 -(xTaskStatus)status{
     return _handle.status;
@@ -103,11 +131,10 @@
 -(void)execute {
     if(_handle.status == xTaskStatusInitial) {
         _handle.status = xTaskStatusExecuting;
-        __weak typeof(self) weak = self;
+        xTaskHandle *hd = _handle;
         void (^wrapperTask)() = ^{
-            __strong typeof(weak) self_ = weak;
-            if(self_.handle.status == xTaskStatusExecuting) {
-                self_.handle.status = xTaskStatusCompleted;
+            if(hd.status == xTaskStatusExecuting) {
+                [hd complete];
             }
         };
         dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(_delaySecs * NSEC_PER_SEC)), dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), wrapperTask);
@@ -122,6 +149,11 @@
 
 @end
 
+@interface xCustomTask(){
+    xTaskHandle *_handle;
+}
+@end
+
 @implementation xCustomTask
 
 -(instancetype)initWithHandler:(void(^)(xTaskHandle*))handler{
@@ -131,6 +163,10 @@
     _handle = [[xTaskHandle alloc] init];
     _handler = handler;
     return self;
+}
+
+-(xTaskHandle*)handle{
+    return _handle;
 }
 
 -(xTaskStatus)status{
@@ -146,6 +182,7 @@
 @end
 
 @interface xCompositeTask(){
+    xTaskHandle *_handle;
     FBKVOController *_kvo;
 }
 
@@ -153,7 +190,7 @@
 
 @implementation xCompositeTask
 
--(instancetype)initWithType:(xCompositeTaskType)type tasks:(NSArray<xTaskProtocol>*)tasks callback:(void(^)(NSArray<xTaskProtocol>*))callback{
+-(instancetype)initWithType:(xCompositeTaskType)type tasks:(NSArray<id<xTaskProtocol>>*)tasks callback:(void(^)(NSArray<id<xTaskProtocol>>*))callback{
     self = [super init];
     if(!self)
         return nil;
@@ -163,6 +200,10 @@
     _callback = callback;
     return self;
     
+}
+
+-(xTaskHandle*)handle{
+    return _handle;
 }
 
 -(void)dealloc{
@@ -215,7 +256,7 @@
         for(id<xTaskProtocol> task in _tasks){
             [task execute];
             __weak typeof(self) weak = self;
-            [_kvo observe:task keyPath:@"status" options:NSKeyValueObservingOptionInitial|NSKeyValueObservingOptionNew block:^(id  _Nullable observer, id  _Nonnull object, NSDictionary<NSString *,id> * _Nonnull change) {
+            [_kvo observe:task keyPath:@"handle.status" options:NSKeyValueObservingOptionInitial|NSKeyValueObservingOptionNew block:^(id  _Nullable observer, id  _Nonnull object, NSDictionary<NSString *,id> * _Nonnull change) {
                 [weak handleTaskStatusChange];
             }];
         }
@@ -282,16 +323,16 @@
     return [[xCustomTask alloc] initWithHandler:handler];
 }
 
-+(xTaskHandle*)all:(NSArray<xTaskProtocol>*)tasks callback:(void(^)(NSArray<xTaskProtocol>*))callback{
++(xCompositeTask*)all:(NSArray<id<xTaskProtocol>>*)tasks callback:(void(^)(NSArray<id<xTaskProtocol>>*))callback{
     xCompositeTask *t = [[xCompositeTask alloc] initWithType:xCompositeTaskTypeAll tasks:tasks callback:callback];
     [t execute];
-    return t.handle;
+    return t;
 }
 
-+(xTaskHandle*)any:(NSArray<xTaskProtocol>*)tasks callback:(void(^)(NSArray<xTaskProtocol>*))callback{
++(xCompositeTask*)any:(NSArray<id<xTaskProtocol>>*)tasks callback:(void(^)(NSArray<id<xTaskProtocol>>*))callback{
     xCompositeTask *t = [[xCompositeTask alloc] initWithType:xCompositeTaskTypeAny tasks:tasks callback:callback];
     [t execute];
-    return t.handle;
+    return t;
 }
 
 @end

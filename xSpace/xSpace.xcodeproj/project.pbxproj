@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		630A14121FCFE68400B0864B /* BeaconAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = 630A14111FCFE68400B0864B /* BeaconAPI.m */; };
+		630E2FEC207342EE008FF287 /* xTaskController.m in Sources */ = {isa = PBXBuildFile; fileRef = 630E2FEB207342EE008FF287 /* xTaskController.m */; };
 		632F0C011E94DFDB000EBCB3 /* FMDBController.m in Sources */ = {isa = PBXBuildFile; fileRef = 632F0C001E94DFDB000EBCB3 /* FMDBController.m */; };
 		632F0C041E94E906000EBCB3 /* Department.m in Sources */ = {isa = PBXBuildFile; fileRef = 632F0C031E94E906000EBCB3 /* Department.m */; };
 		632F0C071E94E92A000EBCB3 /* Employee.m in Sources */ = {isa = PBXBuildFile; fileRef = 632F0C061E94E92A000EBCB3 /* Employee.m */; };
@@ -101,6 +102,8 @@
 		5E5FFD9343F0924413FFEA74 /* Pods-xPortal.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-xPortal.debug.xcconfig"; path = "../Pods/Target Support Files/Pods-xPortal/Pods-xPortal.debug.xcconfig"; sourceTree = "<group>"; };
 		630A14101FCFE68400B0864B /* BeaconAPI.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BeaconAPI.h; sourceTree = "<group>"; };
 		630A14111FCFE68400B0864B /* BeaconAPI.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BeaconAPI.m; sourceTree = "<group>"; };
+		630E2FEA207342EE008FF287 /* xTaskController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = xTaskController.h; sourceTree = "<group>"; };
+		630E2FEB207342EE008FF287 /* xTaskController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = xTaskController.m; sourceTree = "<group>"; };
 		632F0BFF1E94DFDB000EBCB3 /* FMDBController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDBController.h; sourceTree = "<group>"; };
 		632F0C001E94DFDB000EBCB3 /* FMDBController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDBController.m; sourceTree = "<group>"; };
 		632F0C021E94E906000EBCB3 /* Department.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Department.h; sourceTree = "<group>"; };
@@ -274,6 +277,15 @@
 				630A14111FCFE68400B0864B /* BeaconAPI.m */,
 			);
 			path = AFNetworking;
+			sourceTree = "<group>";
+		};
+		630E2FE9207342D1008FF287 /* xTask */ = {
+			isa = PBXGroup;
+			children = (
+				630E2FEA207342EE008FF287 /* xTaskController.h */,
+				630E2FEB207342EE008FF287 /* xTaskController.m */,
+			);
+			path = xTask;
 			sourceTree = "<group>";
 		};
 		632F0BFE1E94DFAA000EBCB3 /* FMDB */ = {
@@ -512,6 +524,7 @@
 		B1748FCE1DDF154C0034C852 /* xSpace */ = {
 			isa = PBXGroup;
 			children = (
+				630E2FE9207342D1008FF287 /* xTask */,
 				63A03ACD205FE5550039D5C9 /* CThread */,
 				63FFE7701FF6BA1A00C96F70 /* BlurView */,
 				636E6E441FD992B70076D260 /* NSPointerArray */,
@@ -872,6 +885,7 @@
 				B17490921DE59E410034C852 /* PortalBaseController.m in Sources */,
 				63D3261B1EB9EB16006D424B /* WebViewJavascriptBridge.m in Sources */,
 				63A3ABA01E810A2600FB47B8 /* xRefreshFooter.m in Sources */,
+				630E2FEC207342EE008FF287 /* xTaskController.m in Sources */,
 				63A3AB9D1E80CA6900FB47B8 /* xRefreshHeader.m in Sources */,
 				63DE23DA1F7E1ABE0068A647 /* PlayerController.m in Sources */,
 				63D3F4431FC851AF0061B993 /* QtAgoraEngine.m in Sources */,
