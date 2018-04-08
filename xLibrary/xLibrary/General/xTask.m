@@ -254,18 +254,33 @@
         _handle.status = xTaskStatusExecuting;
         _kvo = [[FBKVOController alloc] initWithObserver:self];
         for(id<xTaskProtocol> task in _tasks){
-            [task execute];
             __weak typeof(self) weak = self;
             [_kvo observe:task keyPath:@"handle.status" options:NSKeyValueObservingOptionInitial|NSKeyValueObservingOptionNew block:^(id  _Nullable observer, id  _Nonnull object, NSDictionary<NSString *,id> * _Nonnull change) {
                 [weak handleTaskStatusChange];
             }];
         }
+        __weak NSArray<id<xTaskProtocol>> *wTasks = _tasks;
+        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+            __strong NSArray<id<xTaskProtocol>> *sTasks = wTasks;
+            for(id<xTaskProtocol> task in sTasks){
+                [task execute];
+            }
+        });
     }
 }
 
 -(void)cancel{
     if(_handle.status == xTaskStatusInitial || _handle.status == xTaskStatusExecuting){
+        //置为canceled可保证callback不会被调用
         _handle.status = xTaskStatusCanceled;
+        
+        for(id<xTaskProtocol> task in _tasks){
+            xTaskHandle *handle = task.handle;
+            //将子task状态置为canceled，但不保证子task能立刻停止执行
+            if(handle.status == xTaskStatusInitial || handle.status == xTaskStatusExecuting){
+                handle.status = xTaskStatusCanceled;
+            }
+        }
     }
 }
 

@@ -76,8 +76,28 @@
     [self createBtn:@"NSPointerArray" y:1230 selector:@selector(actionPointerArray)];
     [self createBtn:@"BlurView" y:1290 selector:@selector(actionBlurView)];
     [self createBtn:@"c thread" y:1350 selector:@selector(actionCThread)];
-    [self createBtn:@"xTask" y:1350 selector:@selector(actionxTask)];
-    contentView.contentSize = CGSizeMake(kScreenWidth, 1450);
+    [self createBtn:@"xTask" y:1410 selector:@selector(actionxTask)];
+    [self createBtn:@"Date & Calendar" y:1470 selector:@selector(actionDate)];
+    [self createBtn:@"导航" y:1530 selector:@selector(actionNavigation)];
+    contentView.contentSize = CGSizeMake(kScreenWidth, 1630);
+}
+
+-(void)actionNavigation{
+    [self.navigationController pushViewController:[[PagedController alloc] init] animated:YES];
+    __weak typeof(self) weak = self;
+    [xTask asyncMainAfter:5 task:^{
+        [weak.navigationController popViewControllerAnimated:NO];
+        [weak.navigationController pushViewController:[[RefreshController alloc] init] animated:NO];
+    }];
+}
+
+-(void)actionDate{
+    NSString *str = @"2018-04-03T03:15:34.001Z";
+    NSDateFormatter *f = [[NSDateFormatter alloc] init];
+    f.dateFormat = @"yyyy-MM-dd'T'HH:mm:ss.SSS'Z'";
+    NSDate *date = [f dateFromString:str];
+    NSDate *date2 = [f dateFromString:@""];
+    NSLog(@"===== %@, %@ =====", date, date2);
 }
 
 -(void)actionxTask{
