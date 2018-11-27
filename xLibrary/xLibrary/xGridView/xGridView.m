@@ -10,28 +10,6 @@
 #import "Masonry.h"
 #import <objc/runtime.h>
 
-@implementation UICollectionViewCell (xGridView)
-
--(void)setX_data:(id)data{
-    objc_setAssociatedObject(self, @selector(x_data), data, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
-}
-
--(id)x_data{
-    id data = objc_getAssociatedObject(self, _cmd);
-    return data;
-}
-
--(void)setX_indexPath:(NSIndexPath *)indexPath{
-    objc_setAssociatedObject(self, @selector(x_indexPath), indexPath, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
-}
-
--(NSIndexPath*)x_indexPath{
-    NSIndexPath *indexPath = objc_getAssociatedObject(self, _cmd);
-    return indexPath;
-}
-
-@end
-
 @interface xGridView(){
 }
 @property(nonatomic)Class cellClass;
@@ -117,10 +95,10 @@
     return self;
 }
 
--(instancetype)initWithFrame:(CGRect)frame{
-    self = [super initWithFrame:frame];
+-(instancetype)initWithCollectionViewCell{
+    self = [super init];
     if(self){
-        self.cellClass = [UICollectionViewCell class];
+        self.cellClass = UICollectionViewCell.class;
         [self prepare];
     }
     return self;
@@ -138,11 +116,11 @@
     _collectionView.dataSource = self;
     _collectionView.scrollEnabled = NO;
     self.backgroundColor = [UIColor clearColor];
+    [_collectionView registerClass:self.cellClass forCellWithReuseIdentifier:self.reuseId];
     [self addSubview:_collectionView];
     [_collectionView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.edges.mas_equalTo(UIEdgeInsetsZero);
     }];
-    [_collectionView registerClass:self.cellClass forCellWithReuseIdentifier:self.reuseId];
 }
 
 -(UICollectionViewCell *)cellWithIndexPath:(NSIndexPath *)path{

@@ -19,7 +19,4 @@ typedef enum HostinState{
 
 @interface KVOTestController : PortalBaseController
 
-@property(nonatomic, assign)    HostinState state;
-@property(nonatomic, assign)    NSUInteger  talkingTime; //seconds
-
 @end

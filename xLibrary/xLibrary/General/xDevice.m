@@ -13,6 +13,7 @@ static float _iosVersion = -1;
 static CGFloat _screenWidth = -1;
 static CGFloat _screenHeight = -1;
 static NSString *_deviceId = nil;
+static NSString *_bundleId = nil;
 
 @implementation xDevice
 
@@ -92,6 +93,13 @@ static NSString *_deviceId = nil;
         _deviceId = [UIDevice currentDevice].identifierForVendor.UUIDString;
     }
     return _deviceId;
+}
+
++(NSString*)bundleId{
+    if(_bundleId == nil){
+        _bundleId = [[NSBundle mainBundle] bundleIdentifier];
+    }
+    return _bundleId;
 }
 
 +(BOOL)isIphoneX{

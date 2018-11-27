@@ -16,7 +16,7 @@
 
 @implementation xTimer
 
-+ (xTimer *)timerWithIntervalSeconds:(NSInteger)seconds
++ (xTimer *)timerWithIntervalSeconds:(double)seconds
                                queue:(dispatch_queue_t)queue
                          fireOnStart:(BOOL)fireOnStart
                               action:(dispatch_block_t)action
@@ -24,19 +24,19 @@
     return [[xTimer alloc] initWithIntervalSeconds:seconds queue:queue fireOnStart:fireOnStart action:action];
 }
 
-+ (xTimer *)timerOnMainWithIntervalSeconds:(NSInteger)seconds
++ (xTimer *)timerOnMainWithIntervalSeconds:(double)seconds
                                fireOnStart:(BOOL)fireOnStart
                                     action:(dispatch_block_t)action{
     return [[xTimer alloc] initWithIntervalSeconds:seconds queue:dispatch_get_main_queue() fireOnStart:fireOnStart action:action];
 }
 
-+ (xTimer *)timerOnGlobalWithIntervalSeconds:(NSInteger)seconds
++ (xTimer *)timerOnGlobalWithIntervalSeconds:(double)seconds
                                  fireOnStart:(BOOL)fireOnStart
                                       action:(dispatch_block_t)action{
     return [[xTimer alloc] initWithIntervalSeconds:seconds queue:dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0) fireOnStart:fireOnStart action:action];
 }
 
-- (id)initWithIntervalSeconds:(NSInteger)seconds
+- (id)initWithIntervalSeconds:(double)seconds
                         queue:(dispatch_queue_t)queue
                   fireOnStart:(BOOL)fireOnStart
                        action:(dispatch_block_t)action

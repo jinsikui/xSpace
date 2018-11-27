@@ -17,8 +17,11 @@
 #import "xNotice.h"
 #import "xTimer.h"
 #import "xTask.h"
+#import "xFile.h"
 #import "Masonry.h"
 #import "KVOController.h"
 #import "xDefines.h"
+#import "xControllerHelper.h"
+#import "xUrlHelper.h"
 
 #endif /* xHeaders_h */

@@ -44,4 +44,7 @@
 #define kFontMediumPF(x)    ([xFont mediumPFWithSize:x])
 #define kFontSemiboldPF(x)  ([xFont semiboldPFWithSize:x])
 
+#define x_not_null(x) (x != nil && ![x isKindOfClass:[NSNull class]])
+#define x_is_null(x) (x == nil || [x isKindOfClass:[NSNull class]])
+
 #endif

@@ -9,9 +9,12 @@
 #import "UITestController.h"
 #import "Masonry.h"
 #import "PopView.h"
+#import "YYText.h"
+#import "xCornerView.h"
+#import "LiveVoiceAniView.h"
 
 @interface UITestController ()
-@property(nonatomic,strong) UILabel       *stateLabel;
+@property(nonatomic,strong) LiveVoiceAniView *voiceView;
 @end
 
 @implementation UITestController
@@ -19,40 +22,35 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.title = @"UI Test";
+    self.view.backgroundColor = kColor(0);
     
-    _stateLabel = [xViewFactory labelWithText:@"" font:kFontRegularPF(12) color:kColorA(0x0, 1) alignment:NSTextAlignmentCenter];
-    _stateLabel.numberOfLines = 2;
-    [self.view addSubview:_stateLabel];
-    [_stateLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.centerX.equalTo(self.view);
-        make.top.mas_equalTo(100);
-        make.width.mas_equalTo(xDevice.screenWidth);
-        make.height.mas_equalTo(40);
+    UIImageView *avatar = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"avatar-placeholder"]];
+    CGFloat avatarWidth = 50;
+    avatar.frame = CGRectMake(100, 100, avatarWidth, avatarWidth);
+    avatar.clipsToBounds = YES;
+    avatar.layer.cornerRadius = avatarWidth / 2.0;
+    [self.view addSubview:avatar];
+    
+    UITapGestureRecognizer *g = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(actionUserClick)];
+    avatar.userInteractionEnabled = YES;
+    [avatar addGestureRecognizer:g];
+    
+    _voiceView = [[LiveVoiceAniView alloc] initWithAvatarWidth:avatarWidth];
+    [self.view insertSubview:_voiceView belowSubview:avatar];
+    [_voiceView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.center.equalTo(avatar);
+        make.width.height.mas_equalTo(avatarWidth * 144.0 / 100);
     }];
-    _stateLabel.text = @"abc\n......";
-    [_stateLabel sizeToFit];
-    
-    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(3 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-        _stateLabel.text = @"aaaaaa  bbbbbb  cccccc\nhahahhaha";
-        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(3 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-            _stateLabel.text = @"aaaaaa";
-        });
-    });
-    
-    UIButton *btn = [xViewFactory buttonWithTitle:@"pop" font:kFontPF(14) titleColor:kColor(0) bgColor:UIColor.clearColor borderColor:kColor(0) borderWidth:0.5];
-    [btn addTarget:self action:@selector(actionBtnClick) forControlEvents:UIControlEventTouchUpInside];
-    [self.view addSubview:btn];
-    [btn mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.equalTo(_stateLabel.mas_bottom).offset(30);
-        make.centerX.equalTo(self.view);
-        make.width.mas_equalTo(100);
-        make.height.mas_equalTo(50);
+    [xTask asyncMainAfter:3 task:^{
+        [_voiceView startAnimation];
+        [xTask asyncMainAfter:7 task:^{
+            [_voiceView stopAnimation];
+        }];
     }];
-    
 }
 
--(void)actionBtnClick{
-    [[[PopView alloc] init] showInView:self.view];
+-(void)actionUserClick{
+    NSLog(@"===== actionUserClick =====");
 }
 
 @end

@@ -21,6 +21,23 @@
                            alpha:alpha];
 }
 
++(UIColor*)fromRGBAHexStr:(NSString*)rgbaHexStr{
+    if('#' != [rgbaHexStr characterAtIndex:0])
+    {
+        rgbaHexStr = [NSString stringWithFormat:@"#%@", rgbaHexStr];
+    }
+    if(rgbaHexStr.length == 9){
+        //contains alpha
+        NSString *hexStr = [rgbaHexStr substringToIndex:rgbaHexStr.length - 2];
+        NSString *alphaHex = [NSString stringWithFormat:@"0x%@", [rgbaHexStr substringFromIndex:rgbaHexStr.length - 2]];
+        CGFloat alpha = ((CGFloat)[self hexValueToUnsigned:alphaHex])/255.0;
+        return [xColor fromHexStr:hexStr alpha:alpha];
+    }
+    else{
+        return [xColor fromHexStr:rgbaHexStr];
+    }
+}
+
 +(UIColor*)fromHexStr:(NSString*)hexStr{
     return [self fromHexStr:hexStr alpha:1];
 }

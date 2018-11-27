@@ -258,14 +258,10 @@
             [_kvo observe:task keyPath:@"handle.status" options:NSKeyValueObservingOptionInitial|NSKeyValueObservingOptionNew block:^(id  _Nullable observer, id  _Nonnull object, NSDictionary<NSString *,id> * _Nonnull change) {
                 [weak handleTaskStatusChange];
             }];
-        }
-        __weak NSArray<id<xTaskProtocol>> *wTasks = _tasks;
-        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
-            __strong NSArray<id<xTaskProtocol>> *sTasks = wTasks;
-            for(id<xTaskProtocol> task in sTasks){
+            dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
                 [task execute];
-            }
-        });
+            });
+        }
     }
 }
 

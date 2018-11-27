@@ -16,7 +16,6 @@
 #import "BannerLoadingController.h"
 #import "RuntimeController.h"
 #import "PhotoBannerController.h"
-#import "PlayerController.h"
 #import "UITestController.h"
 #import "KVOTestController.h"
 #import "AudienceController.h"
@@ -28,6 +27,21 @@
 #import "BlurViewController.h"
 #import "CThreadController.h"
 #import "xTaskController.h"
+#import "PromisesController.h"
+#import "xBannerController.h"
+#import "YYTextController.h"
+#import "xGridViewController.h"
+#import "SVGController.h"
+#import "SingletonController.h"
+#import "SingletonManager.h"
+#import "RetryController.h"
+#import "AudioController.h"
+#import "SliderController.h"
+#import "GradientController.h"
+#import "AnimationsController.h"
+#import "VoiceViewController.h"
+#import "CollectionViewController.h"
+#import "SVGAController.h"
 
 @interface PortalIndexController ()
 @property(nonatomic,strong)UIView *affineShowingPanel;
@@ -79,7 +93,128 @@
     [self createBtn:@"xTask" y:1410 selector:@selector(actionxTask)];
     [self createBtn:@"Date & Calendar" y:1470 selector:@selector(actionDate)];
     [self createBtn:@"导航" y:1530 selector:@selector(actionNavigation)];
-    contentView.contentSize = CGSizeMake(kScreenWidth, 1630);
+    [self createBtn:@"Promises" y:1590 selector:@selector(actionPromises)];
+    [self createBtn:@"xBanner" y:1650 selector:@selector(actionXBanner)];
+    [self createBtn:@"YYText" y:1710 selector:@selector(actionYYText)];
+    [self createBtn:@"xGridView" y:1770 selector:@selector(actionXGridView)];
+    [self createBtn:@"SVG Animation" y:1830 selector:@selector(actionSVG)];
+    [self createBtn:@"Singleton VC" y:1890 selector:@selector(actionControllerSingle)];
+    [self createBtn:@"Retry Logic" y:1950 selector:@selector(actionRetry)];
+    [self createBtn:@"Audio" y:2010 selector:@selector(actionAudio)];
+    [self createBtn:@"Slider" y:2070 selector:@selector(actionSlider)];
+    [self createBtn:@"gradient" y:2130 selector:@selector(actionGradient)];
+    [self createBtn:@"Animations" y:2190 selector:@selector(actionAnimations)];
+    [self createBtn:@"正则表达式" y:2250 selector:@selector(actionRegularEx)];
+    [self createBtn:@"xVoiceView" y:2310 selector:@selector(actionVoiceView)];
+    [self createBtn:@"CollectionView" y:2370 selector:@selector(actionCollectionView)];
+    [self createBtn:@"SVGA" y:2430 selector:@selector(actionSVGA)];
+    contentView.contentSize = CGSizeMake(kScreenWidth, 2530);
+}
+
+-(void)actionSVGA{
+    [self.navigationController pushViewController:[[SVGAController alloc] init] animated:YES];
+}
+
+-(void)actionCollectionView{
+    [self.navigationController pushViewController:[[CollectionViewController alloc] init] animated:YES];
+}
+
+-(void)actionVoiceView{
+    [self.navigationController pushViewController:[[VoiceViewController alloc] init] animated:YES];
+}
+
+-(void)actionRegularEx{
+    NSString *template = @"曾经有一个{user}站在{podcaster}的面前";
+    NSString *patten = @"(\\{user\\})|(\\{podcaster\\})|(\\{room\\})|(\\{reward\\})";
+    NSInteger start = 0;
+    NSMutableAttributedString *attr = [NSMutableAttributedString new];
+    NSRange find;
+    do{
+        find = [template rangeOfString:patten options:NSRegularExpressionSearch range:NSMakeRange(start, template.length - start)];
+        if(find.location != NSNotFound){
+            //找到patten
+            if(find.location > start){
+                //添加patten前方文字
+                [attr x_appendStr:[template substringWithRange:NSMakeRange(start, find.location - start)] foreColor:kColor(0x333333) font:kFontRegularPF(13)];
+                [attr x_appendStr:@" " foreColor:kColor(0x333333) font:kFontRegularPF(13)];
+            }
+            //添加patten对应内容
+            NSString *findPatten = [template substringWithRange:find];
+            if([findPatten isEqualToString:@"{user}"]){
+                [attr x_appendStr:@"狗小丢" foreColor:kColor(0xFD5253) font:kFontRegularPF(13)];
+            }
+            else if([findPatten isEqualToString:@"{podcaster}"]){
+                [attr x_appendStr:@"金小懵" foreColor:kColor(0xFD5253) font:kFontRegularPF(13)];
+            }
+            else if([findPatten isEqualToString:@"{reward}"]){
+                [attr x_appendStr:@"小礼物" foreColor:kColor(0xFD5253) font:kFontRegularPF(13)];
+            }
+            if(find.location + find.length < template.length){
+                [attr x_appendStr:@" " foreColor:kColor(0x333333) font:kFontRegularPF(13)];
+            }
+            //移动下次查找起始位置
+            start = find.location + find.length;
+        }
+        else{
+            //未找到patten，添加末尾文字
+            [attr x_appendStr:[template substringWithRange:NSMakeRange(start, template.length - start)] foreColor:kColor(0x333333) font:kFontRegularPF(13)];
+            break;
+        }
+    }while(start < template.length);
+    NSLog(@"%@", attr.string);
+}
+
+-(void)actionAnimations{
+    [self.navigationController pushViewController:[[AnimationsController alloc] init] animated:YES];
+}
+
+-(void)actionGradient{
+    [self.navigationController pushViewController:[[GradientController alloc] init] animated:YES];
+}
+
+-(void)actionSlider{
+    [self.navigationController pushViewController:[[SliderController alloc] init] animated:YES];
+}
+
+-(void)actionAudio{
+    [self.navigationController pushViewController:[[AudioController alloc] init] animated:YES];
+}
+
+-(void)actionRetry{
+    [self.navigationController pushViewController:[[RetryController alloc] init] animated:YES];
+}
+
+-(void)actionControllerSingle{
+    [self.navigationController pushViewController:[[SingletonController alloc] init] animated:YES];
+    [self.navigationController pushViewController:[[SVGController alloc] init] animated:YES];
+    [self.navigationController pushViewController:[[YYTextController alloc] init] animated:YES];
+    [xTask asyncMainAfter:1 task:^{
+        [SingletonManager showAndUpdateSingleton];
+        [xTask asyncMainAfter:3 task:^{
+            [SingletonManager showAndUpdateSingleton];
+        }];
+    }];
+    
+}
+
+-(void)actionSVG{
+    [self.navigationController pushViewController:[[SVGController alloc] init] animated:YES];
+}
+
+-(void)actionXGridView{
+    [self.navigationController pushViewController:[[xGridViewController alloc] init] animated:YES];
+}
+
+-(void)actionYYText{
+    [self.navigationController pushViewController:[[YYTextController alloc] init] animated:YES];
+}
+
+-(void)actionXBanner{
+    [self.navigationController pushViewController:[[xBannerController alloc] init] animated:YES];
+}
+
+-(void)actionPromises{
+    [self.navigationController pushViewController:[[PromisesController alloc] init] animated:YES];
 }
 
 -(void)actionNavigation{
@@ -213,11 +348,13 @@
     [_affineShowingPanel addSubview:btn];
     _affineShowingPanel.backgroundColor = kColor(0xFD8238);
     [window addSubview:_affineShowingPanel];
+    NSLog(@"===== rootView size before affine:(%f,%f) =====",rootView.frame.size.width, rootView.frame.size.height);
     
     [UIView animateWithDuration:0.3 animations:^{
         _affineShowingPanel.frame = CGRectMake(0, 0, kScreenWidth, kScreenHeight);
         rootView.transform = CGAffineTransformMakeScale(0.95, 0.95);
     } completion:^(BOOL finished) {
+        NSLog(@"===== rootView size after affine:(%f,%f) =====",rootView.frame.size.width, rootView.frame.size.height);
         rootView.transform = CGAffineTransformMakeScale(1, 1);
         window.backgroundColor = windowColor;
     }];

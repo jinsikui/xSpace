@@ -10,13 +10,13 @@
 
 @interface xTimer : NSObject
 
-+ (xTimer *)timerWithIntervalSeconds:(NSInteger)seconds queue:(dispatch_queue_t)queue fireOnStart:(BOOL)fireOnStart action:(dispatch_block_t)action;
++ (xTimer *)timerWithIntervalSeconds:(double)seconds queue:(dispatch_queue_t)queue fireOnStart:(BOOL)fireOnStart action:(dispatch_block_t)action;
 
-+ (xTimer *)timerOnMainWithIntervalSeconds:(NSInteger)seconds fireOnStart:(BOOL)fireOnStart action:(dispatch_block_t)action;
++ (xTimer *)timerOnMainWithIntervalSeconds:(double)seconds fireOnStart:(BOOL)fireOnStart action:(dispatch_block_t)action;
 
-+ (xTimer *)timerOnGlobalWithIntervalSeconds:(NSInteger)seconds fireOnStart:(BOOL)fireOnStart action:(dispatch_block_t)action;
++ (xTimer *)timerOnGlobalWithIntervalSeconds:(double)seconds fireOnStart:(BOOL)fireOnStart action:(dispatch_block_t)action;
 
-- (id)initWithIntervalSeconds:(NSInteger)seconds queue:(dispatch_queue_t)queue fireOnStart:(BOOL)fireOnStart action:(dispatch_block_t)action;
+- (id)initWithIntervalSeconds:(double)seconds queue:(dispatch_queue_t)queue fireOnStart:(BOOL)fireOnStart action:(dispatch_block_t)action;
 
 - (void)start;
 

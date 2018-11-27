@@ -15,6 +15,8 @@
 
 +(UIColor*)fromRGBA:(uint)rgbValue alpha:(CGFloat)alpha;
 
++(UIColor*)fromRGBAHexStr:(NSString*)rgbaHexStr;
+
 +(UIColor*)fromHexStr:(NSString*)hexStr;
 
 +(UIColor*)fromHexStr:(NSString*)hexStr alpha:(CGFloat)alpha;

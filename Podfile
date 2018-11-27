@@ -14,6 +14,11 @@ target 'xSpace’ do
   pod 'MJRefresh'
   pod 'FMDB'
   pod 'KVOController'
+  pod 'PromisesObjC', '~> 1.0'
+  pod 'YYText'
+  pod 'lottie-ios'
+  pod 'Protobuf'
+  pod 'SVGAPlayer'
 end
 
 target 'xLibrary’ do

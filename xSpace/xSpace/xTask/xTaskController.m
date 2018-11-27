@@ -40,6 +40,13 @@
     [xTask asyncGlobalAfter:4 task:^{
         [handle cancel];
     }];
+    [xTask asyncMain:^{
+        NSLog(@"%@", self);
+    }];
+}
+
+-(void)dealloc{
+    NSLog(@"===== xTaskController dealloc =====");
 }
 
 @end

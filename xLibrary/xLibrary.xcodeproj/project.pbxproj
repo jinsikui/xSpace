@@ -8,7 +8,13 @@
 
 /* Begin PBXBuildFile section */
 		2A2ACE0AF31E8A3D48B9BC62 /* libPods-xLibrary.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3D59FFB247B0652E8883766A /* libPods-xLibrary.a */; };
+		630E632C20AC3A0300F5AB5D /* xControllerHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 630E632B20AC3A0300F5AB5D /* xControllerHelper.m */; };
+		6318DAB220C91CE8001E43AA /* xAVAudioRecorder.m in Sources */ = {isa = PBXBuildFile; fileRef = 6318DAAD20C91CE8001E43AA /* xAVAudioRecorder.m */; };
+		6318DAB320C91CE8001E43AA /* xAVAudioPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 6318DAAF20C91CE8001E43AA /* xAVAudioPlayer.m */; };
+		6318DAB420C91CE8001E43AA /* xAVPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 6318DAB020C91CE8001E43AA /* xAVPlayer.m */; };
+		632A839D20A4166C00622A1F /* xFile.m in Sources */ = {isa = PBXBuildFile; fileRef = 632A839B20A4166B00622A1F /* xFile.m */; };
 		63396C7F1EF0F918001525E7 /* UIView+xBannerLoading.m in Sources */ = {isa = PBXBuildFile; fileRef = 63396C7E1EF0F918001525E7 /* UIView+xBannerLoading.m */; };
+		636B9D242182D4FB006F0E0A /* xUrlHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 636B9D232182D4FA006F0E0A /* xUrlHelper.m */; };
 		63900A1E1F04CADC0080C48D /* NSObject+xRuntime.m in Sources */ = {isa = PBXBuildFile; fileRef = 63900A1D1F04CADC0080C48D /* NSObject+xRuntime.m */; };
 		63900A7B1F066A5A0080C48D /* NSObject+xStatis.m in Sources */ = {isa = PBXBuildFile; fileRef = 63900A601F0649180080C48D /* NSObject+xStatis.m */; };
 		63900A7C1F066A5A0080C48D /* UICollectionView+xStatis.m in Sources */ = {isa = PBXBuildFile; fileRef = 63900A621F0649180080C48D /* UICollectionView+xStatis.m */; };
@@ -37,6 +43,7 @@
 		63CB5B7E1F4703A300EC1082 /* TADotView.m in Sources */ = {isa = PBXBuildFile; fileRef = 63CB5B7A1F4703A300EC1082 /* TADotView.m */; };
 		63CB5B7F1F4703A300EC1082 /* TAPageControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 63CB5B7C1F4703A300EC1082 /* TAPageControl.m */; };
 		63D94A551F33233F00170AA7 /* xAlert.m in Sources */ = {isa = PBXBuildFile; fileRef = 63D94A541F33233F00170AA7 /* xAlert.m */; };
+		63DEA2A2208F6DCE002AA44D /* xBanner.m in Sources */ = {isa = PBXBuildFile; fileRef = 63DEA2A1208F6DCE002AA44D /* xBanner.m */; };
 		63EBC8001EE251DF001029B3 /* xPagedView.m in Sources */ = {isa = PBXBuildFile; fileRef = 63EBC7FF1EE2511E001029B3 /* xPagedView.m */; };
 		63F758F51E76ABC800756FE7 /* CoreDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 63F758F41E76ABC800756FE7 /* CoreDataManager.m */; };
 		63FFE76D1FF6B87B00C96F70 /* xBlurView.m in Sources */ = {isa = PBXBuildFile; fileRef = 63FFE76C1FF6B86D00C96F70 /* xBlurView.m */; };
@@ -64,9 +71,21 @@
 
 /* Begin PBXFileReference section */
 		3D59FFB247B0652E8883766A /* libPods-xLibrary.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-xLibrary.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		630E632A20AC3A0300F5AB5D /* xControllerHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = xControllerHelper.h; sourceTree = "<group>"; };
+		630E632B20AC3A0300F5AB5D /* xControllerHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = xControllerHelper.m; sourceTree = "<group>"; };
+		6318DAAC20C91CE7001E43AA /* xAVAudioPlayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = xAVAudioPlayer.h; sourceTree = "<group>"; };
+		6318DAAD20C91CE8001E43AA /* xAVAudioRecorder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = xAVAudioRecorder.m; sourceTree = "<group>"; };
+		6318DAAE20C91CE8001E43AA /* xAVPlayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = xAVPlayer.h; sourceTree = "<group>"; };
+		6318DAAF20C91CE8001E43AA /* xAVAudioPlayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = xAVAudioPlayer.m; sourceTree = "<group>"; };
+		6318DAB020C91CE8001E43AA /* xAVPlayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = xAVPlayer.m; sourceTree = "<group>"; };
+		6318DAB120C91CE8001E43AA /* xAVAudioRecorder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = xAVAudioRecorder.h; sourceTree = "<group>"; };
+		632A839B20A4166B00622A1F /* xFile.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = xFile.m; sourceTree = "<group>"; };
+		632A839C20A4166C00622A1F /* xFile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = xFile.h; sourceTree = "<group>"; };
 		633538991FE7655500EC99C5 /* xHeaders.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = xHeaders.h; sourceTree = "<group>"; };
 		63396C7D1EF0F918001525E7 /* UIView+xBannerLoading.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+xBannerLoading.h"; sourceTree = "<group>"; };
 		63396C7E1EF0F918001525E7 /* UIView+xBannerLoading.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+xBannerLoading.m"; sourceTree = "<group>"; };
+		636B9D222182D4FA006F0E0A /* xUrlHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = xUrlHelper.h; sourceTree = "<group>"; };
+		636B9D232182D4FA006F0E0A /* xUrlHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = xUrlHelper.m; sourceTree = "<group>"; };
 		63900A1C1F04CADC0080C48D /* NSObject+xRuntime.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+xRuntime.h"; sourceTree = "<group>"; };
 		63900A1D1F04CADC0080C48D /* NSObject+xRuntime.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+xRuntime.m"; sourceTree = "<group>"; };
 		63900A5F1F0649180080C48D /* NSObject+xStatis.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSObject+xStatis.h"; sourceTree = "<group>"; };
@@ -124,6 +143,8 @@
 		63CB5B7C1F4703A300EC1082 /* TAPageControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TAPageControl.m; sourceTree = "<group>"; };
 		63D94A531F33233F00170AA7 /* xAlert.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = xAlert.h; sourceTree = "<group>"; };
 		63D94A541F33233F00170AA7 /* xAlert.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = xAlert.m; sourceTree = "<group>"; };
+		63DEA2A0208F6DCE002AA44D /* xBanner.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = xBanner.h; sourceTree = "<group>"; };
+		63DEA2A1208F6DCE002AA44D /* xBanner.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = xBanner.m; sourceTree = "<group>"; };
 		63EBC7FE1EE2511E001029B3 /* xPagedView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = xPagedView.h; sourceTree = "<group>"; };
 		63EBC7FF1EE2511E001029B3 /* xPagedView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = xPagedView.m; sourceTree = "<group>"; };
 		63F758F31E76ABC800756FE7 /* CoreDataManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoreDataManager.h; sourceTree = "<group>"; };
@@ -171,6 +192,19 @@
 				EB8013C6B10E9C6B786B7D4C /* Pods-xLibrary.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		6318DAAB20C91C1F001E43AA /* xAV */ = {
+			isa = PBXGroup;
+			children = (
+				6318DAAC20C91CE7001E43AA /* xAVAudioPlayer.h */,
+				6318DAAF20C91CE8001E43AA /* xAVAudioPlayer.m */,
+				6318DAB120C91CE8001E43AA /* xAVAudioRecorder.h */,
+				6318DAAD20C91CE8001E43AA /* xAVAudioRecorder.m */,
+				6318DAAE20C91CE8001E43AA /* xAVPlayer.h */,
+				6318DAB020C91CE8001E43AA /* xAVPlayer.m */,
+			);
+			path = xAV;
 			sourceTree = "<group>";
 		};
 		63396C791EF0F8BA001525E7 /* xBannerLoading */ = {
@@ -264,6 +298,15 @@
 			path = xAlert;
 			sourceTree = "<group>";
 		};
+		63DEA29F208F6CFD002AA44D /* xBanner */ = {
+			isa = PBXGroup;
+			children = (
+				63DEA2A0208F6DCE002AA44D /* xBanner.h */,
+				63DEA2A1208F6DCE002AA44D /* xBanner.m */,
+			);
+			path = xBanner;
+			sourceTree = "<group>";
+		};
 		63EBC7FD1EE2511E001029B3 /* xPagedView */ = {
 			isa = PBXGroup;
 			children = (
@@ -312,6 +355,8 @@
 		B17490731DDF30480034C852 /* xLibrary */ = {
 			isa = PBXGroup;
 			children = (
+				6318DAAB20C91C1F001E43AA /* xAV */,
+				63DEA29F208F6CFD002AA44D /* xBanner */,
 				63FFE76A1FF6B86D00C96F70 /* xBlurView */,
 				6391A8B61FC1899D00431D72 /* xGridView */,
 				63CB5B761F47037B00EC1082 /* TAPageControl */,
@@ -333,6 +378,12 @@
 		B1EFACFE1E726F9500128906 /* General */ = {
 			isa = PBXGroup;
 			children = (
+				636B9D222182D4FA006F0E0A /* xUrlHelper.h */,
+				636B9D232182D4FA006F0E0A /* xUrlHelper.m */,
+				630E632A20AC3A0300F5AB5D /* xControllerHelper.h */,
+				630E632B20AC3A0300F5AB5D /* xControllerHelper.m */,
+				632A839C20A4166C00622A1F /* xFile.h */,
+				632A839B20A4166B00622A1F /* xFile.m */,
 				633538991FE7655500EC99C5 /* xHeaders.h */,
 				6391A9C71FC5AEEF00431D72 /* xTask.h */,
 				6391A9C61FC5AEEF00431D72 /* xTask.m */,
@@ -403,7 +454,6 @@
 				B17490551DDF206E0034C852 /* Sources */,
 				B17490561DDF206E0034C852 /* Frameworks */,
 				B17490571DDF206E0034C852 /* CopyFiles */,
-				1869AFB2BDAD1F7080CBC19F /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -448,21 +498,6 @@
 /* End PBXProject section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		1869AFB2BDAD1F7080CBC19F /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/../Pods/Target Support Files/Pods-xLibrary/Pods-xLibrary-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		56033D7F343BAAB5284F71AF /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -494,7 +529,9 @@
 				B1EFAD651E7281F700128906 /* xPhotoBrowser.m in Sources */,
 				6391A8B51FC1895100431D72 /* xViewFactory.m in Sources */,
 				B1EFAD111E72701200128906 /* LogEnvironment.m in Sources */,
+				632A839D20A4166C00622A1F /* xFile.m in Sources */,
 				63F758F51E76ABC800756FE7 /* CoreDataManager.m in Sources */,
+				636B9D242182D4FB006F0E0A /* xUrlHelper.m in Sources */,
 				B1EFAD121E72701200128906 /* NSArray+Log.m in Sources */,
 				63FFE76D1FF6B87B00C96F70 /* xBlurView.m in Sources */,
 				6391A8AC1FC1891700431D72 /* xFont.m in Sources */,
@@ -502,10 +539,13 @@
 				63CB5B551F46926C00EC1082 /* xPhotoBannerData.m in Sources */,
 				63CB5B7D1F4703A300EC1082 /* TAAbstractDotView.m in Sources */,
 				63900A1E1F04CADC0080C48D /* NSObject+xRuntime.m in Sources */,
+				6318DAB220C91CE8001E43AA /* xAVAudioRecorder.m in Sources */,
 				6391A8AF1FC1892700431D72 /* xColor.m in Sources */,
 				B1EFAD641E7281F700128906 /* xPhoto.m in Sources */,
 				63396C7F1EF0F918001525E7 /* UIView+xBannerLoading.m in Sources */,
 				63900A7E1F066A5A0080C48D /* UINavigationController+xStatis.m in Sources */,
+				63DEA2A2208F6DCE002AA44D /* xBanner.m in Sources */,
+				6318DAB320C91CE8001E43AA /* xAVAudioPlayer.m in Sources */,
 				63900A841F066A5A0080C48D /* xStatisManager.m in Sources */,
 				63900A7D1F066A5A0080C48D /* UIControl+xStatis.m in Sources */,
 				63900A821F066A5A0080C48D /* UIViewController+xStatis.m in Sources */,
@@ -514,6 +554,7 @@
 				63EBC8001EE251DF001029B3 /* xPagedView.m in Sources */,
 				6391A8CE1FC2880F00431D72 /* xExtensions.m in Sources */,
 				63D94A551F33233F00170AA7 /* xAlert.m in Sources */,
+				630E632C20AC3A0300F5AB5D /* xControllerHelper.m in Sources */,
 				B1EFAD671E7281F700128906 /* xPhotoView.m in Sources */,
 				6391A9C41FC5AEAB00431D72 /* xTimer.m in Sources */,
 				6391A8B91FC18A4600431D72 /* xGridView.m in Sources */,
@@ -526,6 +567,7 @@
 				6391A9C51FC5AEAB00431D72 /* xNotice.m in Sources */,
 				B1EFAD661E7281F700128906 /* xPhotoToolbar.m in Sources */,
 				6391A8B21FC1893900431D72 /* xDevice.m in Sources */,
+				6318DAB420C91CE8001E43AA /* xAVPlayer.m in Sources */,
 				63900A7C1F066A5A0080C48D /* UICollectionView+xStatis.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

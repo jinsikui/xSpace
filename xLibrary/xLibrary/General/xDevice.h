@@ -28,6 +28,8 @@
 
 +(NSString*)deviceId;
 
++(NSString*)bundleId;
+
 +(BOOL)isIphoneX;
 
 @end

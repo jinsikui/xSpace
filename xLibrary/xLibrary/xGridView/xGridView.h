@@ -9,14 +9,6 @@
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
 
-@interface UICollectionViewCell (xGridView)
-
-@property(nonatomic,strong)id x_data;
-
-@property(nonatomic)NSIndexPath *x_indexPath;
-
-@end
-
 @interface xGridView : UIView <UICollectionViewDelegateFlowLayout, UICollectionViewDataSource>
 
 @property(nonatomic,strong)NSArray *dataList;
@@ -46,6 +38,8 @@
 @property(nonatomic,copy)void (^selectCellCallback)(UICollectionViewCell*);
 
 -(instancetype)initWithCellClass:(Class)cellClass;
+
+-(instancetype)initWithCollectionViewCell;
 
 -(instancetype)initWithFrame:(CGRect)frame;
 

@@ -1,0 +1,99 @@
+syntax = "proto3";
+
+package main;
+
+message User {
+  string user_id = 1;
+  string name = 2;
+  string gender = 3;
+  int32 role = 4;
+  int32 level = 5;
+  int32 hao = 6;
+  repeated int32 medals = 7 [packed=true];
+  string avatar = 8;
+  int32 fan_id = 9;
+}
+
+message Data {
+  string message = 1; // type message
+  int32 amount = 2; // type reward message
+  string rewardName = 3 [json_name="rewardName"];
+  string rewardImage = 4 [json_name="rewardImage"];
+  int32 id = 5;
+  bool isBarrage = 6;
+  bool showCountList = 7;
+  string animationUrl = 8;
+  int64 combo_id = 9 [json_name="combo_id"];
+  int32 combo_amount = 10 [json_name="combo_amount"];
+  string system_message = 11 [json_name="system_message"];
+  int32 rewardIndex = 12;
+  int32 barrage_type = 13 [json_name="barrage_type"];
+  string reward_name1 = 14 [json_name="reward_name"]; // type horn reward message
+  string reward_image1 = 15 [json_name="reward_image"];
+  string liveshow_url = 16 [json_name="liveshow_url"];
+  string podcaster_name = 17 [json_name="podcaster_name"];
+  string template = 18;
+  string stream_type = 19 [json_name="stream_type"]; // type stream switch event
+  string hls_play_url = 20 [json_name="hls_play_url"];
+  string mp3_play_url = 21 [json_name="mp3_play_url"];
+  string event = 23;
+  int32 reward_id = 24 [json_name="reward_id"]; // type commbo End message
+  int32 level = 25 ; // type level upgrade message
+  int32 next_level = 26 [json_name="next_level"];
+  repeated Privilege privileges = 27;
+  repeated Privilege next_privileges = 28 [json_name="next_privileges"];
+  string endTime = 29; // speak deny message
+  string user_id = 30 [json_name="user_id"];
+  string img_url = 31 [json_name="img_url"]; // room image message
+  string title = 32;
+  string redirect_url = 33 [json_name="redirect_url"];
+  int32 r = 34; // type room rank message
+  int32 t = 35;
+  int32 n = 36; // room online message
+  int32 reco = 37; // hostin_call event
+  int32 status = 38; // hostin_quit event
+  int32 program_id = 39; // hostin_reco_update event
+  string agora_key = 40; // hostin_accept event
+  int32 agora_key_ttl = 41;
+  int32 enter = 42; // welcome message
+  string notice = 43; // notice update event
+  repeated Rule rules = 44; // for link in notice and message
+  string red_packet_id = 45 [json_name="red_packet_id"];  // for red packet messages
+  int32 shares = 46; 
+  string empty_at = 47 [json_name="empty_at"] ;
+  string expires_at = 48 [json_name="expires_at"];
+  int32 claimed_amount = 49 [json_name="claimed_amount"];
+  string nick_name = 50 [json_name="nick_name"];
+  bool popup = 51 [json_name="popup"];
+<<<<<<< HEAD
+  int32 wait_left_ms = 52 [json_name="wait_left_ms"];
+=======
+>>>>>>> c23372bc0b7ad42a28fa98c4045150a3361d636b
+}
+
+message Rule {
+  string title = 1;
+  string link = 2;
+}
+
+message Privilege {
+  string icon = 1;
+  string name = 2;
+  int32 level = 3;
+}
+
+message Body {
+  string type = 1;
+  // google.protobuf.Struct data = 2;
+  Data data = 2;
+  User user = 3;
+}
+
+message Message {
+  // Body body = 6; 
+  string type = 1;
+  // google.protobuf.Struct data = 2;
+  Data data = 2;
+  User user = 3;
+}
+
