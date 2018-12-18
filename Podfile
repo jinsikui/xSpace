@@ -19,6 +19,7 @@ target 'xSpace’ do
   pod 'lottie-ios'
   pod 'Protobuf'
   pod 'SVGAPlayer'
+  pod 'TheAmazingAudioEngine', '1.5.8'
 end
 
 target 'xLibrary’ do
