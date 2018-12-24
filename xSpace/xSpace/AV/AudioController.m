@@ -27,8 +27,8 @@
 @property(nonatomic) UIButton *sha1Btn;
 @property(nonatomic) UIButton *clearBtn;
 @property(nonatomic) xAVAudioRecorder *recorder;
-//@property(nonatomic) xAVAudioPlayer *player;
-@property(nonatomic) xAVPlayer *player;
+@property(nonatomic) xAVAudioPlayer *player;
+//@property(nonatomic) xAVPlayer *player;
 @property(nonatomic) NSString *filePath;
 @property(nonatomic) NSURL    *fileUrl;
 
@@ -122,7 +122,7 @@
     [_clearBtn addTarget:self action:@selector(actionClear) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:_clearBtn];
     
-    _filePath = [xFile documentPath:@"recorder.aac"];
+    _filePath = [xFile documentPath:@"recorder.pcm"];
     _fileUrl = [NSURL fileURLWithPath:_filePath];
 }
 
@@ -168,17 +168,17 @@
     //_player = [[xAVPlayer alloc] initWithUrl:[NSURL URLWithString:@"http://www.haomuren.org/Upload/NewsAttach/070829P.mp3"]];
     //_player = [[xAVPlayer alloc] initWithUrl:[NSURL URLWithString:@"http://media.haomuren.org/AudioBible/NT%2025%203Jn/3jn%2001.mp3"]];
 //    _player = [[xAVPlayer alloc] initWithUrl:[NSURL URLWithString:@"https://appuploader.oss-cn-hangzhou.aliyuncs.com/user/000e7e217a9d78edbfeef87e99cd6cc2/recordFile.aac"]];
-    _player = [[xAVPlayer alloc] initWithUrl:[NSURL URLWithString:@"https://qt-zhibo.oss-cn-hangzhou.aliyuncs.com/test/testsikui1.mp3"]];
-    _player.delegate = self;
-    [_player prepareForPlay];
-    [_player play];
-    
-    
-//    _player = [[xAVAudioPlayer alloc] initWithUrl:_fileUrl];
+//    _player = [[xAVPlayer alloc] initWithUrl:[NSURL URLWithString:@"https://qt-zhibo.oss-cn-hangzhou.aliyuncs.com/test/testsikui1.mp3"]];
 //    _player.delegate = self;
 //    [_player prepareForPlay];
 //    [_player play];
-//    [self appendLog:[NSString stringWithFormat:@"duration:%f",_player.duration]];
+    
+    
+    _player = [[xAVAudioPlayer alloc] initWithUrl:_fileUrl];
+    _player.delegate = self;
+    [_player prepareForPlay];
+    [_player play];
+    [self appendLog:[NSString stringWithFormat:@"duration:%f",_player.duration]];
 }
 
 -(void)actionPausePlay{

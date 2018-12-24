@@ -42,7 +42,7 @@
 #import "VoiceViewController.h"
 #import "CollectionViewController.h"
 #import "SVGAController.h"
-#import "AudioToolController.h"
+#import "AudioBusController.h"
 
 @interface PortalIndexController ()
 @property(nonatomic,strong)UIView *affineShowingPanel;
@@ -109,12 +109,12 @@
     [self createBtn:@"xVoiceView" y:2310 selector:@selector(actionVoiceView)];
     [self createBtn:@"CollectionView" y:2370 selector:@selector(actionCollectionView)];
     [self createBtn:@"SVGA" y:2430 selector:@selector(actionSVGA)];
-    [self createBtn:@"Audio Tool" y:2490 selector:@selector(actionAudioTool)];
+    [self createBtn:@"Audio Bus" y:2490 selector:@selector(actionAudioBus)];
     contentView.contentSize = CGSizeMake(kScreenWidth, 2590);
 }
 
--(void)actionAudioTool{
-    [self.navigationController pushViewController:[[AudioToolController alloc] init] animated:YES];
+-(void)actionAudioBus{
+    [self.navigationController pushViewController:[[AudioBusController alloc] init] animated:YES];
 }
 
 -(void)actionSVGA{

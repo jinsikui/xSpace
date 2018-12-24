@@ -104,13 +104,13 @@
          7 音频编码质量
          */
         NSDictionary *info = @{
-                               AVFormatIDKey:[NSNumber numberWithInt:kAudioFormatMPEG4AAC],//音频格式
-                               AVSampleRateKey:@1000,//采样率
+                               AVFormatIDKey:[NSNumber numberWithInt:kAudioFormatLinearPCM],//音频格式
+                               AVSampleRateKey:@44000,//采样率
                                AVNumberOfChannelsKey:@2,//声道数
-                               AVLinearPCMBitDepthKey:@8,//采样位数
+                               AVLinearPCMBitDepthKey:@32,//采样位数
                                AVLinearPCMIsBigEndianKey:@NO,
-                               AVLinearPCMIsFloatKey:@NO,
-                               AVEncoderAudioQualityKey:[NSNumber numberWithInt:AVAudioQualityMedium],
+                               AVLinearPCMIsFloatKey:@YES,
+                               AVEncoderAudioQualityKey:[NSNumber numberWithInt:AVAudioQualityHigh],
                                
                                };
         
